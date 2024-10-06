@@ -1,0 +1,18 @@
+{
+    "name": "gptheme/mpt-core",
+    "type": "wordpress-plugin",
+    "license": "GPL2",
+    "autoload": {
+        "psr-4": {
+            "GpTheme\\GptNewsCore\\": "Includes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "GpTheme Islam",
+            "email": "hello@mominul.me"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

@@ -1,0 +1,49 @@
+.mpt-admin-wrap {
+	background: #fff;
+	border-radius: 8px;
+}
+.mpt-admin-nav {
+	padding: 20px;
+}
+
+.mpt-admin-wrap .mpt-admin-nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.mpt-admin-wrap .mpt-admin-nav ul li {
+	margin: 0.5rem 0.5rem 1rem;
+}
+
+.mpt-admin-wrap .mpt-admin-nav ul li a {
+	text-decoration: none;
+	background: #00CFC8;
+	color: #fff;
+	padding: 0.5rem 0.8rem 0.7rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: 4px;
+}
+
+.mpt-admin-wrap .mpt-admin-nav ul li a.active, .mpt-admin-wrap .mpt-admin-nav ul li a:hover {
+	background: #006BE2;
+}
+
+.mpt-admin-wrap .img__rounded {
+	border-radius: 8px;
+}
+
+#banner {
+	padding: 15px 15px 12px;
+}
+
+#banner img {
+	max-width: 100%;
+}
+
+
+/* Demo Import */
+.plugin-item-wpforms-lite {
+	display: none;
+}
