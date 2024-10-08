@@ -13,8 +13,8 @@ class Footer {
 		register_post_type( 'gpt_footer',
 			array(
 				$labels = [
-					'name'          => __( 'Footer', 'gpt-core' ),
-					'singular_name' => __( 'Footer', 'gpt-core' ),
+					'name'          => __( 'Footer', 'gpt-news-core' ),
+					'singular_name' => __( 'Footer', 'gpt-news-core' ),
 				],
 				'labels'              => $labels,
 				'public'              => true,

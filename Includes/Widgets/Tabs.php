@@ -20,7 +20,7 @@ class Tabs extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'MPT Tabs', 'gpt-core' );
+		return __( 'GPT Tabs', 'gpt-news-core' );
 	}
 
 	public function get_icon() {
@@ -36,19 +36,19 @@ class Tabs extends Widget_Base {
 		// ------------------------------ Feature list ------------------------------
 		$this->start_controls_section(
 			'section_tab', [
-				'label' => __( 'MPT Tabs', 'gpt-core' ),
+				'label' => __( 'GPT Tabs', 'gpt-news-core' ),
 			]
 		);
 
 		// Layout
 		$this->add_control(
 			'tab_layout', [
-				'label'   => __( 'Layout', 'gpt-core' ),
+				'label'   => __( 'Layout', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'horizontal',
 				'options' => [
-					'horizontal' => __( 'Horizontal', 'gpt-core' ),
-					'vertical'   => __( 'Vertical', 'gpt-core' ),
+					'horizontal' => __( 'Horizontal', 'gpt-news-core' ),
+					'vertical'   => __( 'Vertical', 'gpt-news-core' ),
 				],
 			]
 		);
@@ -56,13 +56,13 @@ class Tabs extends Widget_Base {
 		// Tab Style
 		$this->add_control(
 			'tab_style', [
-				'label'   => __( 'Tab Style', 'gpt-core' ),
+				'label'   => __( 'Tab Style', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'style-one',
 				'options' => [
-					'style-one'   => __( 'Style 1', 'gpt-core' ),
-					'style-two'   => __( 'Style 2', 'gpt-core' ),
-					'style-three' => __( 'Style 3', 'gpt-core' ),
+					'style-one'   => __( 'Style 1', 'gpt-news-core' ),
+					'style-two'   => __( 'Style 2', 'gpt-news-core' ),
+					'style-three' => __( 'Style 3', 'gpt-news-core' ),
 				],
 			]
 		);
@@ -71,7 +71,7 @@ class Tabs extends Widget_Base {
 
 		$repeater->add_control(
 			'tab_label', [
-				'label'       => __( 'Tab Label', 'gpt-core' ),
+				'label'       => __( 'Tab Label', 'gpt-news-core' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
 			]
@@ -80,7 +80,7 @@ class Tabs extends Widget_Base {
 		// Badge
 		$repeater->add_control(
 			'tab_badge_text', [
-				'label'       => __( 'Badge', 'gpt-core' ),
+				'label'       => __( 'Badge', 'gpt-news-core' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
 			]
@@ -90,15 +90,15 @@ class Tabs extends Widget_Base {
 		$repeater->add_control(
 			'tab_icon_type',
 			[
-				'label'   => __( 'Icon Type', 'gpt-core' ),
+				'label'   => __( 'Icon Type', 'gpt-news-core' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'none' => [
-						'title' => __( 'None', 'gpt-core' ),
+						'title' => __( 'None', 'gpt-news-core' ),
 						'icon'  => 'eicon-ban',
 					],
 					'icon' => [
-						'title' => __( 'Icon', 'gpt-core' ),
+						'title' => __( 'Icon', 'gpt-news-core' ),
 						'icon'  => 'eicon-star',
 					],
 				],
@@ -111,12 +111,12 @@ class Tabs extends Widget_Base {
 		$repeater->add_control(
 			'tab_icon_pack',
 			[
-				'label'     => __( 'Icon Select', 'gpt-core' ),
+				'label'     => __( 'Icon Select', 'gpt-news-core' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'font_awesome',
 				'options'   => [
-					'font_awesome' => __( 'Font Awesome', 'gpt-core' ),
-					'elegant_icon' => __( 'Elegant Icon', 'gpt-core' ),
+					'font_awesome' => __( 'Font Awesome', 'gpt-news-core' ),
+					'elegant_icon' => __( 'Elegant Icon', 'gpt-news-core' ),
 				],
 				'condition' => [
 					'tab_icon_type' => 'icon',
@@ -146,7 +146,7 @@ class Tabs extends Widget_Base {
 		$repeater->add_control(
 			'tab_icon',
 			[
-				'label'       => __( 'Choose Icon', 'gpt-core' ),
+				'label'       => __( 'Choose Icon', 'gpt-news-core' ),
 				'type'        => Controls_Manager::ICON,
 				'options'     => gpt_simpleline_icons(),
 				'include'     => gpt_include_simpleline_icons(),
@@ -175,7 +175,7 @@ class Tabs extends Widget_Base {
 		$repeater->add_control(
 			'template_id',
 			[
-				'label'   => __( 'Choose Template', 'gpt-core' ),
+				'label'   => __( 'Choose Template', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => $options,
 				'default' => '0',
@@ -186,18 +186,18 @@ class Tabs extends Widget_Base {
 		$this->add_control(
 			'advance_tab',
 			[
-				'label'       => __( 'Tab Lists', 'gpt-core' ),
+				'label'       => __( 'Tab Lists', 'gpt-news-core' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
-						'tab_label' => __( 'Product', 'gpt-core' ),
+						'tab_label' => __( 'Product', 'gpt-news-core' ),
 					],
 					[
-						'tab_label' => __( 'Customer', 'gpt-core' ),
+						'tab_label' => __( 'Customer', 'gpt-news-core' ),
 					],
 					[
-						'tab_label' => __( 'Pricing', 'gpt-core' ),
+						'tab_label' => __( 'Pricing', 'gpt-news-core' ),
 					],
 				],
 				'title_field' => '{{{ tab_label }}}',
@@ -208,19 +208,19 @@ class Tabs extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_align',
 			[
-				'label'     => __( 'Alignment', 'gpt-core' ),
+				'label'     => __( 'Alignment', 'gpt-news-core' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
 					'left'   => [
-						'title' => __( 'Left', 'gpt-core' ),
+						'title' => __( 'Left', 'gpt-news-core' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'gpt-core' ),
+						'title' => __( 'Center', 'gpt-news-core' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'right'  => [
-						'title' => __( 'Right', 'gpt-core' ),
+						'title' => __( 'Right', 'gpt-news-core' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
@@ -239,7 +239,7 @@ class Tabs extends Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => __( 'Tab Label', 'gpt-core' ),
+				'label' => __( 'Tab Label', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -248,7 +248,7 @@ class Tabs extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_label_spacing',
 			[
-				'label'      => __( 'Tabs Spacing', 'gpt-core' ),
+				'label'      => __( 'Tabs Spacing', 'gpt-news-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range'      => [
@@ -274,7 +274,7 @@ class Tabs extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_icon_spacing',
 			[
-				'label'      => __( 'Icon Spacing', 'gpt-core' ),
+				'label'      => __( 'Icon Spacing', 'gpt-news-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range'      => [
@@ -300,7 +300,7 @@ class Tabs extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'tab_label_typography',
-				'label'    => __( 'Typography', 'gpt-core' ),
+				'label'    => __( 'Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a',
 			]
 		);
@@ -309,7 +309,7 @@ class Tabs extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_label_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-core' ),
+				'label'      => __( 'Padding', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -322,12 +322,12 @@ class Tabs extends Widget_Base {
 		$this->start_controls_tabs( 'tab_label_style_tabs' );
 
 		// Normal
-		$this->start_controls_tab( 'tab_label_style_normal_tab', [ 'label' => __( 'Normal', 'gpt-core' ) ] );
+		$this->start_controls_tab( 'tab_label_style_normal_tab', [ 'label' => __( 'Normal', 'gpt-news-core' ) ] );
 
 		$this->add_control(
 			'tab_label_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a' => 'color: {{VALUE}}',
@@ -338,7 +338,7 @@ class Tabs extends Widget_Base {
 		$this->add_control(
 			'tab_label_bg_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a' => 'background-color: {{VALUE}}',
@@ -350,12 +350,12 @@ class Tabs extends Widget_Base {
 
 		// Hover
 
-		$this->start_controls_tab( 'tab_label_style_hover_tab', [ 'label' => __( 'Hover', 'gpt-core' ) ] );
+		$this->start_controls_tab( 'tab_label_style_hover_tab', [ 'label' => __( 'Hover', 'gpt-news-core' ) ] );
 
 		$this->add_control(
 			'tab_label_hover_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a:hover' => 'color: {{VALUE}}',
@@ -366,7 +366,7 @@ class Tabs extends Widget_Base {
 		$this->add_control(
 			'tab_label_hover_bg_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a:hover' => 'background-color: {{VALUE}}',
@@ -377,12 +377,12 @@ class Tabs extends Widget_Base {
 		$this->end_controls_tab();
 
 		// Active
-		$this->start_controls_tab( 'tab_label_style_active_tab', [ 'label' => __( 'Active', 'gpt-core' ) ] );
+		$this->start_controls_tab( 'tab_label_style_active_tab', [ 'label' => __( 'Active', 'gpt-news-core' ) ] );
 
 		$this->add_control(
 			'tab_label_active_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li.active a' => 'color: {{VALUE}}',
@@ -394,7 +394,7 @@ class Tabs extends Widget_Base {
 		$this->add_control(
 			'tab_label_active_bg_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li.active a' => 'background-color: {{VALUE}}',

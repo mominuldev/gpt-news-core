@@ -27,7 +27,7 @@ class MarqueText extends Widget_Base {
 
 
 	public function get_title() {
-		return __( 'Marque Text', 'gpt-core' );
+		return __( 'Marque Text', 'gpt-news-core' );
 	}
 
 	public function get_icon() {
@@ -51,7 +51,7 @@ class MarqueText extends Widget_Base {
 		$this->start_controls_section(
 			'faq_content',
 			[
-				'label' => __( 'Marque Content', 'gpt-core' ),
+				'label' => __( 'Marque Content', 'gpt-news-core' ),
 			]
 		);
 
@@ -60,9 +60,9 @@ class MarqueText extends Widget_Base {
 
 		$repeater->add_control(
 			'title', [
-				'label'       => __( 'Text', 'gpt-core' ),
+				'label'       => __( 'Text', 'gpt-news-core' ),
 				'type'        => Controls_Manager::TEXT,
-				'plaseholder' => __( 'Enter Text', 'gpt-core' ),
+				'plaseholder' => __( 'Enter Text', 'gpt-news-core' ),
 				'label_block' => true,
 			]
 		);
@@ -70,24 +70,24 @@ class MarqueText extends Widget_Base {
 		$this->add_control(
 			'marque_lists',
 			[
-				'label'       => __( 'Text list', 'gpt-core' ),
+				'label'       => __( 'Text list', 'gpt-news-core' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
-						'title' => __( 'Digital Agency', 'gpt-core' ),
+						'title' => __( 'Digital Agency', 'gpt-news-core' ),
 					],
 					[
-						'title' => __( 'Web Design', 'gpt-core' ),
+						'title' => __( 'Web Design', 'gpt-news-core' ),
 					],
 					[
-						'title' => __( 'Product Design', 'gpt-core' ),
+						'title' => __( 'Product Design', 'gpt-news-core' ),
 					],
 					[
-						'title' => __( 'Branding Design', 'gpt-core' ),
+						'title' => __( 'Branding Design', 'gpt-news-core' ),
 					],
 					[
-						'title' => __( 'Branding Service', 'gpt-core' ),
+						'title' => __( 'Branding Service', 'gpt-news-core' ),
 					],
 				],
 				'title_field' => '{{{ title }}}',
@@ -100,7 +100,7 @@ class MarqueText extends Widget_Base {
 		$this->start_controls_section(
 			'social_style_section',
 			[
-				'label' => __( 'Content', 'gpt-core' ),
+				'label' => __( 'Content', 'gpt-news-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -109,7 +109,7 @@ class MarqueText extends Widget_Base {
 		$this->add_control(
 			'faq_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gpt-marque__title' => 'color: {{VALUE}}',
@@ -121,7 +121,7 @@ class MarqueText extends Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name'     => 'faq_typography',
-				'label'    => __( 'Typography', 'gpt-core' ),
+				'label'    => __( 'Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-marque__title',
 			]
 		);
@@ -130,7 +130,7 @@ class MarqueText extends Widget_Base {
 		$this->add_responsive_control(
 			'faq_space',
 			[
-				'label'      => __( 'Space', 'gpt-core' ),
+				'label'      => __( 'Space', 'gpt-news-core' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range'      => [
@@ -150,7 +150,7 @@ class MarqueText extends Widget_Base {
 		$this->start_controls_section(
 			'answer_style_section',
 			[
-				'label' => __( 'Answer', 'gpt-core' ),
+				'label' => __( 'Answer', 'gpt-news-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -158,7 +158,7 @@ class MarqueText extends Widget_Base {
 		$this->add_control(
 			'ans_color',
 			[
-				'label'     => __( 'Faq Color', 'gpt-core' ),
+				'label'     => __( 'Faq Color', 'gpt-news-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gpt-faq__content' => 'color: {{VALUE}}',
@@ -170,7 +170,7 @@ class MarqueText extends Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name'     => 'ans_typography',
-				'label'    => __( 'Faq Typography', 'gpt-core' ),
+				'label'    => __( 'Faq Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-faq__content',
 			]
 		);
@@ -180,7 +180,7 @@ class MarqueText extends Widget_Base {
 		$this->start_controls_section(
 			'faq_style_section',
 			[
-				'label' => __( 'Faq', 'gpt-core' ),
+				'label' => __( 'Faq', 'gpt-news-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -188,7 +188,7 @@ class MarqueText extends Widget_Base {
 		$this->add_responsive_control(
 			'faq_margin',
 			[
-				'label'      => __( 'Margin', 'gpt-core' ),
+				'label'      => __( 'Margin', 'gpt-news-core' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -200,7 +200,7 @@ class MarqueText extends Widget_Base {
 		$this->add_responsive_control(
 			'faq_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-core' ),
+				'label'      => __( 'Padding', 'gpt-news-core' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -212,7 +212,7 @@ class MarqueText extends Widget_Base {
 		$this->add_control(
 			'faq_bg_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gpt-faq__item' => 'background-color: {{VALUE}}',
@@ -224,7 +224,7 @@ class MarqueText extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'faq_border',
-				'label'    => __( 'Border', 'gpt-core' ),
+				'label'    => __( 'Border', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-faq__item',
 			]
 		);
@@ -232,7 +232,7 @@ class MarqueText extends Widget_Base {
 		$this->add_responsive_control(
 			'faq_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'gpt-core' ),
+				'label'      => __( 'Border Radius', 'gpt-news-core' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [

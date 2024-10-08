@@ -11,7 +11,7 @@ import {__} from "@wordpress/i18n";
 
 registerBlockType(
     'mpt-block/mpt-social-links-widget', {
-        title: 'MPT Social Links Widget',
+        title: 'GPT Social Links Widget',
         icon: 'phone',
         category: 'widgets',
         keywords: ['contact info', 'mpt', 'social'],

@@ -25,7 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)('mpt-block/mpt-contact-info-widget', {
-  title: 'MPT Contact Info Widget',
+  title: 'GPT Contact Info Widget',
   icon: 'phone',
   category: 'widgets',
   keywords: ['contact info', 'mpt', 'contact'],
@@ -539,10 +539,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)('mpt-block/mpt-gallery', {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('MPT Gallery', 'create-block'),
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('GPT Gallery', 'create-block'),
   icon: 'shield',
   category: 'common',
-  keywords: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Gallery', 'create-block'), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('MPT', 'create-block'), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Image', 'create-block')],
+  keywords: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Gallery', 'create-block'), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('GPT', 'create-block'), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Image', 'create-block')],
   attributes: {
     images: {
       type: 'array',
@@ -633,7 +633,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__.registerBlockType)('mpt-block/newsletter-widget', {
-  title: 'MPT Newsletter',
+  title: 'GPT Newsletter',
   'icon': 'email-alt',
   'category': 'common',
   'keywords': ['newsletter', 'qutety', 'content box'],
@@ -715,7 +715,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)('mpt-block/mpt-social-links-widget', {
-  title: 'MPT Social Links Widget',
+  title: 'GPT Social Links Widget',
   icon: 'phone',
   category: 'widgets',
   keywords: ['contact info', 'mpt', 'social'],

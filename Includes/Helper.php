@@ -3,7 +3,7 @@
 /**
  * Elementor Helper.
  *
- * @package MPT
+ * @package GPT
  */
 
 if (!defined('ABSPATH')) {
@@ -12,11 +12,11 @@ if (!defined('ABSPATH')) {
 
 
 /**
- * Class MPT_Helper.
+ * Class GPT_Helper.
  */
 
-if ( ! class_exists( 'MPT_Helper' ) ) {
-	class MPT_Helper {
+if ( ! class_exists( 'GPT_Helper' ) ) {
+	class GPT_Helper {
 
 		protected static $instance  = null;
 
@@ -46,12 +46,12 @@ if ( ! class_exists( 'MPT_Helper' ) ) {
 
 			$results = array();
 			if ( $forms ) {
-				$results[] = __( 'Select A Form', 'gpt-core' );
+				$results[] = __( 'Select A Form', 'gpt-news-core' );
 				foreach ( $forms as $form ) {
 					$results[ $form->ID ] = $form->post_title;
 				}
 			} else {
-				$results[] =  __( 'No contact forms found', 'gpt-core' ) ;
+				$results[] =  __( 'No contact forms found', 'gpt-news-core' ) ;
 			}
 
 			return $results;
@@ -64,36 +64,36 @@ if ( ! class_exists( 'MPT_Helper' ) ) {
 		 * @return void
 		 */
 		public function gpt_extra_user_profile_fields( $user ) { ?>
-			<h3><?php esc_html_e( "Extra profile information", 'gpt-core' ); ?></h3>
+			<h3><?php esc_html_e( "Extra profile information", 'gpt-news-core' ); ?></h3>
 
 			<table class="form-table">
 				<tr>
-					<th><label for="facebook"><?php esc_html_e( "Facebook", 'gpt-core' ); ?></label></th>
+					<th><label for="facebook"><?php esc_html_e( "Facebook", 'gpt-news-core' ); ?></label></th>
 					<td>
 						<input type="text" name="facebook" id="facebook" value="<?php echo esc_attr( get_the_author_meta( 'facebook', $user->ID ) ); ?>" class="regular-text"/><br/>
-						<span class="description"><?php esc_html_e( "Please enter your facebook url.", 'gpt-core' ); ?></span>
+						<span class="description"><?php esc_html_e( "Please enter your facebook url.", 'gpt-news-core' ); ?></span>
 					</td>
 				</tr>
 				<tr>
-					<th><label for="twitter"><?php esc_html_e( "Twitter", 'gpt-core' ); ?></label></th>
+					<th><label for="twitter"><?php esc_html_e( "Twitter", 'gpt-news-core' ); ?></label></th>
 					<td>
 						<input type="text" name="twitter" id="twitter" value="<?php echo esc_attr( get_the_author_meta( 'twitter', $user->ID ) ); ?>" class="regular-text"/><br/>
-						<span class="description"><?php esc_html_e( "Please enter your twitter url.", 'gpt-core' ); ?></span>
+						<span class="description"><?php esc_html_e( "Please enter your twitter url.", 'gpt-news-core' ); ?></span>
 					</td>
 				</tr>
 				<tr>
-					<th><label for="linkedin"><?php esc_html_e( "Linkedin", 'gpt-core' ); ?></label></th>
+					<th><label for="linkedin"><?php esc_html_e( "Linkedin", 'gpt-news-core' ); ?></label></th>
 					<td>
 						<input type="text" name="linkedin" id="linkedin"  value="<?php echo esc_attr( get_the_author_meta( 'linkedin', $user->ID ) ); ?>"  class="regular-text"/><br/>
-						<span class="description"><?php esc_html_e( "Please enter your linkedin url.", 'gpt-core' ); ?></span>
+						<span class="description"><?php esc_html_e( "Please enter your linkedin url.", 'gpt-news-core' ); ?></span>
 					</td>
 				</tr>
 
 				<tr>
-					<th><label for="instagram"><?php esc_html_e( "Instagram", 'gpt-core' ); ?></label></th>
+					<th><label for="instagram"><?php esc_html_e( "Instagram", 'gpt-news-core' ); ?></label></th>
 					<td>
 						<input type="text" name="instagram" id="instagram" value="<?php echo esc_attr( get_the_author_meta( 'instagram', $user->ID ) ); ?>"  class="regular-text"/><br/>
-						<span class="description"><?php esc_html_e( "Please enter your instagram url.", 'gpt-core' ); ?></span>
+						<span class="description"><?php esc_html_e( "Please enter your instagram url.", 'gpt-news-core' ); ?></span>
 					</td>
 				</tr>
 			</table>
@@ -180,7 +180,7 @@ if ( ! class_exists( 'MPT_Helper' ) ) {
 			);
 
 			$categories  = get_categories( $query_args );
-//			$options     = array( esc_html__( '0', 'gpt-core' ) => 'All Category' );
+//			$options     = array( esc_html__( '0', 'gpt-news-core' ) => 'All Category' );
 			$options = [];
 
 			if ( is_array( $categories ) && count( $categories ) > 0 ) {
@@ -265,7 +265,7 @@ if ( ! class_exists( 'MPT_Helper' ) ) {
 				];
 				$parent = self::get_term_parents_list( $cat->cat_ID, 'category', [] );
 
-				$content[(string) $cat->slug] = $cat->cat_name.(! empty($parent) ? esc_html__( ' (Parent categories: (', 'gpt-core') .$parent.'))' : "");
+				$content[(string) $cat->slug] = $cat->cat_name.(! empty($parent) ? esc_html__( ' (Parent categories: (', 'gpt-news-core') .$parent.'))' : "");
 			}
 
 			return $content;
@@ -305,12 +305,12 @@ if ( ! class_exists( 'MPT_Helper' ) ) {
 
 		public static function get_grid_metro_size() {
 			return [
-				'1:1'   => esc_html__( 'Width 1 - Height 1', 'gpt-core' ),
-				'1:2'   => esc_html__( 'Width 1 - Height 2', 'gpt-core' ),
-				'1:0.7' => esc_html__( 'Width 1 - Height 70%', 'gpt-core' ),
-				'1:1.3' => esc_html__( 'Width 1 - Height 130%', 'gpt-core' ),
-				'2:1'   => esc_html__( 'Width 2 - Height 1', 'gpt-core' ),
-				'2:2'   => esc_html__( 'Width 2 - Height 2', 'gpt-core' ),
+				'1:1'   => esc_html__( 'Width 1 - Height 1', 'gpt-news-core' ),
+				'1:2'   => esc_html__( 'Width 1 - Height 2', 'gpt-news-core' ),
+				'1:0.7' => esc_html__( 'Width 1 - Height 70%', 'gpt-news-core' ),
+				'1:1.3' => esc_html__( 'Width 1 - Height 130%', 'gpt-news-core' ),
+				'2:1'   => esc_html__( 'Width 2 - Height 1', 'gpt-news-core' ),
+				'2:2'   => esc_html__( 'Width 2 - Height 2', 'gpt-news-core' ),
 			];
 		}
 
@@ -390,7 +390,7 @@ if ( ! class_exists( 'MPT_Helper' ) ) {
 
 
 		public static function image_placeholder( $width, $height ) {
-			echo '<img src="http://via.placeholder.com/' . $width . 'x' . $height . '?text=' . esc_attr__( 'No+Image', 'gpt-core' ) . '" alt="' . esc_attr__( 'Thumbnail', 'gpt-core' ) . '"/>';
+			echo '<img src="http://via.placeholder.com/' . $width . 'x' . $height . '?text=' . esc_attr__( 'No+Image', 'gpt-news-core' ) . '" alt="' . esc_attr__( 'Thumbnail', 'gpt-news-core' ) . '"/>';
 		}
 
 		public static function gpt_hex_to_rgb($hex, $alpha = false) {
@@ -480,5 +480,5 @@ if ( ! class_exists( 'MPT_Helper' ) ) {
 
 	}
 
-	MPT_Helper::instance()->initialize();
+	GPT_Helper::instance()->initialize();
 }

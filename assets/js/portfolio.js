@@ -55,7 +55,7 @@
 	// });
 
 
-	let MPTlGridLayout = function () {
+	let GPTlGridLayout = function () {
 		var $el, $grid, resizeTimer;
 
 		/**
@@ -299,10 +299,10 @@
 
 	};
 
-	// $('.mpt-project__grid-wrapper').MPTlGridLayout();
+	// $('.mpt-project__grid-wrapper').GPTlGridLayout();
 
 	$(window).on('elementor/frontend/init', function () {
-		elementorFrontend.hooks.addAction('frontend/element_ready/mpt-project.default', MPTlGridLayout);
+		elementorFrontend.hooks.addAction('frontend/element_ready/mpt-project.default', GPTlGridLayout);
 	});
 
 })(window.jQuery);

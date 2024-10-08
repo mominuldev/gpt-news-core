@@ -11,7 +11,7 @@ import {__} from "@wordpress/i18n";
 
 registerBlockType(
     'mpt-block/mpt-contact-info-widget', {
-        title: 'MPT Contact Info Widget',
+        title: 'GPT Contact Info Widget',
         icon: 'phone',
         category: 'widgets',
         keywords: ['contact info', 'mpt', 'contact'],

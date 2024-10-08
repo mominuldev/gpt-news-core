@@ -47,7 +47,7 @@ class Team extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'MPT Team', 'gpt-core' );
+		return __( 'GPT Team', 'gpt-news-core' );
 	}
 
 	/**
@@ -103,40 +103,40 @@ class Team extends Widget_Base {
 		// START TEAME CONTENT
 		//============================================
 		$this->start_controls_section( 'team_content', [
-			'label' => __( 'Team Member', 'gpt-core' ),
+			'label' => __( 'Team Member', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_CONTENT,
 		] );
 
 		$this->add_control(
 			'layout',
 			[
-				'label' => esc_html__( 'Style', 'gpt-core' ),
+				'label' => esc_html__( 'Style', 'gpt-news-core' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'one',
 				'options' => [
-					'one' => esc_html__( 'Style One', 'gpt-core' ),
-					'two' => esc_html__( 'Style Two', 'gpt-core' ),
+					'one' => esc_html__( 'Style One', 'gpt-news-core' ),
+					'two' => esc_html__( 'Style Two', 'gpt-news-core' ),
 				]
 			]
 		);
 
 
 		$this->add_control( 'name', [
-			'label'       => __( 'Name', 'gpt-core' ),
+			'label'       => __( 'Name', 'gpt-news-core' ),
 			'type'        => Controls_Manager::TEXT,
-			'placeholder' => __( 'Enter Name', 'gpt-core' ),
-			'default'     => __( 'Mashil Nanchy', 'gpt-core' ),
+			'placeholder' => __( 'Enter Name', 'gpt-news-core' ),
+			'default'     => __( 'Mashil Nanchy', 'gpt-news-core' ),
 		] );
 
 		$this->add_control( 'position', [
-			'label'       => __( 'Position', 'gpt-core' ),
+			'label'       => __( 'Position', 'gpt-news-core' ),
 			'type'        => Controls_Manager::TEXT,
-			'placeholder' => __( 'Enter Position', 'gpt-core' ),
-			'default'     => __('Web Designer', 'gpt-core'),
+			'placeholder' => __( 'Enter Position', 'gpt-news-core' ),
+			'default'     => __('Web Designer', 'gpt-news-core'),
 		] );
 
 		$this->add_control( 'image', [
-			'label'   => __( 'Choose Image', 'gpt-core' ),
+			'label'   => __( 'Choose Image', 'gpt-news-core' ),
 			'type'    => Controls_Manager::MEDIA,
 			'default' => [
 				'url' => plugin_dir_url( __FILE__ ) . 'images/team1.jpg'
@@ -146,16 +146,16 @@ class Team extends Widget_Base {
 		$repeater = new Repeater();
 
 		$repeater->add_control( 'icon', [
-			'label' => __( 'Icon', 'gpt-core' ),
+			'label' => __( 'Icon', 'gpt-news-core' ),
 			'type'  => Controls_Manager::ICONS,
 		] );
 
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'gpt-core' ),
+				'label' => __( 'Link', 'gpt-news-core' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'gpt-core' ),
+				'placeholder' => __( 'https://your-link.com', 'gpt-news-core' ),
 				'show_external' => true,
 				'default' => [
 					'url' => '#',
@@ -164,14 +164,14 @@ class Team extends Widget_Base {
 		);
 
 		$repeater->add_control( 'social_name', [
-			'label'       => __( 'Name', 'gpt-core' ),
-			'description' => __( 'This name will be show in the item header', 'gpt-core' ),
+			'label'       => __( 'Name', 'gpt-news-core' ),
+			'description' => __( 'This name will be show in the item header', 'gpt-news-core' ),
 			'type'        => Controls_Manager::TEXT,
 			'default'     => 'Facebook',
 		] );
 
 		$this->add_control( 'social_icons', [
-			'label'       => __( 'Add Social Icon', 'gpt-core' ),
+			'label'       => __( 'Add Social Icon', 'gpt-news-core' ),
 			'type'        => Controls_Manager::REPEATER,
 			'fields'      => $repeater->get_controls(),
 			'default'     => [
@@ -183,7 +183,7 @@ class Team extends Widget_Base {
 					'link'        => [
 						'url' => '#',
 					],
-					'social_name' => __('Facebook', 'gpt-core'),
+					'social_name' => __('Facebook', 'gpt-news-core'),
 				],
 				[
 					'icon'        => [
@@ -193,7 +193,7 @@ class Team extends Widget_Base {
 					'link'        => [
 						'url' => '#',
 					],
-					'social_name' => __('Twitter', 'gpt-core'),
+					'social_name' => __('Twitter', 'gpt-news-core'),
 				],
 				[
 					'icon'        => [
@@ -203,7 +203,7 @@ class Team extends Widget_Base {
 					'link'        => [
 						'url' => '#',
 					],
-					'social_name' => __('Linkedin', 'gpt-core'),
+					'social_name' => __('Linkedin', 'gpt-news-core'),
 				],
 				[
 					'icon'        => [
@@ -213,7 +213,7 @@ class Team extends Widget_Base {
 					'link'        => [
 						'url' => '#',
 					],
-					'social_name' => __('Pinterest', 'gpt-core'),
+					'social_name' => __('Pinterest', 'gpt-news-core'),
 				],
 
 			],
@@ -225,7 +225,7 @@ class Team extends Widget_Base {
 		// =====================
 
 		$this->start_controls_section( 'animation_effect', [
-			'label' => __( 'Animation Effect', 'gpt-core' ),
+			'label' => __( 'Animation Effect', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_CONTENT,
 		] );
 
@@ -233,10 +233,10 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'enable_tilt',
 			[
-				'label' => __( 'Enable Tilt', 'gpt-core' ),
+				'label' => __( 'Enable Tilt', 'gpt-news-core' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __( 'Enable', 'gpt-core' ),
-				'label_off' => __( 'Disable', 'gpt-core' ),
+				'label_on' => __( 'Enable', 'gpt-news-core' ),
+				'label_off' => __( 'Disable', 'gpt-news-core' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
@@ -253,12 +253,12 @@ class Team extends Widget_Base {
 		// Start Name Style
 		// =====================
 		$this->start_controls_section( 'name_style', [
-			'label' => __( 'Name', 'gpt-core' ),
+			'label' => __( 'Name', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'name_color', [
-			'label'     => __( 'Text Color', 'gpt-core' ),
+			'label'     => __( 'Text Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .gpt-team__name' => 'color: {{VALUE}};',
@@ -268,7 +268,7 @@ class Team extends Widget_Base {
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'name_typography',
-			'label'    => __( 'Typography', 'gpt-core' ),
+			'label'    => __( 'Typography', 'gpt-news-core' ),
 			'selector' => '{{WRAPPER}} .gpt-team__name',
 		] );
 
@@ -280,12 +280,12 @@ class Team extends Widget_Base {
 		// Start Position Style
 		// =====================
 		$this->start_controls_section( 'position_style', [
-			'label' => __( 'Designation', 'gpt-core' ),
+			'label' => __( 'Designation', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'position_color', [
-			'label'     => __( 'Color', 'gpt-core' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .gpt-team__designation' => 'color: {{VALUE}};',
@@ -294,7 +294,7 @@ class Team extends Widget_Base {
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'position_typography',
-			'label'    => __( 'Typography', 'gpt-core' ),
+			'label'    => __( 'Typography', 'gpt-news-core' ),
 			'selector' => '{{WRAPPER}} .gpt-team__designation',
 		] );
 
@@ -306,12 +306,12 @@ class Team extends Widget_Base {
 		// Start Description Style
 		// =====================
 		$this->start_controls_section( 'member_short_info', [
-			'label' => __( 'Description', 'gpt-core' ),
+			'label' => __( 'Description', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'short_info_color', [
-			'label'     => __( 'Color', 'gpt-core' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .team-member .member-short-info' => 'color: {{VALUE}};',
@@ -320,7 +320,7 @@ class Team extends Widget_Base {
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'short_info_typography',
-			'label'    => __( 'Typography', 'gpt-core' ),
+			'label'    => __( 'Typography', 'gpt-news-core' ),
 			'selector' => '{{WRAPPER}} .team-member .member-short-info',
 		] );
 
@@ -332,12 +332,12 @@ class Team extends Widget_Base {
 		// Start Icon Style
 		// =====================
 		$this->start_controls_section( 'icon_style', [
-			'label' => __( 'Social Icon', 'gpt-core' ),
+			'label' => __( 'Social Icon', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_responsive_control( 'font_size', [
-			'label'      => __( 'Font Size', 'gpt-core' ),
+			'label'      => __( 'Font Size', 'gpt-news-core' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px', 'em' ],
 			'default'    => [
@@ -352,11 +352,11 @@ class Team extends Widget_Base {
 		$this->start_controls_tabs( 'team_icon_tabs' );
 
 		$this->start_controls_tab( 'team_icon_normal', [
-			'label' => __( 'Normal', 'gpt-core' ),
+			'label' => __( 'Normal', 'gpt-news-core' ),
 		] );
 
 		$this->add_control( 'team_icon_color', [
-			'label'     => __( 'Icon Color', 'gpt-core' ),
+			'label'     => __( 'Icon Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .gpt-team__social li a' => 'color: {{VALUE}};',
@@ -366,11 +366,11 @@ class Team extends Widget_Base {
 		$this->end_controls_tab();
 
 		$this->start_controls_tab( 'team_icon_hover', [
-			'label' => __( 'Hover', 'gpt-core' ),
+			'label' => __( 'Hover', 'gpt-news-core' ),
 		] );
 
 		$this->add_control( 'team_icon_hover_color', [
-			'label'     => __( 'Icon Color', 'gpt-core' ),
+			'label'     => __( 'Icon Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .gpt-team__social li a:hover' => 'color: {{VALUE}};',
@@ -388,7 +388,7 @@ class Team extends Widget_Base {
 		// ================================
 
 		$this->start_controls_section( 'team_container_style', [
-			'label' => __( 'Team Container', 'gpt-core' ),
+			'label' => __( 'Team Container', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
@@ -396,7 +396,7 @@ class Team extends Widget_Base {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'team_wrapper_box_shadow',
-				'label' => __( 'Box Shadow', 'gpt-core' ),
+				'label' => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-team',
 			]
 		);
@@ -406,7 +406,7 @@ class Team extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'team_background',
-				'label' => __( 'Background', 'gpt-core' ),
+				'label' => __( 'Background', 'gpt-news-core' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .gpt-team',
 			]
@@ -417,13 +417,13 @@ class Team extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'team_border',
-				'label' => __( 'Border', 'gpt-core' ),
+				'label' => __( 'Border', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-team',
 			]
 		);
 
 		$this->add_control( 'team_padding', [
-			'label'      => __( 'Padding', 'gpt-core' ),
+			'label'      => __( 'Padding', 'gpt-news-core' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%', 'em' ],
 			'selectors'  => [
@@ -432,7 +432,7 @@ class Team extends Widget_Base {
 		] );
 
 		$this->add_control( 'team_border-radius', [
-			'label'      => __( 'Border Radius', 'gpt-core' ),
+			'label'      => __( 'Border Radius', 'gpt-news-core' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%', 'em' ],
 			'selectors'  => [
@@ -445,7 +445,7 @@ class Team extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'team_box_shadow',
-				'label' => __( 'Box Shadow', 'gpt-core' ),
+				'label' => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-team',
 			]
 		);

@@ -12,7 +12,7 @@ import {__} from "@wordpress/i18n";
 
 registerBlockType(
     'mpt-block/newsletter-widget', {
-        title: 'MPT Newsletter',
+        title: 'GPT Newsletter',
         'icon': 'email-alt',
         'category': 'common',
         'keywords': ['newsletter', 'qutety', 'content box'],

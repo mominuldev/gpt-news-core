@@ -47,7 +47,7 @@ class Button extends Widget_Base {
 	 *
 	 */
 	public function get_title() {
-		return __( 'MPT Button', 'gpt-core' );
+		return __( 'GPT Button', 'gpt-news-core' );
 	}
 
 	/**
@@ -102,11 +102,11 @@ class Button extends Widget_Base {
 	 */
 	public static function get_button_sizes() {
 		return [
-			'btn-xs' => __( 'Extra Small', 'gpt-core' ),
-			'btn-sm' => __( 'Small', 'gpt-core' ),
-			'btn-md' => __( 'Medium', 'gpt-core' ),
-			'btn-lg' => __( 'Large', 'gpt-core' ),
-			'btn-xl' => __( 'Extra Large', 'gpt-core' ),
+			'btn-xs' => __( 'Extra Small', 'gpt-news-core' ),
+			'btn-sm' => __( 'Small', 'gpt-news-core' ),
+			'btn-md' => __( 'Medium', 'gpt-news-core' ),
+			'btn-lg' => __( 'Large', 'gpt-news-core' ),
+			'btn-xl' => __( 'Extra Large', 'gpt-news-core' ),
 		];
 	}
 
@@ -123,14 +123,14 @@ class Button extends Widget_Base {
 		$this->start_controls_section(
 			'section_button',
 			[
-				'label' => __( 'Button', 'gpt-core' ),
+				'label' => __( 'Button', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'button_size',
 			[
-				'label'   => __( 'Size', 'gpt-core' ),
+				'label'   => __( 'Size', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'btn-md',
 				'options' => $this->get_button_sizes(),
@@ -140,13 +140,13 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'button_shape',
 			[
-				'label'   => __( 'Shape', 'gpt-core' ),
+				'label'   => __( 'Shape', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'btn-round',
 				'options' => [
-					'btn-square' => __( 'Square', 'gpt-core' ),
-					'btn-round'  => __( 'Round', 'gpt-core' ),
-					'btn-circle' => __( 'Circle', 'gpt-core' ),
+					'btn-square' => __( 'Square', 'gpt-news-core' ),
+					'btn-round'  => __( 'Round', 'gpt-news-core' ),
+					'btn-circle' => __( 'Circle', 'gpt-news-core' ),
 				],
 			]
 		);
@@ -154,12 +154,12 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'button_style',
 			[
-				'label'   => __( 'Shape', 'gpt-core' ),
+				'label'   => __( 'Shape', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'btn-default',
 				'options' => [
-					'btn-default' => __( 'Default', 'gpt-core' ),
-					'btn-outline' => __( 'Outline', 'gpt-core' ),
+					'btn-default' => __( 'Default', 'gpt-news-core' ),
+					'btn-outline' => __( 'Outline', 'gpt-news-core' ),
 				],
 			]
 		);
@@ -167,13 +167,13 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'button_fill_color',
 			[
-				'label'   => __( 'Fill Color', 'gpt-core' ),
+				'label'   => __( 'Fill Color', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'btn-dark',
 				'options' => [
-					'btn-default' => __( 'Default', 'gpt-core' ),
-					'btn-light' => __( 'Light', 'gpt-core' ),
-					'btn-dark' => __( 'Dark', 'gpt-core' ),
+					'btn-default' => __( 'Default', 'gpt-news-core' ),
+					'btn-light' => __( 'Light', 'gpt-news-core' ),
+					'btn-dark' => __( 'Dark', 'gpt-news-core' ),
 				],
 			]
 		);
@@ -181,17 +181,17 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'text',
 			[
-				'label'       => __( 'Text', 'gpt-core' ),
+				'label'       => __( 'Text', 'gpt-news-core' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'Learn More', 'gpt-core' ),
-				'placeholder' => __( 'Button Text', 'gpt-core' ),
+				'default'     => __( 'Learn More', 'gpt-news-core' ),
+				'placeholder' => __( 'Button Text', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'link',
 			[
-				'label'       => __( 'Link', 'gpt-core' ),
+				'label'       => __( 'Link', 'gpt-news-core' ),
 				'type'        => Controls_Manager::URL,
 				'placeholder' => 'http://your-link.com',
 				'default'     => [
@@ -201,7 +201,7 @@ class Button extends Widget_Base {
 		);
 
 		$this->add_control( 'selected_icon', [
-			'label'   => __( 'Icon', 'gpt-core' ),
+			'label'   => __( 'Icon', 'gpt-news-core' ),
 			'type'    => Controls_Manager::ICONS,
 			'fa4compatibility' => 'icon',
 			'label_block' => true,
@@ -211,12 +211,12 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'icon_align',
 			[
-				'label'     => __( 'Icon Position', 'gpt-core' ),
+				'label'     => __( 'Icon Position', 'gpt-news-core' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'right',
 				'options'   => [
-					'left'  => __( 'Before', 'gpt-core' ),
-					'right' => __( 'After', 'gpt-core' ),
+					'left'  => __( 'Before', 'gpt-news-core' ),
+					'right' => __( 'After', 'gpt-news-core' ),
 				],
 				'condition' => [
 					'selected_icon!' => '',
@@ -227,7 +227,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'icon_indent',
 			[
-				'label'     => __( 'Icon Spacing', 'gpt-core' ),
+				'label'     => __( 'Icon Spacing', 'gpt-news-core' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -247,19 +247,19 @@ class Button extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label'        => __( 'Alignment', 'gpt-core' ),
+				'label'        => __( 'Alignment', 'gpt-news-core' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'options'      => [
 					'left'    => [
-						'title' => __( 'Left', 'gpt-core' ),
+						'title' => __( 'Left', 'gpt-news-core' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center'  => [
-						'title' => __( 'Center', 'gpt-core' ),
+						'title' => __( 'Center', 'gpt-news-core' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'   => [
-						'title' => __( 'Right', 'gpt-core' ),
+						'title' => __( 'Right', 'gpt-news-core' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
@@ -271,7 +271,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label'   => __( 'View', 'gpt-core' ),
+				'label'   => __( 'View', 'gpt-news-core' ),
 				'type'    => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 			]
@@ -285,7 +285,7 @@ class Button extends Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => __( 'Button', 'gpt-core' ),
+				'label' => __( 'Button', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -294,7 +294,7 @@ class Button extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'typography',
-				'label'    => __( 'Typography', 'gpt-core' ),
+				'label'    => __( 'Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-btn',
 			]
 		);
@@ -302,7 +302,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label'      => __( 'Border Radius', 'gpt-core' ),
+				'label'      => __( 'Border Radius', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
@@ -315,7 +315,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'btn_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-core' ),
+				'label'      => __( 'Padding', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -330,14 +330,14 @@ class Button extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => __( 'Normal', 'gpt-core' ),
+				'label' => __( 'Normal', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -349,7 +349,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'background_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gpt-btn' => 'background-color: {{VALUE}};',
@@ -361,7 +361,7 @@ class Button extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'border',
-				'label'    => __( 'Border', 'gpt-core' ),
+				'label'    => __( 'Border', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-btn',
 			]
 		);
@@ -370,7 +370,7 @@ class Button extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'box_shadow',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-btn',
 			]
 		);
@@ -380,14 +380,14 @@ class Button extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => __( 'Hover', 'gpt-core' ),
+				'label' => __( 'Hover', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gpt-btn:hover' => 'color: {{VALUE}};',
@@ -398,7 +398,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'background_color_hover',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gpt-btn:hover' => 'background-color: {{VALUE}};',
@@ -410,7 +410,7 @@ class Button extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'border_hover',
-				'label'    => __( 'Border', 'gpt-core' ),
+				'label'    => __( 'Border', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-btn:hover'
 			]
 		);
@@ -419,7 +419,7 @@ class Button extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'box_shadow_hover',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-btn:hover',
 			]
 		);

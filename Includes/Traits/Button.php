@@ -1,6 +1,6 @@
 <?php
 
-namespace MPT\traits;
+namespace GPT\traits;
 /**
  * Elementor Button trait.
  *

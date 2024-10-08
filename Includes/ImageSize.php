@@ -309,13 +309,13 @@ class ImageSize {
 		extract( $args );
 
 		if ( empty( $settings ) ) {
-			_doing_it_wrong( sprintf( '%s::%s', get_called_class(), __FUNCTION__ ), esc_html__( 'Cannot get attachment because missing elementor widget settings.', 'gpt-core' ), '1.0.0' );
+			_doing_it_wrong( sprintf( '%s::%s', get_called_class(), __FUNCTION__ ), esc_html__( 'Cannot get attachment because missing elementor widget settings.', 'gpt-news-core' ), '1.0.0' );
 
 			return false;
 		}
 
 		if ( empty( $settings["{$image_key}"] ) ) {
-			_doing_it_wrong( sprintf( '%s::%s', get_called_class(), __FUNCTION__ ), sprintf( esc_html__( 'Cannot get attachment because image key: %s is not exits.', 'gpt-core' ), $image_key ), '1.0.0' );
+			_doing_it_wrong( sprintf( '%s::%s', get_called_class(), __FUNCTION__ ), sprintf( esc_html__( 'Cannot get attachment because image key: %s is not exits.', 'gpt-news-core' ), $image_key ), '1.0.0' );
 
 			return false;
 		}
@@ -329,7 +329,7 @@ class ImageSize {
 
 		// If image has no both id & url.
 		if ( empty( $image['url'] ) && empty( $image['id'] ) ) {
-			_doing_it_wrong( sprintf( '%s::%s', get_called_class(), __FUNCTION__ ), sprintf( esc_html__( 'Cannot get attachment because image key: %s has no both id & url.', 'gpt-core' ), $image_key ), '1.0.0' );
+			_doing_it_wrong( sprintf( '%s::%s', get_called_class(), __FUNCTION__ ), sprintf( esc_html__( 'Cannot get attachment because image key: %s has no both id & url.', 'gpt-news-core' ), $image_key ), '1.0.0' );
 
 			return false;
 		}

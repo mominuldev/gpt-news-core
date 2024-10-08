@@ -31,7 +31,7 @@ class Banner extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'MPT Banner Slider', 'gpt-core' );
+		return __( 'GPT Banner Slider', 'gpt-news-core' );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class Banner extends Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => __( 'Slider Content', 'gpt-core' ),
+				'label' => __( 'Slider Content', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -81,27 +81,27 @@ class Banner extends Widget_Base {
 
 		$repeater->add_control(
 			'banner_title', [
-				'label'       => __( 'Banner Title', 'gpt-core' ),
+				'label'       => __( 'Banner Title', 'gpt-news-core' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'We Are Proud', 'gpt-core' ),
+				'default'     => __( 'We Are Proud', 'gpt-news-core' ),
 				'label_block' => true,
 			]
 		);
 
 		$repeater->add_control(
 			'banner_description', [
-				'label'      => __( 'Description', 'gpt-core' ),
+				'label'      => __( 'Description', 'gpt-news-core' ),
 				'type'       => Controls_Manager::WYSIWYG,
-				'default'    => __( 'Alumni Needs enables you to harness the power of your  alumni network. Whatever may be the need (academic, relocation, career and projects.', 'gpt-core' ),
+				'default'    => __( 'Alumni Needs enables you to harness the power of your  alumni network. Whatever may be the need (academic, relocation, career and projects.', 'gpt-news-core' ),
 				'show_label' => false,
 			]
 		);
 
 		$repeater->add_control(
 			'btn_text_one', [
-				'label'       => __( 'ButtonTitle', 'gpt-core' ),
+				'label'       => __( 'ButtonTitle', 'gpt-news-core' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'Start Now', 'gpt-core' ),
+				'default'     => __( 'Start Now', 'gpt-news-core' ),
 				'label_block' => true,
 			]
 		);
@@ -109,9 +109,9 @@ class Banner extends Widget_Base {
 		$repeater->add_control(
 			'btn_link_one',
 			[
-				'label'         => __( 'Link', 'gpt-core' ),
+				'label'         => __( 'Link', 'gpt-news-core' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => __( 'https://your-link.com', 'gpt-core' ),
+				'placeholder'   => __( 'https://your-link.com', 'gpt-news-core' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -125,7 +125,7 @@ class Banner extends Widget_Base {
 		$repeater->add_control(
 			'banner_image',
 			[
-				'label'   => __( 'Choose Image', 'gpt-core' ),
+				'label'   => __( 'Choose Image', 'gpt-news-core' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -136,7 +136,7 @@ class Banner extends Widget_Base {
 		$repeater->add_control(
 			'overlay_color',
 			[
-				'label'     => __( 'Overlay Color', 'gpt-core' ),
+				'label'     => __( 'Overlay Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .banner:before' => 'color: {{VALUE}}',
@@ -148,27 +148,27 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'sliders',
 			[
-				'label'       => __( 'Repeater List', 'gpt-core' ),
+				'label'       => __( 'Repeater List', 'gpt-news-core' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
-						'banner_title'       => __( 'We Are Proud', 'gpt-core' ),
-						'banner_description' => __( 'Alumni Needs enables you to harness the power of your  alumni network. Whatever may be the need (academic, relocation, career and projects.', 'gpt-core' ),
+						'banner_title'       => __( 'We Are Proud', 'gpt-news-core' ),
+						'banner_description' => __( 'Alumni Needs enables you to harness the power of your  alumni network. Whatever may be the need (academic, relocation, career and projects.', 'gpt-news-core' ),
 						'banner_image'       => [
 							'url' => Utils::get_placeholder_image_src(),
 						],
 					],
 					[
-						'banner_title'       => __( 'We Are Proud', 'gpt-core' ),
-						'banner_description' => __( 'Alumni Needs enables you to harness the power of your  alumni network. Whatever may be the need (academic, relocation, career and projects.', 'gpt-core' ),
+						'banner_title'       => __( 'We Are Proud', 'gpt-news-core' ),
+						'banner_description' => __( 'Alumni Needs enables you to harness the power of your  alumni network. Whatever may be the need (academic, relocation, career and projects.', 'gpt-news-core' ),
 						'banner_image'       => [
 							'url' => Utils::get_placeholder_image_src(),
 						],
 					],
 					[
-						'banner_title'       => __( 'We Are Proud', 'gpt-core' ),
-						'banner_description' => __( 'Alumni Needs enables you to harness the power of your  alumni network. Whatever may be the need (academic, relocation, career and projects.', 'gpt-core' ),
+						'banner_title'       => __( 'We Are Proud', 'gpt-news-core' ),
+						'banner_description' => __( 'Alumni Needs enables you to harness the power of your  alumni network. Whatever may be the need (academic, relocation, career and projects.', 'gpt-news-core' ),
 						'banner_image'       => [
 							'url' => Utils::get_placeholder_image_src(),
 						],
@@ -182,17 +182,17 @@ class Banner extends Widget_Base {
 
 
 		$this->start_controls_section( 'sittings_control', [
-			'label' => esc_html__( 'Slider Control', 'gpt-core' ),
+			'label' => esc_html__( 'Slider Control', 'gpt-news-core' ),
 		] );
 
 
 		$this->add_control(
 			'navigation',
 			[
-				'label'        => esc_html__( 'Navigation', 'gpt-core' ),
+				'label'        => esc_html__( 'Navigation', 'gpt-news-core' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'gpt-core' ),
-				'label_off'    => esc_html__( 'Hide', 'gpt-core' ),
+				'label_on'     => esc_html__( 'Show', 'gpt-news-core' ),
+				'label_off'    => esc_html__( 'Hide', 'gpt-news-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes'
 			]
@@ -201,10 +201,10 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'pagination',
 			[
-				'label'        => esc_html__( 'Pagination', 'gpt-core' ),
+				'label'        => esc_html__( 'Pagination', 'gpt-news-core' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'gpt-core' ),
-				'label_off'    => esc_html__( 'Hide', 'gpt-core' ),
+				'label_on'     => esc_html__( 'Show', 'gpt-news-core' ),
+				'label_off'    => esc_html__( 'Hide', 'gpt-news-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes'
 			]
@@ -213,12 +213,12 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'direction',
 			[
-				'label'   => __( 'Direction', 'gpt-core' ),
+				'label'   => __( 'Direction', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'vertical',
 				'options' => [
-					'horizontal' => __( 'Horizontal', 'gpt-core' ),
-					'vertical'   => __( 'Vertical', 'gpt-core' ),
+					'horizontal' => __( 'Horizontal', 'gpt-news-core' ),
+					'vertical'   => __( 'Vertical', 'gpt-news-core' ),
 				],
 
 
@@ -228,10 +228,10 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'mousewheel',
 			[
-				'label'        => esc_html__( 'mousewheel', 'gpt-core' ),
+				'label'        => esc_html__( 'mousewheel', 'gpt-news-core' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'On', 'gpt-core' ),
-				'label_off'    => esc_html__( 'Off', 'gpt-core' ),
+				'label_on'     => esc_html__( 'On', 'gpt-news-core' ),
+				'label_off'    => esc_html__( 'Off', 'gpt-news-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes'
 			]
@@ -240,10 +240,10 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'loop',
 			[
-				'label'        => esc_html__( 'Loop', 'gpt-core' ),
+				'label'        => esc_html__( 'Loop', 'gpt-news-core' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'On', 'gpt-core' ),
-				'label_off'    => esc_html__( 'Off', 'gpt-core' ),
+				'label_on'     => esc_html__( 'On', 'gpt-news-core' ),
+				'label_off'    => esc_html__( 'Off', 'gpt-news-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes'
 			]
@@ -252,10 +252,10 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'        => esc_html__( 'Autoplay', 'gpt-core' ),
+				'label'        => esc_html__( 'Autoplay', 'gpt-news-core' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'On', 'gpt-core' ),
-				'label_off'    => esc_html__( 'Off', 'gpt-core' ),
+				'label_on'     => esc_html__( 'On', 'gpt-news-core' ),
+				'label_off'    => esc_html__( 'Off', 'gpt-news-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 				'condition'    => [
@@ -267,7 +267,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'autoplay_time',
 			[
-				'label'     => __( 'Autoplay Time', 'gpt-core' ),
+				'label'     => __( 'Autoplay Time', 'gpt-news-core' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 5000,
 				'condition' => [
@@ -280,7 +280,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'speed',
 			[
-				'label'   => __( 'Speed', 'gpt-core' ),
+				'label'   => __( 'Speed', 'gpt-news-core' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 700,
 			]
@@ -293,7 +293,7 @@ class Banner extends Widget_Base {
 		$this->start_controls_section(
 			'title_section',
 			[
-				'label' => __( 'Title', 'gpt-core' ),
+				'label' => __( 'Title', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -301,7 +301,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .banner__title' => 'color: {{VALUE}}',
@@ -313,7 +313,7 @@ class Banner extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'label'    => __( 'Typography', 'gpt-core' ),
+				'label'    => __( 'Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .banner__title',
 			]
 		);
@@ -326,7 +326,7 @@ class Banner extends Widget_Base {
 		$this->start_controls_section(
 			'description_section',
 			[
-				'label' => __( 'Description', 'gpt-core' ),
+				'label' => __( 'Description', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -334,7 +334,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'description_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .banner__description' => 'color: {{VALUE}}',
@@ -346,7 +346,7 @@ class Banner extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'description_typography',
-				'label'    => __( 'Typography', 'gpt-core' ),
+				'label'    => __( 'Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .banner__description',
 			]
 		);
@@ -360,7 +360,7 @@ class Banner extends Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => __( 'Button', 'gpt-core' ),
+				'label' => __( 'Button', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -369,7 +369,7 @@ class Banner extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'typography',
-				'label'    => __( 'Typography', 'gpt-core' ),
+				'label'    => __( 'Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-btn',
 			]
 		);
@@ -377,7 +377,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label'      => __( 'Border Radius', 'gpt-core' ),
+				'label'      => __( 'Border Radius', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
@@ -390,7 +390,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'btn_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-core' ),
+				'label'      => __( 'Padding', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -405,14 +405,14 @@ class Banner extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => __( 'Normal', 'gpt-core' ),
+				'label' => __( 'Normal', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -424,7 +424,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'background_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gpt-btn' => 'background-color: {{VALUE}};',
@@ -436,7 +436,7 @@ class Banner extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'border',
-				'label'    => __( 'Border', 'gpt-core' ),
+				'label'    => __( 'Border', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-btn',
 			]
 		);
@@ -445,7 +445,7 @@ class Banner extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'box_shadow',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-btn',
 			]
 		);
@@ -455,14 +455,14 @@ class Banner extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => __( 'Hover', 'gpt-core' ),
+				'label' => __( 'Hover', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gpt-btn:hover' => 'color: {{VALUE}};',
@@ -473,7 +473,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'background_color_hover',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gpt-btn:hover' => 'background-color: {{VALUE}};',
@@ -485,7 +485,7 @@ class Banner extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'border_hover',
-				'label'    => __( 'Border', 'gpt-core' ),
+				'label'    => __( 'Border', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-btn:hover'
 			]
 		);
@@ -494,7 +494,7 @@ class Banner extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'box_shadow_hover',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-btn:hover',
 			]
 		);
@@ -506,14 +506,14 @@ class Banner extends Widget_Base {
 		// Style Slider Control Section
 		//================================
 		$this->start_controls_section( 'control_section', [
-			'label' => __( 'Slider  Control', 'gpt-core' ),
+			'label' => __( 'Slider  Control', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control(
 			'nav_width',
 			[
-				'label'      => esc_html__( 'Nav Height/Width', 'gpt-core' ),
+				'label'      => esc_html__( 'Nav Height/Width', 'gpt-news-core' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -531,7 +531,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'nav_font_size',
 			[
-				'label'      => esc_html__( 'Nav Font Size', 'gpt-core' ),
+				'label'      => esc_html__( 'Nav Font Size', 'gpt-news-core' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -550,7 +550,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'nav_border_radius',
 			[
-				'label'      => esc_html__( 'Nav Border Radius', 'gpt-core' ),
+				'label'      => esc_html__( 'Nav Border Radius', 'gpt-news-core' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'range'      => [
@@ -578,12 +578,12 @@ class Banner extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_nav_normal',
 			[
-				'label' => __( 'Normal', 'gpt-core' ),
+				'label' => __( 'Normal', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control( 'slider_nav_color', [
-			'label'     => __( 'Color', 'gpt-core' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .banner__slider-prev, {{WRAPPER}} .banner__slider-next' => 'color: {{VALUE}}',
@@ -591,7 +591,7 @@ class Banner extends Widget_Base {
 		] );
 
 		$this->add_control( 'nav_bg_color', [
-			'label'     => __( 'Background Color', 'gpt-core' ),
+			'label'     => __( 'Background Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .banner__slider-prev, {{WRAPPER}} .banner__slider-next' => 'background-color: {{VALUE}}',
@@ -610,13 +610,13 @@ class Banner extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'nav_box_shadow',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .banner__slider-prev, {{WRAPPER}} .banner__slider-next',
 			]
 		);
 
 		$this->add_control( 'pagination_bg_color', [
-			'label'     => __( 'Pagination BG Color', 'gpt-core' ),
+			'label'     => __( 'Pagination BG Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet' => 'background: {{VALUE}}',
@@ -630,12 +630,12 @@ class Banner extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_nav_hover',
 			[
-				'label' => __( 'Hover', 'gpt-core' ),
+				'label' => __( 'Hover', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control( 'nav_color_hover', [
-			'label'     => __( 'Color', 'gpt-core' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .banner__slider-prev:hover, {{WRAPPER}} .banner__slider-next:hover' => 'color: {{VALUE}}',
@@ -643,7 +643,7 @@ class Banner extends Widget_Base {
 		] );
 
 		$this->add_control( 'nav_color_bg_hover', [
-			'label'     => __( 'Background Color', 'gpt-core' ),
+			'label'     => __( 'Background Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .banner__slider-prev:hover, {{WRAPPER}} .banner__slider-next:hover' => 'background-color: {{VALUE}}',
@@ -651,7 +651,7 @@ class Banner extends Widget_Base {
 		] );
 
 		$this->add_control( 'nav_control_hover', [
-			'label'     => __( 'Border Color', 'gpt-core' ),
+			'label'     => __( 'Border Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .banner__slider-prev:hover, {{WRAPPER}} .banner__slider-next:hover' => 'border-color: {{VALUE}}',
@@ -662,13 +662,13 @@ class Banner extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'nav_box_shadow_hover',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .banner__slider-prev:hover, {{WRAPPER}} .banner__slider-next:hover',
 			]
 		);
 
 		$this->add_control( 'slider_pagination_active_color', [
-			'label'     => __( 'Pagination Active BG Color', 'gpt-core' ),
+			'label'     => __( 'Pagination Active BG Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet:before' => 'background: {{VALUE}}',
@@ -730,7 +730,7 @@ class Banner extends Widget_Base {
 		$this->start_controls_section(
 			'social_banner_style',
 			[
-				'label' => __( 'Social Style', 'gpt-core' ),
+				'label' => __( 'Social Style', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -738,7 +738,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'link_size',
 			[
-				'label'     => __( 'Font Size', 'gpt-core' ),
+				'label'     => __( 'Font Size', 'gpt-news-core' ),
 				'type'      => Controls_Manager::NUMBER,
 				'min'       => 10,
 				'max'       => 50,
@@ -753,7 +753,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'i_color',
 			[
-				'label'     => __( 'Icon Color', 'gpt-core' ),
+				'label'     => __( 'Icon Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .banner-share-link li a i' => 'text-shadow: 0 0 {{VALUE}}, 0 30px {{VALUE}}',
@@ -764,7 +764,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'i_color_hover',
 			[
-				'label'     => __( 'Icon Hover Color', 'gpt-core' ),
+				'label'     => __( 'Icon Hover Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .banner-share-link li a:hover i' => 'text-shadow: 0 -30px {{VALUE}}, 0 0 {{VALUE}}',

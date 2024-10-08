@@ -65,7 +65,7 @@ trait PostQuery {
 		$this->start_controls_section(
 			$prefix . '_query_section',
 			[
-				'label' => __( 'Query', 'gpt-core' ),
+				'label' => __( 'Query', 'gpt-news-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -74,12 +74,12 @@ trait PostQuery {
 		$this->add_control(
 			$prefix . '_posts_per_page',
 			[
-				'label'       => __( 'Items Per Page', 'gpt-core' ),
+				'label'       => __( 'Items Per Page', 'gpt-news-core' ),
 				'type'        => \Elementor\Controls_Manager::NUMBER,
 				'min'         => - 1,
 				'max'         => 100,
 				'default'     => 1,
-				'description' => __( 'Number of items to show per page. Set -1 to show all items. Leave blank to use global setting', 'gpt-core' ),
+				'description' => __( 'Number of items to show per page. Set -1 to show all items. Leave blank to use global setting', 'gpt-news-core' ),
 			]
 		);
 
@@ -87,12 +87,12 @@ trait PostQuery {
 		$this->add_control(
 			$prefix . '_post_order',
 			[
-				'label'   => __( 'Order', 'gpt-core' ),
+				'label'   => __( 'Order', 'gpt-news-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'DESC',
 				'options' => [
-					'DESC' => __( 'DESC', 'gpt-core' ),
-					'ASC'  => __( 'ASC', 'gpt-core' ),
+					'DESC' => __( 'DESC', 'gpt-news-core' ),
+					'ASC'  => __( 'ASC', 'gpt-news-core' ),
 				],
 			]
 		);
@@ -101,18 +101,18 @@ trait PostQuery {
 		$this->add_control(
 			$prefix . '_post_orderby',
 			[
-				'label'       => __( 'Order By', 'gpt-core' ),
+				'label'       => __( 'Order By', 'gpt-news-core' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => 'date',
 				'options'     => [
-					'date'          => __( 'Date', 'gpt-core' ),
-					'title'         => __( 'Title', 'gpt-core' ),
-					'modified'      => __( 'Modified', 'gpt-core' ),
-					'rand'          => __( 'Random', 'gpt-core' ),
-					'comment_count' => __( 'Comment Count', 'gpt-core' ),
-					'menu_order'    => __( 'Menu Order', 'gpt-core' ),
+					'date'          => __( 'Date', 'gpt-news-core' ),
+					'title'         => __( 'Title', 'gpt-news-core' ),
+					'modified'      => __( 'Modified', 'gpt-news-core' ),
+					'rand'          => __( 'Random', 'gpt-news-core' ),
+					'comment_count' => __( 'Comment Count', 'gpt-news-core' ),
+					'menu_order'    => __( 'Menu Order', 'gpt-news-core' ),
 				],
-				'description' => __( 'Select how to sort retrieved posts. More at <a href="https://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress Codex</a>', 'gpt-core' ),
+				'description' => __( 'Select how to sort retrieved posts. More at <a href="https://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress Codex</a>', 'gpt-news-core' ),
 			]
 		);
 
@@ -121,12 +121,12 @@ trait PostQuery {
 			$this->add_control(
 				$prefix . '_post_categories',
 				[
-					'label'       => __( 'Select Categories', 'gpt-core' ),
+					'label'       => __( 'Select Categories', 'gpt-news-core' ),
 					'type'        => \Elementor\Controls_Manager::SELECT2,
 					'label_block' => true,
 					'multiple'    => true,
-					'options'     => \MPT_Helper::gpt_category_list( $taxonomy_name ),
-					'description' => __( 'Select categories to show. Select nothing to show posts from all categories', 'gpt-core' ),
+					'options'     => \GPT_Helper::gpt_category_list( $taxonomy_name ),
+					'description' => __( 'Select categories to show. Select nothing to show posts from all categories', 'gpt-news-core' ),
 				]
 			);
 		}
@@ -135,12 +135,12 @@ trait PostQuery {
 //		$this->add_control(
 //			$prefix . '_post_categories_exclude',
 //			[
-//				'label'       => __( 'Exclude Categories', 'gpt-core' ),
+//				'label'       => __( 'Exclude Categories', 'gpt-news-core' ),
 //				'type'        => \Elementor\Controls_Manager::SELECT2,
 //				'label_block' => true,
 //				'multiple'    => true,
 //				'options'     => $this->getCategories( $taxonomy_name ),
-//				'description' => __( 'Select categories to exclude. Select nothing to show posts from all categories', 'gpt-core' ),
+//				'description' => __( 'Select categories to exclude. Select nothing to show posts from all categories', 'gpt-news-core' ),
 //			]
 //		);
 
@@ -149,10 +149,10 @@ trait PostQuery {
 //		$this->add_control(
 //			$prefix . '_post_ids',
 //			[
-//				'label'       => __( 'Input IDs', 'gpt-core' ),
+//				'label'       => __( 'Input IDs', 'gpt-news-core' ),
 //				'type'        => \Elementor\Controls_Manager::TEXT,
 //				'label_block' => true,
-//				'placeholder' => __( '1,2,3,4', 'gpt-core' ),
+//				'placeholder' => __( '1,2,3,4', 'gpt-news-core' ),
 //			]
 //		);
 
@@ -160,10 +160,10 @@ trait PostQuery {
 //		$this->add_control(
 //			$prefix . '_post_ids_exclude',
 //			[
-//				'label'       => __( 'Exclude IDs', 'gpt-core' ),
+//				'label'       => __( 'Exclude IDs', 'gpt-news-core' ),
 //				'type'        => \Elementor\Controls_Manager::TEXT,
 //				'label_block' => true,
-//				'placeholder' => __( '1,2,3,4', 'gpt-core' ),
+//				'placeholder' => __( '1,2,3,4', 'gpt-news-core' ),
 //			]
 //		);
 

@@ -55,7 +55,7 @@ function gpt_mailchimp_subscribe() {
 		'email_valid'	=> true,
 		'api'			=> true,
 		'list'			=> true,
-		'message'		=> esc_html__( 'Somethings is wrong!', 'gpt-core' )
+		'message'		=> esc_html__( 'Somethings is wrong!', 'gpt-news-core' )
 	);
 
 	if ( ! empty( $APIKey ) && ! empty( $ListID ) ) {
@@ -68,17 +68,17 @@ function gpt_mailchimp_subscribe() {
 			if ( $getStatus == 200 ) {
 				$prepareResponse['error'] 		= false;
 				$prepareResponse['email_valid'] = true;
-				$prepareResponse['message'] 	= '<strong>' . esc_html__( 'Success:', 'gpt-core') . ' </strong>' . esc_html__( 'You are added to our newsletter list.', 'gpt-core' );
+				$prepareResponse['message'] 	= '<strong>' . esc_html__( 'Success:', 'gpt-news-core') . ' </strong>' . esc_html__( 'You are added to our newsletter list.', 'gpt-news-core' );
 			} else {
 				$prepareResponse['error'] 		= true;
 				$prepareResponse['email_valid'] = false;
-				$prepareResponse['message'] 	= '<strong>' . esc_html__( 'Error:', 'gpt-core') . ' </strong>' . esc_html__( 'You have entered the invalid email address.', 'gpt-core' );
+				$prepareResponse['message'] 	= '<strong>' . esc_html__( 'Error:', 'gpt-news-core') . ' </strong>' . esc_html__( 'You have entered the invalid email address.', 'gpt-news-core' );
 			}
 
 		} else {
 			$prepareResponse['error'] 		= true;
 			$prepareResponse['email_valid'] = false;
-			$prepareResponse['message'] 	= '<strong>' . esc_html__( 'Error:', 'gpt-core') . ' </strong>' . esc_html__( 'Please provide a email address.', 'gpt-core' );
+			$prepareResponse['message'] 	= '<strong>' . esc_html__( 'Error:', 'gpt-news-core') . ' </strong>' . esc_html__( 'Please provide a email address.', 'gpt-news-core' );
 
 		}
 
@@ -89,7 +89,7 @@ function gpt_mailchimp_subscribe() {
 			'email_valid'	=> false,
 			'api'			=> false,
 			'list'			=> false,
-			'message'		=> '<strong>' . esc_html__( 'Error:', 'gpt-core') . ' </strong>' . esc_html__( 'Newsletter widget is require MailChimp API key & list ID.', 'gpt-core' )
+			'message'		=> '<strong>' . esc_html__( 'Error:', 'gpt-news-core') . ' </strong>' . esc_html__( 'Newsletter widget is require MailChimp API key & list ID.', 'gpt-news-core' )
 		);
 
 	}

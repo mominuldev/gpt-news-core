@@ -1,8 +1,8 @@
 # Copyright (C) 2023 GpTheme
-# This file is distributed under the same license as the MPT Core plugin.
+# This file is distributed under the same license as the GPT Core plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MPT Core 1.1.0\n"
+"Project-Id-Version: GPT Core 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mpt-core\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: mpt-core.php:298
 #: mpt-core.php:319
 #: Includes/Admin/Menu.php:19
-msgid "MPT Core"
+msgid "GPT Core"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -26,7 +26,7 @@ msgid "https://themeforest.net/user/robusttheme/portfolio"
 msgstr ""
 
 #. Description of the plugin
-msgid "This plugin adds the core features to the MPT WordPress theme. You must have to install this plugin to get all the features included with the theme."
+msgid "This plugin adds the core features to the GPT WordPress theme. You must have to install this plugin to get all the features included with the theme."
 msgstr ""
 
 #. Author of the plugin
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#. translators: 1: MPT Core: Elementor
+#. translators: 1: GPT Core: Elementor
 #: mpt-core.php:297
 msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
 msgstr ""
@@ -53,8 +53,8 @@ msgstr ""
 msgid "Elementor"
 msgstr ""
 
-#. translators: 1: MPT Core: Elementor 3: Required Elementor version
-#. translators: 1: MPT Core 2: PHP 3: Required PHP version
+#. translators: 1: GPT Core: Elementor 3: Required Elementor version
+#. translators: 1: GPT Core 2: PHP 3: Required PHP version
 #: mpt-core.php:318
 #: mpt-core.php:339
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
@@ -62,7 +62,7 @@ msgstr ""
 
 #: mpt-core.php:340
 #: Includes/ElementorWidgets.php:59
-msgid "MPT Elements"
+msgid "GPT Elements"
 msgstr ""
 
 #: mpt-core.php:341
@@ -87,7 +87,7 @@ msgid "Email"
 msgstr ""
 
 #: Includes/Admin/Menu.php:20
-msgid "MPT"
+msgid "GPT"
 msgstr ""
 
 #: Includes/Admin/PostType/Footer.php:16
@@ -198,7 +198,7 @@ msgid "Import Demo Data"
 msgstr ""
 
 #: Includes/DemoImport.php:135
-msgid "MPT core"
+msgid "GPT core"
 msgstr ""
 
 #: Includes/DemoImport.php:141
@@ -210,7 +210,7 @@ msgid "Contact Form 7"
 msgstr ""
 
 #: Includes/Elementor/Section.php:54
-msgid "MPT Header Options"
+msgid "GPT Header Options"
 msgstr ""
 
 #: Includes/Elementor/Section.php:59
@@ -302,7 +302,7 @@ msgid "Off"
 msgstr ""
 
 #: Includes/Elementor/Section.php:148
-msgid "MPT Background Text"
+msgid "GPT Background Text"
 msgstr ""
 
 #: Includes/Elementor/Section.php:153
@@ -456,7 +456,7 @@ msgid "Apply Animation?"
 msgstr ""
 
 #: Includes/Elementor/Section.php:261
-msgid "MPT Parallax"
+msgid "GPT Parallax"
 msgstr ""
 
 #: Includes/Elementor/Section.php:266
@@ -627,7 +627,7 @@ msgid "Layers"
 msgstr ""
 
 #: Includes/Elementor/Section.php:522
-msgid "MPT Shape Divider"
+msgid "GPT Shape Divider"
 msgstr ""
 
 #: Includes/Elementor/Section.php:529
@@ -690,7 +690,7 @@ msgid "Z-index"
 msgstr ""
 
 #: Includes/Elementor/Section.php:624
-msgid "MPT Column Options"
+msgid "GPT Column Options"
 msgstr ""
 
 #: Includes/Elementor/Section.php:629
@@ -5431,7 +5431,7 @@ msgid "Select categories to show. Select nothing to show posts from all categori
 msgstr ""
 
 #: Includes/Widgets/Accordion.php:49
-msgid "MPT Accordion"
+msgid "GPT Accordion"
 msgstr ""
 
 #: Includes/Widgets/Accordion.php:97
@@ -5852,7 +5852,7 @@ msgid "Hover"
 msgstr ""
 
 #: Includes/Widgets/Banner.php:34
-msgid "MPT Banner Slider"
+msgid "GPT Banner Slider"
 msgstr ""
 
 #: Includes/Widgets/Banner.php:74
@@ -6243,7 +6243,7 @@ msgid "Icon Hover Color"
 msgstr ""
 
 #: Includes/Widgets/Blog.php:26
-msgid "MPT Blog"
+msgid "GPT Blog"
 msgstr ""
 
 #: Includes/Widgets/Blog.php:61
@@ -6454,7 +6454,7 @@ msgid "Footer Border Color"
 msgstr ""
 
 #: Includes/Widgets/BlogList.php:29
-msgid "MPT Blog List"
+msgid "GPT Blog List"
 msgstr ""
 
 #: Includes/Widgets/BlogList.php:68
@@ -6481,11 +6481,11 @@ msgid "Layout 3"
 msgstr ""
 
 #: Includes/Widgets/BlogSlider.php:33
-msgid "MPT Blog Slider"
+msgid "GPT Blog Slider"
 msgstr ""
 
 #: Includes/Widgets/Button.php:50
-msgid "MPT Button"
+msgid "GPT Button"
 msgstr ""
 
 #: Includes/Widgets/Button.php:105
@@ -6731,7 +6731,7 @@ msgid "View"
 msgstr ""
 
 #: Includes/Widgets/CircleButton.php:50
-msgid "MPT Circle Button"
+msgid "GPT Circle Button"
 msgstr ""
 
 #: Includes/Widgets/CircleButton.php:114
@@ -6739,7 +6739,7 @@ msgid "Let’s talk"
 msgstr ""
 
 #: Includes/Widgets/ContactForm7.php:33
-msgid "MPT Contact Form 7"
+msgid "GPT Contact Form 7"
 msgstr ""
 
 #: Includes/Widgets/ContactForm7.php:67
@@ -6788,7 +6788,7 @@ msgid "Label"
 msgstr ""
 
 #: Includes/Widgets/ContactInfo.php:36
-msgid "MPT Contact Info"
+msgid "GPT Contact Info"
 msgstr ""
 
 #: Includes/Widgets/ContactInfo.php:82
@@ -6866,7 +6866,7 @@ msgid "Contact Container"
 msgstr ""
 
 #: Includes/Widgets/Counter.php:51
-msgid "MPT Counter"
+msgid "GPT Counter"
 msgstr ""
 
 #: Includes/Widgets/Counter.php:122
@@ -7027,7 +7027,7 @@ msgid "Wrapper"
 msgstr ""
 
 #: Includes/Widgets/DualButton.php:49
-msgid "MPT Dual Button"
+msgid "GPT Dual Button"
 msgstr ""
 
 #: Includes/Widgets/DualButton.php:125
@@ -7113,7 +7113,7 @@ msgid "Icon Background"
 msgstr ""
 
 #: Includes/Widgets/FancyHeading.php:57
-msgid "MPT Text"
+msgid "GPT Text"
 msgstr ""
 
 #: Includes/Widgets/FancyHeading.php:356
@@ -7427,7 +7427,7 @@ msgid "Faq Typography"
 msgstr ""
 
 #: Includes/Widgets/FeatureBox.php:43
-msgid "MPT Feature Box"
+msgid "GPT Feature Box"
 msgstr ""
 
 #: Includes/Widgets/FeatureBox.php:89
@@ -7542,7 +7542,7 @@ msgid "Hover Icon Color"
 msgstr ""
 
 #: Includes/Widgets/FeatureListTabs.php:33
-msgid "MPT Feature Tabs "
+msgid "GPT Feature Tabs "
 msgstr ""
 
 #: Includes/Widgets/FeatureListTabs.php:60
@@ -7550,7 +7550,7 @@ msgid "Tabs"
 msgstr ""
 
 #: Includes/Widgets/Gallery.php:51
-msgid "MPT Gallery"
+msgid "GPT Gallery"
 msgstr ""
 
 #: Includes/Widgets/Gallery.php:94
@@ -7604,7 +7604,7 @@ msgid "Justified"
 msgstr ""
 
 #: Includes/Widgets/Heading.php:51
-msgid "MPT Heading"
+msgid "GPT Heading"
 msgstr ""
 
 #: Includes/Widgets/Heading.php:116
@@ -7703,11 +7703,11 @@ msgid "color"
 msgstr ""
 
 #: Includes/Widgets/Hero.php:42
-msgid "MPT Hero"
+msgid "GPT Hero"
 msgstr ""
 
 #: Includes/Widgets/Hero.php:115
-msgid "MPT Hero Static"
+msgid "GPT Hero Static"
 msgstr ""
 
 #: Includes/Widgets/Hero.php:124
@@ -7908,7 +7908,7 @@ msgid "Background & Spacing"
 msgstr ""
 
 #: Includes/Widgets/IconBox.php:48
-msgid "MPT Icon Box"
+msgid "GPT Icon Box"
 msgstr ""
 
 #: Includes/Widgets/IconBox.php:103
@@ -8039,7 +8039,7 @@ msgid "Translate (Y)"
 msgstr ""
 
 #: Includes/Widgets/ImageCarousel.php:36
-msgid "MPT Image Carousel"
+msgid "GPT Image Carousel"
 msgstr ""
 
 #: Includes/Widgets/ImageCarousel.php:72
@@ -8116,7 +8116,7 @@ msgid "Progress Bar Border Radius"
 msgstr ""
 
 #: Includes/Widgets/Lists.php:27
-msgid "MPT List"
+msgid "GPT List"
 msgstr ""
 
 #: Includes/Widgets/Lists.php:68
@@ -8157,7 +8157,7 @@ msgid "List Three"
 msgstr ""
 
 #: Includes/Widgets/LogoCarousel.php:41
-msgid "MPT Logo Carousel"
+msgid "GPT Logo Carousel"
 msgstr ""
 
 #: Includes/Widgets/LogoCarousel.php:77
@@ -8266,7 +8266,7 @@ msgid "Branding Service"
 msgstr ""
 
 #: Includes/Widgets/Newsletter.php:35
-msgid "MPT Newsletter"
+msgid "GPT Newsletter"
 msgstr ""
 
 #: Includes/Widgets/Newsletter.php:60
@@ -8318,7 +8318,7 @@ msgid "Min Width"
 msgstr ""
 
 #: Includes/Widgets/Pricing.php:28
-msgid "MPT Pricing"
+msgid "GPT Pricing"
 msgstr ""
 
 #: Includes/Widgets/Pricing.php:45
@@ -8475,7 +8475,7 @@ msgid "Pricing Box"
 msgstr ""
 
 #: Includes/Widgets/Project.php:36
-msgid "MPT Project"
+msgid "GPT Project"
 msgstr ""
 
 #: Includes/Widgets/Project.php:69
@@ -8733,7 +8733,7 @@ msgid "Next Projects"
 msgstr ""
 
 #: Includes/Widgets/ProjectSlider.php:31
-msgid "MPT Project Slider"
+msgid "GPT Project Slider"
 msgstr ""
 
 #: Includes/Widgets/ProjectSlider.php:56
@@ -8839,11 +8839,11 @@ msgid "Padding Info"
 msgstr ""
 
 #: Includes/Widgets/ProjectSliderCreative.php:31
-msgid "MPT Project Slider Creative"
+msgid "GPT Project Slider Creative"
 msgstr ""
 
 #: Includes/Widgets/ProjectThumnailGallery.php:37
-msgid "MPT Project Thumbnail"
+msgid "GPT Project Thumbnail"
 msgstr ""
 
 #: Includes/Widgets/ProjectThumnailGallery.php:64
@@ -8851,7 +8851,7 @@ msgid "Project Thumbnail Gallery"
 msgstr ""
 
 #: Includes/Widgets/ServiceBox.php:43
-msgid "MPT Service Box"
+msgid "GPT Service Box"
 msgstr ""
 
 #: Includes/Widgets/ServiceBox.php:89
@@ -8893,7 +8893,7 @@ msgid "Overlay BG Color"
 msgstr ""
 
 #: Includes/Widgets/ServiceList.php:43
-msgid "MPT Service LIst"
+msgid "GPT Service LIst"
 msgstr ""
 
 #: Includes/Widgets/ServiceList.php:144
@@ -8903,7 +8903,7 @@ msgstr ""
 #: Includes/Widgets/Tabs.php:23
 #: Includes/Widgets/Tabs.php:39
 #: Includes/Widgets/TemplateTabs.php:46
-msgid "MPT Tabs"
+msgid "GPT Tabs"
 msgstr ""
 
 #: Includes/Widgets/Tabs.php:59
@@ -8963,7 +8963,7 @@ msgid "Active"
 msgstr ""
 
 #: Includes/Widgets/Team.php:50
-msgid "MPT Team"
+msgid "GPT Team"
 msgstr ""
 
 #: Includes/Widgets/Team.php:125
@@ -9081,7 +9081,7 @@ msgid "Read More "
 msgstr ""
 
 #: Includes/Widgets/TemplateTabs.php:30
-msgid "MPT Dynamic Tabs"
+msgid "GPT Dynamic Tabs"
 msgstr ""
 
 #: Includes/Widgets/TemplateTabs.php:201
@@ -9097,7 +9097,7 @@ msgid "Tab #3"
 msgstr ""
 
 #: Includes/Widgets/Testimonial.php:28
-msgid "MPT Testimonial"
+msgid "GPT Testimonial"
 msgstr ""
 
 #: Includes/Widgets/Testimonial.php:43
@@ -9232,7 +9232,7 @@ msgid "Overflow"
 msgstr ""
 
 #: Includes/Widgets/TestimonialCreative.php:29
-msgid "MPT Testimonial Creative"
+msgid "GPT Testimonial Creative"
 msgstr ""
 
 #: Includes/Widgets/TestimonialCreative.php:119
@@ -9250,7 +9250,7 @@ msgid "UI/UX Designer"
 msgstr ""
 
 #: Includes/Widgets/TestimonialTabs.php:48
-msgid "MPT Testimonial Tabs"
+msgid "GPT Testimonial Tabs"
 msgstr ""
 
 #: Includes/Widgets/TestimonialTabs.php:93
@@ -9300,7 +9300,7 @@ msgstr ""
 #: Includes/Widgets/TestimonialTabs.php:173
 #: Includes/Widgets/TestimonialTabs.php:180
 #: Includes/Widgets/TestimonialTabs.php:187
-msgid "MPT has an incredible Remote culture. It really makes working together easy”"
+msgid "GPT has an incredible Remote culture. It really makes working together easy”"
 msgstr ""
 
 #: Includes/Widgets/TestimonialTabs.php:176

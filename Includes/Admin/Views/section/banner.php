@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="">
-                    <img src="<?php echo MPT_CORE_ASSETS_URL . '/images/ue-banner.jpg' ?>" alt="" class="img__rounded">
+                    <img src="<?php echo GPT_CORE_ASSETS_URL . '/images/ue-banner.jpg' ?>" alt="" class="img__rounded">
                 </div>
             </div>
         </div>

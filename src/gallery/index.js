@@ -7,12 +7,12 @@ import { Fragment } from '@wordpress/element'
 import { PanelBody } from '@wordpress/components'
 
 registerBlockType('mpt-block/mpt-gallery', {
-	title: __('MPT Gallery', 'create-block'),
+	title: __('GPT Gallery', 'create-block'),
 	icon: 'shield',
 	category: 'common',
 	keywords: [
 		__('Gallery', 'create-block'),
-		__('MPT', 'create-block'),
+		__('GPT', 'create-block'),
 		__('Image', 'create-block'),
 	],
 	attributes: {

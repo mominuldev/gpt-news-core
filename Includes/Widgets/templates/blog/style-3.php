@@ -41,7 +41,7 @@
 
             <div class="entry-header">
                 <h3 class="entry-title"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <a href="<?php the_permalink(); ?>" class="read_more_btn"><?php esc_html_e( 'Read More ', 'gpt-core' ) ?></a>
+                <a href="<?php the_permalink(); ?>" class="read_more_btn"><?php esc_html_e( 'Read More ', 'gpt-news-core' ) ?></a>
             </div>
         </div>
     </div>

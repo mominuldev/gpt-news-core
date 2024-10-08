@@ -27,7 +27,7 @@ class MarqueTextAdvance extends Widget_Base {
 
 
 	public function get_title() {
-		return __( 'Marque Text Advance', 'gpt-core' );
+		return __( 'Marque Text Advance', 'gpt-news-core' );
 	}
 
 	public function get_icon() {
@@ -51,7 +51,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->start_controls_section(
 			'faq_content',
 			[
-				'label' => __( 'Marque Content', 'gpt-core' ),
+				'label' => __( 'Marque Content', 'gpt-news-core' ),
 			]
 		);
 
@@ -59,11 +59,11 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_control(
 			'style',
 			[
-				'label'   => __( 'Style', 'gpt-core' ),
+				'label'   => __( 'Style', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'one' => __( 'Big Text', 'gpt-core' ),
-					'two'   => __( 'Small Text', 'gpt-core' ),
+					'one' => __( 'Big Text', 'gpt-news-core' ),
+					'two'   => __( 'Small Text', 'gpt-news-core' ),
 				],
 				'default' => 'one',
 			]
@@ -74,9 +74,9 @@ class MarqueTextAdvance extends Widget_Base {
 
 		$repeater->add_control(
 			'title', [
-				'label'       => __( 'Text', 'gpt-core' ),
+				'label'       => __( 'Text', 'gpt-news-core' ),
 				'type'        => Controls_Manager::TEXT,
-				'plaseholder' => __( 'Enter Text', 'gpt-core' ),
+				'plaseholder' => __( 'Enter Text', 'gpt-news-core' ),
 				'label_block' => true,
 			]
 		);
@@ -84,24 +84,24 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_control(
 			'marque_lists',
 			[
-				'label'       => __( 'Text list', 'gpt-core' ),
+				'label'       => __( 'Text list', 'gpt-news-core' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
-						'title' => __( 'Digital Agency', 'gpt-core' ),
+						'title' => __( 'Digital Agency', 'gpt-news-core' ),
 					],
 					[
-						'title' => __( 'Web Design', 'gpt-core' ),
+						'title' => __( 'Web Design', 'gpt-news-core' ),
 					],
 					[
-						'title' => __( 'Product Design', 'gpt-core' ),
+						'title' => __( 'Product Design', 'gpt-news-core' ),
 					],
 					[
-						'title' => __( 'Branding Design', 'gpt-core' ),
+						'title' => __( 'Branding Design', 'gpt-news-core' ),
 					],
 					[
-						'title' => __( 'Branding Service', 'gpt-core' ),
+						'title' => __( 'Branding Service', 'gpt-news-core' ),
 					],
 				],
 				'title_field' => '{{{ title }}}',
@@ -115,7 +115,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->start_controls_section(
 			'settings_section',
 			[
-				'label' => __( 'Settings', 'gpt-core' ),
+				'label' => __( 'Settings', 'gpt-news-core' ),
 			]
 		);
 
@@ -123,11 +123,11 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_control(
 			'direction',
 			[
-				'label'   => __( 'Direction', 'gpt-core' ),
+				'label'   => __( 'Direction', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'left'  => __( 'Right To Left', 'gpt-core' ),
-					'right' => __( 'Left To Right', 'gpt-core' ),
+					'left'  => __( 'Right To Left', 'gpt-news-core' ),
+					'right' => __( 'Left To Right', 'gpt-news-core' ),
 				],
 				'default' => 'left',
 			]
@@ -137,7 +137,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_control(
 			'duration',
 			[
-				'label'   => __( 'Duration', 'gpt-core' ),
+				'label'   => __( 'Duration', 'gpt-news-core' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 60,
 			]
@@ -148,7 +148,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->start_controls_section(
 			'social_style_section',
 			[
-				'label' => __( 'Content', 'gpt-core' ),
+				'label' => __( 'Content', 'gpt-news-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -157,7 +157,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_control(
 			'color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .marquee__text-part' => 'color: {{VALUE}}',
@@ -169,7 +169,7 @@ class MarqueTextAdvance extends Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name'     => 'text_typography',
-				'label'    => __( 'Typography', 'gpt-core' ),
+				'label'    => __( 'Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-marque__title',
 			]
 		);
@@ -178,7 +178,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_responsive_control(
 			'text_stroke_width',
 			[
-				'label'     => __( 'Text Stroke Width', 'gpt-core' ),
+				'label'     => __( 'Text Stroke Width', 'gpt-news-core' ),
 				'type'      => \Elementor\Controls_Manager::NUMBER,
 				'default'   => 2,
 				'selectors' => [
@@ -191,7 +191,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_control(
 			'text_stroke_color',
 			[
-				'label'     => __( 'Text Stroke Color', 'gpt-core' ),
+				'label'     => __( 'Text Stroke Color', 'gpt-news-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .marquee__text-part' => '-webkit-text-stroke-color: {{VALUE}}; text-stroke-color: {{VALUE}};',
@@ -204,7 +204,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_control(
 			'hover_stroke_color',
 			[
-				'label'     => __( 'Hover Color', 'gpt-core' ),
+				'label'     => __( 'Hover Color', 'gpt-news-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .marquee__text-part:before' => '-webkit-text-fill-color: {{VALUE}};',
@@ -215,7 +215,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_control(
 			'hover_stroke_color',
 			[
-				'label'     => __( 'Hover Stroke Color', 'gpt-core' ),
+				'label'     => __( 'Hover Stroke Color', 'gpt-news-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .marquee__text-part:hover' => '-webkit-text-stroke-color: {{VALUE}}; stroke: {{VALUE}}; -webkit-text-fill-color: {{VALUE}};',
@@ -228,7 +228,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_control(
 			'more_option_heading',
 			[
-				'label'     => __( 'More Option', 'gpt-core' ),
+				'label'     => __( 'More Option', 'gpt-news-core' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -239,7 +239,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_responsive_control(
 			'svg_icon_width',
 			[
-				'label'     => __( 'Svg Icon Width', 'gpt-core' ),
+				'label'     => __( 'Svg Icon Width', 'gpt-news-core' ),
 				'type'      => Controls_Manager::NUMBER,
 				'selectors' => [
 					'{{WRAPPER}} .marquee__text-part .arrow svg' => 'width: {{VALUE}}px;',
@@ -252,7 +252,7 @@ class MarqueTextAdvance extends Widget_Base {
 		$this->add_control(
 			'svg_stroke_fill',
 			[
-				'label'     => __( 'Svg Stroke Fill', 'gpt-core' ),
+				'label'     => __( 'Svg Stroke Fill', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .marquee__text-part .arrow svg path' => 'fill: {{VALUE}}',

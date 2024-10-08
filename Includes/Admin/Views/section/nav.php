@@ -5,11 +5,11 @@
                 <div class="gpt-admin-nav">
                     <ul>
                         <?php
-                            $admin_nav_first_item_class = ( !isset( $_GET['action'] ) && $_GET['page'] == 'gpt-core' ) ? 'active' : '';
+                            $admin_nav_first_item_class = ( !isset( $_GET['action'] ) && $_GET['page'] == 'gpt-news-core' ) ? 'active' : '';
 
                             $admin_nav_items = array(
                                 'default' => array(
-                                    'title' => 'MPT',
+                                    'title' => 'GPT',
                                     'url'   => admin_url( 'admin.php?page=gpt_core' ),
                                     'target' => '_self',
                                 ),

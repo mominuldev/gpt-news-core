@@ -52,7 +52,7 @@
 
 					<span class="circle-shape"></span>
 					<span class="progress-shape">
-						<img src="<?php echo plugins_url(  ) . '/gpt-core/Includes/widgets/images/banner/progress-shape.png' ?>" alt="">
+						<img src="<?php echo plugins_url(  ) . '/gpt-news-core/Includes/widgets/images/banner/progress-shape.png' ?>" alt="">
 					</span>
 				</div>
 				<!-- /.banner-feature-image -->

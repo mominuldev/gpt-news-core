@@ -9,7 +9,7 @@ import {__} from "@wordpress/i18n";
 
 registerBlockType(
     'mpt-block/mpt-about-widget', {
-        title: 'MPT About Widget',
+        title: 'GPT About Widget',
         icon: 'bell',
         category: 'widgets',
         keywords: ['About', 'mpt', 'About Widget', 'Social Link'],

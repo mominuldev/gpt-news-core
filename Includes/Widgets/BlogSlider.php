@@ -30,7 +30,7 @@ class BlogSlider extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return esc_html__( 'MPT Blog Slider', 'gpt-core' );
+		return esc_html__( 'GPT Blog Slider', 'gpt-news-core' );
 	}
 
 	/**
@@ -69,27 +69,27 @@ class BlogSlider extends Widget_Base {
 		// Testimonial
 		//=========================
 		$this->start_controls_section( 'section_tab_style', [
-			'label' => esc_html__( 'Blog', 'gpt-core' ),
+			'label' => esc_html__( 'Blog', 'gpt-news-core' ),
 		] );
 
 		$this->add_control( 'post_count', [
-			'label'   => esc_html__( 'Post count', 'gpt-core' ),
+			'label'   => esc_html__( 'Post count', 'gpt-news-core' ),
 			'type'    => Controls_Manager::NUMBER,
-			'default' => esc_html__( '3', 'gpt-core' ),
+			'default' => esc_html__( '3', 'gpt-news-core' ),
 
 		] );
 
 		$this->add_control( 'post_cat', [
-			'label'       => esc_html__( 'Select category', 'gpt-core' ),
+			'label'       => esc_html__( 'Select category', 'gpt-news-core' ),
 			'type'        => Controls_Manager::SELECT2,
 			'multiple'    => true,
 			'label_block' => true,
-			'options'     => \MPT_Helper::categories_suggester(),
+			'options'     => \GPT_Helper::categories_suggester(),
 			'default'     => '0'
 		] );
 
 		$this->add_control( 'content_length', [
-			'label'   => __( 'Word Limit', 'gpt-core' ),
+			'label'   => __( 'Word Limit', 'gpt-news-core' ),
 			'type'    => \Elementor\Controls_Manager::NUMBER,
 			'min'     => 5,
 			'max'     => 30,
@@ -101,7 +101,7 @@ class BlogSlider extends Widget_Base {
 			'label'       => __( 'Read More Button text' ),
 			'type'        => Controls_Manager::TEXT,
 			'placeholder' => __( 'Enter button text here' ),
-			'default'     => __( 'Read More', 'gpt-core' ),
+			'default'     => __( 'Read More', 'gpt-news-core' ),
 			'label_block' => true
 		] );
 
@@ -110,54 +110,54 @@ class BlogSlider extends Widget_Base {
 		// Slider Control
 		//=====================
 		$this->start_controls_section( 'settingd_section', [
-			'label' => esc_html__( 'Slider Control', 'gpt-core' ),
+			'label' => esc_html__( 'Slider Control', 'gpt-news-core' ),
 		] );
 
 		$this->add_control( 'navigation', [
-			'label'        => esc_html__( 'Navigation', 'gpt-core' ),
+			'label'        => esc_html__( 'Navigation', 'gpt-news-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => esc_html__( 'Show', 'gpt-core' ),
-			'label_off'    => esc_html__( 'Hide', 'gpt-core' ),
+			'label_on'     => esc_html__( 'Show', 'gpt-news-core' ),
+			'label_off'    => esc_html__( 'Hide', 'gpt-news-core' ),
 			'return_value' => 'yes',
 			'default'      => 'no'
 		] );
 
 		$this->add_control( 'pagination', [
-			'label'        => esc_html__( 'Pagination', 'gpt-core' ),
+			'label'        => esc_html__( 'Pagination', 'gpt-news-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => esc_html__( 'Show', 'gpt-core' ),
-			'label_off'    => esc_html__( 'Hide', 'gpt-core' ),
+			'label_on'     => esc_html__( 'Show', 'gpt-news-core' ),
+			'label_off'    => esc_html__( 'Hide', 'gpt-news-core' ),
 			'return_value' => 'yes',
 			'default'      => 'yes'
 		] );
 
 
 		$this->add_control( 'loop', [
-			'label'        => esc_html__( 'Loop', 'gpt-core' ),
+			'label'        => esc_html__( 'Loop', 'gpt-news-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => esc_html__( 'On', 'gpt-core' ),
-			'label_off'    => esc_html__( 'Off', 'gpt-core' ),
+			'label_on'     => esc_html__( 'On', 'gpt-news-core' ),
+			'label_off'    => esc_html__( 'Off', 'gpt-news-core' ),
 			'return_value' => 'yes',
 			'default'      => 'yes'
 		] );
 
 		$this->add_control( 'speed', [
-			'label'   => __( 'Speed', 'gpt-core' ),
+			'label'   => __( 'Speed', 'gpt-news-core' ),
 			'type'    => Controls_Manager::NUMBER,
 			'default' => 700,
 		] );
 
 		$this->add_control( 'autoplay', [
-			'label'        => esc_html__( 'Autoplay', 'gpt-core' ),
+			'label'        => esc_html__( 'Autoplay', 'gpt-news-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => esc_html__( 'On', 'gpt-core' ),
-			'label_off'    => esc_html__( 'Off', 'gpt-core' ),
+			'label_on'     => esc_html__( 'On', 'gpt-news-core' ),
+			'label_off'    => esc_html__( 'Off', 'gpt-news-core' ),
 			'return_value' => 'yes',
 			'default'      => 'yes'
 		] );
 
 		$this->add_control( 'autoplay_time', [
-			'label'     => __( 'Autoplay Time', 'gpt-core' ),
+			'label'     => __( 'Autoplay Time', 'gpt-news-core' ),
 			'type'      => Controls_Manager::NUMBER,
 			'default'   => 9000,
 			'condition' => [
@@ -170,34 +170,34 @@ class BlogSlider extends Widget_Base {
 		// Blog Meta Style
 		//====================
 		$this->start_controls_section( 'background_shape', [
-			'label' => __( 'Meta', 'gpt-core' ),
+			'label' => __( 'Meta', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'meta_show', [
-			'label'        => __( 'Show Post meta', 'gpt-core' ),
+			'label'        => __( 'Show Post meta', 'gpt-news-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Yes', 'gpt-core' ),
-			'label_off'    => __( 'No', 'gpt-core' ),
+			'label_on'     => __( 'Yes', 'gpt-news-core' ),
+			'label_off'    => __( 'No', 'gpt-news-core' ),
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'meta_text_typography',
-			'label'    => __( 'Typography', 'gpt-core' ),
+			'label'    => __( 'Typography', 'gpt-news-core' ),
 			'selector' => '{{WRAPPER}} .gpt-post__date-meta .posted-on a',
 		] );
 
 
 		$this->add_control( 'meta_text_color', [
-			'label'     => __( 'Color', 'gpt-core' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => ['{{WRAPPER}} .gpt-post__date-meta .posted-on a' => 'color: {{VALUE}}'],
 		] );
 
 		$this->add_control( 'meta_icon_color', [
-			'label'     => __( 'Icon Color', 'gpt-core' ),
+			'label'     => __( 'Icon Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .gpt-post__date-meta svg path' => 'strocke: {{VALUE}}',
@@ -206,7 +206,7 @@ class BlogSlider extends Widget_Base {
 
 
 		$this->add_control( 'title_color_hover', [
-			'label'     => __( 'Hover Color', 'gpt-core' ),
+			'label'     => __( 'Hover Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .gpt-post__date-meta .posted-on a:hover' => 'color: {{VALUE}}',
@@ -218,18 +218,18 @@ class BlogSlider extends Widget_Base {
 		// Title Style
 		//=====================
 		$this->start_controls_section( 'name_section', [
-			'label' => __( 'Title', 'gpt-core' ),
+			'label' => __( 'Title', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'title_typography',
-			'label'    => __( 'Typography', 'gpt-core' ),
+			'label'    => __( 'Typography', 'gpt-news-core' ),
 			'selector' => '{{WRAPPER}} .gpt__post-slider .gpt__entry-title',
 		] );
 
 		$this->add_control( 'title_color', [
-			'label'     => __( 'Color', 'gpt-core' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .gpt__post-slider .gpt__entry-title a' => 'color: {{VALUE}}',
@@ -237,7 +237,7 @@ class BlogSlider extends Widget_Base {
 		] );
 
 		$this->add_control( 'title_hover_color', [
-			'label'     => __( 'Hover Color', 'gpt-core' ),
+			'label'     => __( 'Hover Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .gpt__post-slider .gpt__entry-title a:hover' => 'color: {{VALUE}}',
@@ -249,18 +249,18 @@ class BlogSlider extends Widget_Base {
 		// Content Style
 		//=====================
 		$this->start_controls_section( 'designation_section', [
-			'label' => __( 'Content', 'gpt-core' ),
+			'label' => __( 'Content', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'content_typography',
-			'label'    => __( 'Typography', 'gpt-core' ),
+			'label'    => __( 'Typography', 'gpt-news-core' ),
 			'selector' => '{{WRAPPER}} .gpt__post-slider .gpt__entry-content',
 		] );
 
 		$this->add_control( 'content_color', [
-			'label'     => __( 'Color', 'gpt-core' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .gpt__post-slider .gpt__entry-content' => 'color: {{VALUE}}',
@@ -273,7 +273,7 @@ class BlogSlider extends Widget_Base {
 		// Style Slider Control Section
 		//================================
 		$this->start_controls_section( 'control_section', [
-			'label' => __( 'Slider  Control', 'gpt-core' ),
+			'label' => __( 'Slider  Control', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
@@ -281,7 +281,7 @@ class BlogSlider extends Widget_Base {
 		$this->add_control(
 			'nav_width',
 			[
-				'label'      => esc_html__( 'Nav Height/Width', 'gpt-core' ),
+				'label'      => esc_html__( 'Nav Height/Width', 'gpt-news-core' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -299,7 +299,7 @@ class BlogSlider extends Widget_Base {
 		$this->add_control(
 			'nav_font_size',
 			[
-				'label'      => esc_html__( 'Nav Font Size', 'gpt-core' ),
+				'label'      => esc_html__( 'Nav Font Size', 'gpt-news-core' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -318,7 +318,7 @@ class BlogSlider extends Widget_Base {
 		$this->add_control(
 			'nav_border_radius',
 			[
-				'label'      => esc_html__( 'Nav Border Radius', 'gpt-core' ),
+				'label'      => esc_html__( 'Nav Border Radius', 'gpt-news-core' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'range'      => [
@@ -346,12 +346,12 @@ class BlogSlider extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_nav_normal',
 			[
-				'label' => __( 'Normal', 'gpt-core' ),
+				'label' => __( 'Normal', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control( 'slider_nav_color', [
-			'label'     => __( 'Color', 'gpt-core' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-prev, {{WRAPPER}} .blog-next' => 'color: {{VALUE}}',
@@ -359,7 +359,7 @@ class BlogSlider extends Widget_Base {
 		] );
 
 		$this->add_control( 'nav_bg_color', [
-			'label'     => __( 'Background Color', 'gpt-core' ),
+			'label'     => __( 'Background Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-prev, {{WRAPPER}} .blog-next' => 'background-color: {{VALUE}}',
@@ -378,13 +378,13 @@ class BlogSlider extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'nav_box_shadow',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .blog-prev, {{WRAPPER}} .blog-next',
 			]
 		);
 
 		$this->add_control( 'pagination_bg_color', [
-			'label'     => __( 'Pagination BG Color', 'gpt-core' ),
+			'label'     => __( 'Pagination BG Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet' => 'background: {{VALUE}}',
@@ -398,12 +398,12 @@ class BlogSlider extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_nav_hover',
 			[
-				'label' => __( 'Hover', 'gpt-core' ),
+				'label' => __( 'Hover', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control( 'nav_color_hover', [
-			'label'     => __( 'Color', 'gpt-core' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-prev:hover, {{WRAPPER}} .blog-next:hover' => 'color: {{VALUE}}',
@@ -411,7 +411,7 @@ class BlogSlider extends Widget_Base {
 		] );
 
 		$this->add_control( 'nav_color_bg_hover', [
-			'label'     => __( 'Background Color', 'gpt-core' ),
+			'label'     => __( 'Background Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-prev:hover, {{WRAPPER}} .blog-next:hover' => 'background-color: {{VALUE}}',
@@ -419,7 +419,7 @@ class BlogSlider extends Widget_Base {
 		] );
 
 		$this->add_control( 'nav_control_hover', [
-			'label'     => __( 'Border Color', 'gpt-core' ),
+			'label'     => __( 'Border Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-prev:hover, {{WRAPPER}} .blog-next:hover' => 'border-color: {{VALUE}}',
@@ -430,13 +430,13 @@ class BlogSlider extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'nav_box_shadow_hover',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .blog-prev:hover, {{WRAPPER}} .blog-next:hover',
 			]
 		);
 
 		$this->add_control( 'slider_pagination_active_color', [
-			'label'     => __( 'Pagination Active BG Color', 'gpt-core' ),
+			'label'     => __( 'Pagination Active BG Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet:before' => 'background: {{VALUE}}',
@@ -451,12 +451,12 @@ class BlogSlider extends Widget_Base {
 		// Style Slider Control Section
 		//================================
 		$this->start_controls_section( 'blog_section', [
-			'label' => __( 'Blog Container', 'gpt-core' ),
+			'label' => __( 'Blog Container', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'blog_bg_color', [
-			'label'     => __( 'Background Color', 'gpt-core' ),
+			'label'     => __( 'Background Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .gpt-post__item' => 'background: {{VALUE}}',
@@ -466,7 +466,7 @@ class BlogSlider extends Widget_Base {
 		$this->add_control(
 			'blog_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-core' ),
+				'label'      => __( 'Padding', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -478,7 +478,7 @@ class BlogSlider extends Widget_Base {
 		$this->add_control(
 			'blog_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'gpt-core' ),
+				'label'      => __( 'Border Radius', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -491,7 +491,7 @@ class BlogSlider extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'blog_shadow',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .gpt-post__item',
 			]
 		);

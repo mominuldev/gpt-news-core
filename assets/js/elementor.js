@@ -1,25 +1,25 @@
 (function ($, elementor) {
 	"use strict";
 
-	var MPT = {
+	var GPT = {
 
 		initWidgets: function() {
 			var widgets = {
-				'mpt-hero-static.default': MPT.Hero,
-				'mpt-highlight-heading.default': MPT.HightlightHeading,
-				'mpt-project-slider.default': MPT.Slider,
-				'mpt-project-slider-creative.default': MPT.ImageCarousel,
-				'mpt-blog-slider.default': MPT.BlogSlider,
-				'mpt-dynamic-tabs.default': MPT.DynamicTabs,
-				'mpt-project-list.default': MPT.ProjectList,
-				'mpt-feature-list-tabs.default': MPT.Tabs,
-				'mpt-testimonial.default': MPT.Testimonial,
-				'mpt-testimonial-creative.default': MPT.TestimonialCreative,
-				'mpt-logo-carousel.default': MPT.Logo,
-				'mpt-coming-soon.default': MPT.Counting,
-				'mpt-pin-video.default': MPT.PinVideo,
-				'mpt-logo-marquee.default': MPT.LogoMaequee,
-				'mpt-marque-text-advance.default': MPT.MarqueText,
+				'mpt-hero-static.default': GPT.Hero,
+				'mpt-highlight-heading.default': GPT.HightlightHeading,
+				'mpt-project-slider.default': GPT.Slider,
+				'mpt-project-slider-creative.default': GPT.ImageCarousel,
+				'mpt-blog-slider.default': GPT.BlogSlider,
+				'mpt-dynamic-tabs.default': GPT.DynamicTabs,
+				'mpt-project-list.default': GPT.ProjectList,
+				'mpt-feature-list-tabs.default': GPT.Tabs,
+				'mpt-testimonial.default': GPT.Testimonial,
+				'mpt-testimonial-creative.default': GPT.TestimonialCreative,
+				'mpt-logo-carousel.default': GPT.Logo,
+				'mpt-coming-soon.default': GPT.Counting,
+				'mpt-pin-video.default': GPT.PinVideo,
+				'mpt-logo-marquee.default': GPT.LogoMaequee,
+				'mpt-marque-text-advance.default': GPT.MarqueText,
 
 			};
 
@@ -824,7 +824,7 @@
 
 
 	};
-	// $(window).on('elementor/frontend/init', MPT.init);
+	// $(window).on('elementor/frontend/init', GPT.init);
 
 	function TextAnimation($style, $selector, tl) {
 		// let tl = gsap.timeline()
@@ -891,7 +891,7 @@
 
 	// Initialize on Elementor frontend load
 	$(window).on('elementor/frontend/init', function () {
-		MPT.initWidgets();  // Initialize widgets after Elementor is ready
+		GPT.initWidgets();  // Initialize widgets after Elementor is ready
 	});
 
 }(jQuery, window.elementorFrontend));

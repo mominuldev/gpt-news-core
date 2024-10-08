@@ -16,8 +16,8 @@ class Menu {
 		$theme_option_link = 'admin.php?page=gpt-framework';
 
 		add_menu_page(
-			esc_html__( 'MPT Core', 'gpt-core' ),
-			esc_html__( 'MPT', 'gpt-core' ),
+			esc_html__( 'GPT Core', 'gpt-news-core' ),
+			esc_html__( 'GPT', 'gpt-news-core' ),
 			$capability,
 			$parent_slug,
 			[$this, 'plugin_main_page'],

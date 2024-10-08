@@ -47,7 +47,7 @@
 				</p>
 			</div><!-- /.blog-content -->
 
-			<a href="<?php the_permalink(); ?>" class="read-more-btn"><?php esc_html_e('Read More ', 'gpt-core') ?>
+			<a href="<?php the_permalink(); ?>" class="read-more-btn"><?php esc_html_e('Read More ', 'gpt-news-core') ?>
 				<i class="ei ei-arrow_right"></i>
 			</a>
 		</div><!-- /.feature-image -->

@@ -30,7 +30,7 @@ class ContactForm7 extends Widget_Base {
 
 
 	public function get_title() {
-		return __( 'MPT Contact Form 7', 'gpt-core' );
+		return __( 'GPT Contact Form 7', 'gpt-news-core' );
 	}
 
 	public function get_icon() {
@@ -57,17 +57,17 @@ class ContactForm7 extends Widget_Base {
 		$this->start_controls_section(
 			'section_content',
 			[
-				'label' => __( 'Content', 'gpt-core' ),
+				'label' => __( 'Content', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'form_title',
 			[
-				'label'       => __( 'Form Title', 'gpt-core' ),
+				'label'       => __( 'Form Title', 'gpt-news-core' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
-				'description' => __( '(Optional) Title to search if no ID selected or cannot find by ID.', 'gpt-core' ),
+				'description' => __( '(Optional) Title to search if no ID selected or cannot find by ID.', 'gpt-news-core' ),
 				'label_block' => true
 			]
 		);
@@ -75,9 +75,9 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'f_id',
 			[
-				'label'   => __( 'Select a form', 'gpt-core' ),
+				'label'   => __( 'Select a form', 'gpt-news-core' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => \MPT_Helper::gpt_get_contact_form7_forms(),
+				'options' => \GPT_Helper::gpt_get_contact_form7_forms(),
 				'default' => '1'
 
 			]
@@ -89,7 +89,7 @@ class ContactForm7 extends Widget_Base {
 		$this->start_controls_section(
 			'form_title_style_section',
 			[
-				'label' => __( 'Title', 'gpt-core' ),
+				'label' => __( 'Title', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -97,7 +97,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form-title' => 'color: {{VALUE}}',
@@ -109,7 +109,7 @@ class ContactForm7 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'label'    => __( 'Typography', 'gpt-core' ),
+				'label'    => __( 'Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form-title',
 			]
 		);
@@ -117,7 +117,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'title_spacing',
 			[
-				'label'      => __( 'Spacing (Margin Bottom)', 'gpt-core' ),
+				'label'      => __( 'Spacing (Margin Bottom)', 'gpt-news-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -141,7 +141,7 @@ class ContactForm7 extends Widget_Base {
 		$this->start_controls_section(
 			'field_style_section',
 			[
-				'label' => __( 'Field', 'gpt-core' ),
+				'label' => __( 'Field', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -149,7 +149,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'field_placeholder_color',
 			[
-				'label'     => __( 'Placeholder Color', 'gpt-core' ),
+				'label'     => __( 'Placeholder Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form input:not([type=checkbox]):not([type=submit])::placeholder,
@@ -162,7 +162,7 @@ class ContactForm7 extends Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name'     => 'field_typography',
-				'label'    => __( 'Typography', 'gpt-core' ),
+				'label'    => __( 'Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form input:not([type=checkbox]):not([type=submit])',
 			]
 		);
@@ -170,7 +170,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'padding',
 			[
-				'label'      => __( 'Padding', 'gpt-core' ),
+				'label'      => __( 'Padding', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -182,7 +182,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label'      => __( 'Border Radius', 'gpt-core' ),
+				'label'      => __( 'Border Radius', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -194,7 +194,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'field_spacing',
 			[
-				'label'      => __( 'Spacing (Margin Bottom)', 'gpt-core' ),
+				'label'      => __( 'Spacing (Margin Bottom)', 'gpt-news-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -213,7 +213,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'input_height',
 			[
-				'label'      => __( 'Input Height', 'gpt-core' ),
+				'label'      => __( 'Input Height', 'gpt-news-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -232,7 +232,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'textarea_height',
 			[
-				'label'      => __( 'Textarea Height', 'gpt-core' ),
+				'label'      => __( 'Textarea Height', 'gpt-news-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -253,14 +253,14 @@ class ContactForm7 extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_field_normal',
 			[
-				'label' => __( 'Normal', 'gpt-core' ),
+				'label' => __( 'Normal', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'field_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form input:not([type=checkbox]):not([type=submit]),
@@ -273,7 +273,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'field_background_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form input:not([type=checkbox]):not([type=submit]),
@@ -287,7 +287,7 @@ class ContactForm7 extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'border',
-				'label'    => __( 'Border', 'gpt-core' ),
+				'label'    => __( 'Border', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form input:not([type=checkbox]), {{WRAPPER}} .contact-form textarea',
 			]
 		);
@@ -297,7 +297,7 @@ class ContactForm7 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'field_box_shadow',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form input:not([type=checkbox]), {{WRAPPER}} .contact-form textarea',
 			]
 		);
@@ -307,14 +307,14 @@ class ContactForm7 extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_field_hover',
 			[
-				'label' => __( 'Focus', 'gpt-core' ),
+				'label' => __( 'Focus', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'field_color_focus',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form input:not([type=checkbox]):not([type=submit]),
@@ -327,7 +327,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'field_background_color_focus',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form input:not([type=checkbox]):not([type=submit]):focus,
@@ -340,7 +340,7 @@ class ContactForm7 extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'border_focus',
-				'label'    => __( 'Border', 'gpt-core' ),
+				'label'    => __( 'Border', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form input:not([type=checkbox]):focus, {{WRAPPER}} .contact-form textarea:focus',
 			]
 		);
@@ -349,7 +349,7 @@ class ContactForm7 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'field_focus_box_shadow',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form input:not([type=checkbox]):focus, {{WRAPPER}} .contact-form textarea:focus',
 			]
 		);
@@ -364,7 +364,7 @@ class ContactForm7 extends Widget_Base {
 		$this->start_controls_section(
 			'label_style_section',
 			[
-				'label' => __( 'Label', 'gpt-core' ),
+				'label' => __( 'Label', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -381,7 +381,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'label_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form label' => 'color: {{VALUE}}',
@@ -392,7 +392,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'label_margin',
 			[
-				'label'      => __( 'Margin', 'gpt-core' ),
+				'label'      => __( 'Margin', 'gpt-news-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
@@ -410,7 +410,7 @@ class ContactForm7 extends Widget_Base {
 		$this->start_controls_section(
 			'button_style_section',
 			[
-				'label' => __( 'Button', 'gpt-core' ),
+				'label' => __( 'Button', 'gpt-news-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -419,7 +419,7 @@ class ContactForm7 extends Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name'     => 'btn_typography',
-				'label'    => __( 'Typography', 'gpt-core' ),
+				'label'    => __( 'Typography', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form input[type=submit]',
 			]
 		);
@@ -427,7 +427,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'btn_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-core' ),
+				'label'      => __( 'Padding', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -440,7 +440,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'btn_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'gpt-core' ),
+				'label'      => __( 'Border Radius', 'gpt-news-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
@@ -454,14 +454,14 @@ class ContactForm7 extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_btn_normal',
 			[
-				'label' => __( 'Normal', 'gpt-core' ),
+				'label' => __( 'Normal', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'btn_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form input[type=submit]' => 'color: {{VALUE}}',
@@ -472,7 +472,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'btn_bg_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form input[type=submit]' => 'background-color: {{VALUE}}',
@@ -484,7 +484,7 @@ class ContactForm7 extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'btn_border',
-				'label'    => __( 'Border', 'gpt-core' ),
+				'label'    => __( 'Border', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form input[type=submit]',
 			]
 		);
@@ -493,7 +493,7 @@ class ContactForm7 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'btn_box_shadow',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form input[type=submit]',
 			]
 		);
@@ -504,14 +504,14 @@ class ContactForm7 extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_btn_hover',
 			[
-				'label' => __( 'Hover', 'gpt-core' ),
+				'label' => __( 'Hover', 'gpt-news-core' ),
 			]
 		);
 
 		$this->add_control(
 			'btn_hover_color',
 			[
-				'label'     => __( 'Color', 'gpt-core' ),
+				'label'     => __( 'Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form input[type=submit]:hover' => 'color: {{VALUE}}',
@@ -522,7 +522,7 @@ class ContactForm7 extends Widget_Base {
 		$this->add_control(
 			'btn_hover_bg_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-core' ),
+				'label'     => __( 'Background Color', 'gpt-news-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .contact-form input[type=submit]:hover' => 'background-color: {{VALUE}}',
@@ -534,7 +534,7 @@ class ContactForm7 extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'btn_hover_border',
-				'label'    => __( 'Border', 'gpt-core' ),
+				'label'    => __( 'Border', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form input[type=submit]:hover',
 			]
 		);
@@ -543,7 +543,7 @@ class ContactForm7 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'btn_hover_box_shadow',
-				'label'    => __( 'Box Shadow', 'gpt-core' ),
+				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
 				'selector' => '{{WRAPPER}} .contact-form input[type=submit]:hover',
 			]
 		);

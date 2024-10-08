@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center p-5">
             <div class="col-md-4 text-right">
-                <img src="<?php echo MPT_CORE_ASSETS . 'admin/img/rating.png' ?>" alt="">
+                <img src="<?php echo GPT_CORE_ASSETS . 'admin/img/rating.png' ?>" alt="">
             </div>
             <div class="col-md-8">
                 <h5>Happy with our work!</h5>

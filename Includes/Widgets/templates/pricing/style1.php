@@ -2,7 +2,7 @@
 
 	<div class="animated-shape has-animation">
 		<div class="translate-right-75 opacity-animation transition-200 transition-delay-1000">
-			<img src="<?php echo MPT_PLUGIN_URL . 'elementor/assets/images/element7.png' ?>"
+			<img src="<?php echo GPT_PLUGIN_URL . 'elementor/assets/images/element7.png' ?>"
 					alt="<?php echo esc_attr( $settings['monthly_title'] ); ?>">
 		</div>
 	</div>
