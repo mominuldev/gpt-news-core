@@ -629,6 +629,7 @@ class BlogHero extends Widget_Base {
 		);
 
 		$gpt_query = new \WP_Query( $query );
+
 		?>
 
 		<div class="blog-post-items">
@@ -636,6 +637,15 @@ class BlogHero extends Widget_Base {
 			<?php
 				if ( $gpt_query->have_posts() ) :
 					$count = 0; // Counter to track posts
+					$colors = [
+						'#ff3385', '#ffaf25', '#0073ff', '#3dd800', '#00B3E6',
+					];
+
+//					$colors_count     = count( $colors );
+//					$color_item_count = 0;
+//					$count_color            = $gpt_query->post_count;
+
+
 					?>
 
 					<?php while ( $gpt_query->have_posts() ) : $gpt_query->the_post(); ?>
@@ -646,7 +656,18 @@ class BlogHero extends Widget_Base {
 
 					?>
 
-					<?php $count++; ?>
+					<?php
+
+					// Color counter
+					if ( $count >= count( $colors ) ) {
+						$count = 0;
+					}
+
+					$count++;
+
+
+
+					?>
 				<?php endwhile; ?>
 
 					<?php
@@ -655,7 +676,6 @@ class BlogHero extends Widget_Base {
 				?>
 			</div>
 		</div>
-
 
 		<?php
 

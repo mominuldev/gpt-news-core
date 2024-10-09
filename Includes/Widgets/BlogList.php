@@ -644,31 +644,26 @@ class BlogList extends Widget_Base {
 				// Display first two posts in separate columns
 				if ( $count < 1 ) : ?>
 					<div class="blog-list-main">
-							<div class="blog-grid__image">
-								<a href="<?php the_permalink(); ?>">
-									<?php
-									if ( has_post_thumbnail() ) {
-										the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
-									} else { ?>
-										<img src="https://via.placeholder.com/410x290" alt="Placeholder">
-									<?php } ?>
-								</a>
-							</div>
-							<div class="blog-grid__content">
-								<h3 class="blog-grid__title">
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								</h3>
-								<div class="blog-grid__meta">
-                                <span class="blog-grid__meta-date">
-                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.5 9C16.5 13.14 13.14 16.5 9 16.5C4.86 16.5 1.5 13.14 1.5 9C1.5 4.86 4.86 1.5 9 1.5C13.14 1.5 16.5 4.86 16.5 9Z" stroke="#141416" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M11.7827 11.3843L9.45766 9.99684C9.05266 9.75684 8.72266 9.17934 8.72266 8.70684V5.63184" stroke="#141416" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span><?php echo get_the_date( 'M d, Y' ); ?></span>
-                                </span>
-								</div>
-							</div>
+						<div class="blog-grid__image">
+							<a href="<?php the_permalink(); ?>">
+								<?php
+								if ( has_post_thumbnail() ) {
+									the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
+								} else { ?>
+									<img src="https://via.placeholder.com/410x290" alt="Placeholder">
+								<?php } ?>
+							</a>
 						</div>
+						<div class="blog-grid__content">
+							<h3 class="blog-grid__title blog-title-hover">
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</h3>
+							<span class="gpt-blog__meta-date">
+								<i class="ri-time-line"></i>
+								<span><?php echo get_the_date( 'M d, Y' ); ?></span>
+							</span>
+						</div>
+					</div>
 				<?php
 				// Display the last two posts in the third column
 				elseif ( $count == 1 ) : ?>
@@ -690,18 +685,13 @@ class BlogList extends Widget_Base {
 							</a>
 						</div>
 						<div class="blog-list__content">
-							<h3 class="blog-list__title">
+							<h3 class="blog-list__title blog-title-hover">
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</h3>
-							<div class="blog-list__meta">
-							<span class="blog-list__meta-date">
-								<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M16.5 9C16.5 13.14 13.14 16.5 9 16.5C4.86 16.5 1.5 13.14 1.5 9C1.5 4.86 4.86 1.5 9 1.5C13.14 1.5 16.5 4.86 16.5 9Z" stroke="#141416" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-									<path d="M11.7827 11.3843L9.45766 9.99684C9.05266 9.75684 8.72266 9.17934 8.72266 8.70684V5.63184" stroke="#141416" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
+							<span class="gpt-blog__meta-date">
+								<i class="ri-time-line"></i>
 								<span><?php echo get_the_date( 'M d, Y' ); ?></span>
 							</span>
-							</div>
 						</div>
 					</div>
 
@@ -712,7 +702,7 @@ class BlogList extends Widget_Base {
 					</div> <!-- Close third column after the second post -->
 				<?php endif; ?>
 
-				<?php $count++; ?>
+				<?php $count ++; ?>
 			<?php endwhile; ?>
 
 				<?php
