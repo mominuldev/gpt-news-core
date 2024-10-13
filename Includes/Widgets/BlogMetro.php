@@ -658,10 +658,15 @@ class BlogMetro extends Widget_Base {
 							<h3 class="gpt-blog-metro__title blog-title-hover">
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</h3>
-							<span class="gpt-blog__meta-date">
-								<i class="ri-time-line"></i>
-								<span><?php echo get_the_date( 'M d, Y' ); ?></span>
-							</span>
+							<ul class="entry-meta">
+								<li>
+									<?php \Gpt_Theme_Helper::post_author_by(); ?>
+								</li>
+								<li>
+									<i class="ri-calendar-2-line"></i>
+									<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+								</li>
+							</ul><!-- .entry-meta -->
 						</div>
 					</div>
 				<?php
@@ -689,10 +694,12 @@ class BlogMetro extends Widget_Base {
 									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								</h3>
 
-								<span class="gpt-blog__meta-date">
-									<i class="ri-time-line"></i>
-									<span><?php echo get_the_date( 'M d, Y' ); ?></span>
-								</span>
+								<ul class="entry-meta">
+									<li>
+										<i class="ri-calendar-2-line"></i>
+										<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+									</li>
+								</ul><!-- .entry-meta -->
 
 							</div>
 						</div>

@@ -2,7 +2,7 @@
 // Display first two posts in separate columns
 if ( $count < 1 ) : ?>
 	<div class="col-lg-7">
-		<div class="blog-hero-item blog-hero-item--large">
+		<div class="blog-hero-item blog-hero-item--large style-two">
 			<div class="blog-hero-item__image">
 				<a href="<?php the_permalink(); ?>">
 					<?php
@@ -28,13 +28,18 @@ if ( $count < 1 ) : ?>
 					</a>
 				<?php } ?>
 
-				<h3 class="blog-hero-item__title blog-title-hover">
+				<h1 class="blog-hero-item__title blog-title-hover">
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-				</h3>
-				<span class="gpt-blog__meta-date">
-					<i class="ri-time-line"></i>
-					<span><?php echo get_the_date( 'M d, Y' ); ?></span>
-				</span>
+				</h1>
+				<ul class="entry-meta">
+					<li>
+						<?php Gpt_Theme_Helper::post_author_by(); ?>
+					</li>
+					<li>
+						<i class="ri-calendar-2-line"></i>
+						<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+					</li>
+				</ul><!-- .entry-meta -->
 			</div>
 		</div>
 	</div>
@@ -71,13 +76,14 @@ elseif ( $count == 1 ) : ?>
 				</a>
 			<?php } ?>
 
-			<h3 class="blog-hero-item__title-two blog-title-hover">
+			<h2 class="blog-hero-item__title-two blog-title-hover">
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			</h3>
-			<span class="gpt-blog__meta-date">
-				<i class="ri-time-line"></i>
-				<span><?php echo get_the_date( 'M d, Y' ); ?></span>
-			</span>
+			</h2>
+			<ul class="entry-meta">
+				<li>
+					<?php Gpt_Theme_Helper::post_author_by(); ?>
+				</li>
+			</ul><!-- .entry-meta -->
 		</div>
 	</div>
 <?php endif; ?>

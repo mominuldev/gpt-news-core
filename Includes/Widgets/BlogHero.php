@@ -69,6 +69,7 @@ class BlogHero extends Widget_Base {
 			'options' => [
 				'one' => esc_html__( 'One', 'gpt-news-core' ),
 				'two' => esc_html__( 'Two', 'gpt-news-core' ),
+				'three' => esc_html__( 'Three', 'gpt-news-core' ),
 			]
 		] );
 
@@ -149,6 +150,9 @@ class BlogHero extends Widget_Base {
 			'label'   => esc_html__( 'Exclude', 'gpt-news-core' ),
 			'type'    => Controls_Manager::TEXT,
 			'default' => '',
+			'description' => esc_html__( 'Enter post ID separated by comma to exclude', 'gpt-news-core' ),
+			'placeholder' => esc_html__( '1,2,3', 'gpt-news-core' ),
+			'label_block' => true
 		] );
 
 		// Include
@@ -156,6 +160,9 @@ class BlogHero extends Widget_Base {
 			'label'   => esc_html__( 'Include', 'gpt-news-core' ),
 			'type'    => Controls_Manager::TEXT,
 			'default' => '',
+			'description' => esc_html__( 'Enter post ID separated by comma to exclude', 'gpt-news-core' ),
+			'placeholder' => esc_html__( '1,2,3', 'gpt-news-core' ),
+			'label_block' => true
 		] );
 
 
@@ -566,6 +573,7 @@ class BlogHero extends Widget_Base {
 		$settings   = $this->get_settings_for_display();
 		$post_cat   = $settings['post_cat'];
 		$post_count = $settings['post_count'];
+		$layout    = $settings['layout'];
 
 
 		$this->add_render_attribute( 'wrapper', 'class', [
@@ -585,28 +593,28 @@ class BlogHero extends Widget_Base {
 			);
 		}
 
-		// Include
-		if ( $settings['include'] ) {
-			$_tax_query = array(
-				array(
-					'taxonomy' => 'category',
-					'field'    => 'slug',
-					'terms'    => explode( ',', $settings['include'] ),
-				)
-			);
-		}
-
-		// Exclude
-		if ( $settings['exclude'] ) {
-			$_tax_query = array(
-				array(
-					'taxonomy' => 'category',
-					'field'    => 'slug',
-					'terms'    => explode( ',', $settings['exclude'] ),
-					'operator' => 'NOT IN'
-				)
-			);
-		}
+//		// Include By Post ID
+//		if ( $settings['include'] ) {
+//			$_tax_query = array(
+//				array(
+//					'taxonomy' => 'category',
+//					'field'    => 'id',
+//					'terms'    => explode( ',', $settings['include'] ),
+//				)
+//			);
+//		}
+//
+//		// Exclude
+//		if ( $settings['exclude'] ) {
+//			$_tax_query = array(
+//				array(
+//					'taxonomy' => 'category',
+//					'field'    => 'id',
+//					'terms'    => explode( ',', $settings['exclude'] ),
+//					'operator' => 'NOT IN'
+//				)
+//			);
+//		}
 
 		$paged = 1;
 		if ( get_query_var( 'paged' ) ) {
@@ -616,11 +624,19 @@ class BlogHero extends Widget_Base {
 			$paged = get_query_var( 'page' );
 		}
 
+		$post_count = -1;
+
+		if($layout == 'one' || $layout == 'two') {
+			$post_count = 4;
+		} else {
+			$post_count = 9;
+		}
+
 
 		$query = array(
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
-			'posts_per_page' => 4, // Total number of posts to fetch
+			'posts_per_page' => $post_count, // Total number of posts to fetch
 			'paged'          => $paged,
 			'tax_query'      => $_tax_query,
 			'orderby'        => $settings['orderby'],
@@ -628,50 +644,74 @@ class BlogHero extends Widget_Base {
 			'offset'         => $settings['offset'],
 		);
 
-		$gpt_query = new \WP_Query( $query );
+		// Include By Post ID
+		if ( $settings['include'] ) {
+			$query['post__in'] = explode( ',', $settings['include'] );
+			$query['orderby']  = 'post__in'; // Ensure the ordering is based on post__in
+			unset( $query['offset'] );
+		}
 
+		// Exclude
+		if ( $settings['exclude'] ) {
+			$query['post__not_in'] = explode( ',', $settings['exclude'] );
+		}
+
+		// Offset if no include
+		if ( empty( $settings['include'] ) && !empty( $settings['offset'] ) ) {
+			$query['offset'] = $settings['offset'];
+		}
+
+
+		$gpt_query = new \WP_Query( $query );
+		$colors = [ '#ff3385', '#ffaf25', '#0073ff', '#3dd800', '#00B3E6', '#ff002a', '#007bff' ];
 		?>
 
 		<div class="blog-post-items">
 			<div class="row g-4">
-			<?php
+				<?php
 				if ( $gpt_query->have_posts() ) :
+
+
 					$count = 0; // Counter to track posts
-					$colors = [
-						'#ff3385', '#ffaf25', '#0073ff', '#3dd800', '#00B3E6',
-					];
+					$color_count = 0;
 
-//					$colors_count     = count( $colors );
-//					$color_item_count = 0;
-//					$count_color            = $gpt_query->post_count;
+					while ( $gpt_query->have_posts() ) : $gpt_query->the_post();
+					if($layout == 'three') {
 
 
-					?>
+						$color = $colors[$color_count];
+						$color_count++; // Increment color index
+						if ($color_count >= count($colors)) {
+							$color_count = 0; // Reset the color index to loop through again
+						}
 
-					<?php while ( $gpt_query->have_posts() ) : $gpt_query->the_post(); ?>
+						$count ++;
 
-					<?php
-					// Include the template
-					require __DIR__ . '/templates/blog/blog-hero-' . $settings['layout'] . '.php';
 
-					?>
 
-					<?php
+					}
+						require  __DIR__ . '/templates/blog/blog-hero-'. $settings['layout'].'.php';
 
-					// Color counter
-					if ( $count >= count( $colors ) ) {
-						$count = 0;
+
+
+					if($layout == 'one' || $layout == 'two') {
+						$count ++;
+						if ( $count >= count( $colors ) ) {
+							$count = 0;
+						}
+
 					}
 
-					$count++;
 
+					endwhile;
 
-
-					?>
-				<?php endwhile; ?>
-
-					<?php
 					wp_reset_postdata();
+
+					if($layout == 'three') {
+						echo '</div>';
+						echo '</div>';
+					}
+
 				endif;
 				?>
 			</div>

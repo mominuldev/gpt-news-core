@@ -633,94 +633,101 @@ class Blog extends Widget_Base {
 
 		<div class="blog-post-items">
 			<div class="row g-4">
-			<?php
-			if ( $gpt_query->have_posts() ) :
-				$count = 0; // Counter to track posts
-				?>
-
-				<?php while ( $gpt_query->have_posts() ) : $gpt_query->the_post(); ?>
-
 				<?php
-				// Display first two posts in separate columns
-				if ( $count < 1 ) : ?>
-					<div class="col-lg-6 col-md-12">
-						<div class="blog-grid">
-							<div class="blog-grid__image">
-								<a href="<?php the_permalink(); ?>">
-									<?php
-									if ( has_post_thumbnail() ) {
-										the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
-									} else { ?>
-										<img src="https://via.placeholder.com/410x290" alt="Placeholder">
-									<?php } ?>
-								</a>
-							</div>
-							<div class="blog-grid__content">
-								<h3 class="blog-grid__title blog-title-hover">
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								</h3>
+				if ( $gpt_query->have_posts() ) :
+					$count = 0; // Counter to track posts
+					?>
 
-								<div class="blog-grid__excerpt">
-									<?php echo wp_trim_words( get_the_content(), $settings['content_length'], '...' ); ?>
+					<?php while ( $gpt_query->have_posts() ) : $gpt_query->the_post(); ?>
+
+					<?php
+					// Display first two posts in separate columns
+					if ( $count < 1 ) : ?>
+						<div class="col-lg-6 col-md-12">
+							<div class="blog-grid">
+								<div class="blog-grid__image">
+									<a href="<?php the_permalink(); ?>">
+										<?php
+										if ( has_post_thumbnail() ) {
+											the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
+										} else { ?>
+											<img src="https://via.placeholder.com/410x290" alt="Placeholder">
+										<?php } ?>
+									</a>
 								</div>
+								<div class="blog-grid__content">
+									<h3 class="blog-grid__title blog-title-hover">
+										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									</h3>
 
-								<span class="gpt-blog__meta-date">
-									<i class="ri-time-line"></i>
-									<span><?php echo get_the_date( 'M d, Y' ); ?></span>
-								</span>
+									<div class="blog-grid__excerpt">
+										<?php echo wp_trim_words( get_the_content(), $settings['content_length'], '...' ); ?>
+									</div>
+
+									<ul class="entry-meta">
+										<li>
+											<?php \Gpt_Theme_Helper::post_author_by(); ?>
+										</li>
+										<li>
+											<i class="ri-calendar-2-line"></i>
+											<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+										</li>
+									</ul><!-- .entry-meta -->
+								</div>
 							</div>
 						</div>
-					</div>
 
-				<?php
-				// Display the last two posts in the third column
-				elseif ( $count == 1 ) : ?>
-					<div class="col-lg-6 col-md-12">
+					<?php
+					// Display the last two posts in the third column
+					elseif ( $count == 1 ) : ?>
+						<div class="col-lg-6 col-md-12">
 						<div class="row">
-				<?php endif; ?>
+					<?php endif; ?>
 
-				<?php if ( $count >= 1 ) : ?>
-					<div class="col-sm-6">
-						<div class="blog-grid__small-list">
-							<div class="blog-grid__image">
-								<a href="<?php the_permalink(); ?>">
-									<?php
-									if ( has_post_thumbnail() ) {
-										the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
-									} else { ?>
-										<img src="https://via.placeholder.com/410x290" alt="Placeholder">
-									<?php } ?>
-								</a>
-							</div>
-							<div class="blog-grid__content">
-								<h3 class="blog-grid__title blog-title-hover">
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								</h3>
-								<div class="blog-grid__meta">
+					<?php if ( $count >= 1 ) : ?>
+						<div class="col-sm-6">
+							<div class="blog-grid__small-list">
+								<div class="blog-grid__image">
+									<a href="<?php the_permalink(); ?>">
+										<?php
+										if ( has_post_thumbnail() ) {
+											the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
+										} else { ?>
+											<img src="https://via.placeholder.com/410x290" alt="Placeholder">
+										<?php } ?>
+									</a>
+								</div>
+								<div class="blog-grid__content">
+									<h3 class="blog-grid__title blog-title-hover">
+										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									</h3>
+									<div class="blog-grid__meta">
 
-								<span class="gpt-blog__meta-date">
-									<i class="ri-time-line"></i>
-									<span><?php echo get_the_date( 'M d, Y' ); ?></span>
-								</span>
+										<ul class="entry-meta">
+											<li>
+												<i class="ri-calendar-2-line"></i>
+												<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+											</li>
+										</ul><!-- .entry-meta -->
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				<?php endif; ?>
+					<?php endif; ?>
 
-				<?php if ( $count == 4 ) : ?>
-					</div>
-					</div> <!-- Close third column after the second post -->
-				<?php endif; ?>
+					<?php if ( $count == 4 ) : ?>
+						</div>
+						</div> <!-- Close third column after the second post -->
+					<?php endif; ?>
 
-				<?php $count++; ?>
-			<?php endwhile; ?>
+					<?php $count ++; ?>
+				<?php endwhile; ?>
 
-				<?php
-				wp_reset_postdata();
-			endif;
-			?>
-		</div>
+					<?php
+					wp_reset_postdata();
+				endif;
+				?>
+			</div>
 		</div>
 
 

@@ -396,100 +396,100 @@ class BlogSidebar extends Widget_Base {
 	}
 
 	protected function render() {
-		$settings = $this->get_settings_for_display();
-		$post_cat = $settings['post_cat'];
+		$settings   = $this->get_settings_for_display();
+		$post_cat   = $settings['post_cat'];
 		$post_count = $settings['post_count'];
 		$query_type = $settings['blog_query_type']; // Get the query type
 
-		$this->add_render_attribute('wrapper', 'class', ['gpt-post-items blog-grid']);
+		$this->add_render_attribute( 'wrapper', 'class', [ 'gpt-post-items blog-grid' ] );
 
 		$_tax_query = array();
 
-		if ($post_cat) {
+		if ( $post_cat ) {
 			$_tax_query = array(
 				array(
 					'taxonomy' => 'category',
-					'field' => 'slug',
-					'terms' => $post_cat,
+					'field'    => 'slug',
+					'terms'    => $post_cat,
 				)
 			);
 		}
 
 		// Include
-		if ($settings['include']) {
+		if ( $settings['include'] ) {
 			$_tax_query = array(
 				array(
 					'taxonomy' => 'category',
-					'field' => 'slug',
-					'terms' => explode(',', $settings['include']),
+					'field'    => 'slug',
+					'terms'    => explode( ',', $settings['include'] ),
 				)
 			);
 		}
 
 		// Exclude
-		if ($settings['exclude']) {
+		if ( $settings['exclude'] ) {
 			$_tax_query = array(
 				array(
 					'taxonomy' => 'category',
-					'field' => 'slug',
-					'terms' => explode(',', $settings['exclude']),
+					'field'    => 'slug',
+					'terms'    => explode( ',', $settings['exclude'] ),
 					'operator' => 'NOT IN'
 				)
 			);
 		}
 
 		// Determine query arguments based on selected query type
-		switch ($query_type) {
+		switch ( $query_type ) {
 			case 'popular':
 				$query_args = array(
-					'post_type' => 'post',
-					'post_status' => 'publish',
+					'post_type'      => 'post',
+					'post_status'    => 'publish',
 					'posts_per_page' => $post_count,
-					'tax_query' => $_tax_query,
-					'meta_key' => 'post_views_count', // Assuming you have a meta key to track views
-					'orderby' => 'meta_value_num',    // Order by the number of views
-					'order' => 'DESC',
+					'tax_query'      => $_tax_query,
+					'meta_key'       => 'post_views_count', // Assuming you have a meta key to track views
+					'orderby'        => 'meta_value_num',    // Order by the number of views
+					'order'          => 'DESC',
 				);
 				break;
 
 			case 'random':
 				$query_args = array(
-					'post_type' => 'post',
-					'post_status' => 'publish',
+					'post_type'      => 'post',
+					'post_status'    => 'publish',
 					'posts_per_page' => $post_count,
-					'tax_query' => $_tax_query,
-					'orderby' => 'rand',  // Random order
+					'tax_query'      => $_tax_query,
+					'orderby'        => 'rand',  // Random order
 				);
 				break;
 
 			default: // 'recent' (default)
 				$query_args = array(
-					'post_type' => 'post',
-					'post_status' => 'publish',
+					'post_type'      => 'post',
+					'post_status'    => 'publish',
 					'posts_per_page' => $post_count,
-					'tax_query' => $_tax_query,
-					'orderby' => 'date',  // Order by recent posts
-					'order' => $settings['order'],
+					'tax_query'      => $_tax_query,
+					'orderby'        => 'date',  // Order by recent posts
+					'order'          => $settings['order'],
 				);
 				break;
 		}
 
 		// Offset
-		if ($settings['offset']) {
+		if ( $settings['offset'] ) {
 			$query_args['offset'] = $settings['offset'];
 		}
 
-		$gpt_query = new \WP_Query($query_args);
+		$gpt_query = new \WP_Query( $query_args );
 		?>
 		<div class="blog-post-items">
-			<?php if ($gpt_query->have_posts()) : ?>
-				<?php while ($gpt_query->have_posts()) : $gpt_query->the_post(); ?>
+			<?php if ( $gpt_query->have_posts() ) : ?>
+				<?php while ( $gpt_query->have_posts() ) : $gpt_query->the_post(); ?>
 					<div class="blog-list">
 						<div class="blog-list__image">
 							<a href="<?php the_permalink(); ?>">
 								<?php
-								if (has_post_thumbnail()) {
-									the_post_thumbnail('gpt-blog-list_300x185', ['alt' => get_the_title()]);
+								if ( has_post_thumbnail() ) {
+									the_post_thumbnail( 'gpt-blog-list_300x185', [ 'alt' => get_the_title() ] );
 								} else { ?>
 									<img src="https://via.placeholder.com/410x290" alt="Placeholder">
 								<?php } ?>
@@ -501,19 +501,20 @@ class BlogSidebar extends Widget_Base {
 							</h3>
 
 							<div class="meta-wrapper">
-								<?php if ($settings['show_date_meta']) : ?>
-									<span class="gpt-blog__meta-date">
-										<i class="ri-time-line"></i>
-										<span><?php echo get_the_date('M d, Y'); ?></span>
-									</span>
-								<?php endif; ?>
-
-								<?php if( $settings['show_view_count_meta']) : ?>
-									<span class="gpt-blog__meta-view-count">
-										<i class="ri-eye-line"></i>
-										<span><?php echo get_post_meta(get_the_ID(), 'post_views_count', true); ?></span>
-									</span>
-								<?php endif; ?>
+								<ul class="entry-meta">
+									<?php if ( $settings['show_date_meta'] ) : ?>
+										<li>
+											<i class="ri-calendar-2-line"></i>
+											<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+<!--										</li>-->
+									<?php endif; ?>
+									<?php if ( $settings['show_view_count_meta'] ) : ?>
+										<li>
+											<i class="ri-eye-line"></i>
+											<span><?php echo get_post_meta( get_the_ID(), 'post_views_count', true ); ?> Views</span>
+										</li>
+									<?php endif; ?>
+								</ul><!-- .entry-meta -->
 							</div>
 						</div>
 					</div>
