@@ -42,9 +42,9 @@ class ElementorWidgets {
 	public function __construct() {
 		add_action( 'plugins_loaded', [ $this, 'init_addons' ] );
 		add_action( 'elementor/elements/categories_registered', [ $this, 'register_categories' ] );
-		add_action( 'elementor/frontend/before_enqueue_scripts', [ $this, 'before_enqueue_scripts' ] );
+//		add_action( 'elementor/frontend/before_enqueue_scripts', [ $this, 'before_enqueue_scripts' ] );
 //		add_action( 'wp_enqueue_scripts', [ $this, 'before_enqueue_scripts' ] );
-		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'after_register_scripts' ] );
+//		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'after_register_scripts' ] );
 		add_action( 'elementor/icons_manager/additional_tabs', [ $this, 'remixicon_icons' ] );
 	}
 
@@ -122,20 +122,8 @@ class ElementorWidgets {
 	 * Enqueue scripts
 	 */
 	public function after_register_scripts() {
-		wp_register_script( 'countUp', GPT_SCRIPTS . '/countUp.min.js', array( 'jquery' ), GPT_CORE_VERSION, true );
-		wp_register_script( 'appear-js', GPT_SCRIPTS . '/jquery.appear.js', array( 'jquery' ), GPT_CORE_VERSION, true );
-		wp_register_script( 'countTo', GPT_SCRIPTS . '/jquery.countTo.js', array( 'jquery' ), GPT_CORE_VERSION, true );
+//		wp_register_script( 'countUp', GPT_SCRIPTS . '/countUp.min.js', array( 'jquery' ), GPT_CORE_VERSION, true );
 
-		wp_register_script( 'isotope', GPT_SCRIPTS . '/isotope.pkgd.min.js', array( 'jquery' ), GPT_CORE_VERSION, true );
-
-		wp_enqueue_script( 'gsap', GPT_SCRIPTS . '/gsap.min.js', array(), GPT_CORE_VERSION, true );
-		wp_enqueue_script( 'splittext', GPT_SCRIPTS . '/SplitText.min.js', array(), GPT_CORE_VERSION, true );
-		wp_enqueue_script( 'ScrollToPlugin', GPT_SCRIPTS . '/ScrollToPlugin.min.js', array(), GPT_CORE_VERSION, true );
-		wp_enqueue_script( 'ScrollTrigger', GPT_SCRIPTS . '/ScrollTrigger.min.js', array(), GPT_CORE_VERSION, true );
-		wp_enqueue_script( 'WebGlGradient', GPT_SCRIPTS . '/WebGlGradient.js', array(), GPT_CORE_VERSION, true );
-//		wp_enqueue_script( 'ScrollSmoother', GPT_SCRIPTS . '/ScrollSmoother.min.js', array(), GPT_CORE_VERSION, true );
-//		wp_enqueue_script( 'ukiyo', GPT_SCRIPTS . '/ukiyo.min.js', array(), GPT_CORE_VERSION, true );
-//		wp_enqueue_script( 'tilts', GPT_SCRIPTS . '/jquery.tilt.js', array('jquery'), GPT_CORE_VERSION, true );
 	}
 
 	/**
