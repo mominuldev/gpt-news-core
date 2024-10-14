@@ -1,7 +1,7 @@
 
 <?php if ($count == 1): ?>
 <div class="col-lg-8">
-	<div class="blog-hero-item blog-hero-item--large style-three height-auto">
+	<div class="blog-hero-item blog-hero-item--large style-three">
 		<div class="blog-hero-item__image">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail('large', ['class' => 'wp-post-image']); ?>
