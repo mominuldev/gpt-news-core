@@ -197,16 +197,16 @@ if (!class_exists('GPT_Core')) {
 			require_once __DIR__ . '/Includes/Helper.php';
 
 			// Aq Resizer
-			require_once __DIR__ . '/Includes/Aq_Resize.php';
+//			require_once __DIR__ . '/Includes/Aq_Resize.php';
 			// Image Sizes
-			require_once __DIR__ . '/Includes/ImageSize.php';
+//			require_once __DIR__ . '/Includes/ImageSize.php';
 
 			// Admin
 			new GpTheme\GptNewsCore\Admin();
-			new Footer();
-			new Project();
-			new Ajax();
-			AnimationEffect::init();
+//			new Footer();
+//			new Project();
+//			new Ajax();
+//			AnimationEffect::init();
 
 			// Elementor Widgets
 			GpTheme\GptNewsCore\ElementorWidgets::get_instance();
