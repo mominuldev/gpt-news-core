@@ -23,7 +23,7 @@ class Blog extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return esc_html__( 'GPT Blog Grid', 'gpt-news-core' );
+		return esc_html__( 'GPT Blog', 'gpt-news-core' );
 	}
 
 	/**
@@ -179,15 +179,23 @@ class Blog extends Widget_Base {
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'meta_text_typography',
-			'label'    => __( 'Date Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-post__item .gpt-post__date-meta .posted-on a, {{WRAPPER}} .gpt-post__date-meta a',
+			'label'    => __( 'Typography', 'gpt-news-core' ),
+			'selector' => '{{WRAPPER}} .blog-grid--two .entry-meta li, {{WRAPPER}} .blog-grid--two .entry-meta li a',
 		] );
 
 		$this->add_control( 'meta_text_color', [
-			'label'     => __( 'Date Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__item .gpt-post__date-meta .posted-on a, {{WRAPPER}} .gpt-post__date-meta a' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .blog-grid--two .entry-meta li, {{WRAPPER}} .blog-grid--two .entry-meta li a' => 'color: {{VALUE}}',
+			],
+		] );
+
+		$this->add_control( 'date_title_color_hover', [
+			'label'     => __( 'Hover Color', 'gpt-news-core' ),
+			'type'      => Controls_Manager::COLOR,
+			'selectors' => [
+				'{{WRAPPER}} .blog-grid--two .entry-meta li a:hover' => 'color: {{VALUE}}',
 			],
 		] );
 
@@ -195,88 +203,7 @@ class Blog extends Widget_Base {
 			'label'     => __( 'Icon Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__date-meta svg path' => 'stroke: {{VALUE}}',
-			],
-		] );
-
-
-		$this->add_control( 'date_title_color_hover', [
-			'label'     => __( 'Hover Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt__post-post-meta li a:hover, {{WRAPPER}} .gpt-post__date-meta a:hover' => 'color: {{VALUE}}',
-			],
-		] );
-
-		// Author name
-		$this->add_control(
-			'author_options',
-			[
-				'label'     => esc_html__( 'Author Style', 'gpt-news-core' ),
-				'type'      => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-		$this->add_group_control( Group_Control_Typography::get_type(), [
-			'name'      => 'author_text_typography',
-			'label'     => __( 'Author Typography', 'gpt-news-core' ),
-			'selectors' => [ '{{WRAPPER}} .gpt-post__author-avatar a', '{{WRAPPER}} .gpt-post__author-meta a' ],
-			'separator' => 'before'
-		] );
-
-		$this->add_control( 'author_text_color', [
-			'label'     => __( 'Author Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt-post__author-avatar a, {{WRAPPER}} .gpt-post__author-meta a' => 'color: {{VALUE}}',
-			],
-
-		] );
-
-		$this->add_control( 'author_color_hover', [
-			'label'     => __( 'Hover Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt-post__author-avatar a:hover, {{WRAPPER}} .gpt-post__author-meta a:hover' => 'color: {{VALUE}}',
-			],
-		] );
-
-		// Icon color
-		$this->add_control( 'author_icon_color', [
-			'label'     => __( 'Icon Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt-post__author-meta svg path' => 'stroke: {{VALUE}}',
-			],
-			'condition' => [
-				'layout' => 'list'
-			]
-		] );
-
-		$this->add_control(
-			'comments_and_view_options',
-			[
-				'label'     => esc_html__( 'Comments and View', 'gpt-news-core' ),
-				'type'      => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-		// Icon color
-		$this->add_control( 'icon_color', [
-			'label'     => __( 'Icon Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt-post__comments svg path, {{WRAPPER}} .gpt-post__views svg path' => 'stroke: {{VALUE}}',
-			],
-		] );
-
-		$this->add_control( 'comments_text_color', [
-			'label'     => __( 'Comments Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt-post__comments, {{WRAPPER}} .post_view_count' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .blog-grid--two .entry-meta li i' => 'color: {{VALUE}}',
 			],
 		] );
 
@@ -292,22 +219,25 @@ class Blog extends Widget_Base {
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'title_typography',
 			'label'    => __( 'Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-post__entry-title',
+			'selector' => '{{WRAPPER}} .blog-grid__title',
 		] );
 
 		$this->add_control( 'title_color', [
 			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__entry-title a' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .blog-grid__title a' => 'color: {{VALUE}}',
 			],
 		] );
 
+
+		// Hover Color
 		$this->add_control( 'title_hover_color', [
-			'label'     => __( 'Hover Color', 'gpt-news-core' ),
+			'label'     => __( 'Hover Background Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__entry-title a:hover' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .blog-grid .blog-grid__title a'       => 'background-image: linear-gradient(to bottom, {{VALUE}} 0%, {{VALUE}} 98%);',
+				'{{WRAPPER}} .blog-grid:hover .blog-grid__title a' => 'color: {{VALUE}}',
 			],
 		] );
 
@@ -315,7 +245,7 @@ class Blog extends Widget_Base {
 
 		// Content Style
 		//=====================
-		$this->start_controls_section( 'designation_section', [
+		$this->start_controls_section( 'content_section', [
 			'label' => __( 'Content', 'gpt-news-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
@@ -323,144 +253,18 @@ class Blog extends Widget_Base {
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'content_typography',
 			'label'    => __( 'Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-post__entry-content',
+			'selector' => '{{WRAPPER}} .blog-grid__excerpt',
 		] );
 
 		$this->add_control( 'content_color', [
 			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__entry-content' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .blog-grid__excerpt' => 'color: {{VALUE}}',
 			],
 		] );
 
 		$this->end_controls_section();
-
-		// Category Style
-		//=====================
-		$this->start_controls_section( 'category_section', [
-			'label'     => __( 'Category', 'gpt-news-core' ),
-			'tab'       => Controls_Manager::TAB_STYLE,
-			'condition' => [
-				'layout' => 'list'
-			]
-		] );
-
-		// Show Category
-		$this->add_control(
-			'category_show',
-			[
-				'label'        => __( 'Show Category', 'gpt-news-core' ),
-				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'gpt-news-core' ),
-				'label_off'    => __( 'Hide', 'gpt-news-core' ),
-				'return_value' => 'yes',
-				'default'      => 'yes',
-			]
-		);
-
-		$this->add_group_control( Group_Control_Typography::get_type(), [
-			'name'     => 'category_typography',
-			'label'    => __( 'Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt__blog-meta-category',
-		] );
-
-		// Padding
-
-		$this->add_responsive_control(
-			'category_padding',
-			[
-				'label'      => __( 'Padding', 'gpt-news-core' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors'  => [
-					'{{WRAPPER}} .gpt__blog-meta-category' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		// Margin
-		$this->add_responsive_control(
-			'category_margin',
-			[
-				'label'      => __( 'Margin', 'gpt-news-core' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors'  => [
-					'{{WRAPPER}} .gpt__blog-meta-category' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		// Border radius
-		$this->add_responsive_control(
-			'category_border_radius',
-			[
-				'label'      => __( 'Border Radius', 'gpt-news-core' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors'  => [
-					'{{WRAPPER}} .gpt__blog-meta-category' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		// Normal and Hover Color
-		$this->start_controls_tabs( 'category_tabs' );
-
-		$this->start_controls_tab(
-			'style_normal_tab',
-			[
-				'label' => esc_html__( 'Normal', 'textdomain' ),
-			]
-		);
-
-		$this->add_control( 'category_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt__blog-meta-category' => 'color: {{VALUE}}',
-			],
-		] );
-
-		$this->add_control( 'category_bg_color', [
-			'label'     => __( 'Background Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt__blog-meta-category' => 'background-color: {{VALUE}}',
-			],
-		] );
-
-		$this->end_controls_tab();
-
-
-		$this->start_controls_tab(
-			'style_hover_tab',
-			[
-				'label' => esc_html__( 'Hover', 'textdomain' ),
-			]
-		);
-
-		$this->add_control( 'category_hover_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt__blog-meta-category:hover' => 'color: {{VALUE}}',
-			],
-		] );
-
-		$this->add_control( 'category_hover_bg_color', [
-			'label'     => __( 'Background Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt__blog-meta-category:hover' => 'background-color: {{VALUE}}',
-			],
-		] );
-
-		$this->end_controls_tab();
-		$this->end_controls_tabs();
-		$this->end_controls_section();
-
 
 		// Style Slider Control Section
 		//================================
@@ -473,24 +277,10 @@ class Blog extends Widget_Base {
 			'label'     => __( 'Background Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__item, {{WRAPPER}} .gpt__post-list' => 'background: {{VALUE}}',
+				'{{WRAPPER}} .blog-grid--two' => 'background: {{VALUE}}',
 			],
 		] );
 
-		// Overlay Color
-		$this->add_control(
-			'blog_overlay_color',
-			[
-				'label'     => __( 'Overlay Color', 'gpt-news-core' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .gpt__post-list .gpt__feature-image:after' => 'background-color: {{VALUE}}',
-				],
-				'condition' => [
-					'layout' => 'list'
-				]
-			]
-		);
 
 		$this->add_responsive_control(
 			'blog_padding',
@@ -499,7 +289,7 @@ class Blog extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .gpt-post__blog-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .blog-grid__content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -512,7 +302,7 @@ class Blog extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .gpt-post__item, {{WRAPPER}} .gpt__post-list' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .gpt-grid--two' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -523,7 +313,7 @@ class Blog extends Widget_Base {
 			[
 				'name'     => 'blog_border',
 				'label'    => __( 'Border', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-post__item',
+				'selector' => '{{WRAPPER}} .blog-grid--two',
 			]
 		);
 
@@ -534,7 +324,7 @@ class Blog extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}}  .gpt-post__item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}}  .blog-grid--two' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -544,18 +334,9 @@ class Blog extends Widget_Base {
 			[
 				'name'     => 'blog_shadow_hover',
 				'label'    => __( 'Hover Box Shadow', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-post__item, {{WRAPPER}} .gpt__post-list',
+				'selector' => '{{WRAPPER}} .blog-grid--two',
 			]
 		);
-
-		// Blog Footer Border Color
-		$this->add_control( 'blog_footer_border_color', [
-			'label'     => __( 'Footer Border Color', 'gpt-news-core' ),
-			'type'      => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .gpt-post__footer' => 'border-top-color: {{VALUE}}',
-			],
-		] );
 
 		$this->end_controls_section();
 
@@ -566,6 +347,7 @@ class Blog extends Widget_Base {
 		$settings   = $this->get_settings_for_display();
 		$post_cat   = $settings['post_cat'];
 		$post_count = $settings['post_count'];
+		$show_meta  = $settings['meta_show'];
 
 
 		$this->add_render_attribute( 'wrapper', 'class', [
@@ -703,12 +485,14 @@ class Blog extends Widget_Base {
 									</h3>
 									<div class="blog-grid__meta">
 
-										<ul class="entry-meta">
-											<li>
-												<i class="ri-calendar-2-line"></i>
-												<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
-											</li>
-										</ul><!-- .entry-meta -->
+										<?php if ( $show_meta == 'yes' ) : ?>
+											<ul class="entry-meta">
+												<li>
+													<i class="ri-calendar-2-line"></i>
+													<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+												</li>
+											</ul><!-- .entry-meta -->
+										<?php endif; ?>
 									</div>
 								</div>
 							</div>

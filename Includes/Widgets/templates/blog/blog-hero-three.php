@@ -14,15 +14,17 @@
 			<h1 class="blog-hero-item__title blog-title-hover">
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h1>
-			<ul class="entry-meta">
-				<li>
-					<?php Gpt_Theme_Helper::post_author_by(); ?>
-				</li>
-				<li>
-					<i class="ri-calendar-2-line"></i>
-					<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
-				</li>
-			</ul><!-- .entry-meta -->
+			<?php if ( $meta_show == 'yes' ): ?>
+				<ul class="entry-meta">
+					<li>
+						<?php Gpt_Theme_Helper::post_author_by(); ?>
+					</li>
+					<li>
+						<i class="ri-calendar-2-line"></i>
+						<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+					</li>
+				</ul><!-- .entry-meta -->
+			<?php endif; ?>
 		</div>
 	</div>
 
@@ -44,15 +46,17 @@
 					<h2 class="blog-hero-item-grid__title blog-title-hover">
 						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 					</h2>
-					<ul class="entry-meta">
-						<li>
-							<?php Gpt_Theme_Helper::post_author_by(); ?>
-						</li>
-						<li>
-							<i class="ri-calendar-2-line"></i>
-							<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
-						</li>
-					</ul><!-- .entry-meta -->
+					<?php if ( $meta_show == 'yes' ) : ?>
+						<ul class="entry-meta">
+							<li>
+								<?php Gpt_Theme_Helper::post_author_by(); ?>
+							</li>
+							<li>
+								<i class="ri-calendar-2-line"></i>
+								<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+							</li>
+						</ul><!-- .entry-meta -->
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

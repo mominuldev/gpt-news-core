@@ -8,14 +8,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-class BlogMetro extends Widget_Base {
+class BlogGrid extends Widget_Base {
 
 	/**
 	 * Get widget name.
 	 * @since 1.0.0
 	 */
 	public function get_name() {
-		return 'gpt-gpt-blog-metro-list';
+		return 'gpt-blog';
 	}
 
 	/**
@@ -23,7 +23,7 @@ class BlogMetro extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return esc_html__( 'GPT Blog Metro', 'gpt-news-core' );
+		return esc_html__( 'GPT Blog Grid', 'gpt-news-core' );
 	}
 
 	/**
@@ -47,7 +47,7 @@ class BlogMetro extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'blog', 'metro', 'gpt' ];
+		return [ 'blog', 'grid', 'post' ];
 	}
 
 	/**
@@ -58,25 +58,25 @@ class BlogMetro extends Widget_Base {
 		// Testimonial
 		//=========================
 		$this->start_controls_section( 'section_tab_style', [
-			'label' => esc_html__( 'Blog Metro', 'gpt-news-core' ),
+			'label' => esc_html__( 'Blog Grid', 'gpt-news-core' ),
 		] );
 
 		// Column
-//		$this->add_control( 'column', [
-//			'label'   => esc_html__( 'Column', 'gpt-news-core' ),
-//			'type'    => Controls_Manager::SELECT,
-//			'default' => '4',
-//			'options' => [
-//				'6' => esc_html__( '2 Column', 'gpt-news-core' ),
-//				'4' => esc_html__( '3 Column', 'gpt-news-core' ),
-//				'3' => esc_html__( '4 Column', 'gpt-news-core' ),
-//			]
-//		] );
+		$this->add_control( 'column', [
+			'label'   => esc_html__( 'Column', 'gpt-news-core' ),
+			'type'    => Controls_Manager::SELECT,
+			'default' => '4',
+			'options' => [
+				'6' => esc_html__( '2 Column', 'gpt-news-core' ),
+				'4' => esc_html__( '3 Column', 'gpt-news-core' ),
+				'3' => esc_html__( '4 Column', 'gpt-news-core' ),
+			]
+		] );
 
 		$this->add_control( 'post_count', [
 			'label'   => esc_html__( 'Post count', 'gpt-news-core' ),
 			'type'    => Controls_Manager::NUMBER,
-			'default' => esc_html__( '5', 'gpt-news-core' ),
+			'default' => esc_html__( '3', 'gpt-news-core' ),
 
 		] );
 
@@ -347,11 +347,11 @@ class BlogMetro extends Widget_Base {
 		$settings   = $this->get_settings_for_display();
 		$post_cat   = $settings['post_cat'];
 		$post_count = $settings['post_count'];
-		$meta_show  = $settings['meta_show'];
+		$meta_show = $settings['meta_show'];
 
 
 		$this->add_render_attribute( 'wrapper', 'class', [
-			'gpt-post-items gpt-blog-metro',
+			'gpt-post-items blog-grid',
 		] );
 
 
@@ -402,7 +402,7 @@ class BlogMetro extends Widget_Base {
 		$query = array(
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
-			'posts_per_page' => 3,
+			'posts_per_page' => $post_count, // Total number of posts to fetch
 			'paged'          => $paged,
 			'tax_query'      => $_tax_query,
 			'orderby'        => $settings['orderby'],
@@ -414,99 +414,58 @@ class BlogMetro extends Widget_Base {
 		?>
 
 		<div class="blog-post-items">
+			<div class="row g-4">
+				<?php if ( $gpt_query->have_posts() ) : ?>
 
-			<?php
-			if ( $gpt_query->have_posts() ) :
-				$count = 0; // Counter to track posts
-				?>
-
-				<?php while ( $gpt_query->have_posts() ) : $gpt_query->the_post(); ?>
-
-				<?php
-				// Display first two posts in separate columns
-				if ( $count < 1 ) : ?>
-					<div class="gpt-blog-metro">
-						<div class="gpt-blog-metro__image">
-							<a href="<?php the_permalink(); ?>">
-								<?php
-								if ( has_post_thumbnail() ) {
-									the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
-								} else { ?>
-									<img src="https://via.placeholder.com/410x290" alt="Placeholder">
-								<?php } ?>
-							</a>
-						</div>
-						<div class="gpt-blog-metro__content">
-							<h3 class="gpt-blog-metro__title blog-title-hover">
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</h3>
-
-							<?php if ( $meta_show == 'yes' ) : ?>
-								<ul class="entry-meta">
-									<li>
-										<?php \Gpt_Theme_Helper::post_author_by(); ?>
-									</li>
-									<li>
-										<i class="ri-calendar-2-line"></i>
-										<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
-									</li>
-								</ul><!-- .entry-meta -->
-							<?php endif; ?>
-						</div>
-					</div>
-				<?php
-				// Display the last two posts in the third column
-				elseif ( $count == 1 ) : ?>
-					<div class="gpt-blog-metro-wrapper">
-					<div class="row">
-				<?php endif; ?>
-
-				<?php if ( $count >= 1 ) : ?>
-					<div class="col-sm-6">
-						<div class="gpt-blog-metro__small">
-							<div class="gpt-blog-metro__image">
-								<a href="<?php the_permalink(); ?>">
-									<?php
-									if ( has_post_thumbnail() ) {
-										the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
-									} else { ?>
-										<img src="https://via.placeholder.com/410x290" alt="Placeholder">
+					<?php while ( $gpt_query->have_posts() ) : $gpt_query->the_post(); ?>
+						<div class="col-lg-<?php echo $settings['column'] ?> col-md-4">
+							<div class="blog-grid blog-grid--two">
+								<div class="blog-grid__image">
+									<a href="<?php the_permalink(); ?>">
+										<?php
+										if ( has_post_thumbnail() ) {
+											the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
+										} else { ?>
+											<img src="https://via.placeholder.com/410x290" alt="Placeholder">
+										<?php } ?>
+									</a>
+								</div>
+								<div class="blog-grid__content">
+									<?php if( $meta_show == 'yes' ) { ?>
+										<ul class="entry-meta">
+											<li>
+												<?php \Gpt_Theme_Helper::post_author_by(); ?>
+											</li>
+											<li>
+												<i class="ri-calendar-2-line"></i>
+												<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+											</li>
+										</ul><!-- .entry-meta -->
 									<?php } ?>
-								</a>
-							</div>
-							<div class="gpt-blog-metro__content">
-								<h3 class="gpt-blog-metro__title blog-title-hover">
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								</h3>
 
-								<?php if ( $meta_show == 'yes' ) : ?>
-									<ul class="entry-meta">
-										<li>
-											<i class="ri-calendar-2-line"></i>
-											<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
-										</li>
-									</ul><!-- .entry-meta -->
-								<?php endif; ?>
 
+									<h3 class="blog-grid__title blog-title-hover">
+										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									</h3>
+
+									<div class="blog-grid__excerpt">
+										<?php echo wp_trim_words( get_the_content(), $settings['content_length'], '...' ); ?>
+									</div>
+
+
+									<?php if ( $settings['readmore'] ) { ?>
+										<a href="<?php the_permalink(); ?>" class="read-more"><?php echo $settings['readmore']; ?> <i class="ri-arrow-right-line"></i> </a>
+									<?php } ?>
+								</div>
 							</div>
 						</div>
-					</div>
 
-				<?php endif; ?>
 
-				<?php if ( $count == 2 ) : ?>
-					</div>
-					</div> <!-- Close third column after the second post -->
-				<?php endif; ?>
-
-				<?php $count++; ?>
-			<?php endwhile; ?>
-
-				<?php
-				wp_reset_postdata();
-			endif;
-			?>
-
+				<?php endwhile;
+					wp_reset_postdata();
+				endif;
+				?>
+			</div>
 		</div>
 
 
