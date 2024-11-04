@@ -13,6 +13,7 @@ use GpTheme\GptNewsCore\Admin\PostType\Footer;
 use GpTheme\GptNewsCore\Admin\PostType\Project;
 use GpTheme\GptNewsCore\AnimationEffect;
 use GpTheme\GptNewsCore\Ajax;
+use GpTheme\GptNewsCore\ElementorWidgets;
 
 if (!defined('ABSPATH'))
 	die('-1');
@@ -189,27 +190,12 @@ if (!class_exists('GPT_Core')) {
 		 */
 		public function core_includes()
 		{
-			// Extra
-			require_once __DIR__ . '/Includes/mailchimp.php';
-
 			// Elementor custom field icons
 			require_once __DIR__ . '/Includes/Icons/icons.php';
 			require_once __DIR__ . '/Includes/Helper.php';
 
-			// Aq Resizer
-//			require_once __DIR__ . '/Includes/Aq_Resize.php';
-			// Image Sizes
-//			require_once __DIR__ . '/Includes/ImageSize.php';
-
-			// Admin
-			new GpTheme\GptNewsCore\Admin();
-//			new Footer();
-//			new Project();
-//			new Ajax();
-//			AnimationEffect::init();
-
 			// Elementor Widgets
-			GpTheme\GptNewsCore\ElementorWidgets::get_instance();
+			ElementorWidgets::get_instance();
 
 		}
 
@@ -276,7 +262,6 @@ if (!class_exists('GPT_Core')) {
 			add_action('elementor/frontend/after_enqueue_styles', [$this, 'enqueue_widget_styles']);
 			add_action('elementor/editor/before_enqueue_scripts', [$this, 'enqueue_widget_styles']);
 			add_action('wp_enqueue_scripts', [$this, 'mpt_enqueue_style']);
-			add_action('wp_enqueue_scripts', [$this, 'mpt_dequeue'], 100);
 			add_action('admin_enqueue_scripts', [$this, 'mpt_admin_enqueue_scripts']);
 		}
 
@@ -346,8 +331,6 @@ if (!class_exists('GPT_Core')) {
 
 		public function mpt_enqueue_style()
 		{
-//			wp_enqueue_style('simpleline', plugins_url('assets/vendors/simple-line-icons//css/simple-line-icons.css', __FILE__));
-//			wp_enqueue_style('mpt-core-fontawesome', plugins_url('assets/vendors/fontawesome/css/all.min.css', __FILE__));
 			wp_enqueue_style('mpt-core-css', plugins_url('assets/css/app.css', __FILE__));
 		}
 
@@ -372,25 +355,6 @@ if (!class_exists('GPT_Core')) {
 		public function mpt_admin_enqueue_scripts()
 		{
 			wp_enqueue_style('admin', plugins_url('assets/css/admin.css', __FILE__));
-		}
-
-
-		/**
-		 * Dequeue the Elementor Animation CSS.
-		 *
-		 * Hooked to the wp_print_scripts action, with a late priority (100),
-		 * so that it is after the script was enqueued.
-		 */
-
-		function mpt_dequeue()
-		{
-			add_action('wp_footer', [$this, 'remove_elementor_animations_css']);
-		}
-
-		function remove_elementor_animations_css()
-		{
-			wp_dequeue_style('e-animations');
-			wp_deregister_style('e-animations');
 		}
 
 	}
