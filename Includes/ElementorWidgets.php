@@ -8,11 +8,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'GOTOXELEMENTOR_CORE_URL', plugins_url( '/', __FILE__ ) );
-define( 'GOTOXELEMENTOR_CORE_PATH', plugin_dir_path( __FILE__ ) );
-define( 'GOTOXELEMENTOR_CORE_FILE', __FILE__ );
-
-
 class ElementorWidgets {
 	// Properties
 
