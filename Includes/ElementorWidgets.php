@@ -40,7 +40,7 @@ class ElementorWidgets {
 //		add_action( 'elementor/frontend/before_enqueue_scripts', [ $this, 'before_enqueue_scripts' ] );
 //		add_action( 'wp_enqueue_scripts', [ $this, 'before_enqueue_scripts' ] );
 //		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'after_register_scripts' ] );
-		add_action( 'elementor/icons_manager/additional_tabs', [ $this, 'remixicon_icons' ] );
+		add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'remix_icons' ] );
 	}
 
 	/**
@@ -133,19 +133,19 @@ class ElementorWidgets {
 		), GPT_CORE_VERSION, true );
 	}
 
-	public function remixicon_icons( $tabs ) {
+	public function remix_icons( $tabs ) {
 
-		$tabs['gpt-font-remix'] = [
-			'name'          => 'gpt-font-remix',
-			'label'         => __( 'Remix Icon', 'gpt-news-core' ),
-			'url'           => GPT_CORE_ASSETS_URL . '/css/remixicon.css',
-			'enqueue'       => [GPT_CORE_ASSETS_URL . '/css/remixicon.css'],
-			'prefix'        => '', // Prefix in your icon font
+		$tabs['remix-icons'] = [
+			'name'      => 'remix-icons',
+			'label'     => __( 'Remix Icon', 'mpt-core' ),
+			'url'       => GPT_CORE_ASSETS_URL . 'css/remixicon.css',
+			'enqueue'   => [ GPT_CORE_ASSETS_URL . 'css/remixicon.css' ],
+			'prefix' => 'ri-',
 			'displayPrefix' => '',
-			'labelIcon'     => 'ri-asterisk', // One of the icons to display as a label
-			'ver'           => '1.0.0',
-			'fetchJson'     => GPT_CORE_ASSETS_URL . '/js/icons.json', // Optional, for icon names
-			'native'        => false,
+			'labelIcon' => 'ri-asterisk',
+			'ver'       => '1.0.0',
+			'fetchJson' => GPT_CORE_ASSETS_URL . 'css/remixicons.js',
+			'native'    => false,
 		];
 
 		return $tabs;

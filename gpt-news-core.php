@@ -32,7 +32,7 @@ define('GPT_CORE_VERSION', '1.0.0');
 
 define('GPT_PLUGIN_URL', plugins_url() . '/mpt-core/' );
 define('GPT_CORE_PATH', plugin_dir_path(__FILE__));
-define('GPT_CORE_ASSETS_URL', plugins_url() . '/mpt-core/assets/' );
+define('GPT_CORE_ASSETS_URL', plugins_url() . '/gpt-news-core/assets/' );
 define('GPT_CORE_DIR', plugin_dir_path(__FILE__));
 define('GPT_SCRIPTS', GPT_PLUGIN_URL . 'assets/js');
 

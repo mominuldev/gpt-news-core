@@ -93,11 +93,11 @@ class Heading extends Widget_Base {
 		return [ 'heading', 'title', 'sub-title' ];
 	}
 
-	public function get_script_depends() {
-		wp_enqueue_script( 'heading', GPT_PLUGIN_URL . 'assets/js/heading.js', [ 'elementor-frontend' ], '1.0.0', true );
-
-		return [ 'heading' ];
-	}
+//	public function get_script_depends() {
+//		wp_enqueue_script( 'heading', GPT_PLUGIN_URL . 'assets/js/heading.js', [ 'elementor-frontend' ], '1.0.0', true );
+//
+//		return [ 'heading' ];
+//	}
 
 	/**
 	 * Register Heading widget controls.

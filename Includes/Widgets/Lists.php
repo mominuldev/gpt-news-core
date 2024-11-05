@@ -79,7 +79,7 @@ class Lists extends Widget_Base {
 			'label_on'     => __( 'Yes', 'gpt-news-core' ),
 			'label_off'    => __( 'No', 'gpt-news-core' ),
 			'return_value' => 'yes',
-			'default'      => 'yes',
+			'default'      => 'no',
 		] );
 
 		$repeater = new Repeater();
@@ -91,37 +91,12 @@ class Lists extends Widget_Base {
 			'label_block' => true,
 		] );
 
-		$repeater->add_control( 'icon_type', [
-			'label'   => __( 'Icon Type', 'gpt-news-core' ),
-			'type'    => Controls_Manager::SELECT,
-			'default' => 'fontawesome',
-			'options' => [
-				'fontawesome' => __( 'Font Awesome', 'gpt-news-core' ),
-				'feather'     => __( 'Feather', 'gpt-news-core' ),
-			],
-		] );
-
-		$repeater->add_control( 'icon_feather', [
-			'label'       => __( 'Icon', 'gpt-news-core' ),
-			'type'        => Controls_Manager::ICON,
-			'options'     => gpt_feather_icon(),
-			'include'     => gpt_include_feather_icons(),
-			'default'     => 'feather-check',
-			'condition'   => [
-				'icon_type' => 'feather'
-			],
-			'label_block' => true,
-		] );
 
 		$repeater->add_control( 'icon', [
-			'label'     => __( 'Icon', 'gpt-news-core' ),
-			'type'      => Controls_Manager::ICONS,
-			'default'   => [
-				'value'   => 'fas fa-check',
-				'library' => 'solid',
-			],
-			'condition' => [
-				'icon_type' => 'fontawesome'
+			'label'   => __( 'Icon', 'gpt-news-core' ),
+			'type'    => Controls_Manager::ICONS,
+			'default' => [
+				'value' => 'ri-arrow-right-double-fill',
 			]
 		] );
 
@@ -140,19 +115,19 @@ class Lists extends Widget_Base {
 				[
 					'list_title' => __( 'List One', 'gpt-news-core' ),
 					'icon'       => [
-						'value' => 'fas fa-check'
+						'value' => 'ri-arrow-right-double-fill'
 					]
 				],
 				[
 					'list_title' => __( 'List Two', 'gpt-news-core' ),
 					'icon'       => [
-						'value' => 'fas fa-check'
+						'value' => 'ri-arrow-right-double-fill'
 					]
 				],
 				[
 					'list_title' => __( 'List Three', 'gpt-news-core' ),
 					'icon'       => [
-						'value' => 'fas fa-check'
+						'value' => 'ri-arrow-right-double-fill'
 					]
 				],
 			],
@@ -216,27 +191,27 @@ class Lists extends Widget_Base {
 		] );
 
 		$this->add_control( 'icon_color', [
-			'label'     => __( 'Color', 'elementor' ),
+			'label'     => __( 'Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '',
 			'selectors' => [
-				'{{WRAPPER}} .gpt__list li .gpt__list-icon i'   => 'color: {{VALUE}};',
-				'{{WRAPPER}} .gpt__list li svg' => 'fill: {{VALUE}};',
+				'{{WRAPPER}} .gpt__list li .gpt__list-icon' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .gpt__list li svg'               => 'fill: {{VALUE}};',
 			],
 		] );
 
 		$this->add_control( 'icon_color_hover', [
-			'label'     => __( 'Hover', 'elementor' ),
+			'label'     => __( 'Hover', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '',
 			'selectors' => [
-				'{{WRAPPER}} .gpt__list li:hover .gpt__list-icon i'   => 'color: {{VALUE}};',
-				'{{WRAPPER}} .gpt__list li:hover svg' => 'fill: {{VALUE}};',
+				'{{WRAPPER}} .gpt__list li:hover .gpt__list-icon' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .gpt__list li:hover svg'               => 'fill: {{VALUE}};',
 			],
 		] );
 
 		$this->add_control( 'icon_bg_color', [
-			'label'     => __( 'BG Color', 'elementor' ),
+			'label'     => __( 'BG Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '',
 			'selectors' => [
@@ -245,7 +220,7 @@ class Lists extends Widget_Base {
 		] );
 
 		$this->add_control( 'icon_bg_hover_color', [
-			'label'     => __( 'BG Color', 'elementor' ),
+			'label'     => __( 'BG Color', 'gpt-news-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '',
 			'selectors' => [
@@ -253,11 +228,11 @@ class Lists extends Widget_Base {
 			],
 		] );
 
-		$this->add_responsive_control( 'uld_icon_size', [
-			'label'     => __( 'Size', 'elementor' ),
+		$this->add_responsive_control( 'list_icon_size', [
+			'label'     => __( 'Size', 'gpt-news-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'default'   => [
-				'size' => 14,
+				'size' => 16,
 			],
 			'range'     => [
 				'px' => [
@@ -265,7 +240,7 @@ class Lists extends Widget_Base {
 				],
 			],
 			'selectors' => [
-				'{{WRAPPER}} .gpt__list li i'   => 'font-size: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .gpt__list li .gpt__list-icon'   => 'font-size: {{SIZE}}{{UNIT}};',
 				'{{WRAPPER}} .gpt__list li svg' => 'width: {{SIZE}}{{UNIT}};',
 			],
 		] );
@@ -275,7 +250,7 @@ class Lists extends Widget_Base {
 			'label'     => __( 'Space', 'gpt-news-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'default'   => [
-				'size' => 10,
+				'size' => 5,
 			],
 			'range'     => [
 				'px' => [
@@ -302,7 +277,6 @@ class Lists extends Widget_Base {
 				'{{WRAPPER}} .gpt__list li .gpt__list-icon' => 'padding: {{SIZE}}{{UNIT}};',
 			],
 		] );
-
 
 
 		$this->end_controls_section();
@@ -337,7 +311,7 @@ class Lists extends Widget_Base {
 		] );
 
 		$this->add_control( 'text_indent', [
-			'label'     => __( 'Text Indent', 'elementor' ),
+			'label'     => __( 'Text Indent', 'gpt-news-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -378,24 +352,19 @@ class Lists extends Widget_Base {
 				?>
 				<li <?php echo $this->get_render_attribute_string( 'list_item' ); ?>>
 					<?php if ( ! empty( $item['link']['url'] ) ) : ?>
-					<a href="<?php echo esc_attr( $item['link']['url'] ); ?>" <?php echo $target, $nofollow ?>>
-						<?php endif; ?>
+						<a href="<?php echo esc_attr( $item['link']['url'] ); ?>" <?php echo $target, $nofollow ?>>
+					<?php endif; ?>
 
-						<?php if ( 'yes' === $settings['icon_show'] ) :
-							if ( $item['icon_type'] == 'fontawesome' ) { ?>
-								<span class="gpt__list-icon">
-                                    <?php Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                                </span>
-							<?php } else { ?>
-								<span class="gpt__list-icon">
-                                    <i class="<?php echo esc_attr( $item['icon_feather'] ) ?>"></i>
-                                </span>
-							<?php }
-						endif; ?>
+						<?php if ( 'yes' === $settings['icon_show'] ) : ?>
+							<span class="gpt__list-icon">
+								<?php Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+							</span>
+						<?php endif; ?>
 						<span class="list-text"><?php echo $item['list_title']; ?></span>
-						<?php if ( ! empty( $item['link']['url'] ) ) : ?>
-					</a>
-				<?php endif; ?>
+					<?php if ( ! empty( $item['link']['url'] ) ) : ?>
+							<i class="ri-external-link-fill"></i>
+						</a>
+					<?php endif; ?>
 				</li>
 			<?php } ?>
 		</ul>

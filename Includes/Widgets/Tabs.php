@@ -409,7 +409,7 @@ class Tabs extends Widget_Base {
 
 	protected function render() {
 
-		$settings    = $this->get_settings();
+		$settings    = $this->get_settings_for_display();
 		$advance_tab = isset( $settings['advance_tab'] ) ? $settings['advance_tab'] : '';
 
 		// Tab Nav render attributes
