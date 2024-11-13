@@ -133,7 +133,6 @@ class Heading extends Widget_Base {
 			'type'        => Controls_Manager::TEXT,
 			'label_block' => true,
 			'placeholder' => esc_html__( 'Sub Title', 'gpt-news-core' ),
-			'default'     => 'Sub Title',
 			'separator'   => 'none',
 		] );
 
