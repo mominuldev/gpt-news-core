@@ -70,6 +70,7 @@ class BlogHero extends Widget_Base {
 				'one' => esc_html__( 'One', 'gpt-news-core' ),
 				'two' => esc_html__( 'Two', 'gpt-news-core' ),
 				'three' => esc_html__( 'Three', 'gpt-news-core' ),
+				'four' => esc_html__( 'Four', 'gpt-news-core' ),
 			]
 		] );
 
@@ -375,29 +376,6 @@ class BlogHero extends Widget_Base {
 			);
 		}
 
-//		// Include By Post ID
-//		if ( $settings['include'] ) {
-//			$_tax_query = array(
-//				array(
-//					'taxonomy' => 'category',
-//					'field'    => 'id',
-//					'terms'    => explode( ',', $settings['include'] ),
-//				)
-//			);
-//		}
-//
-//		// Exclude
-//		if ( $settings['exclude'] ) {
-//			$_tax_query = array(
-//				array(
-//					'taxonomy' => 'category',
-//					'field'    => 'id',
-//					'terms'    => explode( ',', $settings['exclude'] ),
-//					'operator' => 'NOT IN'
-//				)
-//			);
-//		}
-
 		$paged = 1;
 		if ( get_query_var( 'paged' ) ) {
 			$paged = get_query_var( 'paged' );
@@ -410,6 +388,8 @@ class BlogHero extends Widget_Base {
 
 		if($layout == 'one' || $layout == 'two') {
 			$post_count = 4;
+		} elseif($layout == 'four') {
+			$post_count = 5;
 		} else {
 			$post_count = 9;
 		}
@@ -452,15 +432,12 @@ class BlogHero extends Widget_Base {
 			<div class="row g-4">
 				<?php
 				if ( $gpt_query->have_posts() ) :
-
-
 					$count = 0; // Counter to track posts
 					$color_count = 0;
 
 					while ( $gpt_query->have_posts() ) : $gpt_query->the_post();
+
 					if($layout == 'three') {
-
-
 						$color = $colors[$color_count];
 						$color_count++; // Increment color index
 						if ($color_count >= count($colors)) {
@@ -468,28 +445,27 @@ class BlogHero extends Widget_Base {
 						}
 
 						$count ++;
-
-
-
+					} elseif ($layout == 'four') {
+						$color = $colors[$color_count];
+						$color_count++; // Increment color index
+						if ($color_count >= count($colors)) {
+							$color_count = 0; // Reset the color index to loop through again
+						}
 					}
-						require  __DIR__ . '/templates/blog/blog-hero-'. $settings['layout'].'.php';
 
+					require  __DIR__ . '/templates/blog/blog-hero-'. $settings['layout'].'.php';
 
-
-					if($layout == 'one' || $layout == 'two') {
+					if($layout == 'one' || $layout == 'two' || $layout == 'four' ) {
 						$count ++;
 						if ( $count >= count( $colors ) ) {
 							$count = 0;
 						}
-
 					}
 
-
 					endwhile;
-
 					wp_reset_postdata();
 
-					if($layout == 'three') {
+					if($layout == 'three' ) {
 						echo '</div>';
 						echo '</div>';
 					}
