@@ -61,6 +61,17 @@ class Blog extends Widget_Base {
 			'label' => esc_html__( 'Blog Grid', 'gpt-news-core' ),
 		] );
 
+		// Layout
+		$this->add_control( 'layout', [
+			'label'   => esc_html__( 'Layout', 'gpt-news-core' ),
+			'type'    => Controls_Manager::SELECT,
+			'default' => 'one',
+			'options' => [
+				'one'   => esc_html__( 'One', 'gpt-news-core' ),
+				'two' => esc_html__( 'Two', 'gpt-news-core' ),
+			]
+		] );
+
 		// Column
 //		$this->add_control( 'column', [
 //			'label'   => esc_html__( 'Column', 'gpt-news-core' ),
@@ -80,6 +91,16 @@ class Blog extends Widget_Base {
 
 		] );
 
+		// Show Excerpt
+		$this->add_control( 'show_excerpt', [
+			'label'        => esc_html__( 'Show Excerpt', 'gpt-news-core' ),
+			'type'         => Controls_Manager::SWITCHER,
+			'label_on'     => esc_html__( 'Yes', 'gpt-news-core' ),
+			'label_off'    => esc_html__( 'No', 'gpt-news-core' ),
+			'return_value' => 'yes',
+			'default'      => 'yes',
+		] );
+
 
 		$this->add_control( 'content_length', [
 			'label'   => __( 'Word Limit', 'gpt-news-core' ),
@@ -88,6 +109,9 @@ class Blog extends Widget_Base {
 			'max'     => 30,
 			'step'    => 1,
 			'default' => 15,
+			'condition' => [
+				'show_excerpt' => 'yes',
+			],
 		] );
 
 		$this->add_control( 'readmore', [
@@ -348,6 +372,8 @@ class Blog extends Widget_Base {
 		$post_cat   = $settings['post_cat'];
 		$post_count = $settings['post_count'];
 		$show_meta  = $settings['meta_show'];
+		$layout     = $settings['layout'];
+		$show_excerpt = $settings['show_excerpt'];
 
 
 		$this->add_render_attribute( 'wrapper', 'class', [
@@ -398,11 +424,19 @@ class Blog extends Widget_Base {
 			$paged = get_query_var( 'page' );
 		}
 
+		$post_count = "";
+
+		if($layout == 'one'){
+			$post_count = 5;
+		} else {
+			$post_count = 4;
+		}
+
 
 		$query = array(
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
-			'posts_per_page' => 5, // Total number of posts to fetch
+			'posts_per_page' => $post_count, // Total number of posts to fetch
 			'paged'          => $paged,
 			'tax_query'      => $_tax_query,
 			'orderby'        => $settings['orderby'],
@@ -424,87 +458,9 @@ class Blog extends Widget_Base {
 
 					<?php
 					// Display first two posts in separate columns
-					if ( $count < 1 ) : ?>
-						<div class="col-lg-6 col-md-12">
-							<div class="blog-grid">
-								<div class="blog-grid__image">
-									<a href="<?php the_permalink(); ?>">
-										<?php
-										if ( has_post_thumbnail() ) {
-											the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
-										} else { ?>
-											<img src="https://via.placeholder.com/410x290" alt="Placeholder">
-										<?php } ?>
-									</a>
-								</div>
-								<div class="blog-grid__content">
-									<h3 class="blog-grid__title blog-title-hover">
-										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-									</h3>
+						require  __DIR__ . '/templates/blog/blog-'. $settings['layout'].'.php';
 
-									<div class="blog-grid__excerpt">
-										<?php echo wp_trim_words( get_the_content(), $settings['content_length'], '...' ); ?>
-									</div>
-
-									<ul class="entry-meta">
-										<li>
-											<?php \Gpt_Theme_Helper::post_author_by(); ?>
-										</li>
-										<li>
-											<i class="ri-calendar-2-line"></i>
-											<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
-										</li>
-									</ul><!-- .entry-meta -->
-								</div>
-							</div>
-						</div>
-
-					<?php
-					// Display the last two posts in the third column
-					elseif ( $count == 1 ) : ?>
-						<div class="col-lg-6 col-md-12">
-						<div class="row">
-					<?php endif; ?>
-
-					<?php if ( $count >= 1 ) : ?>
-						<div class="col-sm-6">
-							<div class="blog-grid__small-list">
-								<div class="blog-grid__image">
-									<a href="<?php the_permalink(); ?>">
-										<?php
-										if ( has_post_thumbnail() ) {
-											the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
-										} else { ?>
-											<img src="https://via.placeholder.com/410x290" alt="Placeholder">
-										<?php } ?>
-									</a>
-								</div>
-								<div class="blog-grid__content">
-									<h3 class="blog-grid__title blog-title-hover">
-										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-									</h3>
-									<div class="blog-grid__meta">
-
-										<?php if ( $show_meta == 'yes' ) : ?>
-											<ul class="entry-meta">
-												<li>
-													<i class="ri-calendar-2-line"></i>
-													<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
-												</li>
-											</ul><!-- .entry-meta -->
-										<?php endif; ?>
-									</div>
-								</div>
-							</div>
-						</div>
-					<?php endif; ?>
-
-					<?php if ( $count == 4 ) : ?>
-						</div>
-						</div> <!-- Close third column after the second post -->
-					<?php endif; ?>
-
-					<?php $count ++; ?>
+					$count ++; ?>
 				<?php endwhile; ?>
 
 					<?php

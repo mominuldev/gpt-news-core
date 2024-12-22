@@ -2,7 +2,7 @@
 if ( $layout === 'four' ) :
 	if ( $count == 0 ) : ?>
 		<!-- Left column (1 large post) -->
-		<div class="col-md-6">
+		<div class="col-lg-6">
 
 			<div class="blog-hero-item-grid blog-hero-main-grid-four">
 				<div class="blog-hero-item-grid__image">
@@ -24,33 +24,28 @@ if ( $layout === 'four' ) :
 						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 					</h2>
 					<?php if ( $meta_show == 'yes' ) : ?>
-						<ul class="entry-meta">
+						<ul class="entry-meta meta-style-two">
 							<li>
-								<?php Gpt_Theme_Helper::post_author_by(); ?>
+								<?php Gpt_Theme_Helper::gpt_posted_author_avatar(); ?>
 							</li>
 							<li>
-								<i class="ri-calendar-2-line"></i>
 								<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
 							</li>
 						</ul><!-- .entry-meta -->
 					<?php endif; ?>
 				</div>
 			</div>
-
-
-
-
 		</div>
 
 	<?php elseif ( $count == 1 ) : ?>
 		<!-- Right column starts here -->
-		<div class="col-md-6">
+		<div class="col-lg-6">
 		<div class="row">
 	<?php endif; ?>
 
 	<?php if ( $count >= 1 && $count <= 4 ) : ?>
 	<!-- Posts in the right column -->
-	<div class="col-md-6 mb-5">
+	<div class="col-sm-6">
 		<div class="blog-hero-item-grid blog-hero-grid-four">
 			<div class="blog-hero-item-grid__image">
 				<a href="<?php the_permalink(); ?>">
@@ -66,12 +61,11 @@ if ( $layout === 'four' ) :
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</h2>
 				<?php if ( $meta_show == 'yes' ) : ?>
-					<ul class="entry-meta">
+					<ul class="entry-meta meta-style-two">
 						<li>
-							<?php Gpt_Theme_Helper::post_author_by(); ?>
+							<?php Gpt_Theme_Helper::gpt_posted_author_avatar(); ?>
 						</li>
 						<li>
-							<i class="ri-calendar-2-line"></i>
 							<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
 						</li>
 					</ul><!-- .entry-meta -->

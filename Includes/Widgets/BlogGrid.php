@@ -61,6 +61,18 @@ class BlogGrid extends Widget_Base {
 			'label' => esc_html__( 'Blog Grid', 'gpt-news-core' ),
 		] );
 
+		// Layout
+		$this->add_control( 'layout', [
+			'label'   => esc_html__( 'Layout', 'gpt-news-core' ),
+			'type'    => Controls_Manager::SELECT,
+			'default' => '1',
+			'options' => [
+				'1' => esc_html__( 'Style One', 'gpt-news-core' ),
+				'2' => esc_html__( 'Style Two', 'gpt-news-core' ),
+				'3' => esc_html__( 'Style Three', 'gpt-news-core' ),
+			]
+		] );
+
 		// Column
 		$this->add_control( 'column', [
 			'label'   => esc_html__( 'Column', 'gpt-news-core' ),
@@ -80,6 +92,16 @@ class BlogGrid extends Widget_Base {
 
 		] );
 
+		// Excerpt Show
+		$this->add_control( 'excerpt_show', [
+			'label'        => esc_html__( 'Show Excerpt', 'gpt-news-core' ),
+			'type'         => Controls_Manager::SWITCHER,
+			'label_on'     => esc_html__( 'Yes', 'gpt-news-core' ),
+			'label_off'    => esc_html__( 'No', 'gpt-news-core' ),
+			'return_value' => 'yes',
+			'default'      => 'yes',
+		] );
+
 
 		$this->add_control( 'content_length', [
 			'label'   => __( 'Word Limit', 'gpt-news-core' ),
@@ -88,6 +110,9 @@ class BlogGrid extends Widget_Base {
 			'max'     => 30,
 			'step'    => 1,
 			'default' => 15,
+			'condition' => [
+				'excerpt_show' => 'yes',
+			],
 		] );
 
 		$this->add_control( 'readmore', [
@@ -418,46 +443,8 @@ class BlogGrid extends Widget_Base {
 				<?php if ( $gpt_query->have_posts() ) : ?>
 
 					<?php while ( $gpt_query->have_posts() ) : $gpt_query->the_post(); ?>
-						<div class="col-lg-<?php echo $settings['column'] ?> col-md-4">
-							<div class="blog-grid blog-grid--two">
-								<div class="blog-grid__image">
-									<a href="<?php the_permalink(); ?>">
-										<?php
-										if ( has_post_thumbnail() ) {
-											the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
-										} else { ?>
-											<img src="https://via.placeholder.com/410x290" alt="Placeholder">
-										<?php } ?>
-									</a>
-								</div>
-								<div class="blog-grid__content">
-									<?php if( $meta_show == 'yes' ) { ?>
-										<ul class="entry-meta">
-											<li>
-												<?php \Gpt_Theme_Helper::post_author_by(); ?>
-											</li>
-											<li>
-												<i class="ri-calendar-2-line"></i>
-												<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
-											</li>
-										</ul><!-- .entry-meta -->
-									<?php } ?>
-
-
-									<h3 class="blog-grid__title blog-title-hover">
-										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-									</h3>
-
-									<div class="blog-grid__excerpt">
-										<?php echo wp_trim_words( get_the_content(), $settings['content_length'], '...' ); ?>
-									</div>
-
-
-									<?php if ( $settings['readmore'] ) { ?>
-										<a href="<?php the_permalink(); ?>" class="read-more"><?php echo $settings['readmore']; ?> <i class="ri-arrow-right-line"></i> </a>
-									<?php } ?>
-								</div>
-							</div>
+						<div class="col-sm-6 col-lg-<?php echo $settings['column'] ?> col-md-4">
+							<?php require  __DIR__ . '/templates/blog/blog-style-'. $settings['layout'].'.php'; ?>
 						</div>
 
 

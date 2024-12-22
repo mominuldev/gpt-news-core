@@ -188,7 +188,7 @@ class BlogHero extends Widget_Base {
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'meta_text_typography',
 			'label'    => __( 'Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .blog-grid--two .entry-meta li, {{WRAPPER}} .blog-grid--two .entry-meta li a',
+			'selector' => '{{WRAPPER}} .blog-grid--two .entry-meta li, {{WRAPPER}} .blog-grid--two .entry-meta li a, ul.entry-meta li',
 		] );
 
 		$this->add_control( 'meta_text_color', [
