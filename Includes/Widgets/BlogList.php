@@ -75,8 +75,12 @@ class BlogList extends Widget_Base {
 
 		$this->add_control( 'post_count', [
 			'label'   => esc_html__( 'Post count', 'gpt-news-core' ),
-			'type'    => Controls_Manager::NUMBER,
-			'default' => esc_html__( '5', 'gpt-news-core' ),
+			'type'    => Controls_Manager::SELECT,
+			'default' => '4',
+			'options' => [
+				'3' => esc_html__( '3', 'gpt-news-core' ),
+				'4' => esc_html__( '4', 'gpt-news-core' ),
+			]
 
 		] );
 
@@ -402,7 +406,7 @@ class BlogList extends Widget_Base {
 		$query = array(
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
-			'posts_per_page' => 4,
+			'posts_per_page' => $post_count,
 			'paged'          => $paged,
 			'tax_query'      => $_tax_query,
 			'orderby'        => $settings['orderby'],
@@ -489,8 +493,10 @@ class BlogList extends Widget_Base {
 
 				<?php endif; ?>
 
-				<?php if ( $count == 3 ) : ?>
+				<?php if ( $count === 2 && $post_count == 3 ) : ?>
 
+					</div> <!-- Close third column after the second post -->
+				<?php elseif ( $count === 3 ) : ?>
 					</div> <!-- Close third column after the second post -->
 				<?php endif; ?>
 
