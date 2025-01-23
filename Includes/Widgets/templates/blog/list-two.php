@@ -1,30 +1,30 @@
-<div class="gpt__post-list gpt__post-list--<?php echo esc_attr($settings['layout']); ?>">
+<div class="pps__post-list pps__post-list--<?php echo esc_attr($settings['layout']); ?>">
 	<div class="container">
-		<div class="gpt__post-list__inner">
-			<div class="gpt-post__date-meta">
-				<?php Gpt_Theme_Helper::gpt_posted_date(); ?>
+		<div class="pps__post-list__inner">
+			<div class="pps-post__date-meta">
+				<?php PPS_Theme_Helper::pps_posted_date(); ?>
 			</div>
 
-			<div class="gpt__image-contentwrapper">
+			<div class="pps__image-contentwrapper">
 				<?php if ( has_post_thumbnail() ): ?>
-					<div class="gpt__feature-image">
-						<?php the_post_thumbnail( 'gpt-blog-list_300x185', array( 'class' => 'img-fluid' ) ) ?>
+					<div class="pps__feature-image">
+						<?php the_post_thumbnail( 'pps-blog-list_300x185', array( 'class' => 'img-fluid' ) ) ?>
 					</div>
 				<?php endif; ?>
 
-				<div class="gpt__blog-content">
-					<div class="gpt__post-list-title-wrapper">
-						<h3 class="gpt__entry-title"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<div class="pps__blog-content">
+					<div class="pps__post-list-title-wrapper">
+						<h3 class="pps__entry-title"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					</div>
 
-					<p class="gpt-post__entry-content">
-						<?php echo Gpt_Theme_Helper::gpt_excerpt( $settings['content_length'] ); ?>
+					<p class="pps-post__entry-content">
+						<?php echo PPS_Theme_Helper::pps_excerpt( $settings['content_length'] ); ?>
 					</p>
 				</div>
 			</div>
 
 			<?php if ( 'yes' == $settings['category_show'] ) : ?>
-				<div class="gpt__meta-category-wrapper">
+				<div class="pps__meta-category-wrapper">
 					<?php
 					$icon = '
 				<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@
 
 					if ( $terms && ! is_wp_error( $terms ) ) :
 						foreach ( $terms as $term ) {
-							$cat_temp .= '<a href="' . get_category_link( $term->term_id ) . '" class="gpt__blog-meta-category" rel="category tag">'. $icon . esc_html( $term->name ) . '</a>';
+							$cat_temp .= '<a href="' . get_category_link( $term->term_id ) . '" class="pps__blog-meta-category" rel="category tag">'. $icon . esc_html( $term->name ) . '</a>';
 						}
 					endif;
 

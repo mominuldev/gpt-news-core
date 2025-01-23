@@ -3,7 +3,7 @@
 /**
  * Elementor Helper.
  *
- * @package GPT
+ * @package PPS
  */
 
 if (!defined('ABSPATH')) {
@@ -12,11 +12,11 @@ if (!defined('ABSPATH')) {
 
 
 /**
- * Class GPT_Helper.
+ * Class PPS_Helper.
  */
 
-if ( ! class_exists( 'GPT_Helper' ) ) {
-	class GPT_Helper {
+if ( ! class_exists( 'PPS_Helper' ) ) {
+	class PPS_Helper {
 
 		protected static $instance  = null;
 
@@ -29,11 +29,11 @@ if ( ! class_exists( 'GPT_Helper' ) ) {
 		}
 
 		public function initialize() {
-			add_filter('upload_mimes', [ $this, 'gpt_svg_mime_types' ]);
-			add_action( 'show_user_profile', [$this, 'gpt_extra_user_profile_fields'] );
-			add_action( 'edit_user_profile', [$this, 'gpt_extra_user_profile_fields'] );
-			add_action( 'personal_options_update', [$this, 'gpt_save_extra_user_profile_fields'] );
-			add_action( 'edit_user_profile_update', [$this, 'gpt_save_extra_user_profile_fields'] );
+			add_filter('upload_mimes', [ $this, 'pps_svg_mime_types' ]);
+			add_action( 'show_user_profile', [$this, 'pps_extra_user_profile_fields'] );
+			add_action( 'edit_user_profile', [$this, 'pps_extra_user_profile_fields'] );
+			add_action( 'personal_options_update', [$this, 'pps_save_extra_user_profile_fields'] );
+			add_action( 'edit_user_profile_update', [$this, 'pps_save_extra_user_profile_fields'] );
 		}
 
 		/**
@@ -41,17 +41,17 @@ if ( ! class_exists( 'GPT_Helper' ) ) {
 		 *
 		 * Get Contact form 7
 		 */
-		public static function gpt_get_contact_form7_forms(){
+		public static function pps_get_contact_form7_forms(){
 			$forms = get_posts( 'post_type=wpcf7_contact_form&posts_per_page=-1' );
 
 			$results = array();
 			if ( $forms ) {
-				$results[] = __( 'Select A Form', 'gpt-news-core' );
+				$results[] = __( 'Select A Form', 'pps-passport-core' );
 				foreach ( $forms as $form ) {
 					$results[ $form->ID ] = $form->post_title;
 				}
 			} else {
-				$results[] =  __( 'No contact forms found', 'gpt-news-core' ) ;
+				$results[] =  __( 'No contact forms found', 'pps-passport-core' ) ;
 			}
 
 			return $results;
@@ -63,37 +63,37 @@ if ( ! class_exists( 'GPT_Helper' ) ) {
 		 *
 		 * @return void
 		 */
-		public function gpt_extra_user_profile_fields( $user ) { ?>
-			<h3><?php esc_html_e( "Extra profile information", 'gpt-news-core' ); ?></h3>
+		public function pps_extra_user_profile_fields( $user ) { ?>
+			<h3><?php esc_html_e( "Extra profile information", 'pps-passport-core' ); ?></h3>
 
 			<table class="form-table">
 				<tr>
-					<th><label for="facebook"><?php esc_html_e( "Facebook", 'gpt-news-core' ); ?></label></th>
+					<th><label for="facebook"><?php esc_html_e( "Facebook", 'pps-passport-core' ); ?></label></th>
 					<td>
 						<input type="text" name="facebook" id="facebook" value="<?php echo esc_attr( get_the_author_meta( 'facebook', $user->ID ) ); ?>" class="regular-text"/><br/>
-						<span class="description"><?php esc_html_e( "Please enter your facebook url.", 'gpt-news-core' ); ?></span>
+						<span class="description"><?php esc_html_e( "Please enter your facebook url.", 'pps-passport-core' ); ?></span>
 					</td>
 				</tr>
 				<tr>
-					<th><label for="twitter"><?php esc_html_e( "Twitter", 'gpt-news-core' ); ?></label></th>
+					<th><label for="twitter"><?php esc_html_e( "Twitter", 'pps-passport-core' ); ?></label></th>
 					<td>
 						<input type="text" name="twitter" id="twitter" value="<?php echo esc_attr( get_the_author_meta( 'twitter', $user->ID ) ); ?>" class="regular-text"/><br/>
-						<span class="description"><?php esc_html_e( "Please enter your twitter url.", 'gpt-news-core' ); ?></span>
+						<span class="description"><?php esc_html_e( "Please enter your twitter url.", 'pps-passport-core' ); ?></span>
 					</td>
 				</tr>
 				<tr>
-					<th><label for="linkedin"><?php esc_html_e( "Linkedin", 'gpt-news-core' ); ?></label></th>
+					<th><label for="linkedin"><?php esc_html_e( "Linkedin", 'pps-passport-core' ); ?></label></th>
 					<td>
 						<input type="text" name="linkedin" id="linkedin"  value="<?php echo esc_attr( get_the_author_meta( 'linkedin', $user->ID ) ); ?>"  class="regular-text"/><br/>
-						<span class="description"><?php esc_html_e( "Please enter your linkedin url.", 'gpt-news-core' ); ?></span>
+						<span class="description"><?php esc_html_e( "Please enter your linkedin url.", 'pps-passport-core' ); ?></span>
 					</td>
 				</tr>
 
 				<tr>
-					<th><label for="instagram"><?php esc_html_e( "Instagram", 'gpt-news-core' ); ?></label></th>
+					<th><label for="instagram"><?php esc_html_e( "Instagram", 'pps-passport-core' ); ?></label></th>
 					<td>
 						<input type="text" name="instagram" id="instagram" value="<?php echo esc_attr( get_the_author_meta( 'instagram', $user->ID ) ); ?>"  class="regular-text"/><br/>
-						<span class="description"><?php esc_html_e( "Please enter your instagram url.", 'gpt-news-core' ); ?></span>
+						<span class="description"><?php esc_html_e( "Please enter your instagram url.", 'pps-passport-core' ); ?></span>
 					</td>
 				</tr>
 			</table>
@@ -106,7 +106,7 @@ if ( ! class_exists( 'GPT_Helper' ) ) {
 		 *
 		 * @return false|void
 		 */
-		public function gpt_save_extra_user_profile_fields( $user_id ) {
+		public function pps_save_extra_user_profile_fields( $user_id ) {
 			if ( ! current_user_can( 'edit_user', $user_id ) ) {
 				return false;
 			}
@@ -171,7 +171,7 @@ if ( ! class_exists( 'GPT_Helper' ) ) {
 			return $query_args;
 		}
 
-		static public function gpt_category_list( $cat ) {
+		static public function pps_category_list( $cat ) {
 			$query_args = array(
 				'orderby'    => 'ID',
 				'order'      => 'DESC',
@@ -180,7 +180,7 @@ if ( ! class_exists( 'GPT_Helper' ) ) {
 			);
 
 			$categories  = get_categories( $query_args );
-//			$options     = array( esc_html__( '0', 'gpt-news-core' ) => 'All Category' );
+//			$options     = array( esc_html__( '0', 'pps-passport-core' ) => 'All Category' );
 			$options = [];
 
 			if ( is_array( $categories ) && count( $categories ) > 0 ) {
@@ -265,7 +265,7 @@ if ( ! class_exists( 'GPT_Helper' ) ) {
 				];
 				$parent = self::get_term_parents_list( $cat->cat_ID, 'category', [] );
 
-				$content[(string) $cat->slug] = $cat->cat_name.(! empty($parent) ? esc_html__( ' (Parent categories: (', 'gpt-news-core') .$parent.'))' : "");
+				$content[(string) $cat->slug] = $cat->cat_name.(! empty($parent) ? esc_html__( ' (Parent categories: (', 'pps-passport-core') .$parent.'))' : "");
 			}
 
 			return $content;
@@ -305,12 +305,12 @@ if ( ! class_exists( 'GPT_Helper' ) ) {
 
 		public static function get_grid_metro_size() {
 			return [
-				'1:1'   => esc_html__( 'Width 1 - Height 1', 'gpt-news-core' ),
-				'1:2'   => esc_html__( 'Width 1 - Height 2', 'gpt-news-core' ),
-				'1:0.7' => esc_html__( 'Width 1 - Height 70%', 'gpt-news-core' ),
-				'1:1.3' => esc_html__( 'Width 1 - Height 130%', 'gpt-news-core' ),
-				'2:1'   => esc_html__( 'Width 2 - Height 1', 'gpt-news-core' ),
-				'2:2'   => esc_html__( 'Width 2 - Height 2', 'gpt-news-core' ),
+				'1:1'   => esc_html__( 'Width 1 - Height 1', 'pps-passport-core' ),
+				'1:2'   => esc_html__( 'Width 1 - Height 2', 'pps-passport-core' ),
+				'1:0.7' => esc_html__( 'Width 1 - Height 70%', 'pps-passport-core' ),
+				'1:1.3' => esc_html__( 'Width 1 - Height 130%', 'pps-passport-core' ),
+				'2:1'   => esc_html__( 'Width 2 - Height 1', 'pps-passport-core' ),
+				'2:2'   => esc_html__( 'Width 2 - Height 2', 'pps-passport-core' ),
 			];
 		}
 
@@ -383,17 +383,17 @@ if ( ! class_exists( 'GPT_Helper' ) ) {
 		 * Enqueue svg to the media.
 		 * @return void
 		 */
-		function gpt_svg_mime_types($mimes) {
+		function pps_svg_mime_types($mimes) {
 			$mimes['svg'] = 'image/svg+xml';
 			return $mimes;
 		}
 
 
 		public static function image_placeholder( $width, $height ) {
-			echo '<img src="http://via.placeholder.com/' . $width . 'x' . $height . '?text=' . esc_attr__( 'No+Image', 'gpt-news-core' ) . '" alt="' . esc_attr__( 'Thumbnail', 'gpt-news-core' ) . '"/>';
+			echo '<img src="http://via.placeholder.com/' . $width . 'x' . $height . '?text=' . esc_attr__( 'No+Image', 'pps-passport-core' ) . '" alt="' . esc_attr__( 'Thumbnail', 'pps-passport-core' ) . '"/>';
 		}
 
-		public static function gpt_hex_to_rgb($hex, $alpha = false) {
+		public static function pps_hex_to_rgb($hex, $alpha = false) {
 			$hex      = str_replace('#', '', $hex);
 			$length   = strlen($hex);
 			$rgb['r'] = hexdec($length == 6 ? substr($hex, 0, 2) : ($length == 3 ? str_repeat(substr($hex, 0, 1), 2) : 0));
@@ -480,5 +480,5 @@ if ( ! class_exists( 'GPT_Helper' ) ) {
 
 	}
 
-	GPT_Helper::instance()->initialize();
+	PPS_Helper::instance()->initialize();
 }

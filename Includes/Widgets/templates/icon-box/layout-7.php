@@ -1,4 +1,4 @@
-<div class="gpt-icon-box style-seven with-image <?php echo esc_attr($settings['box_align']); ?>">
+<div class="pps-icon-box style-seven with-image <?php echo esc_attr($settings['box_align']); ?>">
 	<?php if ( $settings['icon_type'] == 'type_icon' ) : ?>
 		<?php if ( $settings['icon_pack'] == 'fontawesome' ) : ?>
 			<div class="icon-container">
@@ -51,4 +51,4 @@
     </div>
 
 </div>
-<!-- /.gpt-icon-box -->
+<!-- /.pps-icon-box -->

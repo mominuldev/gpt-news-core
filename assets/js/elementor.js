@@ -1,25 +1,25 @@
 (function ($, elementor) {
 	"use strict";
 
-	var GPT = {
+	var PPS = {
 
 		initWidgets: function() {
 			var widgets = {
-				'mpt-hero-static.default': GPT.Hero,
-				'mpt-highlight-heading.default': GPT.HightlightHeading,
-				'mpt-project-slider.default': GPT.Slider,
-				'mpt-project-slider-creative.default': GPT.ImageCarousel,
-				'mpt-blog-slider.default': GPT.BlogSlider,
-				'mpt-dynamic-tabs.default': GPT.DynamicTabs,
-				'mpt-project-list.default': GPT.ProjectList,
-				'mpt-feature-list-tabs.default': GPT.Tabs,
-				'mpt-testimonial.default': GPT.Testimonial,
-				'mpt-testimonial-creative.default': GPT.TestimonialCreative,
-				'mpt-logo-carousel.default': GPT.Logo,
-				'mpt-coming-soon.default': GPT.Counting,
-				'mpt-pin-video.default': GPT.PinVideo,
-				'mpt-logo-marquee.default': GPT.LogoMaequee,
-				'mpt-marque-text-advance.default': GPT.MarqueText,
+				'mpt-hero-static.default': PPS.Hero,
+				'mpt-highlight-heading.default': PPS.HightlightHeading,
+				'mpt-project-slider.default': PPS.Slider,
+				'mpt-project-slider-creative.default': PPS.ImageCarousel,
+				'mpt-blog-slider.default': PPS.BlogSlider,
+				'mpt-dynamic-tabs.default': PPS.DynamicTabs,
+				'mpt-project-list.default': PPS.ProjectList,
+				'mpt-feature-list-tabs.default': PPS.Tabs,
+				'mpt-testimonial.default': PPS.Testimonial,
+				'mpt-testimonial-creative.default': PPS.TestimonialCreative,
+				'mpt-logo-carousel.default': PPS.Logo,
+				'mpt-coming-soon.default': PPS.Counting,
+				'mpt-pin-video.default': PPS.PinVideo,
+				'mpt-logo-marquee.default': PPS.LogoMaequee,
+				'mpt-marque-text-advance.default': PPS.MarqueText,
 
 			};
 
@@ -824,7 +824,7 @@
 
 
 	};
-	// $(window).on('elementor/frontend/init', GPT.init);
+	// $(window).on('elementor/frontend/init', PPS.init);
 
 	function TextAnimation($style, $selector, tl) {
 		// let tl = gsap.timeline()
@@ -891,7 +891,7 @@
 
 	// Initialize on Elementor frontend load
 	$(window).on('elementor/frontend/init', function () {
-		GPT.initWidgets();  // Initialize widgets after Elementor is ready
+		PPS.initWidgets();  // Initialize widgets after Elementor is ready
 	});
 
 }(jQuery, window.elementorFrontend));

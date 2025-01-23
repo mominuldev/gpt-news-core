@@ -1,12 +1,12 @@
 <?php
 
 
-use GpTheme\GptNewsCore\ImageSize;
+use PixelPath\PPSPassportCore\ImageSize;
 
 $ant = 0.5;
 
-while ( $gpt_query->have_posts() ) :
-	$gpt_query->the_post();
+while ( $pps_query->have_posts() ) :
+	$pps_query->the_post();
 
 	$reveal = $settings['reveal_animation'];
 
@@ -17,7 +17,7 @@ while ( $gpt_query->have_posts() ) :
 		$animation .= $settings['grid_animation'] . ' wow ';
 	}
 
-	$classes = array( "gpt-project grid-item $animation" );
+	$classes = array( "pps-project grid-item $animation" );
 
 	if ( 'yes' == $reveal ) {
 		$grid_classes .= 'overlay_effect ';
@@ -28,7 +28,7 @@ while ( $gpt_query->have_posts() ) :
 	}
 
 	if ( 'yes' === $settings['show_caption'] ) {
-		$grid_classes .= 'gpt-project--caption ';
+		$grid_classes .= 'pps-project--caption ';
 	}
 
 
@@ -38,9 +38,9 @@ while ( $gpt_query->have_posts() ) :
 
 	?>
 	<figure <?php post_class( implode( ' ', $classes ) ); ?> data-wow-delay="<?php echo esc_attr( $ant ); ?>s">
-		<div class="gpt-project__wrapper gpt-box <?php echo $grid_classes ?>">
-			<div class="gpt-project__thumbnail-wrapper gpt-image">
-				<div class="gpt-project__thumbnail">
+		<div class="pps-project__wrapper pps-box <?php echo $grid_classes ?>">
+			<div class="pps-project__thumbnail-wrapper pps-image">
+				<div class="pps-project__thumbnail">
 					<a href="<?php echo the_permalink(); ?>" class="post-permalink link-secret">
 						<?php if ( has_post_thumbnail() ) { ?>
 							<?php $size = ImageSize::elementor_parse_image_size( $settings, '480x480' ); ?>
@@ -48,7 +48,7 @@ while ( $gpt_query->have_posts() ) :
 						<?php } ?>
 
 						<?php if ( 'overlay-one' == $settings['overlay_style'] ) : ?>
-							<span class="gpt-project__permalink"><?php echo 'Case <br> Studies' ?></span>
+							<span class="pps-project__permalink"><?php echo 'Case <br> Studies' ?></span>
 						<?php endif; ?>
 					</a>
 				</div>
@@ -56,17 +56,17 @@ while ( $gpt_query->have_posts() ) :
 
 				<?php if ( ! empty( $settings['overlay_style'] ) ) : ?>
 					<?php if ( 'yes' != $settings['show_caption'] ) : ?>
-						<div class="gpt-project__info">
-							<h3 class="gpt-project__title" data-hover="<?php the_title(); ?>">
+						<div class="pps-project__info">
+							<h3 class="pps-project__title" data-hover="<?php the_title(); ?>">
 								<a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a>
 							</h3>
-							<div class="gpt-project__cat-wrapper">
+							<div class="pps-project__cat-wrapper">
 								<?php
 								$terms = get_the_terms( get_the_ID(), 'project_category' );
 
 								if ( $terms && ! is_wp_error( $terms ) ) :
 									foreach ( $terms as $term ) { ?>
-										<span class="gpt-project__cat-item"><?php echo $term->name; ?></span>
+										<span class="pps-project__cat-item"><?php echo $term->name; ?></span>
 									<?php } ?>
 								<?php endif; ?>
 							</div>
@@ -76,18 +76,18 @@ while ( $gpt_query->have_posts() ) :
 			</div>
 
 			<?php if ( 'yes' === $settings['show_caption'] ) : ?>
-				<div class="gpt-project__info-caption">
-					<h3 class="gpt-project__info-title">
+				<div class="pps-project__info-caption">
+					<h3 class="pps-project__info-title">
 						<a href="<?php the_permalink() ?>"><span><?php the_title(); ?></span></a>
 					</h3>
 
-					<div class="gpt-project__cat">
+					<div class="pps-project__cat">
 						<?php
 						$terms = get_the_terms( get_the_ID(), 'project_category' );
 
 						if ( $terms && ! is_wp_error( $terms ) ) :
 							foreach ( $terms as $term ) { ?>
-								<span class="gpt-project__info-cat-item"><?php echo $term->name; ?></span>
+								<span class="pps-project__info-cat-item"><?php echo $term->name; ?></span>
 							<?php } ?>
 						<?php endif; ?>
 					</div>

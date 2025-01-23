@@ -2,20 +2,20 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="gpt-admin-nav">
+                <div class="pps-admin-nav">
                     <ul>
                         <?php
-                            $admin_nav_first_item_class = ( !isset( $_GET['action'] ) && $_GET['page'] == 'gpt-news-core' ) ? 'active' : '';
+                            $admin_nav_first_item_class = ( !isset( $_GET['action'] ) && $_GET['page'] == 'pps-passport-core' ) ? 'active' : '';
 
                             $admin_nav_items = array(
                                 'default' => array(
-                                    'title' => 'GPT',
-                                    'url'   => admin_url( 'admin.php?page=gpt_core' ),
+                                    'title' => 'PPS',
+                                    'url'   => admin_url( 'admin.php?page=pps_core' ),
                                     'target' => '_self',
                                 ),
                                 'banner' => array(
                                     'title' => 'Documentation',
-                                    'url'   => 'https://themeboxr.com/product/wpgpt-university-alumni-wordpress-theme/',
+                                    'url'   => 'https://themeboxr.com/product/wppps-university-alumni-wordpress-theme/',
                                     'target' => '_blank',
                                 ),
                                 'section_title' => array(

@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Widgets;
+namespace PixelPath\PPSPassportCore\Widgets;
 
 use Elementor\{Controls_Manager, Group_Control_Background, Group_Control_Border, Group_Control_Box_Shadow, Widget_Base, Group_Control_Typography};
 
@@ -15,7 +15,7 @@ class BlogSidebar extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_name() {
-		return 'gpt-sidebar';
+		return 'pps-sidebar';
 	}
 
 	/**
@@ -23,7 +23,7 @@ class BlogSidebar extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return esc_html__( 'GPT Blog Sidebar', 'gpt-news-core' );
+		return esc_html__( 'PPS Blog Sidebar', 'pps-passport-core' );
 	}
 
 	/**
@@ -39,7 +39,7 @@ class BlogSidebar extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_categories() {
-		return [ 'gpt-elements' ];
+		return [ 'pps-elements' ];
 	}
 
 	/**
@@ -47,7 +47,7 @@ class BlogSidebar extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'blog', 'list', 'gpt' ];
+		return [ 'blog', 'list', 'pps' ];
 	}
 
 	/**
@@ -58,44 +58,44 @@ class BlogSidebar extends Widget_Base {
 		// Testimonial
 		//=========================
 		$this->start_controls_section( 'section_tab_style', [
-			'label' => esc_html__( 'Blog Grid', 'gpt-news-core' ),
+			'label' => esc_html__( 'Blog Grid', 'pps-passport-core' ),
 		] );
 
 		// Blog Query Type Recent, Popular, Random
 		$this->add_control( 'blog_query_type', [
-			'label'   => esc_html__( 'Query Type', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Query Type', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'recent',
 			'options' => [
-				'recent'  => esc_html__( 'Recent', 'gpt-news-core' ),
-				'popular' => esc_html__( 'Popular', 'gpt-news-core' ),
-				'random'  => esc_html__( 'Random', 'gpt-news-core' ),
+				'recent'  => esc_html__( 'Recent', 'pps-passport-core' ),
+				'popular' => esc_html__( 'Popular', 'pps-passport-core' ),
+				'random'  => esc_html__( 'Random', 'pps-passport-core' ),
 			],
 		] );
 
 
 		$this->add_control( 'post_count', [
-			'label'   => esc_html__( 'Post count', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Post count', 'pps-passport-core' ),
 			'type'    => Controls_Manager::NUMBER,
-			'default' => esc_html__( '5', 'gpt-news-core' ),
+			'default' => esc_html__( '5', 'pps-passport-core' ),
 		] );
 
 		// Show date meta
 		$this->add_control( 'show_date_meta', [
-			'label'        => esc_html__( 'Show Date Meta', 'gpt-news-core' ),
+			'label'        => esc_html__( 'Show Date Meta', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => esc_html__( 'Yes', 'gpt-news-core' ),
-			'label_off'    => esc_html__( 'No', 'gpt-news-core' ),
+			'label_on'     => esc_html__( 'Yes', 'pps-passport-core' ),
+			'label_off'    => esc_html__( 'No', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
 
 		// Show view count meta
 		$this->add_control( 'show_view_count_meta', [
-			'label'        => esc_html__( 'Show View Count Meta', 'gpt-news-core' ),
+			'label'        => esc_html__( 'Show View Count Meta', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => esc_html__( 'Yes', 'gpt-news-core' ),
-			'label_off'    => esc_html__( 'No', 'gpt-news-core' ),
+			'label_on'     => esc_html__( 'Yes', 'pps-passport-core' ),
+			'label_off'    => esc_html__( 'No', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
@@ -106,57 +106,57 @@ class BlogSidebar extends Widget_Base {
 		// Query
 		//=========================
 		$this->start_controls_section( 'section_query', [
-			'label' => esc_html__( 'Query', 'gpt-news-core' ),
+			'label' => esc_html__( 'Query', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'post_cat', [
-			'label'       => esc_html__( 'Select category', 'gpt-news-core' ),
+			'label'       => esc_html__( 'Select category', 'pps-passport-core' ),
 			'type'        => Controls_Manager::SELECT2,
 			'multiple'    => true,
 			'label_block' => true,
-			'options'     => \GPT_Helper::categories_suggester(),
+			'options'     => \PPS_Helper::categories_suggester(),
 			'default'     => '0'
 		] );
 
 		$this->add_control( 'order', [
-			'label'   => esc_html__( 'Order', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Order', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'DESC',
 			'options' => [
-				'ASC'  => esc_html__( 'ASC', 'gpt-news-core' ),
-				'DESC' => esc_html__( 'DESC', 'gpt-news-core' ),
+				'ASC'  => esc_html__( 'ASC', 'pps-passport-core' ),
+				'DESC' => esc_html__( 'DESC', 'pps-passport-core' ),
 			]
 		] );
 
 		$this->add_control( 'orderby', [
-			'label'   => esc_html__( 'Order By', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Order By', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'date',
 			'options' => [
-				'date'          => esc_html__( 'Date', 'gpt-news-core' ),
-				'title'         => esc_html__( 'Title', 'gpt-news-core' ),
-				'rand'          => esc_html__( 'Random', 'gpt-news-core' ),
-				'comment_count' => esc_html__( 'Comment Count', 'gpt-news-core' ),
+				'date'          => esc_html__( 'Date', 'pps-passport-core' ),
+				'title'         => esc_html__( 'Title', 'pps-passport-core' ),
+				'rand'          => esc_html__( 'Random', 'pps-passport-core' ),
+				'comment_count' => esc_html__( 'Comment Count', 'pps-passport-core' ),
 			]
 		] );
 
 		// Offset
 		$this->add_control( 'offset', [
-			'label'   => esc_html__( 'Offset', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Offset', 'pps-passport-core' ),
 			'type'    => Controls_Manager::NUMBER,
 			'default' => 0,
 		] );
 
 		// Exclude
 		$this->add_control( 'exclude', [
-			'label'   => esc_html__( 'Exclude', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Exclude', 'pps-passport-core' ),
 			'type'    => Controls_Manager::TEXT,
 			'default' => '',
 		] );
 
 		// Include
 		$this->add_control( 'include', [
-			'label'   => esc_html__( 'Include', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Include', 'pps-passport-core' ),
 			'type'    => Controls_Manager::TEXT,
 			'default' => '',
 		] );
@@ -167,47 +167,47 @@ class BlogSidebar extends Widget_Base {
 		// Blog Meta Style
 		//====================
 		$this->start_controls_section( 'background_shape', [
-			'label' => __( 'Meta', 'gpt-news-core' ),
+			'label' => __( 'Meta', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'meta_show', [
-			'label'        => __( 'Show Post meta', 'gpt-news-core' ),
+			'label'        => __( 'Show Post meta', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Yes', 'gpt-news-core' ),
-			'label_off'    => __( 'No', 'gpt-news-core' ),
+			'label_on'     => __( 'Yes', 'pps-passport-core' ),
+			'label_off'    => __( 'No', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'meta_text_typography',
-			'label'    => __( 'Date Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-post__item .gpt-post__date-meta .posted-on a, {{WRAPPER}} .gpt-post__date-meta a',
+			'label'    => __( 'Date Typography', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-post__item .pps-post__date-meta .posted-on a, {{WRAPPER}} .pps-post__date-meta a',
 		] );
 
 		$this->add_control( 'meta_text_color', [
-			'label'     => __( 'Date Color', 'gpt-news-core' ),
+			'label'     => __( 'Date Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__item .gpt-post__date-meta .posted-on a, {{WRAPPER}} .gpt-post__date-meta a' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .pps-post__item .pps-post__date-meta .posted-on a, {{WRAPPER}} .pps-post__date-meta a' => 'color: {{VALUE}}',
 			],
 		] );
 
 		$this->add_control( 'meta_icon_color', [
-			'label'     => __( 'Icon Color', 'gpt-news-core' ),
+			'label'     => __( 'Icon Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__date-meta svg path' => 'stroke: {{VALUE}}',
+				'{{WRAPPER}} .pps-post__date-meta svg path' => 'stroke: {{VALUE}}',
 			],
 		] );
 
 
 		$this->add_control( 'date_title_color_hover', [
-			'label'     => __( 'Hover Color', 'gpt-news-core' ),
+			'label'     => __( 'Hover Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt__post-post-meta li a:hover, {{WRAPPER}} .gpt-post__date-meta a:hover' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .pps__post-post-meta li a:hover, {{WRAPPER}} .pps-post__date-meta a:hover' => 'color: {{VALUE}}',
 			],
 		] );
 
@@ -217,29 +217,29 @@ class BlogSidebar extends Widget_Base {
 		// Title Style
 		//=====================
 		$this->start_controls_section( 'name_section', [
-			'label' => __( 'Title', 'gpt-news-core' ),
+			'label' => __( 'Title', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'title_typography',
-			'label'    => __( 'Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-post__entry-title',
+			'label'    => __( 'Typography', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-post__entry-title',
 		] );
 
 		$this->add_control( 'title_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__entry-title a' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .pps-post__entry-title a' => 'color: {{VALUE}}',
 			],
 		] );
 
 		$this->add_control( 'title_hover_color', [
-			'label'     => __( 'Hover Color', 'gpt-news-core' ),
+			'label'     => __( 'Hover Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__entry-title a:hover' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .pps-post__entry-title a:hover' => 'color: {{VALUE}}',
 			],
 		] );
 
@@ -248,21 +248,21 @@ class BlogSidebar extends Widget_Base {
 		// Content Style
 		//=====================
 		$this->start_controls_section( 'designation_section', [
-			'label' => __( 'Content', 'gpt-news-core' ),
+			'label' => __( 'Content', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'content_typography',
-			'label'    => __( 'Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-post__entry-content',
+			'label'    => __( 'Typography', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-post__entry-content',
 		] );
 
 		$this->add_control( 'content_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-post__entry-content' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .pps-post__entry-content' => 'color: {{VALUE}}',
 			],
 		] );
 
@@ -271,7 +271,7 @@ class BlogSidebar extends Widget_Base {
 		// Category Style
 		//=====================
 		$this->start_controls_section( 'category_section', [
-			'label'     => __( 'Category', 'gpt-news-core' ),
+			'label'     => __( 'Category', 'pps-passport-core' ),
 			'tab'       => Controls_Manager::TAB_STYLE,
 			'condition' => [
 				'layout' => 'list'
@@ -282,10 +282,10 @@ class BlogSidebar extends Widget_Base {
 		$this->add_control(
 			'category_show',
 			[
-				'label'        => __( 'Show Category', 'gpt-news-core' ),
+				'label'        => __( 'Show Category', 'pps-passport-core' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'gpt-news-core' ),
-				'label_off'    => __( 'Hide', 'gpt-news-core' ),
+				'label_on'     => __( 'Show', 'pps-passport-core' ),
+				'label_off'    => __( 'Hide', 'pps-passport-core' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -293,8 +293,8 @@ class BlogSidebar extends Widget_Base {
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'category_typography',
-			'label'    => __( 'Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt__blog-meta-category',
+			'label'    => __( 'Typography', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps__blog-meta-category',
 		] );
 
 		// Padding
@@ -302,11 +302,11 @@ class BlogSidebar extends Widget_Base {
 		$this->add_responsive_control(
 			'category_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-news-core' ),
+				'label'      => __( 'Padding', 'pps-passport-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .gpt__blog-meta-category' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .pps__blog-meta-category' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -315,11 +315,11 @@ class BlogSidebar extends Widget_Base {
 		$this->add_responsive_control(
 			'category_margin',
 			[
-				'label'      => __( 'Margin', 'gpt-news-core' ),
+				'label'      => __( 'Margin', 'pps-passport-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .gpt__blog-meta-category' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .pps__blog-meta-category' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -328,11 +328,11 @@ class BlogSidebar extends Widget_Base {
 		$this->add_responsive_control(
 			'category_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'gpt-news-core' ),
+				'label'      => __( 'Border Radius', 'pps-passport-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .gpt__blog-meta-category' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .pps__blog-meta-category' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -348,18 +348,18 @@ class BlogSidebar extends Widget_Base {
 		);
 
 		$this->add_control( 'category_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt__blog-meta-category' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .pps__blog-meta-category' => 'color: {{VALUE}}',
 			],
 		] );
 
 		$this->add_control( 'category_bg_color', [
-			'label'     => __( 'Background Color', 'gpt-news-core' ),
+			'label'     => __( 'Background Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt__blog-meta-category' => 'background-color: {{VALUE}}',
+				'{{WRAPPER}} .pps__blog-meta-category' => 'background-color: {{VALUE}}',
 			],
 		] );
 
@@ -374,18 +374,18 @@ class BlogSidebar extends Widget_Base {
 		);
 
 		$this->add_control( 'category_hover_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt__blog-meta-category:hover' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .pps__blog-meta-category:hover' => 'color: {{VALUE}}',
 			],
 		] );
 
 		$this->add_control( 'category_hover_bg_color', [
-			'label'     => __( 'Background Color', 'gpt-news-core' ),
+			'label'     => __( 'Background Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt__blog-meta-category:hover' => 'background-color: {{VALUE}}',
+				'{{WRAPPER}} .pps__blog-meta-category:hover' => 'background-color: {{VALUE}}',
 			],
 		] );
 
@@ -401,7 +401,7 @@ class BlogSidebar extends Widget_Base {
 		$post_count = $settings['post_count'];
 		$query_type = $settings['blog_query_type']; // Get the query type
 
-		$this->add_render_attribute( 'wrapper', 'class', [ 'gpt-post-items blog-grid' ] );
+		$this->add_render_attribute( 'wrapper', 'class', [ 'pps-post-items blog-grid' ] );
 
 		$_tax_query = array();
 
@@ -479,17 +479,17 @@ class BlogSidebar extends Widget_Base {
 			$query_args['offset'] = $settings['offset'];
 		}
 
-		$gpt_query = new \WP_Query( $query_args );
+		$pps_query = new \WP_Query( $query_args );
 		?>
 		<div class="blog-post-items">
-			<?php if ( $gpt_query->have_posts() ) : ?>
-				<?php while ( $gpt_query->have_posts() ) : $gpt_query->the_post(); ?>
+			<?php if ( $pps_query->have_posts() ) : ?>
+				<?php while ( $pps_query->have_posts() ) : $pps_query->the_post(); ?>
 					<div class="blog-list">
 						<div class="blog-list__image">
 							<a href="<?php the_permalink(); ?>">
 								<?php
 								if ( has_post_thumbnail() ) {
-									the_post_thumbnail( 'gpt-blog-list_300x185', [ 'alt' => get_the_title() ] );
+									the_post_thumbnail( 'pps-blog-list_300x185', [ 'alt' => get_the_title() ] );
 								} else { ?>
 									<img src="https://via.placeholder.com/410x290" alt="Placeholder">
 								<?php } ?>
@@ -505,7 +505,7 @@ class BlogSidebar extends Widget_Base {
 									<?php if ( $settings['show_date_meta'] ) : ?>
 										<li>
 											<i class="ri-calendar-2-line"></i>
-											<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+											<?php \PPS_Theme_Helper::pps_posted_on(); ?>
 <!--										</li>-->
 									<?php endif; ?>
 									<?php if ( $settings['show_view_count_meta'] ) : ?>

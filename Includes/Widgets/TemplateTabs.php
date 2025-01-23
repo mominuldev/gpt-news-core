@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Widgets;
+namespace PixelPath\PPSPassportCore\Widgets;
 
 use Elementor\{
 	Controls_Manager,
@@ -16,18 +16,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
- * GPT Tab
- * GPT widget.
+ * PPS Tab
+ * PPS widget.
  * @since 1.0.0
  */
 class TemplateTabs extends Widget_Base {
 
 	public function get_name() {
-		return 'gpt-dynamic-tabs';
+		return 'pps-dynamic-tabs';
 	}
 
 	public function get_title() {
-		return __( 'GPT Dynamic Tabs', 'gpt-news-core' );
+		return __( 'PPS Dynamic Tabs', 'pps-passport-core' );
 	}
 
 	public function get_icon() {
@@ -35,7 +35,7 @@ class TemplateTabs extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'gpt-elements' ];
+		return [ 'pps-elements' ];
 	}
 
 	protected function register_controls() {
@@ -43,19 +43,19 @@ class TemplateTabs extends Widget_Base {
 		// ------------------------------ Feature list ------------------------------
 		$this->start_controls_section(
 			'section_tab', [
-				'label' => __( 'GPT Tabs', 'gpt-news-core' ),
+				'label' => __( 'PPS Tabs', 'pps-passport-core' ),
 			]
 		);
 
 		// Layout
 		$this->add_control(
 			'tab_layout', [
-				'label'   => __( 'Layout', 'gpt-news-core' ),
+				'label'   => __( 'Layout', 'pps-passport-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'horizontal',
 				'options' => [
-					'horizontal' => __( 'Horizontal', 'gpt-news-core' ),
-					'vertical'   => __( 'Vertical', 'gpt-news-core' ),
+					'horizontal' => __( 'Horizontal', 'pps-passport-core' ),
+					'vertical'   => __( 'Vertical', 'pps-passport-core' ),
 				],
 			]
 		);
@@ -63,13 +63,13 @@ class TemplateTabs extends Widget_Base {
 		// Tab Style
 		$this->add_control(
 			'tab_style', [
-				'label'   => __( 'Tab Style', 'gpt-news-core' ),
+				'label'   => __( 'Tab Style', 'pps-passport-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'style-one',
 				'options' => [
-					'style-one'   => __( 'Style 1', 'gpt-news-core' ),
-					'style-two'   => __( 'Style 2', 'gpt-news-core' ),
-					'style-three' => __( 'Style 3', 'gpt-news-core' ),
+					'style-one'   => __( 'Style 1', 'pps-passport-core' ),
+					'style-two'   => __( 'Style 2', 'pps-passport-core' ),
+					'style-three' => __( 'Style 3', 'pps-passport-core' ),
 
 				],
 			]
@@ -79,7 +79,7 @@ class TemplateTabs extends Widget_Base {
 
 		$repeater->add_control(
 			'tab_label', [
-				'label'       => __( 'Tab Label', 'gpt-news-core' ),
+				'label'       => __( 'Tab Label', 'pps-passport-core' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
 			]
@@ -87,7 +87,7 @@ class TemplateTabs extends Widget_Base {
 
 		$repeater->add_control(
 			'tab_badge_text', [
-				'label'       => __( 'Badge', 'gpt-news-core' ),
+				'label'       => __( 'Badge', 'pps-passport-core' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
 			]
@@ -97,15 +97,15 @@ class TemplateTabs extends Widget_Base {
 		$repeater->add_control(
 			'tab_icon_type',
 			[
-				'label'   => __( 'Icon Type', 'gpt-news-core' ),
+				'label'   => __( 'Icon Type', 'pps-passport-core' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'none' => [
-						'title' => __( 'None', 'gpt-news-core' ),
+						'title' => __( 'None', 'pps-passport-core' ),
 						'icon'  => 'eicon-ban',
 					],
 					'icon' => [
-						'title' => __( 'Icon', 'gpt-news-core' ),
+						'title' => __( 'Icon', 'pps-passport-core' ),
 						'icon'  => 'eicon-star',
 					],
 				],
@@ -118,12 +118,12 @@ class TemplateTabs extends Widget_Base {
 		$repeater->add_control(
 			'tab_icon_pack',
 			[
-				'label'     => __( 'Icon Select', 'gpt-news-core' ),
+				'label'     => __( 'Icon Select', 'pps-passport-core' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'font_awesome',
 				'options'   => [
-					'font_awesome' => __( 'Font Awesome', 'gpt-news-core' ),
-					'elegant_icon' => __( 'Elegant Icon', 'gpt-news-core' ),
+					'font_awesome' => __( 'Font Awesome', 'pps-passport-core' ),
+					'elegant_icon' => __( 'Elegant Icon', 'pps-passport-core' ),
 				],
 				'condition' => [
 					'tab_icon_type' => 'icon',
@@ -153,10 +153,10 @@ class TemplateTabs extends Widget_Base {
 		$repeater->add_control(
 			'tab_icon',
 			[
-				'label'       => __( 'Choose Icon', 'gpt-news-core' ),
+				'label'       => __( 'Choose Icon', 'pps-passport-core' ),
 				'type'        => Controls_Manager::ICON,
-				'options'     => gpt_simpleline_icons(),
-				'include'     => gpt_include_simpleline_icons(),
+				'options'     => pps_simpleline_icons(),
+				'include'     => pps_include_simpleline_icons(),
 				'default'     => 'icon-user',
 				'label_block' => true,
 				'condition'   => [
@@ -182,7 +182,7 @@ class TemplateTabs extends Widget_Base {
 		$repeater->add_control(
 			'template_id',
 			[
-				'label'   => __( 'Choose Template', 'gpt-news-core' ),
+				'label'   => __( 'Choose Template', 'pps-passport-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => $options,
 				'default' => '0',
@@ -193,18 +193,18 @@ class TemplateTabs extends Widget_Base {
 		$this->add_control(
 			'advance_tab',
 			[
-				'label'       => __( 'Tab Lists', 'gpt-news-core' ),
+				'label'       => __( 'Tab Lists', 'pps-passport-core' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
-						'tab_label' => __( 'Tab #1', 'gpt-news-core' ),
+						'tab_label' => __( 'Tab #1', 'pps-passport-core' ),
 					],
 					[
-						'tab_label' => __( 'Tab #2', 'gpt-news-core' ),
+						'tab_label' => __( 'Tab #2', 'pps-passport-core' ),
 					],
 					[
-						'tab_label' => __( 'Tab #3', 'gpt-news-core' ),
+						'tab_label' => __( 'Tab #3', 'pps-passport-core' ),
 					],
 				],
 				'title_field' => '{{{ tab_label }}}',
@@ -215,25 +215,25 @@ class TemplateTabs extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_align',
 			[
-				'label'     => __( 'Alignment', 'gpt-news-core' ),
+				'label'     => __( 'Alignment', 'pps-passport-core' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
 					'left'   => [
-						'title' => __( 'Left', 'gpt-news-core' ),
+						'title' => __( 'Left', 'pps-passport-core' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'gpt-news-core' ),
+						'title' => __( 'Center', 'pps-passport-core' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'right'  => [
-						'title' => __( 'Right', 'gpt-news-core' ),
+						'title' => __( 'Right', 'pps-passport-core' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
 				'default'   => 'center',
 				'selectors' => [
-					'{{WRAPPER}} .gpt-dynamic-tabs-nav-wrapper' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .pps-dynamic-tabs-nav-wrapper' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -242,7 +242,7 @@ class TemplateTabs extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_spacing',
 			[
-				'label'      => __( 'Tabs Spacing', 'gpt-news-core' ),
+				'label'      => __( 'Tabs Spacing', 'pps-passport-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range'      => [
@@ -258,7 +258,7 @@ class TemplateTabs extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} #gpt-dynamic-tabs.horizontal .gpt-dynamic-tabs-contents ' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} #pps-dynamic-tabs.horizontal .pps-dynamic-tabs-contents ' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -271,7 +271,7 @@ class TemplateTabs extends Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => __( 'Tab Label', 'gpt-news-core' ),
+				'label' => __( 'Tab Label', 'pps-passport-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -280,7 +280,7 @@ class TemplateTabs extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_label_spacing',
 			[
-				'label'      => __( 'Tabs Spacing', 'gpt-news-core' ),
+				'label'      => __( 'Tabs Spacing', 'pps-passport-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range'      => [
@@ -296,9 +296,9 @@ class TemplateTabs extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} #gpt-dynamic-tabs.horizontal #gpt-dynamic-tabs-nav.style-one li:not(:last-child)' => 'margin-right: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} #gpt-dynamic-tabs.horizontal #gpt-dynamic-tabs-nav.style-two li:nth-child(-n+2)'  => 'margin-right: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} #gpt-dynamic-tabs.vertical #gpt-dynamic-tabs-nav li:not(:last-child)'             => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} #pps-dynamic-tabs.horizontal #pps-dynamic-tabs-nav.style-one li:not(:last-child)' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} #pps-dynamic-tabs.horizontal #pps-dynamic-tabs-nav.style-two li:nth-child(-n+2)'  => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} #pps-dynamic-tabs.vertical #pps-dynamic-tabs-nav li:not(:last-child)'             => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -306,7 +306,7 @@ class TemplateTabs extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_icon_spacing',
 			[
-				'label'      => __( 'Icon Spacing', 'gpt-news-core' ),
+				'label'      => __( 'Icon Spacing', 'pps-passport-core' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range'      => [
@@ -322,7 +322,7 @@ class TemplateTabs extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li .nav-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} #pps-dynamic-tabs #pps-dynamic-tabs-nav li .nav-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -332,8 +332,8 @@ class TemplateTabs extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'tab_label_typography',
-				'label'    => __( 'Typography', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a',
+				'label'    => __( 'Typography', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} #pps-dynamic-tabs #pps-dynamic-tabs-nav li a',
 			]
 		);
 
@@ -341,11 +341,11 @@ class TemplateTabs extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_label_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-news-core' ),
+				'label'      => __( 'Padding', 'pps-passport-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} #pps-dynamic-tabs #pps-dynamic-tabs-nav li a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -354,15 +354,15 @@ class TemplateTabs extends Widget_Base {
 		$this->start_controls_tabs( 'tab_label_style_tabs' );
 
 		// Normal
-		$this->start_controls_tab( 'tab_label_style_normal_tab', [ 'label' => __( 'Normal', 'gpt-news-core' ) ] );
+		$this->start_controls_tab( 'tab_label_style_normal_tab', [ 'label' => __( 'Normal', 'pps-passport-core' ) ] );
 
 		$this->add_control(
 			'tab_label_color',
 			[
-				'label'     => __( 'Color', 'gpt-news-core' ),
+				'label'     => __( 'Color', 'pps-passport-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} #pps-dynamic-tabs #pps-dynamic-tabs-nav li a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -370,10 +370,10 @@ class TemplateTabs extends Widget_Base {
 		$this->add_control(
 			'tab_label_bg_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-news-core' ),
+				'label'     => __( 'Background Color', 'pps-passport-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} #pps-dynamic-tabs #pps-dynamic-tabs-nav li a' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -382,15 +382,15 @@ class TemplateTabs extends Widget_Base {
 
 		// Hover
 
-		$this->start_controls_tab( 'tab_label_style_hover_tab', [ 'label' => __( 'Hover', 'gpt-news-core' ) ] );
+		$this->start_controls_tab( 'tab_label_style_hover_tab', [ 'label' => __( 'Hover', 'pps-passport-core' ) ] );
 
 		$this->add_control(
 			'tab_label_hover_color',
 			[
-				'label'     => __( 'Color', 'gpt-news-core' ),
+				'label'     => __( 'Color', 'pps-passport-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} #pps-dynamic-tabs #pps-dynamic-tabs-nav li a:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -398,10 +398,10 @@ class TemplateTabs extends Widget_Base {
 		$this->add_control(
 			'tab_label_hover_bg_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-news-core' ),
+				'label'     => __( 'Background Color', 'pps-passport-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li a:hover' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} #pps-dynamic-tabs #pps-dynamic-tabs-nav li a:hover' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -409,15 +409,15 @@ class TemplateTabs extends Widget_Base {
 		$this->end_controls_tab();
 
 		// Active
-		$this->start_controls_tab( 'tab_label_style_active_tab', [ 'label' => __( 'Active', 'gpt-news-core' ) ] );
+		$this->start_controls_tab( 'tab_label_style_active_tab', [ 'label' => __( 'Active', 'pps-passport-core' ) ] );
 
 		$this->add_control(
 			'tab_label_active_color',
 			[
-				'label'     => __( 'Color', 'gpt-news-core' ),
+				'label'     => __( 'Color', 'pps-passport-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li.active a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} #pps-dynamic-tabs #pps-dynamic-tabs-nav li.active a' => 'color: {{VALUE}}',
 					'{{WRAPPER}} .tab-swipe-line'                                     => 'background-color: {{VALUE}}',
 				],
 			]
@@ -426,10 +426,10 @@ class TemplateTabs extends Widget_Base {
 		$this->add_control(
 			'tab_label_active_bg_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-news-core' ),
+				'label'     => __( 'Background Color', 'pps-passport-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} #gpt-dynamic-tabs #gpt-dynamic-tabs-nav li.active a' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} #pps-dynamic-tabs #pps-dynamic-tabs-nav li.active a' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -445,8 +445,8 @@ class TemplateTabs extends Widget_Base {
 		$advance_tab = isset( $settings['advance_tab'] ) ? $settings['advance_tab'] : '';
 
 		// Tab Nav render attributes
-		$this->add_render_attribute( 'tab_nav', 'class', 'gpt-dynamic-tabs-nav' );
-		$this->add_render_attribute( 'tab_nav', 'id', 'gpt-dynamic-tabs-nav' );
+		$this->add_render_attribute( 'tab_nav', 'class', 'pps-dynamic-tabs-nav' );
+		$this->add_render_attribute( 'tab_nav', 'id', 'pps-dynamic-tabs-nav' );
 
 		if ( ! empty( $settings['tab_style'] ) ) {
 			$this->add_render_attribute( 'tab_nav', 'class', $settings['tab_style'] );
@@ -457,8 +457,8 @@ class TemplateTabs extends Widget_Base {
 		}
 
 		// Tab Content render attributes
-		$this->add_render_attribute( 'tab_wrapper', 'class', 'gpt-dynamic-tabs' );
-		$this->add_render_attribute( 'tab_wrapper', 'id', 'gpt-dynamic-tabs' );
+		$this->add_render_attribute( 'tab_wrapper', 'class', 'pps-dynamic-tabs' );
+		$this->add_render_attribute( 'tab_wrapper', 'id', 'pps-dynamic-tabs' );
 
 		if ( $settings['tab_layout'] == 'vertical' ) {
 			$this->add_render_attribute( 'tab_wrapper', 'class', 'vertical' );
@@ -472,10 +472,10 @@ class TemplateTabs extends Widget_Base {
 
 
 		<div <?php echo $this->get_render_attribute_string( 'tab_wrapper' ) ?>>
-			<div class="gpt-dynamic-tabs-nav-wrapper">
+			<div class="pps-dynamic-tabs-nav-wrapper">
 			<ul <?php echo $this->get_render_attribute_string( 'tab_nav' ) ?>>
 				<?php
-				$id_int = 'gpt-tabs-id-' . substr( $this->get_id_int(), 0, 3 );
+				$id_int = 'pps-tabs-id-' . substr( $this->get_id_int(), 0, 3 );
 				foreach ( $advance_tab as $key => $tabitem ) : ?>
 					<li class="elementor-repeater-item-<?php echo esc_attr( $tabitem['_id'] ); ?>">
 						<a href="#<?php echo esc_attr( $id_int . '-' . $key ); ?>">
@@ -508,10 +508,10 @@ class TemplateTabs extends Widget_Base {
 			</ul>
 			</div>
 
-			<div id="gpt-dynamic-tabs-content" class="gpt-dynamic-tabs-wrapper">
+			<div id="pps-dynamic-tabs-content" class="pps-dynamic-tabs-wrapper">
 				<?php foreach ( $advance_tab as $key => $tabitem ) : ?>
 					<div id="<?php echo esc_attr( $id_int . '-' . $key ); ?>" class="content">
-						<div class="gpt-dynamic-tabs-contents">
+						<div class="pps-dynamic-tabs-contents">
 							<?php if ( ! empty( $tabitem['template_id'] ) ) {
 								$template_id      = $tabitem['template_id'];
 								$template_content = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $template_id );
@@ -522,7 +522,7 @@ class TemplateTabs extends Widget_Base {
 					</div>
 				<?php endforeach; ?>
 			</div>
-			<!-- gpt-dynamic-tabs-content -->
+			<!-- pps-dynamic-tabs-content -->
 		</div>
 
 		<?php

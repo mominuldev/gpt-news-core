@@ -1,4 +1,4 @@
-<div class="gpt-icon-box style-nine">
+<div class="pps-icon-box style-nine">
 	<?php if ( $settings['icon_type'] == 'type_icon' ) : ?>
 		<?php if ( $settings['icon_pack'] == 'fontawesome' ) : ?>
 			<div class="icon-container">
@@ -52,8 +52,8 @@
         <?php endif; ?>
 
         <?php if ( ! empty( $settings['button_text'] ) ) : ?>
-            <a href="<?php echo esc_url( $settings['btn_link']['url'] ); ?>" class="gpt-btn"><?php echo esc_html( $settings['button_text'] ); ?></a>
+            <a href="<?php echo esc_url( $settings['btn_link']['url'] ); ?>" class="pps-btn"><?php echo esc_html( $settings['button_text'] ); ?></a>
         <?php endif; ?>
     </div>
 </div>
-<!-- /.gpt-icon-box -->
+<!-- /.pps-icon-box -->

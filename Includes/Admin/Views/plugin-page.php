@@ -1,6 +1,6 @@
 <div id=wrap class="wrap">
 
-	<div id="gpt-admin-wrap" class="gpt-admin-wrap">
+	<div id="pps-admin-wrap" class="pps-admin-wrap">
 
 		<?php
 		include __DIR__ . '/section/nav.php';

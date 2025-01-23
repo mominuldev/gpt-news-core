@@ -1,4 +1,4 @@
-<div class="gpt-icon-box style-one">
+<div class="pps-icon-box style-one">
 
 	<?php if ( $settings['icon_type'] == 'type_icon' ) : ?>
 		<?php if ( $settings['icon_pack'] == 'fontawesome' ) : ?>
@@ -53,4 +53,4 @@
         <?php endif; ?>
     </div>
 </div>
-<!-- /.gpt-icon-box -->
+<!-- /.pps-icon-box -->

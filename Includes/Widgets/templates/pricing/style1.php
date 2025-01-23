@@ -2,7 +2,7 @@
 
 	<div class="animated-shape has-animation">
 		<div class="translate-right-75 opacity-animation transition-200 transition-delay-1000">
-			<img src="<?php echo GPT_PLUGIN_URL . 'elementor/assets/images/element7.png' ?>"
+			<img src="<?php echo PPS_PLUGIN_URL . 'elementor/assets/images/element7.png' ?>"
 					alt="<?php echo esc_attr( $settings['monthly_title'] ); ?>">
 		</div>
 	</div>
@@ -83,7 +83,7 @@
 										<div class="btn-month monthly-price">
 											<?php if ( ! empty( $table['purchase_btn_label'] ) ) : ?>
 												<a href="<?php echo esc_url( $purchase_btn['url'] ); ?>"
-														class="gpt-btn <?php echo $table['popular'] !== 'yes' ? 'btn-outline' : ''; ?>"
+														class="pps-btn <?php echo $table['popular'] !== 'yes' ? 'btn-outline' : ''; ?>"
 													<?php echo $purchase_btn_target; ?>>
 													<?php echo esc_html( $table['purchase_btn_label'] ) ?>
 												</a>
@@ -92,7 +92,7 @@
 										<div class="btn-annual yearly-price">
 											<?php if ( ! empty( $table['purchase_btn_label_annual'] ) ) : ?>
 												<a href="<?php echo esc_url( $purchase_btn_annual['url'] ); ?>"
-														class="gpt-btn <?php echo $table['popular'] !== 'yes' ? 'btn-outline' : ''; ?>"
+														class="pps-btn <?php echo $table['popular'] !== 'yes' ? 'btn-outline' : ''; ?>"
 													<?php echo $purchase_btn_target_annual; ?>>
 													<?php echo esc_html( $table['purchase_btn_label_annual'] ) ?>
 												</a>

@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Traits;
+namespace PixelPath\PPSPassportCore\Traits;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -65,7 +65,7 @@ trait PostQuery {
 		$this->start_controls_section(
 			$prefix . '_query_section',
 			[
-				'label' => __( 'Query', 'gpt-news-core' ),
+				'label' => __( 'Query', 'pps-passport-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -74,12 +74,12 @@ trait PostQuery {
 		$this->add_control(
 			$prefix . '_posts_per_page',
 			[
-				'label'       => __( 'Items Per Page', 'gpt-news-core' ),
+				'label'       => __( 'Items Per Page', 'pps-passport-core' ),
 				'type'        => \Elementor\Controls_Manager::NUMBER,
 				'min'         => - 1,
 				'max'         => 100,
 				'default'     => 1,
-				'description' => __( 'Number of items to show per page. Set -1 to show all items. Leave blank to use global setting', 'gpt-news-core' ),
+				'description' => __( 'Number of items to show per page. Set -1 to show all items. Leave blank to use global setting', 'pps-passport-core' ),
 			]
 		);
 
@@ -87,12 +87,12 @@ trait PostQuery {
 		$this->add_control(
 			$prefix . '_post_order',
 			[
-				'label'   => __( 'Order', 'gpt-news-core' ),
+				'label'   => __( 'Order', 'pps-passport-core' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'DESC',
 				'options' => [
-					'DESC' => __( 'DESC', 'gpt-news-core' ),
-					'ASC'  => __( 'ASC', 'gpt-news-core' ),
+					'DESC' => __( 'DESC', 'pps-passport-core' ),
+					'ASC'  => __( 'ASC', 'pps-passport-core' ),
 				],
 			]
 		);
@@ -101,18 +101,18 @@ trait PostQuery {
 		$this->add_control(
 			$prefix . '_post_orderby',
 			[
-				'label'       => __( 'Order By', 'gpt-news-core' ),
+				'label'       => __( 'Order By', 'pps-passport-core' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => 'date',
 				'options'     => [
-					'date'          => __( 'Date', 'gpt-news-core' ),
-					'title'         => __( 'Title', 'gpt-news-core' ),
-					'modified'      => __( 'Modified', 'gpt-news-core' ),
-					'rand'          => __( 'Random', 'gpt-news-core' ),
-					'comment_count' => __( 'Comment Count', 'gpt-news-core' ),
-					'menu_order'    => __( 'Menu Order', 'gpt-news-core' ),
+					'date'          => __( 'Date', 'pps-passport-core' ),
+					'title'         => __( 'Title', 'pps-passport-core' ),
+					'modified'      => __( 'Modified', 'pps-passport-core' ),
+					'rand'          => __( 'Random', 'pps-passport-core' ),
+					'comment_count' => __( 'Comment Count', 'pps-passport-core' ),
+					'menu_order'    => __( 'Menu Order', 'pps-passport-core' ),
 				],
-				'description' => __( 'Select how to sort retrieved posts. More at <a href="https://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress Codex</a>', 'gpt-news-core' ),
+				'description' => __( 'Select how to sort retrieved posts. More at <a href="https://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress Codex</a>', 'pps-passport-core' ),
 			]
 		);
 
@@ -121,12 +121,12 @@ trait PostQuery {
 			$this->add_control(
 				$prefix . '_post_categories',
 				[
-					'label'       => __( 'Select Categories', 'gpt-news-core' ),
+					'label'       => __( 'Select Categories', 'pps-passport-core' ),
 					'type'        => \Elementor\Controls_Manager::SELECT2,
 					'label_block' => true,
 					'multiple'    => true,
-					'options'     => \GPT_Helper::gpt_category_list( $taxonomy_name ),
-					'description' => __( 'Select categories to show. Select nothing to show posts from all categories', 'gpt-news-core' ),
+					'options'     => \PPS_Helper::pps_category_list( $taxonomy_name ),
+					'description' => __( 'Select categories to show. Select nothing to show posts from all categories', 'pps-passport-core' ),
 				]
 			);
 		}
@@ -135,12 +135,12 @@ trait PostQuery {
 //		$this->add_control(
 //			$prefix . '_post_categories_exclude',
 //			[
-//				'label'       => __( 'Exclude Categories', 'gpt-news-core' ),
+//				'label'       => __( 'Exclude Categories', 'pps-passport-core' ),
 //				'type'        => \Elementor\Controls_Manager::SELECT2,
 //				'label_block' => true,
 //				'multiple'    => true,
 //				'options'     => $this->getCategories( $taxonomy_name ),
-//				'description' => __( 'Select categories to exclude. Select nothing to show posts from all categories', 'gpt-news-core' ),
+//				'description' => __( 'Select categories to exclude. Select nothing to show posts from all categories', 'pps-passport-core' ),
 //			]
 //		);
 
@@ -149,10 +149,10 @@ trait PostQuery {
 //		$this->add_control(
 //			$prefix . '_post_ids',
 //			[
-//				'label'       => __( 'Input IDs', 'gpt-news-core' ),
+//				'label'       => __( 'Input IDs', 'pps-passport-core' ),
 //				'type'        => \Elementor\Controls_Manager::TEXT,
 //				'label_block' => true,
-//				'placeholder' => __( '1,2,3,4', 'gpt-news-core' ),
+//				'placeholder' => __( '1,2,3,4', 'pps-passport-core' ),
 //			]
 //		);
 
@@ -160,10 +160,10 @@ trait PostQuery {
 //		$this->add_control(
 //			$prefix . '_post_ids_exclude',
 //			[
-//				'label'       => __( 'Exclude IDs', 'gpt-news-core' ),
+//				'label'       => __( 'Exclude IDs', 'pps-passport-core' ),
 //				'type'        => \Elementor\Controls_Manager::TEXT,
 //				'label_block' => true,
-//				'placeholder' => __( '1,2,3,4', 'gpt-news-core' ),
+//				'placeholder' => __( '1,2,3,4', 'pps-passport-core' ),
 //			]
 //		);
 

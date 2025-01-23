@@ -1,8 +1,8 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Widgets;
+namespace PixelPath\PPSPassportCore\Widgets;
 
-use GpTheme\GptNewsCore\IconsPack;
+use PixelPath\PPSPassportCore\IconsPack;
 use Elementor\{Controls_Manager,
 	Group_Control_Background,
 	Group_Control_Border,
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) exit;
 
 /**
  * Class IconBox
- * @package GpTheme\GptNewsCore\Widgets
+ * @package PixelPath\PPSPassportCore\Widgets
  */
 class IconBox extends Widget_Base {
 
@@ -31,7 +31,7 @@ class IconBox extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'gpt-icon-box';
+		return 'pps-icon-box';
 	}
 
 	/**
@@ -45,7 +45,7 @@ class IconBox extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'GPT Icon Box', 'gpt-news-core' );
+		return esc_html__( 'PPS Icon Box', 'pps-passport-core' );
 	}
 
 	/**
@@ -73,7 +73,7 @@ class IconBox extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'gpt-elements' ];
+		return [ 'pps-elements' ];
 	}
 
 	/**
@@ -100,7 +100,7 @@ class IconBox extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section( 'general_section', [
-			'label' => esc_html__( 'Preset', 'gpt-news-core' ),
+			'label' => esc_html__( 'Preset', 'pps-passport-core' ),
 		] );
 
 		$this->add_control(
@@ -113,9 +113,9 @@ class IconBox extends Widget_Base {
 					'enable'  => esc_html__( 'Enable', 'elementskit-lite' ),
 				],
 				'default'      => 'disable',
-				'prefix_class' => 'gpt-equal-height-',
+				'prefix_class' => 'pps-equal-height-',
 				'selectors'    => [
-					'{{WRAPPER}}.gpt-equal-height-enable, {{WRAPPER}}.gpt-equal-height-enable .elementor-widget-container, {{WRAPPER}}.gpt-equal-height-enable .gpt-icon-box' => 'height: 100%;',
+					'{{WRAPPER}}.pps-equal-height-enable, {{WRAPPER}}.pps-equal-height-enable .elementor-widget-container, {{WRAPPER}}.pps-equal-height-enable .pps-icon-box' => 'height: 100%;',
 				],
 			]
 		);
@@ -126,24 +126,24 @@ class IconBox extends Widget_Base {
 		// Icon and Image
 		//==================
 		$this->start_controls_section( 'section_tab', [
-			'label' => esc_html__( 'Icon and Image', 'gpt-news-core' ),
+			'label' => esc_html__( 'Icon and Image', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'icon_type', [
-			'label'       => esc_html__( 'Add Icon/Image', 'gpt-news-core' ),
+			'label'       => esc_html__( 'Add Icon/Image', 'pps-passport-core' ),
 			'type'        => Controls_Manager::CHOOSE,
 			'label_block' => false,
 			'options'     => [
 				'none'       => [
-					'title' => esc_html__( 'None', 'gpt-news-core' ),
+					'title' => esc_html__( 'None', 'pps-passport-core' ),
 					'icon'  => 'eicon-ban',
 				],
 				'type_icon'  => [
-					'title' => esc_html__( 'Icon', 'gpt-news-core' ),
+					'title' => esc_html__( 'Icon', 'pps-passport-core' ),
 					'icon'  => 'eicon-paint-brush',
 				],
 				'type_image' => [
-					'title' => esc_html__( 'Image', 'gpt-news-core' ),
+					'title' => esc_html__( 'Image', 'pps-passport-core' ),
 					'icon'  => 'eicon-image-bold',
 				]
 			],
@@ -152,7 +152,7 @@ class IconBox extends Widget_Base {
 
 
 		$this->add_control( 'box_icon', [
-			'label'     => __( 'Icon', 'gpt-news-core' ),
+			'label'     => __( 'Icon', 'pps-passport-core' ),
 			'type'      => Controls_Manager::ICONS,
 			'default'   => [
 				'value'   => 'fas fa-star',
@@ -164,7 +164,7 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'icon_image', [
-			'label'     => __( 'Choose Image', 'gpt-news-core' ),
+			'label'     => __( 'Choose Image', 'pps-passport-core' ),
 			'type'      => Controls_Manager::MEDIA,
 			'default'   => [
 				'url' => Utils::get_placeholder_image_src(),
@@ -175,47 +175,47 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'icon_view', [
-			'label'        => __( 'View', 'gpt-news-core' ),
+			'label'        => __( 'View', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SELECT,
 			'default'      => 'stacked',
 			'options'      => [
-				'none'    => __( 'None', 'gpt-news-core' ),
-				'stacked' => __( 'Stacked', 'gpt-news-core' ),
-				'framed'  => __( 'Framed', 'gpt-news-core' ),
+				'none'    => __( 'None', 'pps-passport-core' ),
+				'stacked' => __( 'Stacked', 'pps-passport-core' ),
+				'framed'  => __( 'Framed', 'pps-passport-core' ),
 			],
-			'prefix_class' => 'gpt-view-',
+			'prefix_class' => 'pps-view-',
 		] );
 
 		$this->add_control( 'icon_shape', [
-			'label'        => __( 'Shape', 'gpt-news-core' ),
+			'label'        => __( 'Shape', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SELECT,
 			'default'      => 'rounded',
 			'options'      => [
-				'rounded' => __( 'Rounded', 'gpt-news-core' ),
-				'circle'  => __( 'Circle', 'gpt-news-core' ),
-				'square'  => __( 'Square', 'gpt-news-core' ),
+				'rounded' => __( 'Rounded', 'pps-passport-core' ),
+				'circle'  => __( 'Circle', 'pps-passport-core' ),
+				'square'  => __( 'Square', 'pps-passport-core' ),
 
 			],
 			'condition'    => [
 				'icon_view' => [ 'stacked', 'framed' ],
 			],
-			'prefix_class' => 'gpt-shape-',
+			'prefix_class' => 'pps-shape-',
 		] );
 
 		$this->add_responsive_control( 'icon_position', [
-			'label'   => __( 'Icon Position', 'gpt-news-core' ),
+			'label'   => __( 'Icon Position', 'pps-passport-core' ),
 			'type'    => Controls_Manager::CHOOSE,
 			'options' => [
 				'left'  => [
-					'title' => __( 'Left', 'gpt-news-core' ),
+					'title' => __( 'Left', 'pps-passport-core' ),
 					'icon'  => 'eicon-h-align-left',
 				],
 				'top'   => [
-					'title' => __( 'Center', 'gpt-news-core' ),
+					'title' => __( 'Center', 'pps-passport-core' ),
 					'icon'  => 'eicon-v-align-top',
 				],
 				'right' => [
-					'title' => __( 'Right', 'gpt-news-core' ),
+					'title' => __( 'Right', 'pps-passport-core' ),
 					'icon'  => 'eicon-h-align-right',
 				],
 			],
@@ -224,19 +224,19 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'icon_vertically_position', [
-			'label'     => __( 'Icon Vertically Position', 'gpt-news-core' ),
+			'label'     => __( 'Icon Vertically Position', 'pps-passport-core' ),
 			'type'      => Controls_Manager::CHOOSE,
 			'options'   => [
 				'start'  => [
-					'top'  => __( 'Top', 'gpt-news-core' ),
+					'top'  => __( 'Top', 'pps-passport-core' ),
 					'icon' => ' eicon-v-align-top',
 				],
 				'center' => [
-					'title' => __( 'Center', 'gpt-news-core' ),
+					'title' => __( 'Center', 'pps-passport-core' ),
 					'icon'  => 'eicon-v-align-middle',
 				],
 				'end'    => [
-					'title' => __( 'Bottom', 'gpt-news-core' ),
+					'title' => __( 'Bottom', 'pps-passport-core' ),
 					'icon'  => 'eicon-v-align-bottom',
 				],
 			],
@@ -248,16 +248,16 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'icon_bg_shape', [
-			'label'        => __( 'Icon BG Shape?', 'gpt-news-core' ),
+			'label'        => __( 'Icon BG Shape?', 'pps-passport-core' ),
 			'type'         => \Elementor\Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Show', 'gpt-news-core' ),
-			'label_off'    => __( 'Hide', 'gpt-news-core' ),
+			'label_on'     => __( 'Show', 'pps-passport-core' ),
+			'label_off'    => __( 'Hide', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'no',
 		] );
 
 		$this->add_control( 'icon_shape_image', [
-			'label'     => __( 'Choose Image', 'gpt-news-core' ),
+			'label'     => __( 'Choose Image', 'pps-passport-core' ),
 			'type'      => Controls_Manager::MEDIA,
 			'condition' => [
 				'icon_bg_shape' => 'yes'
@@ -265,16 +265,16 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'icon_fixed_height', [
-			'label'        => __( 'Enable Icon Fixed Height?', 'gpt-news-core' ),
+			'label'        => __( 'Enable Icon Fixed Height?', 'pps-passport-core' ),
 			'type'         => \Elementor\Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Show', 'gpt-news-core' ),
-			'label_off'    => __( 'Hide', 'gpt-news-core' ),
+			'label_on'     => __( 'Show', 'pps-passport-core' ),
+			'label_off'    => __( 'Hide', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
 
 		$this->add_control( 'fixed_height', [
-			'label'     => __( 'Icon Container Height', 'gpt-news-core' ),
+			'label'     => __( 'Icon Container Height', 'pps-passport-core' ),
 			'type'      => \Elementor\Controls_Manager::NUMBER,
 			'min'       => 20,
 			'max'       => 300,
@@ -285,7 +285,7 @@ class IconBox extends Widget_Base {
 				'icon_type'         => 'type_image'
 			],
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__icon-container img' => 'height: {{VALUE}}px;'
+				'{{WRAPPER}} .pps-icon-box__icon-container img' => 'height: {{VALUE}}px;'
 			],
 		] );
 
@@ -294,31 +294,31 @@ class IconBox extends Widget_Base {
 		// Content Section
 		//=================
 		$this->start_controls_section( 'icon_box_content_section', [
-			'label' => esc_html__( 'Content', 'gpt-news-core' ),
+			'label' => esc_html__( 'Content', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'box_title', [
-			'label'       => esc_html__( 'Box Title', 'gpt-news-core' ),
+			'label'       => esc_html__( 'Box Title', 'pps-passport-core' ),
 			'type'        => Controls_Manager::TEXT,
 			'label_block' => true,
-			'placeholder' => esc_html__( 'Title', 'gpt-news-core' ),
-			'default'     => esc_html__( 'Feature Heading', 'gpt-news-core' ),
+			'placeholder' => esc_html__( 'Title', 'pps-passport-core' ),
+			'default'     => esc_html__( 'Feature Heading', 'pps-passport-core' ),
 			'dynamic'     => [
 				'active' => true,
 			],
 		] );
 
 		$this->add_control( 'title_link', [
-			'label'       => __( 'Link', 'gpt-news-core' ),
+			'label'       => __( 'Link', 'pps-passport-core' ),
 			'type'        => \Elementor\Controls_Manager::URL,
-			'placeholder' => __( 'https://your-link.com', 'gpt-news-core' ),
+			'placeholder' => __( 'https://your-link.com', 'pps-passport-core' ),
 			'dynamic'     => [
 				'active' => true,
 			],
 		] );
 
 		$this->add_control( 'title_size', [
-			'label'   => __( 'Title HTML Tag', 'gpt-news-core' ),
+			'label'   => __( 'Title HTML Tag', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'options' => [
 				'h1'   => 'H1',
@@ -335,11 +335,11 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'description', [
-			'label'       => esc_html__( 'Description', 'gpt-news-core' ),
+			'label'       => esc_html__( 'Description', 'pps-passport-core' ),
 			'type'        => Controls_Manager::TEXTAREA,
 			'label_block' => true,
-			'placeholder' => esc_html__( 'Description', 'gpt-news-core' ),
-			'default'     => __( 'There are many variations of the passages of Lorem Ipsum is an available the done.', 'gpt-news-core' ),
+			'placeholder' => esc_html__( 'Description', 'pps-passport-core' ),
+			'default'     => __( 'There are many variations of the passages of Lorem Ipsum is an available the done.', 'pps-passport-core' ),
 			'separator'   => 'before',
 			'dynamic'     => [
 				'active' => true,
@@ -347,29 +347,29 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'title_align', [
-			'label'     => esc_html__( 'Alignment', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Alignment', 'pps-passport-core' ),
 			'type'      => Controls_Manager::CHOOSE,
 			'options'   => [
 
 				'left'    => [
-					'title' => esc_html__( 'Left', 'gpt-news-core' ),
+					'title' => esc_html__( 'Left', 'pps-passport-core' ),
 					'icon'  => 'eicon-text-align-left',
 				],
 				'center'  => [
-					'title' => esc_html__( 'Center', 'gpt-news-core' ),
+					'title' => esc_html__( 'Center', 'pps-passport-core' ),
 					'icon'  => 'eicon-text-align-centee',
 				],
 				'right'   => [
-					'title' => esc_html__( 'Right', 'gpt-news-core' ),
+					'title' => esc_html__( 'Right', 'pps-passport-core' ),
 					'icon'  => 'eicon-text-align-right',
 				],
 				'justify' => [
-					'title' => esc_html__( 'Justified', 'gpt-news-core' ),
+					'title' => esc_html__( 'Justified', 'pps-passport-core' ),
 					'icon'  => 'eicon-text-align-justify',
 				],
 			],
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box' => 'text-align: {{VALUE}};'
+				'{{WRAPPER}} .pps-icon-box' => 'text-align: {{VALUE}};'
 			],
 		] );
 
@@ -379,25 +379,25 @@ class IconBox extends Widget_Base {
 		// Button Section
 		//==========================
 		$this->start_controls_section( 'section_button', [
-			'label' => __( 'Button', 'gpt-news-core' ),
+			'label' => __( 'Button', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'show_button', [
-			'label'        => __( 'Show Button', 'gpt-news-core' ),
+			'label'        => __( 'Show Button', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Show', 'gpt-news-core' ),
-			'label_off'    => __( 'Hide', 'gpt-news-core' ),
+			'label_on'     => __( 'Show', 'pps-passport-core' ),
+			'label_off'    => __( 'Hide', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'no',
 		] );
 
 		$this->add_control( 'button_type', [
-			'label'     => __( 'Button Type', 'gpt-news-core' ),
+			'label'     => __( 'Button Type', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SELECT,
 			'default'   => 'de-icon-box__link',
 			'options'   => [
-				'de-icon-box__link' => __( 'Link', 'gpt-news-core' ),
-				'gpt-btn'           => __( 'Button', 'gpt-news-core' ),
+				'de-icon-box__link' => __( 'Link', 'pps-passport-core' ),
+				'pps-btn'           => __( 'Button', 'pps-passport-core' ),
 			],
 			'condition' => [
 				'show_button' => 'yes'
@@ -405,12 +405,12 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'button_shape', [
-			'label'     => __( 'Button Shape', 'gpt-news-core' ),
+			'label'     => __( 'Button Shape', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SELECT,
 			'default'   => 'btn-outline',
 			'options'   => [
-				'btn-outline' => __( 'Outline', 'gpt-news-core' ),
-				'btn-fill'    => __( 'Fill', 'gpt-news-core' ),
+				'btn-outline' => __( 'Outline', 'pps-passport-core' ),
+				'btn-fill'    => __( 'Fill', 'pps-passport-core' ),
 			],
 			'condition' => [
 				'show_button' => 'yes'
@@ -418,11 +418,11 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'btn_text', [
-			'label'       => __( 'Button Text', 'gpt-news-core' ),
+			'label'       => __( 'Button Text', 'pps-passport-core' ),
 			'type'        => Controls_Manager::TEXT,
 			'label_block' => true,
-			'placeholder' => __( 'Button Text', 'gpt-news-core' ),
-			'default'     => __( 'Learn here', 'gpt-news-core' ),
+			'placeholder' => __( 'Button Text', 'pps-passport-core' ),
+			'default'     => __( 'Learn here', 'pps-passport-core' ),
 			'dynamic'     => [
 				'active' => true,
 			],
@@ -432,9 +432,9 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'button_link', [
-			'label'       => __( 'Link', 'gpt-news-core' ),
+			'label'       => __( 'Link', 'pps-passport-core' ),
 			'type'        => Controls_Manager::URL,
-			'placeholder' => __( 'https://your-link.com', 'gpt-news-core' ),
+			'placeholder' => __( 'https://your-link.com', 'pps-passport-core' ),
 			'dynamic'     => [
 				'active' => true,
 			],
@@ -447,16 +447,16 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'show_button_icon', [
-			'label'        => __( 'Show Button Icon', 'gpt-news-core' ),
+			'label'        => __( 'Show Button Icon', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Show', 'gpt-news-core' ),
-			'label_off'    => __( 'Hide', 'gpt-news-core' ),
+			'label_on'     => __( 'Show', 'pps-passport-core' ),
+			'label_off'    => __( 'Hide', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'no',
 		] );
 
 		$this->add_control( 'button_icon', [
-			'label'     => __( 'Icon', 'gpt-news-core' ),
+			'label'     => __( 'Icon', 'pps-passport-core' ),
 			'type'      => Controls_Manager::ICONS,
 			'default'   => [
 				'value'   => 'fas fa-arrow-right',
@@ -466,18 +466,18 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'icon_align', [
-			'label'     => esc_html__( 'Icon Position', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Icon Position', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SELECT,
 			'default'   => 'right',
 			'options'   => [
-				'left'  => esc_html__( 'Before', 'gpt-news-core' ),
-				'right' => esc_html__( 'After', 'gpt-news-core' ),
+				'left'  => esc_html__( 'Before', 'pps-passport-core' ),
+				'right' => esc_html__( 'After', 'pps-passport-core' ),
 			],
 			'condition' => [ 'show_button_icon' => 'yes' ]
 		] );
 
 		$this->add_control( 'icon_indent', [
-			'label'     => esc_html__( 'Icon Spacing', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Icon Spacing', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -485,15 +485,15 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__button .gpt-align-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-				'{{WRAPPER}} .gpt-icon-box__button .gpt-align-icon-left'  => 'margin-right: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__button .pps-align-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__button .pps-align-icon-left'  => 'margin-right: {{SIZE}}{{UNIT}};',
 				'condition'                                               => [ 'show_button_icon' => 'yes' ]
 			],
 
 		] );
 
 		$this->add_responsive_control( 'button_space', [
-			'label'     => esc_html__( 'Button Spacing Margin Top', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Button Spacing Margin Top', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -502,7 +502,7 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__button' => 'margin-top: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__button' => 'margin-top: {{SIZE}}{{UNIT}};',
 			],
 		] );
 
@@ -511,24 +511,24 @@ class IconBox extends Widget_Base {
 		// Badge
 		//===================
 		$this->start_controls_section( 'badge_section', [
-			'label' => esc_html__( 'Badge', 'gpt-news-core' ),
+			'label' => esc_html__( 'Badge', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'badge_enable', [
-			'label'        => __( 'Enable Badge?', 'gpt-news-core' ),
+			'label'        => __( 'Enable Badge?', 'pps-passport-core' ),
 			'type'         => \Elementor\Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Show', 'gpt-news-core' ),
-			'label_off'    => __( 'Hide', 'gpt-news-core' ),
+			'label_on'     => __( 'Show', 'pps-passport-core' ),
+			'label_off'    => __( 'Hide', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'no',
 		] );
 
 		$this->add_control( 'badge_text', [
-			'label'       => esc_html__( 'Badge Text', 'gpt-news-core' ),
+			'label'       => esc_html__( 'Badge Text', 'pps-passport-core' ),
 			'type'        => Controls_Manager::TEXT,
 			'label_block' => true,
-			'placeholder' => esc_html__( 'Badge Text', 'gpt-news-core' ),
-			'default'     => __( 'Badge', 'gpt-news-core' ),
+			'placeholder' => esc_html__( 'Badge Text', 'pps-passport-core' ),
+			'default'     => __( 'Badge', 'pps-passport-core' ),
 			'condition'   => [
 				'badge_enable' => 'yes'
 			]
@@ -536,10 +536,10 @@ class IconBox extends Widget_Base {
 
 
 		$this->add_control( 'border_popover_toggle', [
-			'label'        => __( 'Position', 'gpt-news-core' ),
+			'label'        => __( 'Position', 'pps-passport-core' ),
 			'type'         => Controls_Manager::POPOVER_TOGGLE,
-			'label_off'    => __( 'Default', 'gpt-news-core' ),
-			'label_on'     => __( 'Custom', 'gpt-news-core' ),
+			'label_off'    => __( 'Default', 'pps-passport-core' ),
+			'label_on'     => __( 'Custom', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'condition'    => [
 				'badge_enable' => 'yes'
@@ -549,7 +549,7 @@ class IconBox extends Widget_Base {
 		$this->start_popover();
 
 		$this->add_responsive_control( 'de_bg_text_horizontal_position', [
-			'label'      => __( 'Horizontal Position', 'gpt-news-core' ),
+			'label'      => __( 'Horizontal Position', 'pps-passport-core' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px', '%' ],
 			'default'    => [
@@ -562,12 +562,12 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box__badge' => 'left: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__badge' => 'left: {{SIZE}}{{UNIT}};',
 			],
 		] );
 
 		$this->add_responsive_control( 'de_bg_text_vertical_position', [
-			'label'      => __( 'Vertical Position', 'gpt-news-core' ),
+			'label'      => __( 'Vertical Position', 'pps-passport-core' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px', '%' ],
 			'default'    => [
@@ -580,7 +580,7 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box__badge' => 'top: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__badge' => 'top: {{SIZE}}{{UNIT}};',
 			],
 		] );
 
@@ -593,7 +593,7 @@ class IconBox extends Widget_Base {
 		 */
 
 		$this->start_controls_section( 'section_icon_style', [
-			'label' => esc_html__( 'Icon and Image', 'gpt-news-core' ),
+			'label' => esc_html__( 'Icon and Image', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
@@ -601,41 +601,41 @@ class IconBox extends Widget_Base {
 		$this->start_controls_tabs( 'tabs_icon_style' );
 
 		$this->start_controls_tab( 'tab_icon_normal', [
-			'label' => __( 'Normal', 'gpt-news-core' ),
+			'label' => __( 'Normal', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'icon_color', [
-			'label'     => esc_html__( 'Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__icon-container' => 'color: {{VALUE}};'
+				'{{WRAPPER}} .pps-icon-box__icon-container' => 'color: {{VALUE}};'
 			],
 		] );
 
 //		$this->add_control('icon_border_color', [
-//			'label'     => esc_html__('Border Color', 'gpt-news-core'),
+//			'label'     => esc_html__('Border Color', 'pps-passport-core'),
 //			'type'      => Controls_Manager::COLOR,
 //			'selectors' => [
-//				'{{WRAPPER}} .gpt-icon-box__icon-container' => 'border-color: {{VALUE}};'
+//				'{{WRAPPER}} .pps-icon-box__icon-container' => 'border-color: {{VALUE}};'
 //			],
 //		]);
 
 		$this->add_control( 'icon_bg_color_type', array(
-			'label'        => __( 'BG Color Type', 'gpt-news-core' ),
+			'label'        => __( 'BG Color Type', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SELECT,
 			'options'      => array(
-				'color'    => __( 'Color', 'gpt-news-core' ),
-				'gradient' => __( 'Background', 'gpt-news-core' ),
+				'color'    => __( 'Color', 'pps-passport-core' ),
+				'gradient' => __( 'Background', 'pps-passport-core' ),
 			),
 			'default'      => 'color',
-			'prefix_class' => 'gpt-heading-fill-',
+			'prefix_class' => 'pps-heading-fill-',
 		) );
 
 		$this->add_control( 'icon_color_bg', [
-			'label'     => esc_html__( 'Background Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Background Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__icon-container' => 'background-color: {{VALUE}}; border-color: {{VALUE}};'
+				'{{WRAPPER}} .pps-icon-box__icon-container' => 'background-color: {{VALUE}}; border-color: {{VALUE}};'
 			],
 			'condition' => [
 				'icon_bg_color_type' => 'color'
@@ -646,9 +646,9 @@ class IconBox extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'      => 'icon_color_bg_gradient',
-				'label'     => __( 'Background', 'gpt-news-core' ),
+				'label'     => __( 'Background', 'pps-passport-core' ),
 				'types'     => [ 'gradient' ],
-				'selector'  => '{{WRAPPER}} .gpt-icon-box__icon-container',
+				'selector'  => '{{WRAPPER}} .pps-icon-box__icon-container',
 				'condition' => [
 					'icon_bg_color_type' => 'gradient'
 				]
@@ -659,54 +659,54 @@ class IconBox extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'icon_border',
-				'selector' => '{{WRAPPER}} .gpt-icon-box__icon-container',
+				'selector' => '{{WRAPPER}} .pps-icon-box__icon-container',
 			]
 		);
 
 		$this->add_group_control( Group_Control_Box_Shadow::get_type(), [
 			'name'     => 'icon_shadow',
-			'label'    => __( 'Box Shadow', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-icon-box__icon-container',
+			'label'    => __( 'Box Shadow', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-icon-box__icon-container',
 		] );
 
 		$this->end_controls_tab();
 
 		$this->start_controls_tab( 'tab_icon_hover', [
-			'label' => __( 'Hover', 'gpt-news-core' ),
+			'label' => __( 'Hover', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'icon_color_hover', [
-			'label'     => esc_html__( 'Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box:hover .gpt-icon-box__icon-container:hover' => 'color: {{VALUE}}; border-color: {{VALUE}};'
+				'{{WRAPPER}} .pps-icon-box:hover .pps-icon-box__icon-container:hover' => 'color: {{VALUE}}; border-color: {{VALUE}};'
 			],
 		] );
 
 		$this->add_control( 'icon_hover_border_color', [
-			'label'     => esc_html__( 'Border Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Border Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box:hover .gpt-icon-box__icon-container:hover' => 'border-color: {{VALUE}};'
+				'{{WRAPPER}} .pps-icon-box:hover .pps-icon-box__icon-container:hover' => 'border-color: {{VALUE}};'
 			],
 		] );
 
 		$this->add_control( 'icon_bg_color_type_hover', array(
-			'label'        => __( 'Color Type', 'gpt-news-core' ),
+			'label'        => __( 'Color Type', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SELECT,
 			'options'      => array(
-				'color'    => __( 'Color', 'gpt-news-core' ),
-				'gradient' => __( 'Background', 'gpt-news-core' ),
+				'color'    => __( 'Color', 'pps-passport-core' ),
+				'gradient' => __( 'Background', 'pps-passport-core' ),
 			),
 			'default'      => 'color',
-			'prefix_class' => 'gpt-heading-fill-',
+			'prefix_class' => 'pps-heading-fill-',
 		) );
 
 		$this->add_control( 'icon_hover_bg_color', [
-			'label'     => esc_html__( 'Background Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Background Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box:hover .gpt-icon-box__icon-container:hover' => 'background-color: {{VALUE}}'
+				'{{WRAPPER}} .pps-icon-box:hover .pps-icon-box__icon-container:hover' => 'background-color: {{VALUE}}'
 			],
 			'condition' => [
 				'icon_bg_color_type_hover' => 'color'
@@ -717,9 +717,9 @@ class IconBox extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'      => 'icon_hover_bg_color_gradient',
-				'label'     => __( 'Background', 'gpt-news-core' ),
+				'label'     => __( 'Background', 'pps-passport-core' ),
 				'types'     => [ 'gradient' ],
-				'selector'  => '{{WRAPPER}} .gpt-icon-box:hover .gpt-icon-box__icon-container:hover',
+				'selector'  => '{{WRAPPER}} .pps-icon-box:hover .pps-icon-box__icon-container:hover',
 				'condition' => [
 					'icon_bg_color_type_hover' => 'gradient'
 				]
@@ -728,8 +728,8 @@ class IconBox extends Widget_Base {
 
 		$this->add_group_control( Group_Control_Box_Shadow::get_type(), [
 			'name'     => 'icon_box_shadow_hover',
-			'label'    => __( 'Box Shadow', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-icon-box__icon-container:hover',
+			'label'    => __( 'Box Shadow', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-icon-box__icon-container:hover',
 		] );
 
 		$this->end_controls_tab();
@@ -740,7 +740,7 @@ class IconBox extends Widget_Base {
 		 * Spacing
 		 */
 		$this->add_responsive_control( 'icon_space', [
-			'label'     => esc_html__( 'Spacing', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Spacing', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -749,15 +749,15 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors' => [
-				'{{WRAPPER}} .icon--right .gpt-icon-box__icon-container' => 'margin-left: {{SIZE}}{{UNIT}};',
-				'{{WRAPPER}} .icon--left .gpt-icon-box__icon-container'  => 'margin-right: {{SIZE}}{{UNIT}};',
-				'{{WRAPPER}} .icon--top .gpt-icon-box__icon-container'   => 'margin-bottom: {{SIZE}}{{UNIT}};',
-				'(mobile){{WRAPPER}} .gpt-icon-box__icon-container'      => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .icon--right .pps-icon-box__icon-container' => 'margin-left: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .icon--left .pps-icon-box__icon-container'  => 'margin-right: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .icon--top .pps-icon-box__icon-container'   => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				'(mobile){{WRAPPER}} .pps-icon-box__icon-container'      => 'margin-bottom: {{SIZE}}{{UNIT}};',
 			],
 		] );
 
 		$this->add_responsive_control( 'icon_size', [
-			'label'     => esc_html__( 'Size', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Size', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -766,15 +766,15 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__icon-container' => 'font-size: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__icon-container' => 'font-size: {{SIZE}}{{UNIT}};',
 			],
 		] );
 
 		$this->add_control( 'icon_padding', [
-			'label'     => esc_html__( 'Padding', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Padding', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__icon-container' => 'padding: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__icon-container' => 'padding: {{SIZE}}{{UNIT}};',
 			],
 			'range'     => [
 				'em' => [
@@ -788,22 +788,22 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'rotate', [
-			'label'     => esc_html__( 'Rotate', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Rotate', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'default'   => [
 				'size' => 0,
 				'unit' => 'deg',
 			],
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__icon-container i' => 'transform: rotate({{SIZE}}{{UNIT}});',
+				'{{WRAPPER}} .pps-icon-box__icon-container i' => 'transform: rotate({{SIZE}}{{UNIT}});',
 			],
 		] );
 
 		$this->add_control( 'icon_border_width_one', [
-			'label'     => esc_html__( 'Border Width', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Border Width', 'pps-passport-core' ),
 			'type'      => Controls_Manager::DIMENSIONS,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__icon-container' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__icon-container' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
 //			'condition' => [
 //				'icon_view' => 'framed',
@@ -811,11 +811,11 @@ class IconBox extends Widget_Base {
 		] );
 
 		$this->add_control( 'border_radius', [
-			'label'      => esc_html__( 'Border Radius', 'gpt-news-core' ),
+			'label'      => esc_html__( 'Border Radius', 'pps-passport-core' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%' ],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box__icon-container' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__icon-container' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
 //			'condition'  => [
 //				'icon_view!' => 'none',
@@ -827,35 +827,35 @@ class IconBox extends Widget_Base {
 		//Title Style Section
 		//======================
 		$this->start_controls_section( 'section_title_style', [
-			'label' => esc_html__( 'Title', 'gpt-news-core' ),
+			'label' => esc_html__( 'Title', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'title_color', [
-			'label'     => esc_html__( 'Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box .gpt-icon-box__title,
-				{{WRAPPER}} .gpt-icon-box .gpt-icon-box__title a' => 'color: {{VALUE}};'
+				'{{WRAPPER}} .pps-icon-box .pps-icon-box__title,
+				{{WRAPPER}} .pps-icon-box .pps-icon-box__title a' => 'color: {{VALUE}};'
 			],
 		] );
 
 		$this->add_control( 'title_color_hover', [
-			'label'     => esc_html__( 'Hover Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Hover Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box .gpt-icon-box__title:hover,
-				{{WRAPPER}} .gpt-icon-box .gpt-icon-box__title a:hover' => 'color: {{VALUE}};'
+				'{{WRAPPER}} .pps-icon-box .pps-icon-box__title:hover,
+				{{WRAPPER}} .pps-icon-box .pps-icon-box__title a:hover' => 'color: {{VALUE}};'
 			],
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'title_typography',
-			'selector' => '{{WRAPPER}} .gpt-icon-box .gpt-icon-box__title',
+			'selector' => '{{WRAPPER}} .pps-icon-box .pps-icon-box__title',
 		] );
 
 		$this->add_responsive_control( 'title_space', [
-			'label'     => esc_html__( 'Spacing', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Spacing', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -864,7 +864,7 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 			],
 		] );
 
@@ -873,25 +873,25 @@ class IconBox extends Widget_Base {
 		// Description Style Section
 		//=============================
 		$this->start_controls_section( 'section_description_style', [
-			'label' => esc_html__( 'Description', 'gpt-news-core' ),
+			'label' => esc_html__( 'Description', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'description_color', [
-			'label'     => esc_html__( 'Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box .gpt-icon-box__description' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .pps-icon-box .pps-icon-box__description' => 'color: {{VALUE}};',
 			],
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'description_typography',
-			'selector' => '{{WRAPPER}} .gpt-icon-box .gpt-icon-box__description',
+			'selector' => '{{WRAPPER}} .pps-icon-box .pps-icon-box__description',
 		] );
 
 		$this->add_responsive_control( 'description_space', [
-			'label'     => esc_html__( 'Spacing', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Spacing', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -900,7 +900,7 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__description' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__description' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 			],
 		] );
 
@@ -909,40 +909,40 @@ class IconBox extends Widget_Base {
 		// Badge style section
 		//======================
 		$this->start_controls_section( 'section_badge_style', [
-			'label' => esc_html__( 'Badge', 'gpt-news-core' ),
+			'label' => esc_html__( 'Badge', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'badge_color', [
-			'label'     => esc_html__( 'Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__badge' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .pps-icon-box__badge' => 'color: {{VALUE}};',
 			],
 		] );
 
 		$this->add_control( 'badge_bg_color', [
-			'label'     => esc_html__( 'BG Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'BG Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__badge' => 'background-color: {{VALUE}};',
+				'{{WRAPPER}} .pps-icon-box__badge' => 'background-color: {{VALUE}};',
 			],
 		] );
 
 		$this->add_control( 'badge_hover_color', [
-			'label'     => esc_html__( 'Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__badge:hover' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .pps-icon-box__badge:hover' => 'color: {{VALUE}};',
 			],
 			'separator' => 'before'
 		] );
 
 		$this->add_control( 'badge_hover_bg_color', [
-			'label'     => esc_html__( 'Hover BG Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Hover BG Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__badge:hover' => 'background-color: {{VALUE}};',
+				'{{WRAPPER}} .pps-icon-box__badge:hover' => 'background-color: {{VALUE}};',
 			],
 		] );
 
@@ -952,78 +952,78 @@ class IconBox extends Widget_Base {
 		// Button Style
 		// =====================
 		$this->start_controls_section( 'style_button', [
-			'label' => __( 'Button', 'gpt-news-core' ),
+			'label' => __( 'Button', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->start_controls_tabs( 'tabs_button_style' );
 
 		$this->start_controls_tab( 'tab_button_normal', [
-			'label' => __( 'Normal', 'gpt-news-core' ),
+			'label' => __( 'Normal', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'button_text_color', [
-			'label'     => __( 'Text Color', 'gpt-news-core' ),
+			'label'     => __( 'Text Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '',
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__button' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .pps-icon-box__button' => 'color: {{VALUE}};',
 			],
 		] );
 
 		$this->add_control( 'button_bg_color', [
-			'label'     => __( 'Background Color', 'gpt-news-core' ),
+			'label'     => __( 'Background Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__button' => 'background-color: {{VALUE}};',
+				'{{WRAPPER}} .pps-icon-box__button' => 'background-color: {{VALUE}};',
 			],
 		] );
 
 		$this->add_group_control( Group_Control_Border::get_type(), [
 			'name'     => 'button_border',
-			'label'    => __( 'Border', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-icon-box__button',
+			'label'    => __( 'Border', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-icon-box__button',
 		] );
 
 		$this->add_group_control( Group_Control_Box_Shadow::get_type(), [
 			'name'     => 'button_box_shadow',
-			'label'    => __( 'Box Shadow', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-icon-box__button',
+			'label'    => __( 'Box Shadow', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-icon-box__button',
 		] );
 
 		$this->end_controls_tab();
 
 		$this->start_controls_tab( 'tab_button_hover', [
-			'label' => __( 'Hover', 'gpt-news-core' ),
+			'label' => __( 'Hover', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'hover_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__button:hover' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .pps-icon-box__button:hover' => 'color: {{VALUE}};',
 			],
 
 		] );
 
 		$this->add_control( 'button_hover_bg_color', [
-			'label'     => __( 'Background Color', 'gpt-news-core' ),
+			'label'     => __( 'Background Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-icon-box__button:hover' => 'background-color: {{VALUE}};',
+				'{{WRAPPER}} .pps-icon-box__button:hover' => 'background-color: {{VALUE}};',
 			]
 		] );
 
 		$this->add_group_control( Group_Control_Border::get_type(), [
 			'name'     => 'button_hover_border',
-			'label'    => __( 'Border', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-icon-box__button:hover',
+			'label'    => __( 'Border', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-icon-box__button:hover',
 		] );
 
 		$this->add_group_control( Group_Control_Box_Shadow::get_type(), [
 			'name'     => 'button_box_shadow_hover',
-			'label'    => __( 'Box Shadow', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-icon-box__button',
+			'label'    => __( 'Box Shadow', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-icon-box__button',
 		] );
 
 		$this->end_controls_tab();
@@ -1031,26 +1031,26 @@ class IconBox extends Widget_Base {
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'      => 'button_typography',
-			'label'     => __( 'Typography', 'gpt-news-core' ),
-			'selector'  => '{{WRAPPER}} .gpt-icon-box__button',
+			'label'     => __( 'Typography', 'pps-passport-core' ),
+			'selector'  => '{{WRAPPER}} .pps-icon-box__button',
 			'separator' => 'before'
 		] );
 
 		$this->add_control( 'padding', [
-			'label'      => __( 'Padding', 'gpt-news-core' ),
+			'label'      => __( 'Padding', 'pps-passport-core' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%', 'em' ],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box__button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
 		] );
 
 		$this->add_control( 'border-radius', [
-			'label'      => __( 'Border Radius', 'gpt-news-core' ),
+			'label'      => __( 'Border Radius', 'pps-passport-core' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%', 'em' ],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box__button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box__button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
 		] );
 
@@ -1059,37 +1059,37 @@ class IconBox extends Widget_Base {
 
 		//Box Style Section
 		$this->start_controls_section( 'section_box_style', [
-			'label' => esc_html__( 'Box Container', 'gpt-news-core' ),
+			'label' => esc_html__( 'Box Container', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->start_controls_tabs( 'tabs_box_style' );
 
 		$this->start_controls_tab( 'tab_box_normal', [
-			'label' => __( 'Normal', 'gpt-news-core' ),
+			'label' => __( 'Normal', 'pps-passport-core' ),
 		] );
 
 		$this->add_group_control( Group_Control_Background::get_type(), [
 			'name'     => 'box_background',
-			'label'    => __( 'Background', 'gpt-news-core' ),
+			'label'    => __( 'Background', 'pps-passport-core' ),
 			'types'    => [ 'classic', 'gradient' ],
-			'selector' => '{{WRAPPER}} .gpt-icon-box',
+			'selector' => '{{WRAPPER}} .pps-icon-box',
 		] );
 
 		$this->add_group_control( Group_Control_Border::get_type(), [
 			'name'     => 'box_border',
-			'label'    => __( 'Border', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-icon-box',
+			'label'    => __( 'Border', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-icon-box',
 		] );
 
 		$this->add_group_control( \Elementor\Group_Control_Box_Shadow::get_type(), [
 			'name'     => 'icon_box_shadow',
-			'label'    => __( 'Box Shadow', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-icon-box',
+			'label'    => __( 'Box Shadow', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-icon-box',
 		] );
 
 		$this->add_control( 'box_translate_x', [
-			'label'      => __( 'Translate (X)', 'gpt-news-core' ),
+			'label'      => __( 'Translate (X)', 'pps-passport-core' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => 'px',
 			'range'      => [
@@ -1100,12 +1100,12 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box' => 'transform: translateX({{SIZE}}{{UNIT}});',
+				'{{WRAPPER}} .pps-icon-box' => 'transform: translateX({{SIZE}}{{UNIT}});',
 			],
 		] );
 
 		$this->add_control( 'box_translate', [
-			'label'      => __( 'Translate (Y)', 'gpt-news-core' ),
+			'label'      => __( 'Translate (Y)', 'pps-passport-core' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => 'px',
 			'range'      => [
@@ -1116,38 +1116,38 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box' => 'transform: translateY({{SIZE}}{{UNIT}});',
+				'{{WRAPPER}} .pps-icon-box' => 'transform: translateY({{SIZE}}{{UNIT}});',
 			],
 		] );
 
 		$this->end_controls_tab();
 
 		$this->start_controls_tab( 'tab_box_hover', [
-			'label' => __( 'Hover', 'gpt-news-core' ),
+			'label' => __( 'Hover', 'pps-passport-core' ),
 		] );
 
 		$this->add_group_control( Group_Control_Background::get_type(), [
 			'name'     => 'box_background_hover',
-			'label'    => __( 'Background', 'gpt-news-core' ),
+			'label'    => __( 'Background', 'pps-passport-core' ),
 			'types'    => [ 'classic', 'gradient' ],
-			'selector' => '{{WRAPPER}} .gpt-icon-box:hover',
+			'selector' => '{{WRAPPER}} .pps-icon-box:hover',
 		] );
 
 		$this->add_group_control( Group_Control_Border::get_type(), [
 			'name'     => 'box_border_hover',
-			'label'    => __( 'Border', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-icon-box:hover',
+			'label'    => __( 'Border', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-icon-box:hover',
 		] );
 
 		$this->add_group_control( \Elementor\Group_Control_Box_Shadow::get_type(), [
 			'name'     => 'icon_box_shadow_box_hover',
-			'label'    => __( 'Box Shadow', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-icon-box:hover',
+			'label'    => __( 'Box Shadow', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-icon-box:hover',
 		] );
 
 
 		$this->add_control( 'box_translate_x_hover', [
-			'label'      => __( 'Translate (X)', 'gpt-news-core' ),
+			'label'      => __( 'Translate (X)', 'pps-passport-core' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => 'px',
 			'range'      => [
@@ -1158,12 +1158,12 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box:hover' => 'transform: translateX({{SIZE}}{{UNIT}});',
+				'{{WRAPPER}} .pps-icon-box:hover' => 'transform: translateX({{SIZE}}{{UNIT}});',
 			],
 		] );
 
 		$this->add_control( 'box_translate_hover', [
-			'label'      => __( 'Translate (Y)', 'gpt-news-core' ),
+			'label'      => __( 'Translate (Y)', 'pps-passport-core' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => 'px',
 			'range'      => [
@@ -1174,7 +1174,7 @@ class IconBox extends Widget_Base {
 				],
 			],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box:hover' => 'transform: translateY({{SIZE}}{{UNIT}});',
+				'{{WRAPPER}} .pps-icon-box:hover' => 'transform: translateY({{SIZE}}{{UNIT}});',
 			],
 		] );
 
@@ -1182,29 +1182,29 @@ class IconBox extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control( 'box_padding', [
-			'label'      => __( 'Padding', 'gpt-news-core' ),
+			'label'      => __( 'Padding', 'pps-passport-core' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%', 'em' ],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
 		] );
 
 		$this->add_responsive_control( 'box_margin', [
-			'label'      => __( 'Margin', 'gpt-news-core' ),
+			'label'      => __( 'Margin', 'pps-passport-core' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%', 'em' ],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
 		] );
 
 		$this->add_control( 'box_border_radius', [
-			'label'      => __( 'Border Radius', 'gpt-news-core' ),
+			'label'      => __( 'Border Radius', 'pps-passport-core' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%', 'em' ],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-icon-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'{{WRAPPER}} .pps-icon-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
 		] );
 
@@ -1224,7 +1224,7 @@ class IconBox extends Widget_Base {
 		$target   = $settings['title_link']['is_external'] ? ' target="_blank"' : '';
 		$nofollow = $settings['title_link']['nofollow'] ? ' rel="nofollow"' : '';
 
-		$this->add_render_attribute( 'button', 'class', 'gpt-icon-box__button' );
+		$this->add_render_attribute( 'button', 'class', 'pps-icon-box__button' );
 
 		$this->add_render_attribute( 'button', 'class', $settings['button_type'] );
 		$this->add_render_attribute( 'button', 'class', $settings['button_shape'] );
@@ -1234,9 +1234,9 @@ class IconBox extends Widget_Base {
 		}
 
 
-		$this->add_render_attribute( 'box_wrapper', 'class', 'gpt-icon-box' );
+		$this->add_render_attribute( 'box_wrapper', 'class', 'pps-icon-box' );
 		if ( $settings['icon_bg_shape'] == 'yes' ) {
-			$this->add_render_attribute( 'box_wrapper', 'class', 'gpt-icon-box--icon-shape' );
+			$this->add_render_attribute( 'box_wrapper', 'class', 'pps-icon-box--icon-shape' );
 		}
 
 		if ( ! empty( $settings['icon_vertically_position'] ) ) {
@@ -1255,8 +1255,8 @@ class IconBox extends Widget_Base {
 		$this->add_render_attribute( [
 			'icon_align' => [
 				'class' => [
-					'gpt-button-icon',
-					'gpt-align-icon-' . $settings['icon_align'],
+					'pps-button-icon',
+					'pps-align-icon-' . $settings['icon_align'],
 				],
 			],
 			'btn_text'   => [
@@ -1265,7 +1265,7 @@ class IconBox extends Widget_Base {
 		] );
 
 
-		$this->add_render_attribute( 'box_title', 'class', 'gpt-icon-box__title' );
+		$this->add_render_attribute( 'box_title', 'class', 'pps-icon-box__title' );
 
 		?>
 
@@ -1273,7 +1273,7 @@ class IconBox extends Widget_Base {
 
 			<?php if ( $settings['icon_type'] == 'type_icon' ) : ?>
 
-				<div class="gpt-icon-box__icon-container">
+				<div class="pps-icon-box__icon-container">
 					<?php if ( ! empty( $settings['box_icon'] ) ) : ?>
 						<?php \Elementor\Icons_Manager::render_icon( $settings['box_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 					<?php endif; ?>
@@ -1287,7 +1287,7 @@ class IconBox extends Widget_Base {
 			<?php endif; ?>
 
 			<?php if ( $settings['icon_type'] == 'type_image' ) : ?>
-				<div class="gpt-icon-box__icon-container">
+				<div class="pps-icon-box__icon-container">
 					<?php if ( ! empty( $settings['icon_shape_image']['url'] ) && $settings['icon_bg_shape'] == 'yes' ) : ?>
 						<img class="shape-image" src="<?php echo $settings['icon_shape_image']['url'] ?>"
 							 alt="<?php echo $settings['box_title']; ?>">
@@ -1300,7 +1300,7 @@ class IconBox extends Widget_Base {
 			<?php endif; ?>
 			<!-- /.icon-container -->
 
-			<div class="gpt-icon-box__content">
+			<div class="pps-icon-box__content">
 
 				<?php
 				$title = $settings['box_title'];
@@ -1317,7 +1317,7 @@ class IconBox extends Widget_Base {
 				?>
 
 				<?php if ( ! empty( $settings['description'] ) ) : ?>
-					<p class="gpt-icon-box__description">
+					<p class="pps-icon-box__description">
 						<?php echo $settings['description']; ?>
 					</p>
 				<?php endif; ?>
@@ -1340,13 +1340,13 @@ class IconBox extends Widget_Base {
 			</div>
 
 			<?php if ( ! empty( $settings['badge_text'] ) ) : ?>
-				<div class="gpt-icon-box__badge">
+				<div class="pps-icon-box__badge">
 					<?php echo esc_html( $settings['badge_text'] ); ?>
 				</div>
-				<!-- /.gpt-icon-box__badge -->
+				<!-- /.pps-icon-box__badge -->
 			<?php endif; ?>
 		</div>
-		<!-- /.gpt-icon-box -->
+		<!-- /.pps-icon-box -->
 
 		<?php
 	}

@@ -3,7 +3,7 @@
 		<?php if ( has_post_thumbnail() ): ?>
             <div class="feature-image">
                 <a href="<?php echo the_permalink(); ?>">
-					<?php the_post_thumbnail( 'gpt_blog_grid_520x446', array( 'class' => 'img-fluid' ) ) ?>
+					<?php the_post_thumbnail( 'pps_blog_grid_520x446', array( 'class' => 'img-fluid' ) ) ?>
                 </a>
 
                 <?php if ('yes' == $settings['meta_show']) : ?>
@@ -30,18 +30,18 @@
                 <ul class="post-meta">
                     <li class="author-simple">
                         <i class="far fa-user"></i>
-						<?php echo Gpt_Theme_Helper::gpt_posted_by(); ?>
+						<?php echo PPS_Theme_Helper::pps_posted_by(); ?>
                     </li>
                     <li class="meta-date">
                         <i class="fas fa-calendar-alt"></i>
-						<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+						<?php PPS_Theme_Helper::pps_posted_on(); ?>
                     </li>
                 </ul>
 			<?php endif; ?>
 
             <div class="entry-header">
                 <h3 class="entry-title"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <a href="<?php the_permalink(); ?>" class="read_more_btn"><?php esc_html_e( 'Read More ', 'gpt-news-core' ) ?></a>
+                <a href="<?php the_permalink(); ?>" class="read_more_btn"><?php esc_html_e( 'Read More ', 'pps-passport-core' ) ?></a>
             </div>
         </div>
     </div>

@@ -1,19 +1,19 @@
 <?php
 /**
- * Plugin Name: GPT News Core
- * Plugin URI: https://themeforest.net/user/gptheme/portfolio
- * Description: This plugin is required for GPT Theme.
+ * Plugin Name: PPS Passport Core
+ * Plugin URI: https://themeforest.net/user/ppsheme/pixelpath
+ * Description: This plugin is required for PPS Passport.
  * Version: 1.0.0
- * Author: GpTheme
- * Author URI: https://gptheme.com
- * Text domain: mpt-core
+ * Author: Pixel Path Solution
+ * Author URI: https://pixelpathsolution.com
+ * Text domain: pps-passport-core
  */
 
-use GpTheme\GptNewsCore\Admin\PostType\Footer;
-use GpTheme\GptNewsCore\Admin\PostType\Project;
-use GpTheme\GptNewsCore\AnimationEffect;
-use GpTheme\GptNewsCore\Ajax;
-use GpTheme\GptNewsCore\ElementorWidgets;
+use PixelPath\PPSPassportCore\Admin\PostType\Footer;
+use PixelPath\PPSPassportCore\Admin\PostType\Project;
+use PixelPath\PPSPassportCore\AnimationEffect;
+use PixelPath\PPSPassportCore\Ajax;
+use PixelPath\PPSPassportCore\ElementorWidgets;
 
 if (!defined('ABSPATH'))
 	die('-1');
@@ -23,35 +23,35 @@ if (!defined('ABSPATH'))
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('GPT_CORE_VERSION', '1.0.0');
+define('PPS_CORE_VERSION', '1.0.0');
 
 /**
  * Constant for the plugins
  */
 
 
-define('GPT_PLUGIN_URL', plugins_url() . '/mpt-core/' );
-define('GPT_CORE_PATH', plugin_dir_path(__FILE__));
-define('GPT_CORE_ASSETS_URL', plugins_url() . '/gpt-news-core/assets/' );
-define('GPT_CORE_DIR', plugin_dir_path(__FILE__));
-define('GPT_SCRIPTS', GPT_PLUGIN_URL . 'assets/js');
+define('PPS_PLUGIN_URL', plugins_url() . '/pps-passport-core/' );
+define('PPS_CORE_PATH', plugin_dir_path(__FILE__));
+define('PPS_CORE_ASSETS_URL', plugins_url() . '/pps-passport-core/assets/' );
+define('PPS_CORE_DIR', plugin_dir_path(__FILE__));
+define('PPS_SCRIPTS', PPS_PLUGIN_URL . 'assets/js');
 
 // Include comoposer autoload
-require_once GPT_CORE_DIR . 'vendor/autoload.php';
+require_once PPS_CORE_DIR . 'vendor/autoload.php';
 
 // Make sure the same class is not loaded twice in free/premium versions.
-if (!class_exists('GPT_Core')) {
+if (!class_exists('PPS_Core')) {
 	/**
-	 * Main GPT Core Class
+	 * Main PPS Core Class
 	 *
-	 * The main class that initiates and runs the GPT Core plugin.
+	 * The main class that initiates and runs the PPS Core plugin.
 	 *
 	 * @since 1.0.0
 	 */
-	final class GPT_Core
+	final class PPS_Core
 	{
 		/**
-		 * GPT Core Version
+		 * PPS Core Version
 		 *
 		 * Holds the version of the plugin.
 		 *
@@ -86,14 +86,14 @@ if (!class_exists('GPT_Core')) {
 		/**
 		 * Instance
 		 *
-		 * Holds a single instance of the `GPT_Core` class.
+		 * Holds a single instance of the `PPS_Core` class.
 		 *
 		 * @since 1.0.0
 		 *
 		 * @access private
 		 * @static
 		 *
-		 * @var GPT_Core A single instance of the class.
+		 * @var PPS_Core A single instance of the class.
 		 */
 		private static $_instance = null;
 
@@ -103,7 +103,7 @@ if (!class_exists('GPT_Core')) {
 		 *
 		 * @since    1.0.0
 		 * @access   protected
-		 * @var      GPT_Core $loader Maintains and registers all hooks for the plugin.
+		 * @var      PPS_Core $loader Maintains and registers all hooks for the plugin.
 		 */
 		protected $loader;
 
@@ -112,7 +112,7 @@ if (!class_exists('GPT_Core')) {
 		 *
 		 * Ensures only one instance of the class is loaded or can be loaded.
 		 *
-		 * @return GPT_Core An instance of the class.
+		 * @return PPS_Core An instance of the class.
 		 * @since 1.0.0
 		 *
 		 * @access public
@@ -165,7 +165,7 @@ if (!class_exists('GPT_Core')) {
 		/**
 		 * Constructor
 		 *
-		 * Initialize the GPT Core plugins.
+		 * Initialize the PPS Core plugins.
 		 *
 		 * @since 1.0.0
 		 *
@@ -229,7 +229,7 @@ if (!class_exists('GPT_Core')) {
 		}
 
 		/**
-		 * Init GPT Core
+		 * Init PPS Core
 		 *
 		 * Load the plugin after Elementor (and other plugins) are loaded.
 		 *
@@ -278,9 +278,9 @@ if (!class_exists('GPT_Core')) {
 		public function admin_notice_missing_main_plugin()
 		{
 			$message = sprintf(
-			/* translators: 1: GPT Core: Elementor */
+			/* translators: 1: PPS Core: Elementor */
 				esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'mpt-core'),
-				'<strong>' . esc_html__('GPT Core', 'mpt-core') . '</strong>',
+				'<strong>' . esc_html__('PPS Core', 'mpt-core') . '</strong>',
 				'<strong>' . esc_html__('Elementor', 'mpt-core') . '</strong>'
 			);
 			printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message);
@@ -299,9 +299,9 @@ if (!class_exists('GPT_Core')) {
 		public function admin_notice_minimum_elementor_version()
 		{
 			$message = sprintf(
-			/* translators: 1: GPT Core: Elementor 3: Required Elementor version */
+			/* translators: 1: PPS Core: Elementor 3: Required Elementor version */
 				esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'mpt-core'),
-				'<strong>' . esc_html__('GPT Core', 'mpt-core') . '</strong>',
+				'<strong>' . esc_html__('PPS Core', 'mpt-core') . '</strong>',
 				'<strong>' . esc_html__('Elementor', 'mpt-core') . '</strong>',
 				self::MINIMUM_ELEMENTOR_VERSION
 			);
@@ -320,9 +320,9 @@ if (!class_exists('GPT_Core')) {
 		public function admin_notice_minimum_php_version()
 		{
 			$message = sprintf(
-			/* translators: 1: GPT Core 2: PHP 3: Required PHP version */
+			/* translators: 1: PPS Core 2: PHP 3: Required PHP version */
 				esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'mpt-core'),
-				'<strong>' . esc_html__('GPT Elements', 'mpt-core') . '</strong>',
+				'<strong>' . esc_html__('PPS Elements', 'mpt-core') . '</strong>',
 				'<strong>' . esc_html__('PHP', 'mpt-core') . '</strong>',
 				self::MINIMUM_PHP_VERSION
 			);
@@ -337,7 +337,7 @@ if (!class_exists('GPT_Core')) {
 		/**
 		 * Register Widget Styles
 		 *
-		 * Register custom styles required to run GPT Core.
+		 * Register custom styles required to run PPS Core.
 		 *
 		 * @since 2.0.0
 		 * @since 1.7.1 The method moved to this class.
@@ -363,18 +363,18 @@ if (!class_exists('GPT_Core')) {
 
 if (!function_exists('mpt_core_load')) {
 	/**
-	 * Load GPT Core
+	 * Load PPS Core
 	 *
-	 * Main instance of GPT_Core.
+	 * Main instance of PPS_Core.
 	 *
 	 * @since 1.0.0
 	 * @since 1.0.0 The logic moved from this function to a class method.
 	 */
 	function mpt_core_load()
 	{
-		return GPT_Core::instance();
+		return PPS_Core::instance();
 	}
 
-	// Run GPT Core
+	// Run PPS Core
 	mpt_core_load();
 }

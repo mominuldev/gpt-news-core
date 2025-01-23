@@ -9,7 +9,7 @@ if ( $layout === 'four' ) :
 					<a href="<?php the_permalink(); ?>">
 						<?php
 						if ( has_post_thumbnail() ) {
-							the_post_thumbnail( 'gpt-hero_four_600x750', array( 'alt' => get_the_title() ) );
+							the_post_thumbnail( 'pps-hero_four_600x750', array( 'alt' => get_the_title() ) );
 						} else { ?>
 							<img src="https://via.placeholder.com/410x290" alt="Placeholder">
 						<?php } ?>
@@ -17,7 +17,7 @@ if ( $layout === 'four' ) :
 
 				</div>
 				<div class="blog-hero-item-grid__content">
-					<a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>" class="gpt-blog__meta-category" style="background: <?php echo $color; ?>">
+					<a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>" class="pps-blog__meta-category" style="background: <?php echo $color; ?>">
 						<?php echo get_the_category()[0]->name; ?>
 					</a>
 					<h2 class="blog-hero-item-grid__title blog-title-hover">
@@ -26,10 +26,10 @@ if ( $layout === 'four' ) :
 					<?php if ( $meta_show == 'yes' ) : ?>
 						<ul class="entry-meta meta-style-two">
 							<li>
-								<?php Gpt_Theme_Helper::gpt_posted_author_avatar(); ?>
+								<?php PPS_Theme_Helper::pps_posted_author_avatar(); ?>
 							</li>
 							<li>
-								<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+								<?php PPS_Theme_Helper::pps_posted_on(); ?>
 							</li>
 						</ul><!-- .entry-meta -->
 					<?php endif; ?>
@@ -49,12 +49,12 @@ if ( $layout === 'four' ) :
 		<div class="blog-hero-item-grid blog-hero-grid-four">
 			<div class="blog-hero-item-grid__image">
 				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail('gpt_hero_grid_two_436x300', ['class' => 'wp-post-image']); ?>
+					<?php the_post_thumbnail('pps_hero_grid_two_436x300', ['class' => 'wp-post-image']); ?>
 				</a>
 
 			</div>
 			<div class="blog-hero-item-grid__content">
-				<a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>" class="gpt-blog__meta-category" style="background: <?php echo $color; ?>">
+				<a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>" class="pps-blog__meta-category" style="background: <?php echo $color; ?>">
 					<?php echo get_the_category()[0]->name; ?>
 				</a>
 				<h2 class="blog-hero-item-grid__title blog-title-hover">
@@ -63,10 +63,10 @@ if ( $layout === 'four' ) :
 				<?php if ( $meta_show == 'yes' ) : ?>
 					<ul class="entry-meta meta-style-two">
 						<li>
-							<?php Gpt_Theme_Helper::gpt_posted_author_avatar(); ?>
+							<?php PPS_Theme_Helper::pps_posted_author_avatar(); ?>
 						</li>
 						<li>
-							<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+							<?php PPS_Theme_Helper::pps_posted_on(); ?>
 						</li>
 					</ul><!-- .entry-meta -->
 				<?php endif; ?>

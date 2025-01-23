@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Admin\PostType;
+namespace PixelPath\PPSPassportCore\Admin\PostType;
 
 class Project {
 	/**
@@ -90,33 +90,33 @@ class Project {
 
 	public function register_post_type() {
 		$labels = array(
-			'name'                  => _x( $this->post_type_plural_name, 'Post Type General Name', 'gpt-news-core' ),
-			'singular_name'         => _x( $this->post_type_singular_name, 'Post Type Singular Name', 'gpt-news-core' ),
-			'menu_name'             => __( $this->post_type_plural_name, 'gpt-news-core' ),
-			'name_admin_bar'        => __( $this->post_type_singular_name, 'gpt-news-core' ),
-			'archives'              => __( $this->post_type_plural_name . ' Archives', 'gpt-news-core' ),
-			'attributes'            => __( $this->post_type_singular_name . ' Attributes', 'gpt-news-core' ),
-			'parent_item_colon'     => __( 'Parent ' . $this->post_type_singular_name . ':', 'gpt-news-core' ),
-			'all_items'             => __( 'All ' . $this->post_type_plural_name, 'gpt-news-core' ),
-			'add_new_item'          => __( 'Add New ' . $this->post_type_singular_name, 'gpt-news-core' ),
-			'add_new'               => __( 'Add New', 'gpt-news-core' ),
-			'new_item'              => __( 'New ' . $this->post_type_singular_name, 'gpt-news-core' ),
-			'edit_item'             => __( 'Edit ' . $this->post_type_singular_name, 'gpt-news-core' ),
-			'update_item'           => __( 'Update ' . $this->post_type_singular_name, 'gpt-news-core' ),
-			'view_item'             => __( 'View ' . $this->post_type_singular_name, 'gpt-news-core' ),
-			'view_items'            => __( 'View ' . $this->post_type_plural_name, 'gpt-news-core' ),
-			'search_items'          => __( 'Search ' . $this->post_type_singular_name, 'gpt-news-core' ),
-			'not_found'             => __( 'Not found', 'gpt-news-core' ),
-			'not_found_in_trash'    => __( 'Not found in Trash', 'gpt-news-core' ),
-			'featured_image'        => __( 'Featured Image', 'gpt-news-core' ),
-			'set_featured_image'    => __( 'Set featured image', 'gpt-news-core' ),
-			'remove_featured_image' => __( 'Remove featured image', 'gpt-news-core' ),
-			'use_featured_image'    => __( 'Use as featured image', 'gpt-news-core' ),
+			'name'                  => _x( $this->post_type_plural_name, 'Post Type General Name', 'pps-passport-core' ),
+			'singular_name'         => _x( $this->post_type_singular_name, 'Post Type Singular Name', 'pps-passport-core' ),
+			'menu_name'             => __( $this->post_type_plural_name, 'pps-passport-core' ),
+			'name_admin_bar'        => __( $this->post_type_singular_name, 'pps-passport-core' ),
+			'archives'              => __( $this->post_type_plural_name . ' Archives', 'pps-passport-core' ),
+			'attributes'            => __( $this->post_type_singular_name . ' Attributes', 'pps-passport-core' ),
+			'parent_item_colon'     => __( 'Parent ' . $this->post_type_singular_name . ':', 'pps-passport-core' ),
+			'all_items'             => __( 'All ' . $this->post_type_plural_name, 'pps-passport-core' ),
+			'add_new_item'          => __( 'Add New ' . $this->post_type_singular_name, 'pps-passport-core' ),
+			'add_new'               => __( 'Add New', 'pps-passport-core' ),
+			'new_item'              => __( 'New ' . $this->post_type_singular_name, 'pps-passport-core' ),
+			'edit_item'             => __( 'Edit ' . $this->post_type_singular_name, 'pps-passport-core' ),
+			'update_item'           => __( 'Update ' . $this->post_type_singular_name, 'pps-passport-core' ),
+			'view_item'             => __( 'View ' . $this->post_type_singular_name, 'pps-passport-core' ),
+			'view_items'            => __( 'View ' . $this->post_type_plural_name, 'pps-passport-core' ),
+			'search_items'          => __( 'Search ' . $this->post_type_singular_name, 'pps-passport-core' ),
+			'not_found'             => __( 'Not found', 'pps-passport-core' ),
+			'not_found_in_trash'    => __( 'Not found in Trash', 'pps-passport-core' ),
+			'featured_image'        => __( 'Featured Image', 'pps-passport-core' ),
+			'set_featured_image'    => __( 'Set featured image', 'pps-passport-core' ),
+			'remove_featured_image' => __( 'Remove featured image', 'pps-passport-core' ),
+			'use_featured_image'    => __( 'Use as featured image', 'pps-passport-core' ),
 		);
 
 		$args = array(
-			'label'               => __( $this->post_type_singular_name, 'gpt-news-core' ),
-			'description'         => __( $this->post_type_plural_name, 'gpt-news-core' ),
+			'label'               => __( $this->post_type_singular_name, 'pps-passport-core' ),
+			'description'         => __( $this->post_type_plural_name, 'pps-passport-core' ),
 			'labels'              => $labels,
 			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
 			'taxonomies'          => array( $this->post_type_taxonomy ),
@@ -147,24 +147,24 @@ class Project {
 
 	public function register_taxonomy() {
 		$labels = array(
-			'name'                       => _x( $this->post_type_taxonomy_plural_name, 'Taxonomy General Name', 'gpt-news-core' ),
-			'singular_name'              => _x( $this->post_type_taxonomy_singular_name, 'Taxonomy Singular Name', 'gpt-news-core' ),
-			'menu_name'                  => __( $this->post_type_taxonomy_plural_name, 'gpt-news-core' ),
-			'all_items'                  => __( 'All ' . $this->post_type_taxonomy_plural_name, 'gpt-news-core' ),
-			'parent_item'                => __( 'Parent ' . $this->post_type_taxonomy_singular_name, 'gpt-news-core' ),
-			'parent_item_colon'          => __( 'Parent ' . $this->post_type_taxonomy_singular_name . ':', 'gpt-news-core' ),
-			'new_item_name'              => __( 'New ' . $this->post_type_taxonomy_singular_name . ' Name', 'gpt-news-core' ),
-			'add_new_item'               => __( 'Add New ' . $this->post_type_taxonomy_singular_name, 'gpt-news-core' ),
-			'edit_item'                  => __( 'Edit ' . $this->post_type_taxonomy_singular_name, 'gpt-news-core' ),
-			'update_item'                => __( 'Update ' . $this->post_type_taxonomy_singular_name, 'gpt-news-core' ),
-			'view_item'                  => __( 'View ' . $this->post_type_taxonomy_singular_name, 'gpt-news-core' ),
-			'separate_items_with_commas' => __( 'Separate ' . $this->post_type_taxonomy_plural_name . ' with commas', 'gpt-news-core' ),
-			'add_or_remove_items'        => __( 'Add or remove ' . $this->post_type_taxonomy_plural_name, 'gpt-news-core' ),
-			'choose_from_most_used'      => __( 'Choose from the most used', 'gpt-news-core' ),
-			'popular_items'              => __( 'Popular ' . $this->post_type_taxonomy_plural_name, 'gpt-news-core' ),
-			'search_items'               => __( 'Search ' . $this->post_type_taxonomy_plural_name, 'gpt-news-core' ),
-			'not_found'                  => __( 'Not Found', 'gpt-news-core' ),
-			'no_terms'                   => __( 'No ' . $this->post_type_taxonomy_plural_name, 'gpt-news-core' ),
+			'name'                       => _x( $this->post_type_taxonomy_plural_name, 'Taxonomy General Name', 'pps-passport-core' ),
+			'singular_name'              => _x( $this->post_type_taxonomy_singular_name, 'Taxonomy Singular Name', 'pps-passport-core' ),
+			'menu_name'                  => __( $this->post_type_taxonomy_plural_name, 'pps-passport-core' ),
+			'all_items'                  => __( 'All ' . $this->post_type_taxonomy_plural_name, 'pps-passport-core' ),
+			'parent_item'                => __( 'Parent ' . $this->post_type_taxonomy_singular_name, 'pps-passport-core' ),
+			'parent_item_colon'          => __( 'Parent ' . $this->post_type_taxonomy_singular_name . ':', 'pps-passport-core' ),
+			'new_item_name'              => __( 'New ' . $this->post_type_taxonomy_singular_name . ' Name', 'pps-passport-core' ),
+			'add_new_item'               => __( 'Add New ' . $this->post_type_taxonomy_singular_name, 'pps-passport-core' ),
+			'edit_item'                  => __( 'Edit ' . $this->post_type_taxonomy_singular_name, 'pps-passport-core' ),
+			'update_item'                => __( 'Update ' . $this->post_type_taxonomy_singular_name, 'pps-passport-core' ),
+			'view_item'                  => __( 'View ' . $this->post_type_taxonomy_singular_name, 'pps-passport-core' ),
+			'separate_items_with_commas' => __( 'Separate ' . $this->post_type_taxonomy_plural_name . ' with commas', 'pps-passport-core' ),
+			'add_or_remove_items'        => __( 'Add or remove ' . $this->post_type_taxonomy_plural_name, 'pps-passport-core' ),
+			'choose_from_most_used'      => __( 'Choose from the most used', 'pps-passport-core' ),
+			'popular_items'              => __( 'Popular ' . $this->post_type_taxonomy_plural_name, 'pps-passport-core' ),
+			'search_items'               => __( 'Search ' . $this->post_type_taxonomy_plural_name, 'pps-passport-core' ),
+			'not_found'                  => __( 'Not Found', 'pps-passport-core' ),
+			'no_terms'                   => __( 'No ' . $this->post_type_taxonomy_plural_name, 'pps-passport-core' ),
 		);
 
 		$args = array(

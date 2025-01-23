@@ -7,7 +7,7 @@ if ( $count < 1 ) : ?>
 				<a href="<?php the_permalink(); ?>">
 					<?php
 					if ( has_post_thumbnail() ) {
-						the_post_thumbnail( 'gpt_hero_large_960x520', array( 'alt' => get_the_title() ) );
+						the_post_thumbnail( 'pps_hero_large_960x520', array( 'alt' => get_the_title() ) );
 					} else { ?>
 						<img src="https://via.placeholder.com/410x290" alt="Placeholder">
 					<?php } ?>
@@ -23,7 +23,7 @@ if ( $count < 1 ) : ?>
 					$cat_name = $cat->name;
 					$cat_link = get_category_link( $cat_id );
 					?>
-					<a href="<?php echo esc_url( $cat_link ); ?>" class="gpt-blog__meta-category" style="background: <?php echo esc_attr($colors[$count]); ?>">
+					<a href="<?php echo esc_url( $cat_link ); ?>" class="pps-blog__meta-category" style="background: <?php echo esc_attr($colors[$count]); ?>">
 						<?php echo esc_html( $cat_name ); ?>
 					</a>
 				<?php } ?>
@@ -35,11 +35,11 @@ if ( $count < 1 ) : ?>
 				<?php if ( $meta_show == 'yes' ) : ?>
 					<ul class="entry-meta">
 						<li>
-							<?php Gpt_Theme_Helper::post_author_by(); ?>
+							<?php PPS_Theme_Helper::post_author_by(); ?>
 						</li>
 						<li>
 							<i class="ri-calendar-2-line"></i>
-							<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+							<?php PPS_Theme_Helper::pps_posted_on(); ?>
 						</li>
 					</ul><!-- .entry-meta -->
 				<?php endif; ?>
@@ -59,7 +59,7 @@ elseif ( $count == 1 ) : ?>
 			<a href="<?php the_permalink(); ?>">
 				<?php
 				if ( has_post_thumbnail() ) {
-					the_post_thumbnail( 'gpt_hero_thumbnail_220x175', array( 'alt' => get_the_title() ) );
+					the_post_thumbnail( 'pps_hero_thumbnail_220x175', array( 'alt' => get_the_title() ) );
 				} else { ?>
 					<img src="https://via.placeholder.com/410x290" alt="Placeholder">
 				<?php } ?>
@@ -74,7 +74,7 @@ elseif ( $count == 1 ) : ?>
 				$cat_name = $cat->name;
 				$cat_link = get_category_link( $cat_id );
 				?>
-				<a href="<?php echo esc_url( $cat_link ); ?>" class="gpt-blog__meta-category" style="background: <?php echo esc_attr($colors[$count]); ?>">
+				<a href="<?php echo esc_url( $cat_link ); ?>" class="pps-blog__meta-category" style="background: <?php echo esc_attr($colors[$count]); ?>">
 					<?php echo esc_html( $cat_name ); ?>
 				</a>
 			<?php } ?>
@@ -85,7 +85,7 @@ elseif ( $count == 1 ) : ?>
 			<?php if ( $meta_show == 'yes' ) : ?>
 				<ul class="entry-meta">
 					<li>
-						<?php Gpt_Theme_Helper::post_author_by(); ?>
+						<?php PPS_Theme_Helper::post_author_by(); ?>
 					</li>
 				</ul><!-- .entry-meta -->
 			<?php endif; ?>

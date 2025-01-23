@@ -1,9 +1,9 @@
-# Copyright (C) 2024 GpTheme
-# This file is distributed under the same license as the GPT News Core plugin.
+# Copyright (C) 2024 PixelPath
+# This file is distributed under the same license as the PPS News Core plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: GPT News Core 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gpt-news-core\n"
+"Project-Id-Version: PPS News Core 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pps-passport-core\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,57 +15,57 @@ msgstr ""
 "X-Domain: mpt-core\n"
 
 #. Plugin Name of the plugin
-msgid "GPT News Core"
+msgid "PPS News Core"
 msgstr ""
 
 #. Plugin URI of the plugin
-msgid "https://themeforest.net/user/gptheme/portfolio"
+msgid "https://themeforest.net/user/ppsheme/portfolio"
 msgstr ""
 
 #. Description of the plugin
-msgid "This plugin is required for GPT Theme."
+msgid "This plugin is required for PPS Theme."
 msgstr ""
 
 #. Author of the plugin
-msgid "GpTheme"
+msgid "PixelPath"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "https://gptheme.com"
+msgid "https://ppsheme.com"
 msgstr ""
 
-#: gpt-news-core.php:145
-#: gpt-news-core.php:162
+#: pps-passport-core.php:145
+#: pps-passport-core.php:162
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#. translators: 1: GPT Core: Elementor
-#: gpt-news-core.php:282
+#. translators: 1: PPS Core: Elementor
+#: pps-passport-core.php:282
 msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
 msgstr ""
 
-#: gpt-news-core.php:283
-#: gpt-news-core.php:304
-msgid "GPT Core"
+#: pps-passport-core.php:283
+#: pps-passport-core.php:304
+msgid "PPS Core"
 msgstr ""
 
-#: gpt-news-core.php:284
-#: gpt-news-core.php:305
+#: pps-passport-core.php:284
+#: pps-passport-core.php:305
 msgid "Elementor"
 msgstr ""
 
-#. translators: 1: GPT Core: Elementor 3: Required Elementor version
-#. translators: 1: GPT Core 2: PHP 3: Required PHP version
-#: gpt-news-core.php:303
-#: gpt-news-core.php:324
+#. translators: 1: PPS Core: Elementor 3: Required Elementor version
+#. translators: 1: PPS Core 2: PHP 3: Required PHP version
+#: pps-passport-core.php:303
+#: pps-passport-core.php:324
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
 
-#: gpt-news-core.php:325
-msgid "GPT Elements"
+#: pps-passport-core.php:325
+msgid "PPS Elements"
 msgstr ""
 
-#: gpt-news-core.php:326
+#: pps-passport-core.php:326
 msgid "PHP"
 msgstr ""
 

@@ -11,11 +11,11 @@
             <div class="col-md-4">
                 <div class="feature mb-3">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/doc.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/doc.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5>Documentation</h5>
-                        <p>Get started by spending some time with the documentation to get familiar with WPGPT. Build awesome websites for you or your clients with ease.</p>
+                        <p>Get started by spending some time with the documentation to get familiar with WPPPS. Build awesome websites for you or your clients with ease.</p>
                         <a href="#" class="button button-primary">Documentation</a>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
             <div class="col-md-4">
                 <div class="feature mb-3">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/support.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/support.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5>Amazing Support</h5>
@@ -35,11 +35,11 @@
             <div class="col-md-4">
                 <div class="feature mb-3">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/update.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/update.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5>Regular Update</h5>
-                        <p>WPGPT releases continued value packed updates with incredible New Feature & Improvements</p>
+                        <p>WPPPS releases continued value packed updates with incredible New Feature & Improvements</p>
                         <a href="#" class="button button-primary">Changelog</a>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
             <div class="col-md-4 offset-md-2">
                 <div class="feature">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/responsive.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/responsive.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5>Responsive layout</h5>
@@ -57,7 +57,7 @@
             <div class="col-md-4">
                 <div class="feature">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/retina.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/retina.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5>Clean Code</h5>
@@ -80,7 +80,7 @@
             <div class="col-md-4">
                 <div class="feature feature__left mb-3">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/font.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/font.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5 class="h6">Google Fonts</h5>
@@ -90,7 +90,7 @@
             <div class="col-md-4">
                 <div class="feature feature__left mb-3">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/bootstrap.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/bootstrap.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5 class="h6">Built on Bootstrap</h5>
@@ -100,7 +100,7 @@
             <div class="col-md-4">
                 <div class="feature feature__left">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/retina.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/retina.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5 class="h6">Clean Code</h5>
@@ -123,7 +123,7 @@
             <div class="col-md-4">
                 <div class="feature feature__right mb-3">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/font.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/font.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5 class="h6">Google Fonts</h5>
@@ -133,7 +133,7 @@
             <div class="col-md-4">
                 <div class="feature feature__right mb-3">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/bootstrap.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/bootstrap.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5 class="h6">Built on Bootstrap</h5>
@@ -143,7 +143,7 @@
             <div class="col-md-4">
                 <div class="feature feature__right">
                     <div class="feature__img">
-                        <img src="<?php /*echo GPT_CORE_ASSETS . 'admin/img/retina.png' */?>" alt="">
+                        <img src="<?php /*echo PPS_CORE_ASSETS . 'admin/img/retina.png' */?>" alt="">
                     </div>
                     <div class="feature__content">
                         <h5 class="h6">Clean Code</h5>

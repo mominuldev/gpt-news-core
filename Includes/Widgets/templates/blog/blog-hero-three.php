@@ -8,7 +8,7 @@
 			</a>
 		</div>
 		<div class="blog-hero-item__content">
-			<a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>" class="gpt-blog__meta-category" style="background: <?php echo $color; ?>">
+			<a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>" class="pps-blog__meta-category" style="background: <?php echo $color; ?>">
 				<?php echo get_the_category()[0]->name; ?>
 			</a>
 			<h1 class="blog-hero-item__title blog-title-hover">
@@ -17,11 +17,11 @@
 			<?php if ( $meta_show == 'yes' ): ?>
 				<ul class="entry-meta">
 					<li>
-						<?php Gpt_Theme_Helper::post_author_by(); ?>
+						<?php PPS_Theme_Helper::post_author_by(); ?>
 					</li>
 					<li>
 						<i class="ri-calendar-2-line"></i>
-						<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+						<?php PPS_Theme_Helper::pps_posted_on(); ?>
 					</li>
 				</ul><!-- .entry-meta -->
 			<?php endif; ?>
@@ -34,10 +34,10 @@
 			<div class="blog-hero-item-grid">
 				<div class="blog-hero-item-grid__image">
 					<a href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail('gpt_hero_grid_two_436x300', ['class' => 'wp-post-image']); ?>
+						<?php the_post_thumbnail('pps_hero_grid_two_436x300', ['class' => 'wp-post-image']); ?>
 					</a>
 
-					<a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>" class="gpt-blog__meta-category" style="background: <?php echo $color; ?>">
+					<a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>" class="pps-blog__meta-category" style="background: <?php echo $color; ?>">
 						<?php echo get_the_category()[0]->name; ?>
 					</a>
 				</div>
@@ -49,11 +49,11 @@
 					<?php if ( $meta_show == 'yes' ) : ?>
 						<ul class="entry-meta">
 							<li>
-								<?php Gpt_Theme_Helper::post_author_by(); ?>
+								<?php PPS_Theme_Helper::post_author_by(); ?>
 							</li>
 							<li>
 								<i class="ri-calendar-2-line"></i>
-								<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+								<?php PPS_Theme_Helper::pps_posted_on(); ?>
 							</li>
 						</ul><!-- .entry-meta -->
 					<?php endif; ?>
@@ -77,11 +77,11 @@
 			<div class="blog-hero-item__small-list-three">
 				<div class="blog-hero-item__image-three">
 					<a href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail('gpt_hero_thumbnail_220x175', ['class' => 'wp-post-image']); ?>
+						<?php the_post_thumbnail('pps_hero_thumbnail_220x175', ['class' => 'wp-post-image']); ?>
 					</a>
 				</div>
 				<div class="blog-hero-item__content-three">
-					<a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>" class="gpt-blog__meta-category" style="background: <?php echo $color; ?>">
+					<a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>" class="pps-blog__meta-category" style="background: <?php echo $color; ?>">
 						<?php echo get_the_category()[0]->name; ?>
 					</a>
 					<h2 class="blog-hero-item__title-three blog-title-hover">
@@ -90,7 +90,7 @@
 					<ul class="entry-meta">
 						<li>
 							<i class="ri-calendar-2-line"></i>
-							<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+							<?php PPS_Theme_Helper::pps_posted_on(); ?>
 						</li>
 					</ul><!-- .entry-meta -->
 				</div>

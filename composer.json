@@ -1,15 +1,15 @@
 {
-    "name": "gptheme/mpt-core",
+    "name": "ppsheme/mpt-core",
     "type": "wordpress-plugin",
     "license": "GPL2",
     "autoload": {
         "psr-4": {
-            "GpTheme\\GptNewsCore\\": "Includes/"
+            "PixelPath\\PPSPassportCore\\": "Includes/"
         }
     },
     "authors": [
         {
-            "name": "GpTheme Islam",
+            "name": "PixelPath Islam",
             "email": "hello@mominul.me"
         }
     ],

@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Widgets;
+namespace PixelPath\PPSPassportCore\Widgets;
 
 use Elementor\{Controls_Manager,
 	Group_Control_Background,
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Team
  *
- * @package GpTheme\GptNewsCore\Widgets
+ * @package PixelPath\PPSPassportCore\Widgets
  */
 
 class Team extends Widget_Base {
@@ -33,7 +33,7 @@ class Team extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'gpt-team';
+		return 'pps-team';
 	}
 
 	/**
@@ -47,7 +47,7 @@ class Team extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'GPT Team', 'gpt-news-core' );
+		return __( 'PPS Team', 'pps-passport-core' );
 	}
 
 	/**
@@ -75,7 +75,7 @@ class Team extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'gpt-elements' ];
+		return [ 'pps-elements' ];
 	}
 
 	/**
@@ -86,7 +86,7 @@ class Team extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'Team', 'gpt member' ];
+		return [ 'Team', 'pps member' ];
 	}
 
 	/**
@@ -103,40 +103,40 @@ class Team extends Widget_Base {
 		// START TEAME CONTENT
 		//============================================
 		$this->start_controls_section( 'team_content', [
-			'label' => __( 'Team Member', 'gpt-news-core' ),
+			'label' => __( 'Team Member', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_CONTENT,
 		] );
 
 		$this->add_control(
 			'layout',
 			[
-				'label' => esc_html__( 'Style', 'gpt-news-core' ),
+				'label' => esc_html__( 'Style', 'pps-passport-core' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'one',
 				'options' => [
-					'one' => esc_html__( 'Style One', 'gpt-news-core' ),
-					'two' => esc_html__( 'Style Two', 'gpt-news-core' ),
+					'one' => esc_html__( 'Style One', 'pps-passport-core' ),
+					'two' => esc_html__( 'Style Two', 'pps-passport-core' ),
 				]
 			]
 		);
 
 
 		$this->add_control( 'name', [
-			'label'       => __( 'Name', 'gpt-news-core' ),
+			'label'       => __( 'Name', 'pps-passport-core' ),
 			'type'        => Controls_Manager::TEXT,
-			'placeholder' => __( 'Enter Name', 'gpt-news-core' ),
-			'default'     => __( 'Mashil Nanchy', 'gpt-news-core' ),
+			'placeholder' => __( 'Enter Name', 'pps-passport-core' ),
+			'default'     => __( 'Mashil Nanchy', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'position', [
-			'label'       => __( 'Position', 'gpt-news-core' ),
+			'label'       => __( 'Position', 'pps-passport-core' ),
 			'type'        => Controls_Manager::TEXT,
-			'placeholder' => __( 'Enter Position', 'gpt-news-core' ),
-			'default'     => __('Web Designer', 'gpt-news-core'),
+			'placeholder' => __( 'Enter Position', 'pps-passport-core' ),
+			'default'     => __('Web Designer', 'pps-passport-core'),
 		] );
 
 		$this->add_control( 'image', [
-			'label'   => __( 'Choose Image', 'gpt-news-core' ),
+			'label'   => __( 'Choose Image', 'pps-passport-core' ),
 			'type'    => Controls_Manager::MEDIA,
 			'default' => [
 				'url' => plugin_dir_url( __FILE__ ) . 'images/team1.jpg'
@@ -146,16 +146,16 @@ class Team extends Widget_Base {
 		$repeater = new Repeater();
 
 		$repeater->add_control( 'icon', [
-			'label' => __( 'Icon', 'gpt-news-core' ),
+			'label' => __( 'Icon', 'pps-passport-core' ),
 			'type'  => Controls_Manager::ICONS,
 		] );
 
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'gpt-news-core' ),
+				'label' => __( 'Link', 'pps-passport-core' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'gpt-news-core' ),
+				'placeholder' => __( 'https://your-link.com', 'pps-passport-core' ),
 				'show_external' => true,
 				'default' => [
 					'url' => '#',
@@ -164,14 +164,14 @@ class Team extends Widget_Base {
 		);
 
 		$repeater->add_control( 'social_name', [
-			'label'       => __( 'Name', 'gpt-news-core' ),
-			'description' => __( 'This name will be show in the item header', 'gpt-news-core' ),
+			'label'       => __( 'Name', 'pps-passport-core' ),
+			'description' => __( 'This name will be show in the item header', 'pps-passport-core' ),
 			'type'        => Controls_Manager::TEXT,
 			'default'     => 'Facebook',
 		] );
 
 		$this->add_control( 'social_icons', [
-			'label'       => __( 'Add Social Icon', 'gpt-news-core' ),
+			'label'       => __( 'Add Social Icon', 'pps-passport-core' ),
 			'type'        => Controls_Manager::REPEATER,
 			'fields'      => $repeater->get_controls(),
 			'default'     => [
@@ -183,7 +183,7 @@ class Team extends Widget_Base {
 					'link'        => [
 						'url' => '#',
 					],
-					'social_name' => __('Facebook', 'gpt-news-core'),
+					'social_name' => __('Facebook', 'pps-passport-core'),
 				],
 				[
 					'icon'        => [
@@ -193,7 +193,7 @@ class Team extends Widget_Base {
 					'link'        => [
 						'url' => '#',
 					],
-					'social_name' => __('Twitter', 'gpt-news-core'),
+					'social_name' => __('Twitter', 'pps-passport-core'),
 				],
 				[
 					'icon'        => [
@@ -203,7 +203,7 @@ class Team extends Widget_Base {
 					'link'        => [
 						'url' => '#',
 					],
-					'social_name' => __('Linkedin', 'gpt-news-core'),
+					'social_name' => __('Linkedin', 'pps-passport-core'),
 				],
 				[
 					'icon'        => [
@@ -213,7 +213,7 @@ class Team extends Widget_Base {
 					'link'        => [
 						'url' => '#',
 					],
-					'social_name' => __('Pinterest', 'gpt-news-core'),
+					'social_name' => __('Pinterest', 'pps-passport-core'),
 				],
 
 			],
@@ -225,7 +225,7 @@ class Team extends Widget_Base {
 		// =====================
 
 		$this->start_controls_section( 'animation_effect', [
-			'label' => __( 'Animation Effect', 'gpt-news-core' ),
+			'label' => __( 'Animation Effect', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_CONTENT,
 		] );
 
@@ -233,10 +233,10 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'enable_tilt',
 			[
-				'label' => __( 'Enable Tilt', 'gpt-news-core' ),
+				'label' => __( 'Enable Tilt', 'pps-passport-core' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __( 'Enable', 'gpt-news-core' ),
-				'label_off' => __( 'Disable', 'gpt-news-core' ),
+				'label_on' => __( 'Enable', 'pps-passport-core' ),
+				'label_off' => __( 'Disable', 'pps-passport-core' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
@@ -253,23 +253,23 @@ class Team extends Widget_Base {
 		// Start Name Style
 		// =====================
 		$this->start_controls_section( 'name_style', [
-			'label' => __( 'Name', 'gpt-news-core' ),
+			'label' => __( 'Name', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'name_color', [
-			'label'     => __( 'Text Color', 'gpt-news-core' ),
+			'label'     => __( 'Text Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-team__name' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .pps-team__name' => 'color: {{VALUE}};',
 			],
 		] );
 
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'name_typography',
-			'label'    => __( 'Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-team__name',
+			'label'    => __( 'Typography', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-team__name',
 		] );
 
 
@@ -280,22 +280,22 @@ class Team extends Widget_Base {
 		// Start Position Style
 		// =====================
 		$this->start_controls_section( 'position_style', [
-			'label' => __( 'Designation', 'gpt-news-core' ),
+			'label' => __( 'Designation', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'position_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-team__designation' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .pps-team__designation' => 'color: {{VALUE}};',
 			],
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'position_typography',
-			'label'    => __( 'Typography', 'gpt-news-core' ),
-			'selector' => '{{WRAPPER}} .gpt-team__designation',
+			'label'    => __( 'Typography', 'pps-passport-core' ),
+			'selector' => '{{WRAPPER}} .pps-team__designation',
 		] );
 
 		$this->end_controls_section();
@@ -306,12 +306,12 @@ class Team extends Widget_Base {
 		// Start Description Style
 		// =====================
 		$this->start_controls_section( 'member_short_info', [
-			'label' => __( 'Description', 'gpt-news-core' ),
+			'label' => __( 'Description', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'short_info_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .team-member .member-short-info' => 'color: {{VALUE}};',
@@ -320,7 +320,7 @@ class Team extends Widget_Base {
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'short_info_typography',
-			'label'    => __( 'Typography', 'gpt-news-core' ),
+			'label'    => __( 'Typography', 'pps-passport-core' ),
 			'selector' => '{{WRAPPER}} .team-member .member-short-info',
 		] );
 
@@ -332,12 +332,12 @@ class Team extends Widget_Base {
 		// Start Icon Style
 		// =====================
 		$this->start_controls_section( 'icon_style', [
-			'label' => __( 'Social Icon', 'gpt-news-core' ),
+			'label' => __( 'Social Icon', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_responsive_control( 'font_size', [
-			'label'      => __( 'Font Size', 'gpt-news-core' ),
+			'label'      => __( 'Font Size', 'pps-passport-core' ),
 			'type'       => Controls_Manager::SLIDER,
 			'size_units' => [ 'px', 'em' ],
 			'default'    => [
@@ -345,35 +345,35 @@ class Team extends Widget_Base {
 				'size' => '16',
 			],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-team__social li a' => 'font-size: {{SIZE}}{{UNIT}};',
+				'{{WRAPPER}} .pps-team__social li a' => 'font-size: {{SIZE}}{{UNIT}};',
 			],
 		] );
 
 		$this->start_controls_tabs( 'team_icon_tabs' );
 
 		$this->start_controls_tab( 'team_icon_normal', [
-			'label' => __( 'Normal', 'gpt-news-core' ),
+			'label' => __( 'Normal', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'team_icon_color', [
-			'label'     => __( 'Icon Color', 'gpt-news-core' ),
+			'label'     => __( 'Icon Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-team__social li a' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .pps-team__social li a' => 'color: {{VALUE}};',
 			],
 		] );
 
 		$this->end_controls_tab();
 
 		$this->start_controls_tab( 'team_icon_hover', [
-			'label' => __( 'Hover', 'gpt-news-core' ),
+			'label' => __( 'Hover', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'team_icon_hover_color', [
-			'label'     => __( 'Icon Color', 'gpt-news-core' ),
+			'label'     => __( 'Icon Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
-				'{{WRAPPER}} .gpt-team__social li a:hover' => 'color: {{VALUE}};',
+				'{{WRAPPER}} .pps-team__social li a:hover' => 'color: {{VALUE}};',
 			],
 		] );
 
@@ -388,7 +388,7 @@ class Team extends Widget_Base {
 		// ================================
 
 		$this->start_controls_section( 'team_container_style', [
-			'label' => __( 'Team Container', 'gpt-news-core' ),
+			'label' => __( 'Team Container', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
@@ -396,8 +396,8 @@ class Team extends Widget_Base {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'team_wrapper_box_shadow',
-				'label' => __( 'Box Shadow', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-team',
+				'label' => __( 'Box Shadow', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-team',
 			]
 		);
 
@@ -406,9 +406,9 @@ class Team extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'team_background',
-				'label' => __( 'Background', 'gpt-news-core' ),
+				'label' => __( 'Background', 'pps-passport-core' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .gpt-team',
+				'selector' => '{{WRAPPER}} .pps-team',
 			]
 		);
 
@@ -417,26 +417,26 @@ class Team extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'team_border',
-				'label' => __( 'Border', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-team',
+				'label' => __( 'Border', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-team',
 			]
 		);
 
 		$this->add_control( 'team_padding', [
-			'label'      => __( 'Padding', 'gpt-news-core' ),
+			'label'      => __( 'Padding', 'pps-passport-core' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%', 'em' ],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-team .gpt-team__info' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'{{WRAPPER}} .pps-team .pps-team__info' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
 		] );
 
 		$this->add_control( 'team_border-radius', [
-			'label'      => __( 'Border Radius', 'gpt-news-core' ),
+			'label'      => __( 'Border Radius', 'pps-passport-core' ),
 			'type'       => Controls_Manager::DIMENSIONS,
 			'size_units' => [ 'px', '%', 'em' ],
 			'selectors'  => [
-				'{{WRAPPER}} .gpt-team' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'{{WRAPPER}} .pps-team' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
 		] );
 
@@ -445,8 +445,8 @@ class Team extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'team_box_shadow',
-				'label' => __( 'Box Shadow', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-team',
+				'label' => __( 'Box Shadow', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-team',
 			]
 		);
 
@@ -458,13 +458,13 @@ class Team extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		// Wrapper attributes
-		$this->add_render_attribute( 'wrapper', 'class', 'gpt-team' );
+		$this->add_render_attribute( 'wrapper', 'class', 'pps-team' );
 		if ( $settings['enable_tilt'] == 'yes' ) {
 			$this->add_render_attribute( 'wrapper', 'data-tilt', );
 		}
 
 		// Style
-		$this->add_render_attribute( 'wrapper', 'class', 'gpt-team--' . $settings['layout'] );
+		$this->add_render_attribute( 'wrapper', 'class', 'pps-team--' . $settings['layout'] );
 
 		require __DIR__ . '/templates/team/style-'.  $settings['layout'] .'.php';
 	}

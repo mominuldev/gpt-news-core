@@ -1,9 +1,9 @@
-<div class="gpt-contact-info">
+<div class="pps-contact-info">
 	<?php if ( ! empty( $settings['icon'] ) ) : ?>
-		<div class="gpt-contact-info__icon">
+		<div class="pps-contact-info__icon">
 			<?php \Elementor\Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ); ?>
 		</div>
-		<!-- /.gpt-contact-info__icon -->
+		<!-- /.pps-contact-info__icon -->
 	<?php endif; ?>
 
 	<?php if ( ! empty( $settings['contact_info'] ) ) :
@@ -11,9 +11,9 @@
 		$info = nl2br( $settings['contact_info'] );
 		$info = str_replace( '<br />', '<p>', $info );
 		?>
-		<div class="gpt-contact-info__info">
+		<div class="pps-contact-info__info">
 			<?php if ( ! empty( $settings['title'] ) ) : ?>
-				<h3 class="gpt-contact-info__title">
+				<h3 class="pps-contact-info__title">
 					<?php echo $settings['title']; ?>
 				</h3>
 			<?php endif; ?>

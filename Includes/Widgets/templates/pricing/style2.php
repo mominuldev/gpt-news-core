@@ -2,7 +2,7 @@
     <div class="row">
 		<?php foreach ( $tables as $table_value ) : ?>
             <div class="<?php echo esc_attr( $grid ); ?> col-md-6">
-                <div class="gpt-pricing-table-simple elementor-repeater-item-<?php echo $table_value['_id'] ?> <?php if ( $table_value['featured_table'] == 'yes' ) {
+                <div class="pps-pricing-table-simple elementor-repeater-item-<?php echo $table_value['_id'] ?> <?php if ( $table_value['featured_table'] == 'yes' ) {
 					echo 'featured active';
 				} ?> <?php echo esc_attr( $settings['layout'] ); ?>">
 
@@ -32,7 +32,7 @@
 
 	                if ( ! empty( $table_value['btn_url']['url'] ) ) : ?>
 						<div class="pricing__btn-wrapper">
-							<a href="<?php echo esc_url( $table_value['btn_url']['url'] ); ?>" <?php echo $target . ' ' . $nofollow; ?> class="gpt-btn btn-outline btn-round"><?php echo esc_html( $table_value['button_text'] ); ?></a>
+							<a href="<?php echo esc_url( $table_value['btn_url']['url'] ); ?>" <?php echo $target . ' ' . $nofollow; ?> class="pps-btn btn-outline btn-round"><?php echo esc_html( $table_value['button_text'] ); ?></a>
 						</div><!-- .pricing-footer -->
 	                <?php endif; ?>
 

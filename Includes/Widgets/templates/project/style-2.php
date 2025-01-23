@@ -5,7 +5,7 @@
 		<?php endif; ?>
 	</div>
 </div>
-<!-- /.gpt-project__image -->
+<!-- /.pps-project__image -->
 
 <div class="products__item-content">
 	<div class="products__item-title-wrapper">
@@ -14,7 +14,7 @@
 		</h3>
 
 		<?php if ( $settings['show_category'] == 'yes' ): ?>
-			<div class="gpt-project__category">
+			<div class="pps-project__category">
 				<?php the_terms( get_the_ID(), 'project_category', '', ', ', '' ); ?>
 			</div>
 		<?php endif; ?>

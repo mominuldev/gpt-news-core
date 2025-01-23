@@ -1,6 +1,6 @@
 <?php
 
-namespace GPT\traits;
+namespace PPS\traits;
 /**
  * Elementor Button trait.
  *

@@ -1,20 +1,20 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Admin\PostType;
+namespace PixelPath\PPSPassportCore\Admin\PostType;
 
 class Footer {
 
 	public function __construct() {
-		add_action( 'init', [ $this, 'gpt_create_type_footer' ], 2 );
+		add_action( 'init', [ $this, 'pps_create_type_footer' ], 2 );
 		add_action( 'wp_insert_post_data', [$this, 'set_default_footer_template'], 10, 2 );
 	}
 
-	public function gpt_create_type_footer() {
-		register_post_type( 'gpt_footer',
+	public function pps_create_type_footer() {
+		register_post_type( 'pps_footer',
 			array(
 				$labels = [
-					'name'          => __( 'Footer', 'gpt-news-core' ),
-					'singular_name' => __( 'Footer', 'gpt-news-core' ),
+					'name'          => __( 'Footer', 'pps-passport-core' ),
+					'singular_name' => __( 'Footer', 'pps-passport-core' ),
 				],
 				'labels'              => $labels,
 				'public'              => true,
@@ -29,14 +29,14 @@ class Footer {
 			)
 		);
 
-		if ( $tt_js_content_types = get_option( 'gpt_js_content_types' ) ) {
-			if ( ! in_array( 'gpt_footer', $tt_js_content_types ) ) {
-				$tt_js_content_types[] = 'gpt_footer';
+		if ( $tt_js_content_types = get_option( 'pps_js_content_types' ) ) {
+			if ( ! in_array( 'pps_footer', $tt_js_content_types ) ) {
+				$tt_js_content_types[] = 'pps_footer';
 			}
-			$options[] = 'gpt_footer';
-			update_option( 'gpt_js_content_types', $tt_js_content_types );
+			$options[] = 'pps_footer';
+			update_option( 'pps_js_content_types', $tt_js_content_types );
 		} else {
-			$options = array( 'page', 'gpt_footer' );
+			$options = array( 'page', 'pps_footer' );
 		}
 
 		update_post_meta( get_the_ID(), '_wp_page_template', 'elementor_canvas' );

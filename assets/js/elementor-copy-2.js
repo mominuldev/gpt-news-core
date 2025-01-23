@@ -1,17 +1,17 @@
 // (function ($, elementor) {
 // 	"use strict";
 //
-// 	var GPT = {
+// 	var PPS = {
 //
 // 		// Initialize widgets
 //
 // 		initWidgets: function () {
 // 			var widgets = {
-// 				'mpt-hero-static.default': GPT.Hero,
-// 				'mpt-highlight-heading.default': GPT.HightlightHeading,
-// 				'mpt-project-list.default': GPT.ProjectList,
-// 				'mpt-logo-marquee.default': GPT.LogoMaequee,
-// 				'mpt-marque-text-advance.default': GPT.MarqueText,
+// 				'mpt-hero-static.default': PPS.Hero,
+// 				'mpt-highlight-heading.default': PPS.HightlightHeading,
+// 				'mpt-project-list.default': PPS.ProjectList,
+// 				'mpt-logo-marquee.default': PPS.LogoMaequee,
+// 				'mpt-marque-text-advance.default': PPS.MarqueText,
 // 			};
 //
 // 			$.each(widgets, function (widget, callback) {
@@ -427,7 +427,7 @@
 //
 // 	// Initialize on Elementor frontend load
 // 	$(window).on('elementor/frontend/init', function () {
-// 		GPT.initWidgets();  // Initialize widgets after Elementor is ready
+// 		PPS.initWidgets();  // Initialize widgets after Elementor is ready
 // 	});
 //
 // }(jQuery, window.elementorFrontend));
@@ -436,7 +436,7 @@
 (function ($, elementor) {
 	"use strict";
 
-	var GPT = {
+	var PPS = {
 		// Initialize widgets
 		initWidgets: function () {
 			const widgets = {
@@ -651,7 +651,7 @@
 
 	// Initialize on Elementor frontend load
 	$(window).on('elementor/frontend/init', function () {
-		GPT.initWidgets();
+		PPS.initWidgets();
 	});
 
 }(jQuery, window.elementorFrontend));
@@ -680,7 +680,7 @@
 // 					// Entering transition for page loader
 // 					return pageEnterAnimation(next.container);
 // 					ScrollTrigger.refresh();
-// 					GPT.Hero($(document));
+// 					PPS.Hero($(document));
 // 				}
 // 			}
 // 		]
@@ -690,7 +690,7 @@
 // 	barba.hooks.afterEnter(() => {
 // 		// Initialize Elementor Widget animations here
 // 		if (typeof elementorFrontend !== 'undefined') {
-// 			GPT.initWidgets(); // Trigger your custom Elementor animations
+// 			PPS.initWidgets(); // Trigger your custom Elementor animations
 // 		}
 // 		initPageAnimations();
 // 	});
@@ -929,13 +929,13 @@
 // 		// Reinitialize your GSAP animations here
 //
 // 		// Example: Reinitialize the hero section GSAP animations
-// 		GPT.Hero($(document));
+// 		PPS.Hero($(document));
 //
 // 		// Example: Reinitialize other animations
-// 		GPT.HightlightHeading($(document));
-// 		GPT.MarqueText($(document));
-// 		GPT.LogoMaequee($(document));
-// 		GPT.ProjectList($(document));
+// 		PPS.HightlightHeading($(document));
+// 		PPS.MarqueText($(document));
+// 		PPS.LogoMaequee($(document));
+// 		PPS.ProjectList($(document));
 // 	}
 //
 // };

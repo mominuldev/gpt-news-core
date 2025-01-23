@@ -10,7 +10,7 @@ $project_info = get_post_meta( get_the_ID(), 'project_options', true );
 		<div class="container">
 
 			<div class="single-project-details-banner_content text-center">
-				<h2 class="single-project-details-banner_title"><?php echo gpt_option('project-page-title'); ?></h2>
+				<h2 class="single-project-details-banner_title"><?php echo pps_option('project-page-title'); ?></h2>
 			</div>
 
 		</div>
@@ -22,7 +22,7 @@ $project_info = get_post_meta( get_the_ID(), 'project_options', true );
 
 			<?php if ( has_post_thumbnail() ) { ?>
 				<div class="project-details_thumb">
-					<?php the_post_thumbnail( 'gpt_project_details_1300x600' ); ?>
+					<?php the_post_thumbnail( 'pps_project_details_1300x600' ); ?>
 				</div>
 			<?php } ?>
 

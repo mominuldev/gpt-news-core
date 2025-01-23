@@ -25,11 +25,11 @@ if ( $count < 1 ) : ?>
 
 				<ul class="entry-meta">
 					<li>
-						<?php \Gpt_Theme_Helper::post_author_by(); ?>
+						<?php \PPS_Theme_Helper::post_author_by(); ?>
 					</li>
 					<li>
 						<i class="ri-calendar-2-line"></i>
-						<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+						<?php \PPS_Theme_Helper::pps_posted_on(); ?>
 					</li>
 				</ul><!-- .entry-meta -->
 			</div>
@@ -50,7 +50,7 @@ elseif ( $count == 1 ) : ?>
 				<a href="<?php the_permalink(); ?>">
 					<?php
 					if ( has_post_thumbnail() ) {
-						the_post_thumbnail( 'gpt-blog-list_180x150', array( 'alt' => get_the_title() ) );
+						the_post_thumbnail( 'pps-blog-list_180x150', array( 'alt' => get_the_title() ) );
 					} else { ?>
 						<img src="https://via.placeholder.com/410x290" alt="Placeholder">
 					<?php } ?>
@@ -66,7 +66,7 @@ elseif ( $count == 1 ) : ?>
 						<ul class="entry-meta">
 							<li>
 								<i class="ri-calendar-2-line"></i>
-								<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+								<?php \PPS_Theme_Helper::pps_posted_on(); ?>
 							</li>
 						</ul><!-- .entry-meta -->
 					<?php endif; ?>

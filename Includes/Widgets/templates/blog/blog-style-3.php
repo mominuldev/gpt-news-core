@@ -3,7 +3,7 @@
 		<a href="<?php the_permalink(); ?>">
 			<?php
 			if ( has_post_thumbnail() ) {
-				the_post_thumbnail( 'gpt_hero_grid_800x550', array( 'alt' => get_the_title() ) );
+				the_post_thumbnail( 'pps_hero_grid_800x550', array( 'alt' => get_the_title() ) );
 			} else { ?>
 				<img src="https://via.placeholder.com/410x290" alt="Placeholder">
 			<?php } ?>
@@ -16,10 +16,10 @@
 		<?php if ( $meta_show == 'yes' ) : ?>
 			<ul class="entry-meta meta-style-two">
 				<li>
-					<?php Gpt_Theme_Helper::gpt_posted_author_avatar(); ?>
+					<?php PPS_Theme_Helper::pps_posted_author_avatar(); ?>
 				</li>
 				<li>
-					<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+					<?php PPS_Theme_Helper::pps_posted_on(); ?>
 				</li>
 			</ul><!-- .entry-meta -->
 		<?php endif; ?>

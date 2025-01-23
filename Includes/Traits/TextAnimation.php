@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Traits;
+namespace PixelPath\PPSPassportCore\Traits;
 
 use Elementor\Controls_Manager;
 
@@ -14,10 +14,10 @@ trait TextAnimation {
 	public function textAnimation( $prefix ) {
 		$this->add_control(
 			$prefix . 'enable_animation', [
-			'label'        => __( 'Enable Animation', 'gpt-news-core' ),
+			'label'        => __( 'Enable Animation', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Yes', 'gpt-news-core' ),
-			'label_off'    => __( 'No', 'gpt-news-core' ),
+			'label_on'     => __( 'Yes', 'pps-passport-core' ),
+			'label_off'    => __( 'No', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
@@ -25,15 +25,15 @@ trait TextAnimation {
 		// Animation Style
 		$this->add_control(
 			$prefix . 'animation_style', [
-			'label'     => __( 'Animation Style', 'gpt-news-core' ),
+			'label'     => __( 'Animation Style', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SELECT,
 			'default'   => 'one',
 			'options'   => [
-				'one'   => __( 'One', 'gpt-news-core' ),
-				'two'   => __( 'Two', 'gpt-news-core' ),
-				'three' => __( 'Three', 'gpt-news-core' ),
-				'four'  => __( 'four', 'gpt-news-core' ),
-				'five'  => __( 'five', 'gpt-news-core' ),
+				'one'   => __( 'One', 'pps-passport-core' ),
+				'two'   => __( 'Two', 'pps-passport-core' ),
+				'three' => __( 'Three', 'pps-passport-core' ),
+				'four'  => __( 'four', 'pps-passport-core' ),
+				'five'  => __( 'five', 'pps-passport-core' ),
 			],
 			'condition' => [
 				$prefix . 'enable_animation' => 'yes',
@@ -43,10 +43,10 @@ trait TextAnimation {
 		// perspective Switcher
 		$this->add_control(
 			$prefix . 'perspective', [
-			'label'     => __( 'Perspective', 'gpt-news-core' ),
+			'label'     => __( 'Perspective', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SWITCHER,
-			'label_on'  => __( 'Yes', 'gpt-news-core' ),
-			'label_off' => __( 'No', 'gpt-news-core' ),
+			'label_on'  => __( 'Yes', 'pps-passport-core' ),
+			'label_off' => __( 'No', 'pps-passport-core' ),
 			'default'   => 'yes',
 			'condition' => [
 				$prefix .'animation_style' => 'two',
@@ -56,7 +56,7 @@ trait TextAnimation {
 		// Animation Duration
 		$this->add_control(
 			$prefix . 'animation_duration', [
-			'label'     => __( 'Animation Duration', 'gpt-news-core' ),
+			'label'     => __( 'Animation Duration', 'pps-passport-core' ),
 			'type'      => Controls_Manager::NUMBER,
 			'default'   => 2,
 			'step'      => 0.1,
@@ -69,7 +69,7 @@ trait TextAnimation {
 		// Animation Delay
 		$this->add_control(
 			$prefix . 'animation_delay', [
-			'label'     => __( 'Animation Delay', 'gpt-news-core' ),
+			'label'     => __( 'Animation Delay', 'pps-passport-core' ),
 			'type'      => Controls_Manager::NUMBER,
 			'default'   => 0.1,
 			'step'      => 0.1,

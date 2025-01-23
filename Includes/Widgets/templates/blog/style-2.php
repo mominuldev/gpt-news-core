@@ -5,7 +5,7 @@
 		<div class="feature-image">
 			<?php if (has_post_thumbnail()): ?>
 				<a href="<?php echo the_permalink(); ?>">
-					<?php the_post_thumbnail('gpt_blog_grid_370x400', array('class' => 'img-fluid')) ?>
+					<?php the_post_thumbnail('pps_blog_grid_370x400', array('class' => 'img-fluid')) ?>
 				</a>
 			<?php endif; ?>
 
@@ -13,7 +13,7 @@
 			<div class="entry-content">
 				<div class="author vcard">
 					<a class="post-author" href="blog-single.html">
-						<?php echo Gpt_Theme_Helper::gpt_posted_author_avatar(); ?>
+						<?php echo PPS_Theme_Helper::pps_posted_author_avatar(); ?>
 					</a>
 				</div>
 
@@ -35,7 +35,7 @@
 						</li>
 						<li class="meta-date">
 							<i class="fas fa-calendar-alt"></i>
-							<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+							<?php PPS_Theme_Helper::pps_posted_on(); ?>
 						</li>
 					</ul>
 				<?php endif; ?>
@@ -47,7 +47,7 @@
 				</p>
 			</div><!-- /.blog-content -->
 
-			<a href="<?php the_permalink(); ?>" class="read-more-btn"><?php esc_html_e('Read More ', 'gpt-news-core') ?>
+			<a href="<?php the_permalink(); ?>" class="read-more-btn"><?php esc_html_e('Read More ', 'pps-passport-core') ?>
 				<i class="ei ei-arrow_right"></i>
 			</a>
 		</div><!-- /.feature-image -->

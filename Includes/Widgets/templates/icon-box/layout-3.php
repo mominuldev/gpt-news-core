@@ -1,4 +1,4 @@
-<div class="gpt-icon-box style-three">
+<div class="pps-icon-box style-three">
 	<?php if ( $settings['icon_type'] == 'type_icon' ) : ?>
 		<?php if ( $settings['icon_pack'] == 'fontawesome' ) : ?>
 			<div class="icon-container">
@@ -52,9 +52,9 @@
 
 
 	    <?php if ( ! empty( $settings['button_text'] ) ) : ?>
-			<a href="<?php echo esc_url( $settings['btn_link']['url'] ); ?>" class="gpt-btn-link"><?php echo esc_html( $settings['button_text'] ); ?> <i class="ei ei-arrow_right"></i></a>
+			<a href="<?php echo esc_url( $settings['btn_link']['url'] ); ?>" class="pps-btn-link"><?php echo esc_html( $settings['button_text'] ); ?> <i class="ei ei-arrow_right"></i></a>
 	    <?php endif; ?>
 
     </div>
 </div>
-<!-- /.gpt-icon-box -->
+<!-- /.pps-icon-box -->

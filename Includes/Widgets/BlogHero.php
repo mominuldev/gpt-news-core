@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Widgets;
+namespace PixelPath\PPSPassportCore\Widgets;
 
 use Elementor\{Controls_Manager, Group_Control_Background, Group_Control_Border, Group_Control_Box_Shadow, Widget_Base, Group_Control_Typography};
 
@@ -15,7 +15,7 @@ class BlogHero extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_name() {
-		return 'gpt-blog-hero';
+		return 'pps-blog-hero';
 	}
 
 	/**
@@ -23,7 +23,7 @@ class BlogHero extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return esc_html__( 'GPT Blog Hero', 'gpt-news-core' );
+		return esc_html__( 'PPS Blog Hero', 'pps-passport-core' );
 	}
 
 	/**
@@ -39,7 +39,7 @@ class BlogHero extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_categories() {
-		return [ 'gpt-elements' ];
+		return [ 'pps-elements' ];
 	}
 
 	/**
@@ -47,7 +47,7 @@ class BlogHero extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'blog', 'hero', 'gpt' ];
+		return [ 'blog', 'hero', 'pps' ];
 	}
 
 	/**
@@ -58,33 +58,33 @@ class BlogHero extends Widget_Base {
 		// Testimonial
 		//=========================
 		$this->start_controls_section( 'section_tab_style', [
-			'label' => esc_html__( 'Blog Grid', 'gpt-news-core' ),
+			'label' => esc_html__( 'Blog Grid', 'pps-passport-core' ),
 		] );
 
 		// Layout
 		$this->add_control( 'layout', [
-			'label'   => esc_html__( 'Layout', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Layout', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'one',
 			'options' => [
-				'one' => esc_html__( 'One', 'gpt-news-core' ),
-				'two' => esc_html__( 'Two', 'gpt-news-core' ),
-				'three' => esc_html__( 'Three', 'gpt-news-core' ),
-				'four' => esc_html__( 'Four', 'gpt-news-core' ),
+				'one' => esc_html__( 'One', 'pps-passport-core' ),
+				'two' => esc_html__( 'Two', 'pps-passport-core' ),
+				'three' => esc_html__( 'Three', 'pps-passport-core' ),
+				'four' => esc_html__( 'Four', 'pps-passport-core' ),
 			]
 		] );
 
 
 		$this->add_control( 'post_count', [
-			'label'   => esc_html__( 'Post count', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Post count', 'pps-passport-core' ),
 			'type'    => Controls_Manager::NUMBER,
-			'default' => esc_html__( '3', 'gpt-news-core' ),
+			'default' => esc_html__( '3', 'pps-passport-core' ),
 
 		] );
 
 
 		$this->add_control( 'content_length', [
-			'label'   => __( 'Word Limit', 'gpt-news-core' ),
+			'label'   => __( 'Word Limit', 'pps-passport-core' ),
 			'type'    => \Elementor\Controls_Manager::NUMBER,
 			'min'     => 5,
 			'max'     => 30,
@@ -96,7 +96,7 @@ class BlogHero extends Widget_Base {
 			'label'       => __( 'Read More Button text' ),
 			'type'        => Controls_Manager::TEXT,
 			'placeholder' => __( 'Enter button text here' ),
-			'default'     => __( 'Read More', 'gpt-news-core' ),
+			'default'     => __( 'Read More', 'pps-passport-core' ),
 			'label_block' => true
 		] );
 
@@ -105,64 +105,64 @@ class BlogHero extends Widget_Base {
 		// Query
 		//=========================
 		$this->start_controls_section( 'section_query', [
-			'label' => esc_html__( 'Query', 'gpt-news-core' ),
+			'label' => esc_html__( 'Query', 'pps-passport-core' ),
 		] );
 
 		$this->add_control( 'post_cat', [
-			'label'       => esc_html__( 'Select category', 'gpt-news-core' ),
+			'label'       => esc_html__( 'Select category', 'pps-passport-core' ),
 			'type'        => Controls_Manager::SELECT2,
 			'multiple'    => true,
 			'label_block' => true,
-			'options'     => \GPT_Helper::categories_suggester(),
+			'options'     => \PPS_Helper::categories_suggester(),
 			'default'     => '0'
 		] );
 
 		$this->add_control( 'order', [
-			'label'   => esc_html__( 'Order', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Order', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'DESC',
 			'options' => [
-				'ASC'  => esc_html__( 'ASC', 'gpt-news-core' ),
-				'DESC' => esc_html__( 'DESC', 'gpt-news-core' ),
+				'ASC'  => esc_html__( 'ASC', 'pps-passport-core' ),
+				'DESC' => esc_html__( 'DESC', 'pps-passport-core' ),
 			]
 		] );
 
 		$this->add_control( 'orderby', [
-			'label'   => esc_html__( 'Order By', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Order By', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'date',
 			'options' => [
-				'date'          => esc_html__( 'Date', 'gpt-news-core' ),
-				'title'         => esc_html__( 'Title', 'gpt-news-core' ),
-				'rand'          => esc_html__( 'Random', 'gpt-news-core' ),
-				'comment_count' => esc_html__( 'Comment Count', 'gpt-news-core' ),
+				'date'          => esc_html__( 'Date', 'pps-passport-core' ),
+				'title'         => esc_html__( 'Title', 'pps-passport-core' ),
+				'rand'          => esc_html__( 'Random', 'pps-passport-core' ),
+				'comment_count' => esc_html__( 'Comment Count', 'pps-passport-core' ),
 			]
 		] );
 
 		// Offset
 		$this->add_control( 'offset', [
-			'label'   => esc_html__( 'Offset', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Offset', 'pps-passport-core' ),
 			'type'    => Controls_Manager::NUMBER,
 			'default' => 0,
 		] );
 
 		// Exclude
 		$this->add_control( 'exclude', [
-			'label'   => esc_html__( 'Exclude', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Exclude', 'pps-passport-core' ),
 			'type'    => Controls_Manager::TEXT,
 			'default' => '',
-			'description' => esc_html__( 'Enter post ID separated by comma to exclude', 'gpt-news-core' ),
-			'placeholder' => esc_html__( '1,2,3', 'gpt-news-core' ),
+			'description' => esc_html__( 'Enter post ID separated by comma to exclude', 'pps-passport-core' ),
+			'placeholder' => esc_html__( '1,2,3', 'pps-passport-core' ),
 			'label_block' => true
 		] );
 
 		// Include
 		$this->add_control( 'include', [
-			'label'   => esc_html__( 'Include', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Include', 'pps-passport-core' ),
 			'type'    => Controls_Manager::TEXT,
 			'default' => '',
-			'description' => esc_html__( 'Enter post ID separated by comma to exclude', 'gpt-news-core' ),
-			'placeholder' => esc_html__( '1,2,3', 'gpt-news-core' ),
+			'description' => esc_html__( 'Enter post ID separated by comma to exclude', 'pps-passport-core' ),
+			'placeholder' => esc_html__( '1,2,3', 'pps-passport-core' ),
 			'label_block' => true
 		] );
 
@@ -172,27 +172,27 @@ class BlogHero extends Widget_Base {
 		// Blog Meta Style
 		//====================
 		$this->start_controls_section( 'background_shape', [
-			'label' => __( 'Meta', 'gpt-news-core' ),
+			'label' => __( 'Meta', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'meta_show', [
-			'label'        => __( 'Show Post meta', 'gpt-news-core' ),
+			'label'        => __( 'Show Post meta', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Yes', 'gpt-news-core' ),
-			'label_off'    => __( 'No', 'gpt-news-core' ),
+			'label_on'     => __( 'Yes', 'pps-passport-core' ),
+			'label_off'    => __( 'No', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'yes',
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'meta_text_typography',
-			'label'    => __( 'Typography', 'gpt-news-core' ),
+			'label'    => __( 'Typography', 'pps-passport-core' ),
 			'selector' => '{{WRAPPER}} .blog-grid--two .entry-meta li, {{WRAPPER}} .blog-grid--two .entry-meta li a, ul.entry-meta li',
 		] );
 
 		$this->add_control( 'meta_text_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-grid--two .entry-meta li, {{WRAPPER}} .blog-grid--two .entry-meta li a' => 'color: {{VALUE}}',
@@ -200,7 +200,7 @@ class BlogHero extends Widget_Base {
 		] );
 
 		$this->add_control( 'date_title_color_hover', [
-			'label'     => __( 'Hover Color', 'gpt-news-core' ),
+			'label'     => __( 'Hover Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-grid--two .entry-meta li a:hover' => 'color: {{VALUE}}',
@@ -208,7 +208,7 @@ class BlogHero extends Widget_Base {
 		] );
 
 		$this->add_control( 'meta_icon_color', [
-			'label'     => __( 'Icon Color', 'gpt-news-core' ),
+			'label'     => __( 'Icon Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-grid--two .entry-meta li i' => 'color: {{VALUE}}',
@@ -220,18 +220,18 @@ class BlogHero extends Widget_Base {
 		// Title Style
 		//=====================
 		$this->start_controls_section( 'name_section', [
-			'label' => __( 'Title', 'gpt-news-core' ),
+			'label' => __( 'Title', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'title_typography',
-			'label'    => __( 'Typography', 'gpt-news-core' ),
+			'label'    => __( 'Typography', 'pps-passport-core' ),
 			'selector' => '{{WRAPPER}} .blog-grid__title',
 		] );
 
 		$this->add_control( 'title_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-grid__title a' => 'color: {{VALUE}}',
@@ -241,7 +241,7 @@ class BlogHero extends Widget_Base {
 
 		// Hover Color
 		$this->add_control( 'title_hover_color', [
-			'label'     => __( 'Hover Background Color', 'gpt-news-core' ),
+			'label'     => __( 'Hover Background Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-grid .blog-grid__title a' => 'background-image: linear-gradient(to bottom, {{VALUE}} 0%, {{VALUE}} 98%);',
@@ -254,18 +254,18 @@ class BlogHero extends Widget_Base {
 		// Content Style
 		//=====================
 		$this->start_controls_section( 'content_section', [
-			'label' => __( 'Content', 'gpt-news-core' ),
+			'label' => __( 'Content', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_group_control( Group_Control_Typography::get_type(), [
 			'name'     => 'content_typography',
-			'label'    => __( 'Typography', 'gpt-news-core' ),
+			'label'    => __( 'Typography', 'pps-passport-core' ),
 			'selector' => '{{WRAPPER}} .blog-grid__excerpt',
 		] );
 
 		$this->add_control( 'content_color', [
-			'label'     => __( 'Color', 'gpt-news-core' ),
+			'label'     => __( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-grid__excerpt' => 'color: {{VALUE}}',
@@ -277,12 +277,12 @@ class BlogHero extends Widget_Base {
 		// Style Slider Control Section
 		//================================
 		$this->start_controls_section( 'blog_section', [
-			'label' => __( 'Blog Container', 'gpt-news-core' ),
+			'label' => __( 'Blog Container', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'blog_bg_color', [
-			'label'     => __( 'Background Color', 'gpt-news-core' ),
+			'label'     => __( 'Background Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .blog-grid--two' => 'background: {{VALUE}}',
@@ -293,7 +293,7 @@ class BlogHero extends Widget_Base {
 		$this->add_responsive_control(
 			'blog_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-news-core' ),
+				'label'      => __( 'Padding', 'pps-passport-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -306,11 +306,11 @@ class BlogHero extends Widget_Base {
 		$this->add_responsive_control(
 			'blog_margin',
 			[
-				'label'      => __( 'Margin', 'gpt-news-core' ),
+				'label'      => __( 'Margin', 'pps-passport-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .gpt-grid--two' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .pps-grid--two' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -320,7 +320,7 @@ class BlogHero extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'blog_border',
-				'label'    => __( 'Border', 'gpt-news-core' ),
+				'label'    => __( 'Border', 'pps-passport-core' ),
 				'selector' => '{{WRAPPER}} .blog-grid--two',
 			]
 		);
@@ -328,7 +328,7 @@ class BlogHero extends Widget_Base {
 		$this->add_control(
 			'blog_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'gpt-news-core' ),
+				'label'      => __( 'Border Radius', 'pps-passport-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -341,7 +341,7 @@ class BlogHero extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'blog_shadow_hover',
-				'label'    => __( 'Hover Box Shadow', 'gpt-news-core' ),
+				'label'    => __( 'Hover Box Shadow', 'pps-passport-core' ),
 				'selector' => '{{WRAPPER}} .blog-grid--two',
 			]
 		);
@@ -360,7 +360,7 @@ class BlogHero extends Widget_Base {
 
 
 		$this->add_render_attribute( 'wrapper', 'class', [
-			'gpt-post-items blog-grid',
+			'pps-post-items blog-grid',
 		] );
 
 
@@ -424,18 +424,18 @@ class BlogHero extends Widget_Base {
 		}
 
 
-		$gpt_query = new \WP_Query( $query );
+		$pps_query = new \WP_Query( $query );
 		$colors = [ '#ff3385', '#ffaf25', '#0073ff', '#3dd800', '#00B3E6', '#ff002a', '#007bff' ];
 		?>
 
 		<div class="blog-post-items">
 			<div class="row g-4">
 				<?php
-				if ( $gpt_query->have_posts() ) :
+				if ( $pps_query->have_posts() ) :
 					$count = 0; // Counter to track posts
 					$color_count = 0;
 
-					while ( $gpt_query->have_posts() ) : $gpt_query->the_post();
+					while ( $pps_query->have_posts() ) : $pps_query->the_post();
 
 					if($layout == 'three') {
 						$color = $colors[$color_count];

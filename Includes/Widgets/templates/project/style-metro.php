@@ -1,6 +1,6 @@
 <?php
 
-use GpTheme\GptNewsCore\ImageSize;
+use PixelPath\PPSPassportCore\ImageSize;
 
 if (isset($settings['grid_metro_layout'])) {
 	$metro_layout = array();
@@ -28,13 +28,13 @@ if (count($metro_layout) < 1) {
 
 $metro_layout_count = count($metro_layout);
 $metro_item_count = 0;
-$count = $gpt_query->post_count;
+$count = $pps_query->post_count;
 $ant = 0.5;
 
-while ($gpt_query->have_posts()) : $gpt_query->the_post();
+while ($pps_query->have_posts()) : $pps_query->the_post();
 	$animation = $settings['grid_animation'];
 	$reveal = $settings['reveal_animation'];
-	$classes = array("gpt-project grid-item");
+	$classes = array("pps-project grid-item");
 
 
 	$size = $metro_layout[$metro_item_count];
@@ -73,10 +73,10 @@ while ($gpt_query->have_posts()) : $gpt_query->the_post();
 
 	<figure <?php post_class(implode(' ', $classes)); ?> data-width="<?php echo esc_attr($ratioW); ?>"
 														 data-height="<?php echo esc_attr($ratioH); ?>">
-		<div class="gpt-project__wrapper gpt-box <?php echo $grid_classes; ?>" data-wow-delay="<?php echo esc_attr($ant); ?>s">
-			<div class="gpt-project__thumbnail-wrapper gpt-image grid-item-height">
+		<div class="pps-project__wrapper pps-box <?php echo $grid_classes; ?>" data-wow-delay="<?php echo esc_attr($ant); ?>s">
+			<div class="pps-project__thumbnail-wrapper pps-image grid-item-height">
 				<a href="<?php echo the_permalink(); ?>" class="post-permalink link-secret">
-					<div class="gpt-project__thumbnail">
+					<div class="pps-project__thumbnail">
 						<?php if (has_post_thumbnail()) { ?>
 							<?php ImageSize::the_post_thumbnail(array(
 								'size'   => 'custom',
@@ -90,17 +90,17 @@ while ($gpt_query->have_posts()) : $gpt_query->the_post();
 				</a>
 
 				<?php if (!empty($settings['overlay_style'])) : ?>
-					<div class="gpt-project__info">
-						<h3 class="gpt-project__title" data-hover="<?php the_title(); ?>">
+					<div class="pps-project__info">
+						<h3 class="pps-project__title" data-hover="<?php the_title(); ?>">
 							<a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></span></a>
 						</h3>
-						<div class="gpt-project__cat">
+						<div class="pps-project__cat">
 							<?php
 							$terms = get_the_terms(get_the_ID(), 'project_category');
 
 							if ($terms && !is_wp_error($terms)) :
 								foreach ($terms as $term) { ?>
-									<span class="gpt-project__cat-item"><?php echo $term->name; ?></span>
+									<span class="pps-project__cat-item"><?php echo $term->name; ?></span>
 								<?php } ?>
 							<?php endif; ?>
 						</div>

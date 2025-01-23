@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Widgets;
+namespace PixelPath\PPSPassportCore\Widgets;
 
 use Elementor\{Controls_Manager,
 	Widget_Base,
@@ -22,12 +22,12 @@ class MarqueText extends Widget_Base {
 	 * @access public
 	 */
 	public function get_name() {
-		return 'gpt-marquetext';
+		return 'pps-marquetext';
 	}
 
 
 	public function get_title() {
-		return __( 'Marque Text', 'gpt-news-core' );
+		return __( 'Marque Text', 'pps-passport-core' );
 	}
 
 	public function get_icon() {
@@ -43,7 +43,7 @@ class MarqueText extends Widget_Base {
 	 * @access public
 	 */
 	public function get_categories() {
-		return [ 'gpt-elements' ];
+		return [ 'pps-elements' ];
 	}
 
 	protected function register_controls() {
@@ -51,7 +51,7 @@ class MarqueText extends Widget_Base {
 		$this->start_controls_section(
 			'faq_content',
 			[
-				'label' => __( 'Marque Content', 'gpt-news-core' ),
+				'label' => __( 'Marque Content', 'pps-passport-core' ),
 			]
 		);
 
@@ -60,9 +60,9 @@ class MarqueText extends Widget_Base {
 
 		$repeater->add_control(
 			'title', [
-				'label'       => __( 'Text', 'gpt-news-core' ),
+				'label'       => __( 'Text', 'pps-passport-core' ),
 				'type'        => Controls_Manager::TEXT,
-				'plaseholder' => __( 'Enter Text', 'gpt-news-core' ),
+				'plaseholder' => __( 'Enter Text', 'pps-passport-core' ),
 				'label_block' => true,
 			]
 		);
@@ -70,24 +70,24 @@ class MarqueText extends Widget_Base {
 		$this->add_control(
 			'marque_lists',
 			[
-				'label'       => __( 'Text list', 'gpt-news-core' ),
+				'label'       => __( 'Text list', 'pps-passport-core' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => [
 					[
-						'title' => __( 'Digital Agency', 'gpt-news-core' ),
+						'title' => __( 'Digital Agency', 'pps-passport-core' ),
 					],
 					[
-						'title' => __( 'Web Design', 'gpt-news-core' ),
+						'title' => __( 'Web Design', 'pps-passport-core' ),
 					],
 					[
-						'title' => __( 'Product Design', 'gpt-news-core' ),
+						'title' => __( 'Product Design', 'pps-passport-core' ),
 					],
 					[
-						'title' => __( 'Branding Design', 'gpt-news-core' ),
+						'title' => __( 'Branding Design', 'pps-passport-core' ),
 					],
 					[
-						'title' => __( 'Branding Service', 'gpt-news-core' ),
+						'title' => __( 'Branding Service', 'pps-passport-core' ),
 					],
 				],
 				'title_field' => '{{{ title }}}',
@@ -100,7 +100,7 @@ class MarqueText extends Widget_Base {
 		$this->start_controls_section(
 			'social_style_section',
 			[
-				'label' => __( 'Content', 'gpt-news-core' ),
+				'label' => __( 'Content', 'pps-passport-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -109,10 +109,10 @@ class MarqueText extends Widget_Base {
 		$this->add_control(
 			'faq_color',
 			[
-				'label'     => __( 'Color', 'gpt-news-core' ),
+				'label'     => __( 'Color', 'pps-passport-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .gpt-marque__title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .pps-marque__title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -121,8 +121,8 @@ class MarqueText extends Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name'     => 'faq_typography',
-				'label'    => __( 'Typography', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-marque__title',
+				'label'    => __( 'Typography', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-marque__title',
 			]
 		);
 
@@ -130,7 +130,7 @@ class MarqueText extends Widget_Base {
 		$this->add_responsive_control(
 			'faq_space',
 			[
-				'label'      => __( 'Space', 'gpt-news-core' ),
+				'label'      => __( 'Space', 'pps-passport-core' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range'      => [
@@ -140,7 +140,7 @@ class MarqueText extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .gpt-marque__title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .pps-marque__title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -150,7 +150,7 @@ class MarqueText extends Widget_Base {
 		$this->start_controls_section(
 			'answer_style_section',
 			[
-				'label' => __( 'Answer', 'gpt-news-core' ),
+				'label' => __( 'Answer', 'pps-passport-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -158,10 +158,10 @@ class MarqueText extends Widget_Base {
 		$this->add_control(
 			'ans_color',
 			[
-				'label'     => __( 'Faq Color', 'gpt-news-core' ),
+				'label'     => __( 'Faq Color', 'pps-passport-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .gpt-faq__content' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .pps-faq__content' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -170,8 +170,8 @@ class MarqueText extends Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name'     => 'ans_typography',
-				'label'    => __( 'Faq Typography', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-faq__content',
+				'label'    => __( 'Faq Typography', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-faq__content',
 			]
 		);
 
@@ -180,7 +180,7 @@ class MarqueText extends Widget_Base {
 		$this->start_controls_section(
 			'faq_style_section',
 			[
-				'label' => __( 'Faq', 'gpt-news-core' ),
+				'label' => __( 'Faq', 'pps-passport-core' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -188,11 +188,11 @@ class MarqueText extends Widget_Base {
 		$this->add_responsive_control(
 			'faq_margin',
 			[
-				'label'      => __( 'Margin', 'gpt-news-core' ),
+				'label'      => __( 'Margin', 'pps-passport-core' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .gpt-faq__item:not(:last-child)' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .pps-faq__item:not(:last-child)' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -200,11 +200,11 @@ class MarqueText extends Widget_Base {
 		$this->add_responsive_control(
 			'faq_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-news-core' ),
+				'label'      => __( 'Padding', 'pps-passport-core' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .gpt-faq__item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .pps-faq__item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -212,10 +212,10 @@ class MarqueText extends Widget_Base {
 		$this->add_control(
 			'faq_bg_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-news-core' ),
+				'label'     => __( 'Background Color', 'pps-passport-core' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .gpt-faq__item' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .pps-faq__item' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -224,19 +224,19 @@ class MarqueText extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name'     => 'faq_border',
-				'label'    => __( 'Border', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-faq__item',
+				'label'    => __( 'Border', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-faq__item',
 			]
 		);
 
 		$this->add_responsive_control(
 			'faq_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'gpt-news-core' ),
+				'label'      => __( 'Border Radius', 'pps-passport-core' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .gpt-faq__item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .pps-faq__item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -245,7 +245,7 @@ class MarqueText extends Widget_Base {
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'faq_box_shadow',
-				'selector' => '{{WRAPPER}} .gpt-faq__item',
+				'selector' => '{{WRAPPER}} .pps-faq__item',
 			]
 		);
 
@@ -258,24 +258,24 @@ class MarqueText extends Widget_Base {
 
 
 		if ( $settings['marque_lists'] ) { ?>
-			<div class="gpt-marque-wrapper">
-				<ul class="gpt-faq__items">
+			<div class="pps-marque-wrapper">
+				<ul class="pps-faq__items">
 					<?php foreach ( $settings['marque_lists'] as $item ) { ?>
 						<?php if ( ! empty( $item['title'] ) ) : ?>
-							<li class="gpt-marque__title"><?php echo $item['title']; ?></li>
+							<li class="pps-marque__title"><?php echo $item['title']; ?></li>
 						<?php endif; ?>
 					<?php } ?>
 				</ul>
 
-				<ul class="gpt-faq__items" aria-hidden="true">
+				<ul class="pps-faq__items" aria-hidden="true">
 					<?php foreach ( $settings['marque_lists'] as $item ) { ?>
 						<?php if ( ! empty( $item['title'] ) ) : ?>
-							<li class="gpt-marque__title"><?php echo $item['title']; ?></li>
+							<li class="pps-marque__title"><?php echo $item['title']; ?></li>
 						<?php endif; ?>
 					<?php } ?>
 				</ul>
 			</div>
-			<!-- /.gpt-marque-wrapper -->
+			<!-- /.pps-marque-wrapper -->
 			<?php
 
 		}

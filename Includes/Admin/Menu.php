@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Admin;
+namespace PixelPath\PPSPassportCore\Admin;
 
 class Menu {
 
@@ -10,14 +10,14 @@ class Menu {
 
 	public function custom_menu() {
 		$capability  = 'manage_options';
-		$parent_slug = 'gpt_core';
+		$parent_slug = 'pps_core';
 
-		$link_footer_post_type = 'edit.php?post_type=gpt_footer';
-		$theme_option_link = 'admin.php?page=gpt-framework';
+		$link_footer_post_type = 'edit.php?post_type=pps_footer';
+		$theme_option_link = 'admin.php?page=pps-framework';
 
 		add_menu_page(
-			esc_html__( 'GPT Core', 'gpt-news-core' ),
-			esc_html__( 'GPT', 'gpt-news-core' ),
+			esc_html__( 'PPS Core', 'pps-passport-core' ),
+			esc_html__( 'PPS', 'pps-passport-core' ),
 			$capability,
 			$parent_slug,
 			[$this, 'plugin_main_page'],

@@ -1,8 +1,8 @@
 <?php
-namespace GpTheme\GptNewsCore\Widgets;
+namespace PixelPath\PPSPassportCore\Widgets;
 
 use Elementor\{Controls_Manager, Group_Control_Background, Group_Control_Typography, Repeater, Widget_Base};
-use GPT_Helper;
+use PPS_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -28,7 +28,7 @@ class Title extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'gpt_title';
+		return 'pps_title';
 	}
 
 	/**
@@ -42,7 +42,7 @@ class Title extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'GPT Title', 'gpt-news-core' );
+		return __( 'PPS Title', 'pps-passport-core' );
 	}
 
 	/**
@@ -72,7 +72,7 @@ class Title extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'gpt-elements' ];
+		return [ 'pps-elements' ];
 	}
 
 	/**
@@ -124,7 +124,7 @@ class Title extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'gpt-news-core' ),
+				'label' => __( 'Title', 'pps-passport-core' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => array(
 					'active' => true,
@@ -154,7 +154,7 @@ class Title extends Widget_Base {
 		$this->add_control(
 			'tag',
 			[
-				'label' => esc_html__( 'Element Tag', 'gpt-news-core' ),
+				'label' => esc_html__( 'Element Tag', 'pps-passport-core' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1' => 'H1',
@@ -174,23 +174,23 @@ class Title extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'gpt-news-core' ),
+				'label' => __( 'Alignment', 'pps-passport-core' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'gpt-news-core' ),
+						'title' => __( 'Left', 'pps-passport-core' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'gpt-news-core' ),
+						'title' => __( 'Center', 'pps-passport-core' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'gpt-news-core' ),
+						'title' => __( 'Right', 'pps-passport-core' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justify', 'gpt-news-core' ),
+						'title' => __( 'Justify', 'pps-passport-core' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -206,7 +206,7 @@ class Title extends Widget_Base {
 		$this->start_controls_section(
 			'title_style_section',
 			[
-				'label' => __( 'Title', 'gpt-news-core' ),
+				'label' => __( 'Title', 'pps-passport-core' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -215,10 +215,10 @@ class Title extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Color', 'gpt-news-core' ),
+				'label' => __( 'Color', 'pps-passport-core' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .gpt-section-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .pps-section-title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -228,7 +228,7 @@ class Title extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'selector' => '{{WRAPPER}} .gpt-section-title',
+				'selector' => '{{WRAPPER}} .pps-section-title',
 			]
 		);
 
@@ -250,7 +250,7 @@ class Title extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		// Wrapper
-		$this->add_render_attribute( 'wrapper', 'class', 'gpt-section-title-wrapper' );
+		$this->add_render_attribute( 'wrapper', 'class', 'pps-section-title-wrapper' );
 
 		// Link
 		if ( ! empty( $settings['link']['url'] ) ) {
@@ -263,7 +263,7 @@ class Title extends Widget_Base {
 			<?php if ( ! empty( $settings['link']['url'] ) ) : ?>
 				<a <?php $this->print_render_attribute_string( 'link' ); ?>>
 			<?php endif; ?>
-				<<?php echo esc_attr( $settings['tag'] ); ?> class="gpt-section-title">
+				<<?php echo esc_attr( $settings['tag'] ); ?> class="pps-section-title">
 					<?php echo esc_html( $settings['title'] ); ?>
 				</<?php echo esc_attr( $settings['tag'] ); ?>>
 			<?php if ( ! empty( $settings['link']['url'] ) ) : ?>

@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Widgets;
+namespace PixelPath\PPSPassportCore\Widgets;
 
 use Elementor\{
 	Group_Control_Box_Shadow,
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Button
  *
- * @package GpTheme\GptNewsCore\Widgets
+ * @package PixelPath\PPSPassportCore\Widgets
  */
 
 class Button extends Widget_Base {
@@ -33,7 +33,7 @@ class Button extends Widget_Base {
 	 *
 	 */
 	public function get_name() {
-		return 'gpt-button';
+		return 'pps-button';
 	}
 
 	/**
@@ -47,7 +47,7 @@ class Button extends Widget_Base {
 	 *
 	 */
 	public function get_title() {
-		return __( 'GPT Button', 'gpt-news-core' );
+		return __( 'PPS Button', 'pps-passport-core' );
 	}
 
 	/**
@@ -77,7 +77,7 @@ class Button extends Widget_Base {
 	 *
 	 */
 	public function get_categories() {
-		return [ 'gpt-elements' ];
+		return [ 'pps-elements' ];
 	}
 
 	/**
@@ -102,11 +102,11 @@ class Button extends Widget_Base {
 	 */
 	public static function get_button_sizes() {
 		return [
-			'btn-xs' => __( 'Extra Small', 'gpt-news-core' ),
-			'btn-sm' => __( 'Small', 'gpt-news-core' ),
-			'btn-md' => __( 'Medium', 'gpt-news-core' ),
-			'btn-lg' => __( 'Large', 'gpt-news-core' ),
-			'btn-xl' => __( 'Extra Large', 'gpt-news-core' ),
+			'btn-xs' => __( 'Extra Small', 'pps-passport-core' ),
+			'btn-sm' => __( 'Small', 'pps-passport-core' ),
+			'btn-md' => __( 'Medium', 'pps-passport-core' ),
+			'btn-lg' => __( 'Large', 'pps-passport-core' ),
+			'btn-xl' => __( 'Extra Large', 'pps-passport-core' ),
 		];
 	}
 
@@ -123,14 +123,14 @@ class Button extends Widget_Base {
 		$this->start_controls_section(
 			'section_button',
 			[
-				'label' => __( 'Button', 'gpt-news-core' ),
+				'label' => __( 'Button', 'pps-passport-core' ),
 			]
 		);
 
 		$this->add_control(
 			'button_size',
 			[
-				'label'   => __( 'Size', 'gpt-news-core' ),
+				'label'   => __( 'Size', 'pps-passport-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'btn-md',
 				'options' => $this->get_button_sizes(),
@@ -140,13 +140,13 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'button_shape',
 			[
-				'label'   => __( 'Shape', 'gpt-news-core' ),
+				'label'   => __( 'Shape', 'pps-passport-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'btn-round',
 				'options' => [
-					'btn-square' => __( 'Square', 'gpt-news-core' ),
-					'btn-round'  => __( 'Round', 'gpt-news-core' ),
-					'btn-circle' => __( 'Circle', 'gpt-news-core' ),
+					'btn-square' => __( 'Square', 'pps-passport-core' ),
+					'btn-round'  => __( 'Round', 'pps-passport-core' ),
+					'btn-circle' => __( 'Circle', 'pps-passport-core' ),
 				],
 			]
 		);
@@ -154,12 +154,12 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'button_style',
 			[
-				'label'   => __( 'Shape', 'gpt-news-core' ),
+				'label'   => __( 'Shape', 'pps-passport-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'btn-default',
 				'options' => [
-					'btn-default' => __( 'Default', 'gpt-news-core' ),
-					'btn-outline' => __( 'Outline', 'gpt-news-core' ),
+					'btn-default' => __( 'Default', 'pps-passport-core' ),
+					'btn-outline' => __( 'Outline', 'pps-passport-core' ),
 				],
 			]
 		);
@@ -167,13 +167,13 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'button_fill_color',
 			[
-				'label'   => __( 'Fill Color', 'gpt-news-core' ),
+				'label'   => __( 'Fill Color', 'pps-passport-core' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'btn-dark',
 				'options' => [
-					'btn-default' => __( 'Default', 'gpt-news-core' ),
-					'btn-light' => __( 'Light', 'gpt-news-core' ),
-					'btn-dark' => __( 'Dark', 'gpt-news-core' ),
+					'btn-default' => __( 'Default', 'pps-passport-core' ),
+					'btn-light' => __( 'Light', 'pps-passport-core' ),
+					'btn-dark' => __( 'Dark', 'pps-passport-core' ),
 				],
 			]
 		);
@@ -181,17 +181,17 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'text',
 			[
-				'label'       => __( 'Text', 'gpt-news-core' ),
+				'label'       => __( 'Text', 'pps-passport-core' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'Learn More', 'gpt-news-core' ),
-				'placeholder' => __( 'Button Text', 'gpt-news-core' ),
+				'default'     => __( 'Learn More', 'pps-passport-core' ),
+				'placeholder' => __( 'Button Text', 'pps-passport-core' ),
 			]
 		);
 
 		$this->add_control(
 			'link',
 			[
-				'label'       => __( 'Link', 'gpt-news-core' ),
+				'label'       => __( 'Link', 'pps-passport-core' ),
 				'type'        => Controls_Manager::URL,
 				'placeholder' => 'http://your-link.com',
 				'default'     => [
@@ -201,7 +201,7 @@ class Button extends Widget_Base {
 		);
 
 		$this->add_control( 'selected_icon', [
-			'label'   => __( 'Icon', 'gpt-news-core' ),
+			'label'   => __( 'Icon', 'pps-passport-core' ),
 			'type'    => Controls_Manager::ICONS,
 			'fa4compatibility' => 'icon',
 			'label_block' => true,
@@ -211,12 +211,12 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'icon_align',
 			[
-				'label'     => __( 'Icon Position', 'gpt-news-core' ),
+				'label'     => __( 'Icon Position', 'pps-passport-core' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'right',
 				'options'   => [
-					'left'  => __( 'Before', 'gpt-news-core' ),
-					'right' => __( 'After', 'gpt-news-core' ),
+					'left'  => __( 'Before', 'pps-passport-core' ),
+					'right' => __( 'After', 'pps-passport-core' ),
 				],
 				'condition' => [
 					'selected_icon!' => '',
@@ -227,7 +227,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'icon_indent',
 			[
-				'label'     => __( 'Icon Spacing', 'gpt-news-core' ),
+				'label'     => __( 'Icon Spacing', 'pps-passport-core' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -238,8 +238,8 @@ class Button extends Widget_Base {
 					'selected_icon!' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .gpt-btn .elementor-align-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .gpt-btn .elementor-align-icon-left'  => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .pps-btn .elementor-align-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .pps-btn .elementor-align-icon-left'  => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -247,19 +247,19 @@ class Button extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label'        => __( 'Alignment', 'gpt-news-core' ),
+				'label'        => __( 'Alignment', 'pps-passport-core' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'options'      => [
 					'left'    => [
-						'title' => __( 'Left', 'gpt-news-core' ),
+						'title' => __( 'Left', 'pps-passport-core' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center'  => [
-						'title' => __( 'Center', 'gpt-news-core' ),
+						'title' => __( 'Center', 'pps-passport-core' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'   => [
-						'title' => __( 'Right', 'gpt-news-core' ),
+						'title' => __( 'Right', 'pps-passport-core' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
@@ -271,7 +271,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label'   => __( 'View', 'gpt-news-core' ),
+				'label'   => __( 'View', 'pps-passport-core' ),
 				'type'    => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 			]
@@ -285,7 +285,7 @@ class Button extends Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => __( 'Button', 'gpt-news-core' ),
+				'label' => __( 'Button', 'pps-passport-core' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -294,19 +294,19 @@ class Button extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'typography',
-				'label'    => __( 'Typography', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-btn',
+				'label'    => __( 'Typography', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-btn',
 			]
 		);
 
 		$this->add_control(
 			'border_radius',
 			[
-				'label'      => __( 'Border Radius', 'gpt-news-core' ),
+				'label'      => __( 'Border Radius', 'pps-passport-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} a.gpt-btn, {{WRAPPER}} .gpt-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} a.pps-btn, {{WRAPPER}} .pps-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -315,11 +315,11 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'btn_padding',
 			[
-				'label'      => __( 'Padding', 'gpt-news-core' ),
+				'label'      => __( 'Padding', 'pps-passport-core' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} a.gpt-btn, {{WRAPPER}} .gpt-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} a.pps-btn, {{WRAPPER}} .pps-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -330,18 +330,18 @@ class Button extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => __( 'Normal', 'gpt-news-core' ),
+				'label' => __( 'Normal', 'pps-passport-core' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text_color',
 			[
-				'label'     => __( 'Color', 'gpt-news-core' ),
+				'label'     => __( 'Color', 'pps-passport-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} a.gpt-btn, {{WRAPPER}} .gpt-btn' => 'color: {{VALUE}};',
+					'{{WRAPPER}} a.pps-btn, {{WRAPPER}} .pps-btn' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -349,10 +349,10 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'background_color',
 			[
-				'label'     => __( 'Background Color', 'gpt-news-core' ),
+				'label'     => __( 'Background Color', 'pps-passport-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .gpt-btn' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .pps-btn' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -361,8 +361,8 @@ class Button extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'border',
-				'label'    => __( 'Border', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-btn',
+				'label'    => __( 'Border', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-btn',
 			]
 		);
 
@@ -370,8 +370,8 @@ class Button extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'box_shadow',
-				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-btn',
+				'label'    => __( 'Box Shadow', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-btn',
 			]
 		);
 
@@ -380,17 +380,17 @@ class Button extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => __( 'Hover', 'gpt-news-core' ),
+				'label' => __( 'Hover', 'pps-passport-core' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label'     => __( 'Color', 'gpt-news-core' ),
+				'label'     => __( 'Color', 'pps-passport-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .gpt-btn:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .pps-btn:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -398,10 +398,10 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'background_color_hover',
 			[
-				'label'     => __( 'Background Color', 'gpt-news-core' ),
+				'label'     => __( 'Background Color', 'pps-passport-core' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .gpt-btn:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .pps-btn:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -410,8 +410,8 @@ class Button extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'border_hover',
-				'label'    => __( 'Border', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-btn:hover'
+				'label'    => __( 'Border', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-btn:hover'
 			]
 		);
 
@@ -419,8 +419,8 @@ class Button extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'box_shadow_hover',
-				'label'    => __( 'Box Shadow', 'gpt-news-core' ),
-				'selector' => '{{WRAPPER}} .gpt-btn:hover',
+				'label'    => __( 'Box Shadow', 'pps-passport-core' ),
+				'selector' => '{{WRAPPER}} .pps-btn:hover',
 			]
 		);
 
@@ -441,11 +441,11 @@ class Button extends Widget_Base {
 		$settings    = $this->get_settings_for_display();
 		$button_type = $settings['button_size'];
 
-		$this->add_render_attribute( 'wrapper', 'class', 'gpt-btn-wrapper' );
+		$this->add_render_attribute( 'wrapper', 'class', 'pps-btn-wrapper' );
 
 		if ( ! empty( $settings['link']['url'] ) ) {
 			$this->add_render_attribute( 'button', 'href', $settings['link']['url'] );
-			$this->add_render_attribute( 'button', 'class', 'gpt-btn-links' );
+			$this->add_render_attribute( 'button', 'class', 'pps-btn-links' );
 
 			if ( $settings['link']['is_external'] ) {
 				$this->add_render_attribute( 'button', 'target', '_blank' );
@@ -456,7 +456,7 @@ class Button extends Widget_Base {
 			}
 		}
 
-		$this->add_render_attribute( 'button', 'class', 'gpt-btn' );
+		$this->add_render_attribute( 'button', 'class', 'pps-btn' );
 
 
 		if ( ! empty( $settings['button_shape'] ) ) {
@@ -500,11 +500,11 @@ class Button extends Widget_Base {
 
 		var iconHTML = elementor.helpers.renderIcon( view, settings.selected_icon, { 'aria-hidden': true }, 'i' , 'object' );
 		#>
-		<div class="gpt-btn-wrapper">
-			<a class="gpt-btn {{ settings.button_shape }} {{ settings.button_size }} {{ settings.button_style }} {{ settings.button_fill_color}} elementor-animation-{{ settings.hover_animation }}"
+		<div class="pps-btn-wrapper">
+			<a class="pps-btn {{ settings.button_shape }} {{ settings.button_size }} {{ settings.button_style }} {{ settings.button_fill_color}} elementor-animation-{{ settings.hover_animation }}"
 			   href="{{ settings.link.url }}">
-				<span class="gpt-btn-content-wrapper">
-					<span class="gpt-btn-icon elementor-align-icon-{{ settings.icon_align }}">
+				<span class="pps-btn-content-wrapper">
+					<span class="pps-btn-icon elementor-align-icon-{{ settings.icon_align }}">
 						{{{ iconHTML.value }}}
 					</span>
 					<span {{{ view.getRenderAttributeString( 'text' ) }}}>{{{ settings.text }}}</span>
@@ -524,11 +524,11 @@ class Button extends Widget_Base {
 	 */
 	protected function render_text() {
 		$settings = $this->get_settings();
-		$this->add_render_attribute( 'content-wrapper', 'class', 'gpt-btn-content-wrapper' );
+		$this->add_render_attribute( 'content-wrapper', 'class', 'pps-btn-content-wrapper' );
 		$this->add_render_attribute( 'icon-align', 'class', 'elementor-align-icon-' . $settings['icon_align'] );
-		$this->add_render_attribute( 'icon-align', 'class', 'gpt-btn-icon' );
+		$this->add_render_attribute( 'icon-align', 'class', 'pps-btn-icon' );
 
-		$this->add_render_attribute( 'text', 'class', 'gpt-btn-text' );
+		$this->add_render_attribute( 'text', 'class', 'pps-btn-text' );
 
 		// $this->add_inline_editing_attributes( 'text', 'none' );
 		?>

@@ -25,11 +25,11 @@ if ( $count < 1 ) : ?>
 
 				<ul class="entry-meta">
 					<li>
-						<?php \Gpt_Theme_Helper::post_author_by(); ?>
+						<?php \PPS_Theme_Helper::post_author_by(); ?>
 					</li>
 					<li>
 						<i class="ri-calendar-2-line"></i>
-						<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+						<?php \PPS_Theme_Helper::pps_posted_on(); ?>
 					</li>
 				</ul><!-- .entry-meta -->
 			</div>
@@ -66,7 +66,7 @@ elseif ( $count == 1 ) : ?>
 						<ul class="entry-meta">
 							<li>
 								<i class="ri-calendar-2-line"></i>
-								<?php \Gpt_Theme_Helper::gpt_posted_on(); ?>
+								<?php \PPS_Theme_Helper::pps_posted_on(); ?>
 							</li>
 						</ul><!-- .entry-meta -->
 					<?php endif; ?>

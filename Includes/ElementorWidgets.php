@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore;
+namespace PixelPath\PPSPassportCore;
 
 use Elementor\Plugin;
 
@@ -51,9 +51,9 @@ class ElementorWidgets {
 
 	public function register_categories( $elements_manager ) {
 		$elements_manager->add_category(
-			'gpt-elements',
+			'pps-elements',
 			[
-				'title' => __( 'GPT Elements', 'gpt-news-core' ),
+				'title' => __( 'PPS Elements', 'pps-passport-core' ),
 				'icon'  => 'fa fa-plug',
 			]
 		);
@@ -66,11 +66,11 @@ class ElementorWidgets {
 	public function register_widgets() {
 		$widget_manager = Plugin::instance()->widgets_manager;
 
-		foreach ( glob( GPT_CORE_PATH . 'Includes/Widgets/*.php' ) as $file ) {
+		foreach ( glob( PPS_CORE_PATH . 'Includes/Widgets/*.php' ) as $file ) {
 			$base  = basename( str_replace( '.php', '', $file ) );
 			$class = ucwords( str_replace( '-', ' ', $base ) );
 			$class = str_replace( ' ', '_', $class );
-			$class = sprintf( '\GpTheme\GptNewsCore\Widgets\%s', $class );
+			$class = sprintf( '\PixelPath\PPSPassportCore\Widgets\%s', $class );
 
 			if ( class_exists( $class ) ) {
 				$widget_manager->register( new $class );
@@ -83,11 +83,11 @@ class ElementorWidgets {
 	 * Register addon by file name
 	 */
 	public function register_modules_addon() {
-		foreach ( glob( GPT_CORE_PATH . 'Includes/Elementor/*.php' ) as $file ) {
+		foreach ( glob( PPS_CORE_PATH . 'Includes/Elementor/*.php' ) as $file ) {
 			$base  = basename( str_replace( '.php', '', $file ) );
 			$class = ucwords( str_replace( '-', ' ', $base ) );
 			$class = str_replace( ' ', '_', $class );
-			$class = sprintf( '\GpTheme\GptNewsCore\Elementor\%s', $class );
+			$class = sprintf( '\PixelPath\PPSPassportCore\Elementor\%s', $class );
 
 			if ( class_exists( $class ) ) {
 				new $class;
@@ -117,7 +117,7 @@ class ElementorWidgets {
 	 * Enqueue scripts
 	 */
 	public function after_register_scripts() {
-//		wp_register_script( 'countUp', GPT_SCRIPTS . '/countUp.min.js', array( 'jquery' ), GPT_CORE_VERSION, true );
+//		wp_register_script( 'countUp', PPS_SCRIPTS . '/countUp.min.js', array( 'jquery' ), PPS_CORE_VERSION, true );
 
 	}
 
@@ -127,10 +127,10 @@ class ElementorWidgets {
 	 */
 
 	public function before_enqueue_scripts() {
-		wp_enqueue_script( 'gpt-elementor', GPT_SCRIPTS . '/elementor.js', array(
+		wp_enqueue_script( 'pps-elementor', PPS_SCRIPTS . '/elementor.js', array(
 			'jquery',
 			'elementor-frontend'
-		), GPT_CORE_VERSION, true );
+		), PPS_CORE_VERSION, true );
 	}
 
 	public function remix_icons( $tabs ) {
@@ -138,13 +138,13 @@ class ElementorWidgets {
 		$tabs['remix-icons'] = [
 			'name'      => 'remix-icons',
 			'label'     => __( 'Remix Icon', 'mpt-core' ),
-			'url'       => GPT_CORE_ASSETS_URL . 'css/remixicon.css',
-			'enqueue'   => [ GPT_CORE_ASSETS_URL . 'css/remixicon.css' ],
+			'url'       => PPS_CORE_ASSETS_URL . 'css/remixicon.css',
+			'enqueue'   => [ PPS_CORE_ASSETS_URL . 'css/remixicon.css' ],
 			'prefix' => 'ri-',
 			'displayPrefix' => '',
 			'labelIcon' => 'ri-asterisk',
 			'ver'       => '1.0.0',
-			'fetchJson' => GPT_CORE_ASSETS_URL . 'css/remixicons.js',
+			'fetchJson' => PPS_CORE_ASSETS_URL . 'css/remixicons.js',
 			'native'    => false,
 		];
 

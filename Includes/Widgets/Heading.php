@@ -1,6 +1,6 @@
 <?php
 
-namespace GpTheme\GptNewsCore\Widgets;
+namespace PixelPath\PPSPassportCore\Widgets;
 
 use Elementor\{
 	Controls_Manager,
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Heading
  *
- * @package GpTheme\GptNewsCore\Widgets
+ * @package PixelPath\PPSPassportCore\Widgets
  */
 
 class Heading extends Widget_Base {
@@ -34,7 +34,7 @@ class Heading extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'gpt-heading';
+		return 'pps-heading';
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Heading extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'GPT Heading', 'gpt-news-core' );
+		return esc_html__( 'PPS Heading', 'pps-passport-core' );
 	}
 
 	/**
@@ -76,7 +76,7 @@ class Heading extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'gpt-elements' ];
+		return [ 'pps-elements' ];
 	}
 
 	/**
@@ -94,7 +94,7 @@ class Heading extends Widget_Base {
 	}
 
 //	public function get_script_depends() {
-//		wp_enqueue_script( 'heading', GPT_PLUGIN_URL . 'assets/js/heading.js', [ 'elementor-frontend' ], '1.0.0', true );
+//		wp_enqueue_script( 'heading', PPS_PLUGIN_URL . 'assets/js/heading.js', [ 'elementor-frontend' ], '1.0.0', true );
 //
 //		return [ 'heading' ];
 //	}
@@ -113,64 +113,64 @@ class Heading extends Widget_Base {
 		// Heading Content Section
 		//==========================
 		$this->start_controls_section( 'section_tab', [
-			'label' => esc_html__( 'Heading', 'gpt-news-core' ),
+			'label' => esc_html__( 'Heading', 'pps-passport-core' ),
 		] );
 
 		// Style
 		$this->add_control( 'style', [
-			'label'   => esc_html__( 'Style', 'gpt-news-core' ),
+			'label'   => esc_html__( 'Style', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'default' => 'one',
 			'options' => [
-				'one' => esc_html__( 'Style 1', 'gpt-news-core' ),
-				'two' => esc_html__( 'Style 2', 'gpt-news-core' ),
+				'one' => esc_html__( 'Style 1', 'pps-passport-core' ),
+				'two' => esc_html__( 'Style 2', 'pps-passport-core' ),
 			]
 		] );
 
 
 		$this->add_control( 'sub_title', [
-			'label'       => esc_html__( 'Sub Title', 'gpt-news-core' ),
+			'label'       => esc_html__( 'Sub Title', 'pps-passport-core' ),
 			'type'        => Controls_Manager::TEXT,
 			'label_block' => true,
-			'placeholder' => esc_html__( 'Sub Title', 'gpt-news-core' ),
+			'placeholder' => esc_html__( 'Sub Title', 'pps-passport-core' ),
 			'separator'   => 'none',
 		] );
 
 		$this->add_control( 'title_text', [
-			'label'       => esc_html__( 'Title', 'gpt-news-core' ),
+			'label'       => esc_html__( 'Title', 'pps-passport-core' ),
 			'type'        => Controls_Manager::TEXTAREA,
 			'label_block' => true,
 			'rows'        => 2,
-			'placeholder' => esc_html__( 'Title', 'gpt-news-core' ),
-			'default'     => esc_html__( 'Section Title', 'gpt-news-core' ),
+			'placeholder' => esc_html__( 'Title', 'pps-passport-core' ),
+			'default'     => esc_html__( 'Section Title', 'pps-passport-core' ),
 		] );
 
 
 		// Secondary Title Enable
 		$this->add_control( 'secondary_title_enable', [
-			'label'        => __( 'Secondary Title Enable', 'gpt-news-core' ),
+			'label'        => __( 'Secondary Title Enable', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Yes', 'gpt-news-core' ),
-			'label_off'    => __( 'No', 'gpt-news-core' ),
+			'label_on'     => __( 'Yes', 'pps-passport-core' ),
+			'label_off'    => __( 'No', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'no',
 		] );
 
 		// Secondary Title
 		$this->add_control( 'secondary_title', [
-			'label'       => esc_html__( 'Secondary Title', 'gpt-news-core' ),
+			'label'       => esc_html__( 'Secondary Title', 'pps-passport-core' ),
 			'type'        => Controls_Manager::TEXTAREA,
 			'label_block' => true,
 			'rows'        => 2,
-			'placeholder' => esc_html__( 'Secondary Title', 'gpt-news-core' ),
-			'default'     => esc_html__( 'Secondary Title', 'gpt-news-core' ),
+			'placeholder' => esc_html__( 'Secondary Title', 'pps-passport-core' ),
+			'default'     => esc_html__( 'Secondary Title', 'pps-passport-core' ),
 			'condition'   => [
 				'secondary_title_enable' => 'yes'
 			]
 		] );
 
 		$this->add_control( 'title_size', [
-			'label'   => __( 'Title HTML Tag', 'gpt-news-core' ),
+			'label'   => __( 'Title HTML Tag', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'options' => [
 				'h1'   => 'H1',
@@ -188,31 +188,31 @@ class Heading extends Widget_Base {
 
 
 		$this->add_control( 'description_text', [
-			'label'       => __( 'Description', 'gpt-news-core' ),
+			'label'       => __( 'Description', 'pps-passport-core' ),
 			'type'        => Controls_Manager::WYSIWYG,
-			'placeholder' => __( 'Type your description here', 'gpt-news-core' ),
+			'placeholder' => __( 'Type your description here', 'pps-passport-core' ),
 			'separator'   => 'before'
 		] );
 
 		$this->add_responsive_control( 'title_align', [
-			'label'     => esc_html__( 'Alignment', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Alignment', 'pps-passport-core' ),
 			'type'      => Controls_Manager::CHOOSE,
 			'options'   => [
 
 				'left'    => [
-					'title' => esc_html__( 'Left', 'gpt-news-core' ),
+					'title' => esc_html__( 'Left', 'pps-passport-core' ),
 					'icon'  => 'eicon-text-align-left',
 				],
 				'center'  => [
-					'title' => esc_html__( 'Center', 'gpt-news-core' ),
+					'title' => esc_html__( 'Center', 'pps-passport-core' ),
 					'icon'  => 'eicon-text-align-center',
 				],
 				'right'   => [
-					'title' => esc_html__( 'Right', 'gpt-news-core' ),
+					'title' => esc_html__( 'Right', 'pps-passport-core' ),
 					'icon'  => 'eicon-text-align-right',
 				],
 				'justify' => [
-					'title' => esc_html__( 'Justified', 'gpt-news-core' ),
+					'title' => esc_html__( 'Justified', 'pps-passport-core' ),
 					'icon'  => 'eicon-text-align-justify',
 				],
 			],
@@ -223,7 +223,7 @@ class Heading extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'heading_spacing_div', [
-			'label'     => __( 'Spacing', 'gpt-news-core' ),
+			'label'     => __( 'Spacing', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -241,31 +241,31 @@ class Heading extends Widget_Base {
 		// Heading Effects
 		//=========================
 		$this->start_controls_section( 'section_heading_effect', [
-			'label' => esc_html__( 'Heading Effects', 'gpt-news-core' ),
+			'label' => esc_html__( 'Heading Effects', 'pps-passport-core' ),
 		] );
 
 		// Enable Splitting Effects
 		$this->add_control( 'enable_splitting', [
-			'label'        => __( 'Enable Splitting', 'gpt-news-core' ),
+			'label'        => __( 'Enable Splitting', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Yes', 'gpt-news-core' ),
-			'label_off'    => __( 'No', 'gpt-news-core' ),
+			'label_on'     => __( 'Yes', 'pps-passport-core' ),
+			'label_off'    => __( 'No', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'no',
 		] );
 
 		// Effect Style
 		$this->add_control( 'effect_style', [
-			'label'     => __( 'Effect Style', 'gpt-news-core' ),
+			'label'     => __( 'Effect Style', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SELECT,
 			'options'   => [
-				'one'   => __( 'One', 'gpt-news-core' ),
-				'two'   => __( 'Two', 'gpt-news-core' ),
-				'three' => __( 'Three', 'gpt-news-core' ),
-				'four'  => __( 'Four', 'gpt-news-core' ),
-				'five'  => __( 'Five', 'gpt-news-core' ),
-				'six'   => __( 'Six', 'gpt-news-core' ),
-				'seven' => __( 'Seven', 'gpt-news-core' ),
+				'one'   => __( 'One', 'pps-passport-core' ),
+				'two'   => __( 'Two', 'pps-passport-core' ),
+				'three' => __( 'Three', 'pps-passport-core' ),
+				'four'  => __( 'Four', 'pps-passport-core' ),
+				'five'  => __( 'Five', 'pps-passport-core' ),
+				'six'   => __( 'Six', 'pps-passport-core' ),
+				'seven' => __( 'Seven', 'pps-passport-core' ),
 			],
 			'default'   => 'one',
 			'condition' => [
@@ -275,7 +275,7 @@ class Heading extends Widget_Base {
 
 		// Splitting Effects Type
 		$this->add_control( 'splitting_type', [
-			'label'   => __( 'Splitting Type', 'gpt-news-core' ),
+			'label'   => __( 'Splitting Type', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'options' => [
 				'chars' => 'Chars',
@@ -290,7 +290,7 @@ class Heading extends Widget_Base {
 
 		//Animation Duration
 		$this->add_control( 'title_animation_time', [
-			'label'     => __( 'Animation Duration', 'gpt-news-core' ),
+			'label'     => __( 'Animation Duration', 'pps-passport-core' ),
 			'type'      => Controls_Manager::NUMBER,
 			'default'   => 1,
 			'min'       => 0.1,
@@ -307,22 +307,22 @@ class Heading extends Widget_Base {
 		// Description Effects
 		//=========================
 		$this->start_controls_section( 'section_description_effect', [
-			'label' => esc_html__( 'Description Effects', 'gpt-news-core' ),
+			'label' => esc_html__( 'Description Effects', 'pps-passport-core' ),
 		] );
 
 		// Enable Splitting Effects
 		$this->add_control( 'des_enable_splitting', [
-			'label'        => __( 'Enable Splitting', 'gpt-news-core' ),
+			'label'        => __( 'Enable Splitting', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SWITCHER,
-			'label_on'     => __( 'Yes', 'gpt-news-core' ),
-			'label_off'    => __( 'No', 'gpt-news-core' ),
+			'label_on'     => __( 'Yes', 'pps-passport-core' ),
+			'label_off'    => __( 'No', 'pps-passport-core' ),
 			'return_value' => 'yes',
 			'default'      => 'no',
 		] );
 
 		// Effect Style
 		$this->add_control( 'des_effect_style', [
-			'label'     => __( 'Effect Style', 'gpt-news-core' ),
+			'label'     => __( 'Effect Style', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SELECT,
 			'options'   => [
 				'one'   => 'One',
@@ -338,7 +338,7 @@ class Heading extends Widget_Base {
 
 		// Splitting Effects Type
 		$this->add_control( 'des_splitting_type', [
-			'label'   => __( 'Splitting Type', 'gpt-news-core' ),
+			'label'   => __( 'Splitting Type', 'pps-passport-core' ),
 			'type'    => Controls_Manager::SELECT,
 			'options' => [
 				'chars' => 'Chars',
@@ -355,7 +355,7 @@ class Heading extends Widget_Base {
 
 		// Animation Delay Delay
 		$this->add_control( 'animation_delay', [
-			'label'     => __( 'Animation Delay', 'gpt-news-core' ),
+			'label'     => __( 'Animation Delay', 'pps-passport-core' ),
 			'type'      => Controls_Manager::NUMBER,
 			'default'   => 0.1,
 			'min'       => 0.1,
@@ -368,7 +368,7 @@ class Heading extends Widget_Base {
 
 		//Animation Duration
 		$this->add_control( 'animation_time', [
-			'label'     => __( 'Animation Duration', 'gpt-news-core' ),
+			'label'     => __( 'Animation Duration', 'pps-passport-core' ),
 			'type'      => Controls_Manager::NUMBER,
 			'default'   => 1,
 			'min'       => 0.1,
@@ -386,12 +386,12 @@ class Heading extends Widget_Base {
 		//Title Style Section
 		//=========================
 		$this->start_controls_section( 'section_title_style', [
-			'label' => esc_html__( 'Title', 'gpt-news-core' ),
+			'label' => esc_html__( 'Title', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 		$this->add_control( 'title_color_one', [
-			'label'     => esc_html__( 'Title color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Title color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .section-heading .section-title' => 'color: {{VALUE}};'
@@ -405,7 +405,7 @@ class Heading extends Widget_Base {
 
         // Highlight Color
         $this->add_control( 'title_highlight_color', [
-            'label'     => esc_html__( 'Highlight color', 'gpt-news-core' ),
+            'label'     => esc_html__( 'Highlight color', 'pps-passport-core' ),
             'type'      => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .section-heading .section-title span' => 'color: {{VALUE}};'
@@ -421,7 +421,7 @@ class Heading extends Widget_Base {
         ] );
 
 		$this->add_responsive_control( 'space_between_title', [
-			'label'     => __( 'Spacing Title', 'gpt-news-core' ),
+			'label'     => __( 'Spacing Title', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -440,7 +440,7 @@ class Heading extends Widget_Base {
 		// Secondary Title Style Section
 		//=========================
 		$this->start_controls_section( 'section_secondary_title_style', [
-			'label'     => esc_html__( 'Secondary Title', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Secondary Title', 'pps-passport-core' ),
 			'tab'       => Controls_Manager::TAB_STYLE,
 			'condition' => [
 				'secondary_title_enable' => 'yes'
@@ -448,7 +448,7 @@ class Heading extends Widget_Base {
 		] );
 
 		$this->add_control( 'title_color_two', [
-			'label'     => esc_html__( 'Secondary Title color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Secondary Title color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .section-heading .section-title-secondary' => 'color: {{VALUE}};'
@@ -468,7 +468,7 @@ class Heading extends Widget_Base {
 
 		// Space Between
 		$this->add_responsive_control( 'space_between_two', [
-			'label'     => __( 'Spacing', 'gpt-news-core' ),
+			'label'     => __( 'Spacing', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -489,24 +489,24 @@ class Heading extends Widget_Base {
 
 		//Subtitle Style Section
 		$this->start_controls_section( 'section_subtitle_style', [
-			'label' => esc_html__( 'Sub Title', 'gpt-news-core' ),
+			'label' => esc_html__( 'Sub Title', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 
 		$this->add_control( 'heading_color_type', array(
-			'label'        => __( 'Color Type', 'gpt-news-core' ),
+			'label'        => __( 'Color Type', 'pps-passport-core' ),
 			'type'         => Controls_Manager::SELECT,
 			'options'      => array(
-				'color'    => __( 'Color', 'gpt-news-core' ),
-				'gradient' => __( 'Background', 'gpt-news-core' ),
+				'color'    => __( 'Color', 'pps-passport-core' ),
+				'gradient' => __( 'Background', 'pps-passport-core' ),
 			),
 			'default'      => 'color',
-			'prefix_class' => 'gpt-heading-fill-',
+			'prefix_class' => 'pps-heading-fill-',
 		) );
 
 		$this->add_control( 'subtitle_color', [
-			'label'     => esc_html__( 'Color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .section-heading .subtitle' => 'color: {{VALUE}};',
@@ -529,7 +529,7 @@ class Heading extends Widget_Base {
 		) );
 
 		$this->add_control( 'subtitle_bg_color', [
-			'label'     => esc_html__( 'Sub Title BG color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Sub Title BG color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .section-heading .subtitle' => 'background-color: {{VALUE}};'
@@ -539,7 +539,7 @@ class Heading extends Widget_Base {
 		// Background
 
 		$this->add_control( 'subtitle_bg', [
-			'label'     => esc_html__( 'BG color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'BG color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .section-heading .subtitle' => 'background: {{VALUE}};'
@@ -551,7 +551,7 @@ class Heading extends Widget_Base {
 
 		// Border color
 		$this->add_control( 'subtitle_border_color', [
-			'label'     => esc_html__( 'Border color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Border color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .section-heading .subtitle' => 'border-color: {{VALUE}};'
@@ -563,7 +563,7 @@ class Heading extends Widget_Base {
 
 		// Circle BG Color
 		$this->add_control( 'circle_bg_color', [
-			'label'     => esc_html__( 'Circle BG color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'Circle BG color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .section-heading .subtitle:before, {{WRAPPER}} .section-heading .subtitle:after' => 'background: {{VALUE}};'
@@ -580,7 +580,7 @@ class Heading extends Widget_Base {
 		] );
 
 		$this->add_responsive_control( 'space_between_subtitle', [
-			'label'     => __( 'Spacing Sub Title', 'gpt-news-core' ),
+			'label'     => __( 'Spacing Sub Title', 'pps-passport-core' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => [
 				'px' => [
@@ -604,13 +604,13 @@ class Heading extends Widget_Base {
 
 		//Description Style Section
 		$this->start_controls_section( 'section_des_style', [
-			'label' => esc_html__( 'Description', 'gpt-news-core' ),
+			'label' => esc_html__( 'Description', 'pps-passport-core' ),
 			'tab'   => Controls_Manager::TAB_STYLE,
 		] );
 
 
 		$this->add_control( 'des_color', [
-			'label'     => esc_html__( 'color', 'gpt-news-core' ),
+			'label'     => esc_html__( 'color', 'pps-passport-core' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} .section-heading .description, {{WRAPPER}} .section-heading .description p' => 'color: {{VALUE}};',

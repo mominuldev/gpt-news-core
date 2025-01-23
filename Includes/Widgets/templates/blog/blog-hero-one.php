@@ -7,7 +7,7 @@ if ( $count < 2 ) : ?>
 				<a href="<?php the_permalink(); ?>">
 					<?php
 					if ( has_post_thumbnail() ) {
-						the_post_thumbnail( 'gpt_hero_grid_800x550', array( 'alt' => get_the_title() ) );
+						the_post_thumbnail( 'pps_hero_grid_800x550', array( 'alt' => get_the_title() ) );
 					} else { ?>
 						<img src="https://via.placeholder.com/410x290" alt="Placeholder">
 					<?php } ?>
@@ -20,11 +20,11 @@ if ( $count < 2 ) : ?>
 				<?php if ( $meta_show == 'yes' ) : ?>
 					<ul class="entry-meta">
 						<li>
-							<?php Gpt_Theme_Helper::post_author_by(); ?>
+							<?php PPS_Theme_Helper::post_author_by(); ?>
 						</li>
 						<li>
 							<i class="ri-calendar-2-line"></i>
-							<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+							<?php PPS_Theme_Helper::pps_posted_on(); ?>
 						</li>
 					</ul><!-- .entry-meta -->
 				<?php endif; ?>
@@ -44,7 +44,7 @@ elseif ( $count == 2 ) : ?>
 			<a href="<?php the_permalink(); ?>">
 				<?php
 				if ( has_post_thumbnail() ) {
-					the_post_thumbnail( 'gpt_hero_thumbnail_420x270', array( 'alt' => get_the_title() ) );
+					the_post_thumbnail( 'pps_hero_thumbnail_420x270', array( 'alt' => get_the_title() ) );
 				} else { ?>
 					<img src="https://via.placeholder.com/410x290" alt="Placeholder">
 				<?php } ?>
@@ -57,11 +57,11 @@ elseif ( $count == 2 ) : ?>
 			<?php if ($meta_show == 'yes') : ?>
 				<ul class="entry-meta">
 					<li>
-						<?php Gpt_Theme_Helper::post_author_by(); ?>
+						<?php PPS_Theme_Helper::post_author_by(); ?>
 					</li>
 					<li>
 						<i class="ri-calendar-2-line"></i>
-						<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+						<?php PPS_Theme_Helper::pps_posted_on(); ?>
 					</li>
 				</ul><!-- .entry-meta -->
 			<?php endif; ?>

@@ -1,4 +1,4 @@
-<div class="gpt-testimonial-wrapper">
+<div class="pps-testimonial-wrapper">
 
 	<div <?php $this->print_render_attribute_string( 'wrapper' ); ?>>
 
@@ -41,14 +41,14 @@
 
 								<?php
 								$rating = $testimonial['rating'];
-								$this->add_render_attribute( 'star-rating', 'class', 'gpt-star-rating gpt-star-' . esc_attr( $rating ) );
+								$this->add_render_attribute( 'star-rating', 'class', 'pps-star-rating pps-star-' . esc_attr( $rating ) );
 
-								$rating_markup = "<div class='gpt-star-rating gpt-star-" . $rating . "'>\n";
-								$rating_markup .= "<span class=\"gpt-star-1 fa-star\"></span>\n";
-								$rating_markup .= "<span class=\"gpt-star-2 fa-star\"></span>\n";
-								$rating_markup .= "<span class=\"gpt-star-3 fa-star\"></span>\n";
-								$rating_markup .= "<span class=\"gpt-star-4 fa-star\"></span>\n";
-								$rating_markup .= "<span class=\"gpt-star-5 fa-star\"></span>\n";
+								$rating_markup = "<div class='pps-star-rating pps-star-" . $rating . "'>\n";
+								$rating_markup .= "<span class=\"pps-star-1 fa-star\"></span>\n";
+								$rating_markup .= "<span class=\"pps-star-2 fa-star\"></span>\n";
+								$rating_markup .= "<span class=\"pps-star-3 fa-star\"></span>\n";
+								$rating_markup .= "<span class=\"pps-star-4 fa-star\"></span>\n";
+								$rating_markup .= "<span class=\"pps-star-5 fa-star\"></span>\n";
 								$rating_markup .= "</div>";
 
 								echo $rating_markup;
@@ -87,4 +87,4 @@
 	<?php } ?>
 
 </div>
-<!-- /.gpt-testimonial-wrapper -->
+<!-- /.pps-testimonial-wrapper -->

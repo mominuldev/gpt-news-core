@@ -1,19 +1,19 @@
 <div <?php echo $this->get_render_attribute_string( 'wrapper' ) ?>>
-	<div class="gpt-service__count">
+	<div class="pps-service__count">
 		<?php if ( $settings['count'] ): ?>
 			<?php printf( '%s', $settings['count'] ); ?>
 		<?php endif; ?>
 	</div>
 
-	<div class="gpt-service__content">
+	<div class="pps-service__content">
 		<?php if ( $settings['title'] ): ?>
-			<h4 class="gpt-service__title">
+			<h4 class="pps-service__title">
 				<?php printf( '%s', $settings['title'] ); ?>
 			</h4>
 		<?php endif; ?>
 
 		<?php if ( $settings['description'] ): ?>
-			<p class="gpt-service__description">
+			<p class="pps-service__description">
 				<?php printf( '%s', $settings['description'] ); ?>
 			</p>
 		<?php endif; ?>
@@ -25,4 +25,4 @@
 		</a>
 	<?php endif; ?>
 </div>
-<!-- /.gpt-service -->
+<!-- /.pps-service -->

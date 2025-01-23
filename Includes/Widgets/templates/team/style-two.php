@@ -1,30 +1,30 @@
 <?php
 if ( $settings['image']['url'] ): ?>
 	<figure <?php echo $this->get_render_attribute_string( 'wrapper' ) ?>>
-		<div class="gpt-team__avater">
+		<div class="pps-team__avater">
 			<img src="<?php echo esc_url( $settings['image']['url'] ); ?>" alt="<?php echo esc_attr( $settings['name'] ); ?>">
 		</div>
 		<!-- /.member-avater -->
 
-		<div class="gpt-team__info">
+		<div class="pps-team__info">
 			<?php if ( $settings['name'] ): ?>
-				<h5 class="gpt-team__name">
+				<h5 class="pps-team__name">
 					<?php printf( '%s', $settings['name'] ); ?>
 				</h5>
 			<?php endif; ?>
 
 			<?php if ( $settings['position'] ): ?>
-				<h6 class="gpt-team__designation">
+				<h6 class="pps-team__designation">
 					<?php printf( '%s', $settings['position'] ); ?>
 				</h6>
 			<?php endif; ?>
 
 			<?php if ( ! empty( $settings['social_icons'] )  ) : ?>
 
-				<ul class="gpt-team__social">
+				<ul class="pps-team__social">
 					<?php foreach ( $settings['social_icons'] as $index => $item ) :
 						$repeater_setting_key = $this->get_repeater_setting_key( 'text', 'social-icon', $index );
-						$this->add_render_attribute( $repeater_setting_key, 'class', 'gpt-social-icon' );
+						$this->add_render_attribute( $repeater_setting_key, 'class', 'pps-social-icon' );
 
 						?>
 						<li <?php $this->print_render_attribute_string( 'social-icon' ); ?>>
@@ -47,6 +47,6 @@ if ( $settings['image']['url'] ): ?>
 
 			<?php endif; ?>
 		</div>
-	</figure><!-- .gpt-team -->
+	</figure><!-- .pps-team -->
 <?php
 endif;
